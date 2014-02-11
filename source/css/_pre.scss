@@ -1,0 +1,11 @@
+pre {
+  @include border-radius(5px);
+  padding: 10px;
+  background: #49483e;
+  color: #fff;
+}
+pre, code, tt {
+  font-size: 1em;
+  font-family: "andale mono","lucida console",monospace;
+  line-height: 1.5;
+}
