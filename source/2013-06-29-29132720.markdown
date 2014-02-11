@@ -1,0 +1,41 @@
+---
+title: '* CoffeeScript入門 - .vimrc設定編'
+published: true
+date: 2013-06-29 13:27
+comments: true
+categories:
+- CoffeeScript
+- JavaScript
+tags: []
+keywords:
+- CoffeeScript
+- JavaScript
+---
+<p>そろそろやっておこうと思ってCoffeeScriptをはじめてみた。とりあえずvim使いなのでvimrcの設定からはじめる。</p>
+<p>vimでCoffeeScriptを幸せに書けるための便利なプラグインがあるのでまずはそれをインストールする。</p>
+
+<p>↓これ使う。<br>
+[https://github.com/kchmck/vim-coffee-script](https://github.com/kchmck/vim-coffee-script "https://github.com/kchmck/vim-coffee-script")</p>
+
+<p>NeoBundle使うとプラグインの管理が楽なので、先にNeoBundleのインストールをする。<br>
+[https://github.com/Shougo/neobundle.vim](https://github.com/Shougo/neobundle.vim "https://github.com/Shougo/neobundle.vim")</p>
+
+<p>git cloneする</p>
+<script src="https://gist.github.com/funnythingz/5889520.js"></script>
+<p>git clone終わったら.vimrcに↓を追加</p>
+<script src="https://gist.github.com/funnythingz/5889521.js"></script>
+<p>.vimrcに追加したらvim開いて↓を実行</p>
+<script src="https://gist.github.com/funnythingz/5889527.js"></script>
+
+<p>NeoBundleが使えるようになったらkchmck/vim-coffee-scriptをインストールする。<br>
+.vimrcに↓を追記する。</p>
+<script src="https://gist.github.com/funnythingz/5889548.js"></script>
+
+<p>.vimrcに追加したらvim開いて↓を実行</p>
+<script src="https://gist.github.com/funnythingz/5889527.js"></script>
+
+<p>vimでhoge.coffeeを開いてCoffeeScriptを書いたらCtrl+Cで右側にコンパイルされたJSのプレビューが表示されます。</p>
+<a href="/imgs/archives/2013/06/4dc99b061cc67594868072a17dfb57d5.png"><img src="/imgs/archives/2013/06/4dc99b061cc67594868072a17dfb57d5.png" alt="hoge.coffee____tmp_coffee__-_VIM_—_vim_—_102×38" class="alignnone size-full wp-image-946" /></a>
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

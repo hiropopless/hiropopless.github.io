@@ -1,0 +1,62 @@
+---
+title: '* CSS画像置換について'
+published: true
+date: 2007-12-20 15:58
+comments: true
+categories:
+- (X)HTML
+- CSS
+tags: []
+keywords:
+- (X)HTML
+- CSS
+---
+こんちゃす。海外のCSSデザインを見ていたら、text-indent: -9999px; とは違う画像置換方法を見つけました。（既出かも）
+
+旧式では、CSS側で、text-indent: -9999px; などと指定して、テキストを飛ばして、バックグラウンドに画像を指定する下記のようなテクニックを使います。
+
+**text-indent: -9999px を使ったテクニック**
+
+
+```html
+<div>[テキスト</span>](# "テキスト</span>")</div>
+```
+
+```css
+div a {
+	display: block;
+	width: 45px;
+	height: 45px;
+	background: url(images/bg_off.gif) no-repeat 0 0;
+	<strong style="color: #ff0000">text-indent: -9999px; /*ここでテキストを飛ばす*/</strong>
+}
+div a:hover {
+	background: url(images/bg_on.gif) no-repeat 0 0;
+}
+```
+
+しかし、これでは、キーボードでのタブ移動の際に選択がわかりにくくなって、アクセシビリティ的によくないとのことから、display: none; を使った画像置換テクニックもあります。
+
+**display: none; を使った画像置換テクニック**
+
+```html
+<div>[テキスト</span>](# "テキスト</span>")</div>
+```
+
+```css
+div a {
+	display: block;
+	width: 45px;
+	height: 45px;
+	background: url(images/bg_off.gif) no-repeat 0 0;
+}
+div a:hover {
+	background: url(images/bg_on.gif) no-repeat 0 0;
+}
+div span {
+	display: none; /*テキストを表示させない。*/
+}
+```
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

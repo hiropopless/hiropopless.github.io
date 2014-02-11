@@ -1,0 +1,26 @@
+---
+title: '* clearfix - IE7対応'
+published: true
+date: 2008-01-23 19:48
+comments: true
+categories:
+- CSS
+tags: []
+keywords:
+- CSS
+---
+```css
+.clearfix {
+	zoom:1;/*for IE 5.5-7*/
+}
+.clearfix:after {/*for modern browser*/
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+```
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

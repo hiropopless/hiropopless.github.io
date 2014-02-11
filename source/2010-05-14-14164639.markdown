@@ -1,0 +1,75 @@
+---
+title: '* Objective-Cにおける文字列の連結'
+published: true
+date: 2010-05-14 16:46
+comments: true
+categories:
+- iPad
+- iPhone
+- Objective-C
+tags: []
+keywords:
+- iPad
+- iPhone
+- Objective-C
+---
+JavaScriptやRubyやPHPといったインタプリタな緩くて便利な言語しか使ったことがないので、C言語の文字列の扱いが非常に難しかった。というかC言語単体は挫折したけど…。
+
+Objective-Cに置いてはクラスが拡張されているのでやはり文字列の扱いはものすごい便利になっている。それでも記述する内容多すぎなんだけどね…。
+
+JavascriptとObjective-Cでの書き方をメモっとく。
+
+[js]
+//文字列を代入
+var str1 = "あひゃ！";
+var str2 = "ヒーハーッ！";
+
+//文字列の連結
+var str3 = str1 + str2;
+var str4 = str3 + str1 + str2;
+
+//出力
+alert(str1); //あひゃ！
+alert(str2); //ヒーハーッ！
+alert(str3); //あひゃ！ヒーハーッ！
+alert(str4); //あひゃ！ヒーハーッ！あひゃ！ヒーハーッ！
+[/js]
+
+[c]
+//文字列を代入
+NSString *str1 = @"あひゃ！";
+NSString *str2 = @"ヒーハーッ！";
+
+//文字列の連結
+NSString *str3 = [str1 stringByAppendingString:str2];
+NSString *str4 = [str3 stringByAppendingString:[str1 stringByAppendingString:str2]];
+
+//NSLogで出力
+NSLog(@"\n%@",str1); //あひゃ！
+NSLog(@"\n%@",str2); //ヒーハーッ！
+NSLog(@"\n%@",str3); //あひゃ！ヒーハーッ！
+NSLog(@"\n%@",str4); //あひゃ！ヒーハーッ！あひゃ！ヒーハーッ！
+[/c]
+
+ちなみにメッセージ式の書式もメモっとく。
+
+[c]
+//メッセージ式
+[オブジェクト メッセージ];
+
+//メッセージ式の戻り値を変数に代入
+変数 = [オブジェクト メッセージ]
+
+//引数を1つもつメソッドの呼び出し
+[オブジェクト メソッド名:引数]
+
+//引数を複数もつメソッドの呼び出し
+//※ラベルとは引数の説明のような文字列
+[オブジェクト メソッド名:引数1 ラベル:引数2]
+[/c]
+
+
+他にインスタンスメソッドとクラスメソッドが存在するが、次の機会に書けたら書きます。
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

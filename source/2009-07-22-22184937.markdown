@@ -1,0 +1,112 @@
+---
+title: '* 名前をつけるのがめんどくさい時 - 無名JavaScript'
+published: true
+date: 2009-07-22 18:49
+comments: true
+categories:
+- JavaScript
+tags: []
+keywords:
+- JavaScript
+---
+プログラムを組んでいるとき、名前をつけるのがめんどくさいと思うことが多々多々ある。
+そんなときはどうしているのかというと、大抵、
+
+```js
+var a = 'string';
+function b(){
+   return a;
+}
+```
+
+といった具合に適当につける。
+
+ひどい場合は、
+
+```js
+var ahya = function(){
+   return;
+}
+```
+
+とか、
+
+```js
+var moe = 'ahyao';
+var ooiwa = function(){
+   return moe;
+}
+```
+
+など、人名使ったり、宇宙語使ったり…。
+
+そこで、[前回のブログ](http://hiropo.co.uk/archives/168 "前回のブログ")で紹介した、無名関数や無名コンストラクタを使うことで、名前を考えずにとも、ある一定のルールに従ってプログラムを組めば、毎回名前を考える必要はないパターンを紹介する。
+
+まずは、無名関数でグローバル領域を汚さないようにする
+
+```js
+//無名関数
+(function(){
+   //ここにソース
+})();
+```
+
+そして、いきなり実行する無名コンストラクタを実装する
+
+```js
+//無名関数
+(function(){
+   //無名コンストラクタ
+   new function(){
+      //ここにソース
+   }
+})();
+```
+
+コンストラクタ内で呼び出したい関数があれば、
+無名関数の中に実装する。
+
+```js
+//無名関数
+(function(){
+   //無名コンストラクタ
+   new function(){
+      //ここにソース
+   }
+   //method_a
+   var a = fuction(arg){
+      //ここにソース
+      return arg;
+   }
+   //method_b
+   var b = fuction(arg){
+      //ここにソース
+      return arg;
+   }
+})();
+```
+
+引数に関しても、名前をつけるのがめんどくさい時がある。
+さらに、引数の数も決まってない上に、増える可能性がある場合は、
+引数を配列として取得するなり、オブジェクトにしてしまうなり方法は色々ある。
+
+```js
+new function(arg){
+   var name = arg.name;
+   var age = arg.age;
+   var bloodType = arg.bloodType;
+}({
+   name: 'funnythingz',
+   age: 25,
+   bloodType: 'RH-AB'
+});
+```
+
+
+というようにも書ける。
+そうすると、引数を定義するときもすっきり見やすくわかりやすくなる。
+
+めんどくさがりな人にはこんな書き方もあるということです。
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

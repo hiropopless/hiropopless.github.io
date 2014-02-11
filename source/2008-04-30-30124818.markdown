@@ -1,0 +1,61 @@
+---
+title: '* SecureShell2関数を使う。 - SSH2インストール'
+published: true
+date: 2008-04-30 12:48
+comments: true
+categories:
+- FedoraCore
+- PHP
+tags: []
+keywords:
+- FedoraCore
+- PHP
+---
+SSH2インストール
+
+参考URL
+http://www.php.net/manual/ja/book.ssh2.php
+
+・OpenSSLインストール
+```sh
+# yum install openssl-devel
+```
+
+・libssh2をダウンロードしてインストール
+http://sourceforge.net/projects/libssh2/
+```sh
+# ./configure && make all install
+```
+
+・ssh2モジュールのインストール
+```sh
+# pecl download ssh2-beta
+# phpize && ./configure –with-ssh2
+```
+
+※phpizeがない場合、
+```sh
+# yum install php-dev
+```
+でインストールする。
+
+config.h に
+「#define LIBSSH2_APINO 200412301450」
+を追記する。
+```sh
+# vi config.h
+# make
+```
+
+php.ini ファイルの extension_dir で指定された場所に ssh2.so をコピー。
+php.iniにextention=ssh2.soを追記
+
+php.ini の設定を再読込させるため、Web サーバを再起動します。
+```sh
+# /etc/rc.d/init.d/httpd restart
+```
+
+phpinfo()にてssh2のブロックが確認できれば成功です。
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

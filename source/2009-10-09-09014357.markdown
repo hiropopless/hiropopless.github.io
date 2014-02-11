@@ -1,0 +1,39 @@
+---
+title: '* ActionScript3.0でiPhoneアプリ開発がAdobe CS5で実現！？'
+published: true
+date: 2009-10-09 01:43
+comments: true
+categories:
+- ActionScript3
+- Flash
+tags: []
+keywords:
+- ActionScript3
+- Flash
+---
+ActionScript3.0、はじまったな・・・。
+iPhoneアプリをObjective-CじゃなくてもAS3で開発できちゃうってんなら、かなり敷居が下がりまくりだよね。
+
+[Flash Professional CS5（英語サイト）](http://labs.adobe.com/technologies/flashcs5/ "Flash Professional CS5（英語サイト）")
+[Flash Professional CS5 のアナウンスと iPhone](http://blogs.adobe.com/akamijo/archives/2009/10/flash_professio_1.html "Flash Professional CS5 のアナウンスと iPhone")
+
+<object width="560" height="340"><param name="movie" value="http://www.youtube.com/v/mpEUNqfk4rw&hl=ja&fs=1&"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/mpEUNqfk4rw&hl=ja&fs=1&" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="560" height="340"></embed></object>
+
+こんなことができるらしい。
+
+- AS 3 のプロジェクトから iPhone, iPod Touch 用アプリケーションの書き出し
+- Text Layout Framework (TLF) を用いた新規のテキストコントロールによる新しい表現
+- XML ベースの FLA ファイル （ソース管理システムを使ったバージョン管理が可能に）
+- コードスニペットパネル （事前に作成済みのコードをプロジェクトでそのまま利用）
+- Flash Builder の統合 （ActionScript エディタとして使用できる）
+- ActionScript エディタの改良 （コードヒントや自動補完機能など）
+
+
+これはActionScript3.0の開発者が一気に増えそうな予感がしまくりんぐですよ！
+
+それに比べ、googleのAndroid使ったみましたが、動きはもっさりだし、あいつイマイチっす。やっぱりJavaってとこがあかんじゃないのかなー。重いし、iPhoneに慣れてしまっていると、どうしてもiPhoneと同じような操作しちゃうんだけど、けっこう融通が利かない。ユーザビリティもいまいちでwebブラウジングもイマイチだし、売れても流行らないと思う。結果、売れないと思う。
+
+JavaScriptやってる人は今からActionScript3.0にどっぷりいっちゃって良いと思うよ！（＾ω＾）
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

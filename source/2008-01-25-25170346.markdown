@@ -1,0 +1,38 @@
+---
+title: '* SSIを動かす。'
+published: true
+date: 2008-01-25 17:03
+comments: true
+categories:
+- apache
+tags: []
+keywords:
+- apache
+---
+環境：FedoraCore6
+
+```sh
+#vi /etc/httpd/conf/httpd.conf
+
+#Options Indexes FollowSymLinks
+↓変更後
+#コメントアウトする。
+Options Indexes FollowSymLinks
+
+AddType text/html .shtml
+AddOutputFilter INCLUDES .shtml
+↓変更後
+AddType text/html .shtml .html .htm
+AddOutputFilter INCLUDES .shtml .html .htm
+```
+
+SSIテスト動作用スクリプト
+```html
+今日は
+<!--#config timefmt="%a, %b %d, %Y" -->
+<!--#echo var="DATE_LOCAL" -->
+です。
+```
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

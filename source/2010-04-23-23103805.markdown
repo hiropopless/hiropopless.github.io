@@ -1,0 +1,29 @@
+---
+title: '* spam！'
+published: true
+date: 2010-04-23 10:38
+comments: true
+categories:
+- つれDUれ
+tags: []
+keywords:
+- つれDUれ
+---
+ブログを更新しようと管理画面にログインしてみたら、
+
+<a href="/imgs/archives/2010/04/po.gif"><img src="/imgs/archives/2010/04/po.gif" alt="" title="po" width="652" height="384" class="alignnone size-full wp-image-445" /></a>
+
+「<span style="text-decoration: underline">でも</span>今のところ スパム はありません。」
+
+どうでも良いけど、"でも" の部分要らなくね？ぇ、スパムあったのなかったの！？って思ったけど何かおかしいかなー？
+
+
+そういえば昔こんなことやろうとしてた。
+
+▽スパム検索エンジン
+[http://hiropo.co.uk/archives/11](http://hiropo.co.uk/archives/11 "http://hiropo.co.uk/archives/11")
+
+バカだったんだね。今もバカだけど。
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

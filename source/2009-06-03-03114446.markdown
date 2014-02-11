@@ -1,0 +1,39 @@
+---
+title: '* FlashPlayerの有無を判別する構文 - JavaScript'
+published: true
+date: 2009-06-03 11:44
+comments: true
+categories:
+- Ajax
+- JavaScript
+tags: []
+keywords:
+- Ajax
+- JavaScript
+---
+swfobject.js(ver_1.5)を使った場合のFlashPlayerの有無の判別。
+いつもスクラッチするので、めんどくさいと思いメモ。
+
+```js
+/*
+*	swfobject.js(ver_1.5)を使った場合
+*/
+var so = new SWFObject('sample.swf', 'top', '100%', '394', '8', '#f2ebda');
+if(so.installedVer.major &gt;= 8){
+/*-------------------------------------------------
+*	FlashPlayer8以上がインストールされている場合、
+*	トップページにFlashを表示する。
+*/
+
+}else{
+/*-------------------------------------------------
+*	FlashPlayer8以上がインストールされていない場合、
+*	Adpbe公式のFlashPlayerのインストール画面へリンクする
+*	画面を表示する。
+*/
+
+}
+```
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

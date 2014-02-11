@@ -1,0 +1,34 @@
+---
+title: '* rootパスワード忘れた場合 - FedoraCore6'
+published: true
+date: 2008-04-30 10:56
+comments: true
+categories:
+- FedoraCore
+tags: []
+keywords:
+- FedoraCore
+---
+
+- GRUBの起動画面で「e」を押す
+- kernel, initrd の2つのコマンドをメモする
+- 「Esc」を押してメニューに戻る
+- 「c」を押す
+- 先ほどメモした2つのコマンドを実行する（kernelコマンドは 「-s」オプションを付ける）
+- bootコマンドを入力
+
+
+# 実例
+```sh
+grub> kernel /vmlinuz-2.6.18-1.2798.fc6 ro root=「ラベル」/ -s
+grub> initrd /initrd-2.6.18-1.2798.fc6.img
+grub> boot
+```
+
+# パスワード設定
+```sh
+root# passwd root
+```
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

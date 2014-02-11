@@ -1,0 +1,51 @@
+---
+title: '* Aptana1.5 インストールと日本語化'
+published: true
+date: 2009-07-30 01:44
+comments: true
+categories:
+- Adobe AIR
+- Ajax
+- Aptana
+- JavaScript
+tags: []
+keywords:
+- Adobe AIR
+- Ajax
+- Aptana
+- JavaScript
+---
+こんぬつわ。
+JavaとかRubyとかやろうかなと思いつつも、結局気づいたらJavaScriptしか書いてない僕です。
+
+JavaScripterな人たちにとって有名か有名じゃないかわかりませんが、Adobe AIRでAjaxやらMXML+ActionScriptを使ってデスクトップアプリが簡単（？）に作れるオーサリングツール、Aptana。AIRアプリをつくるときにものすごく重宝しています。
+Eclipseを元に開発されたらしいので、（Eclipseのプラグインとしてのインストールも可）Java開発ならEclipse、JavaScriptならAptanaというイメージで使っています。
+
+元々英語なので、インストール後に日本語化しなくてはいけないので、簡単に手順を。
+
+<blockquote>
+[1]
+Aptana公式サイトから[Aptana本体をダウンロード](http://www.aptana.com/ "Aptana本体をダウンロード")
+
+[2]
+ダウンロード完了後、インストール。
+
+[3]
+英語のまま使いたかったらこのままでも使えますが、日本語化するため、eclipseの日本語化プラグインを使います。(aptanaはeclipseをベースに作られているため使用可能)。
+
+こちらから[Pleiade（安定版）をダウンロード](http://mergedoc.sourceforge.jp/index.html#/pleiades.html "Pleiade（安定版）をダウンロード")します。
+
+[4]
+Pleiadesを解凍し、featuresフォルダとpluginsフォルダをAptanaがインストールされているフォルダに移動し、コピーする。
+
+[5]
+AptanaStudio.iniに下記を追記する。
+-javaagent:plugins/jp.sourceforge.mergedoc.pleiades/pleiades.jar
+
+Aptanaを起動し、日本語化されていればインストール成功
+</blockquote>
+
+環境が整ったら、AIRを開発するための環境を整えたりすればおｋ（＾ｑ＾）
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

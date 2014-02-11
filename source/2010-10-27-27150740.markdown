@@ -1,0 +1,40 @@
+---
+title: '* WordPressで今見ているカテゴリーのIDを取得'
+published: true
+date: 2010-10-27 15:07
+comments: true
+categories:
+- PHP
+- wordpress
+tags: []
+keywords:
+- PHP
+- wordpress
+---
+今見ているカテゴリーの記事をごにょごにょとソートしたいってことがよくあるのでメモっておく。
+関数にまとめてしまっても良いんだけどねー。
+
+[php]
+$cat = get_query_var('cat');
+[/php]
+
+$cat にカテゴリIDが入るので、あとはquery_posts() などでソートしてやればおｋ。
+
+カテゴリページでソートしたい場合は下記のように。
+例： 古い順でカテゴリごとに並び替え
+[php]
+<?php
+	$cat = get_query_var('cat');
+	$paged = get_query_var('paged');
+	query_posts("cat=".$cat."&order=ASC&orderby=date&posts_per_page=10&paged=".$paged);
+?>
+<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+
+//吐き出しテンプレート
+
+<?php endwhile; else: ?>
+<?php endif; ?>
+[/php]
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

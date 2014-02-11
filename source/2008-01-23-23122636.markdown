@@ -1,0 +1,66 @@
+---
+title: '* 全選択・解除 JavaScript'
+published: true
+date: 2008-01-23 12:26
+comments: true
+categories:
+- JavaScript
+tags: []
+keywords:
+- JavaScript
+---
+```js
+// 全て選択押下処理
+function AllChackInput(objAll){
+
+	// 全ての要素に対して
+	for(var i=0;i<document>
+		//チェックボックスであれば
+		if(document.AllCheck[i].type=="checkbox"){
+			document.AllCheck[i].checked = objAll.checked;
+		}
+	}
+
+}
+
+// 全て選択以外の押下処理
+function AllChackOnOut(objMbr){
+
+	// チェックボックスのチェックが外れたら『全て選択』のチェックを外す
+	if(objMbr.checked == false){
+		document.AllCheck.chk99.checked = false;
+		return;
+	}
+
+	for(var i=0;i</document><document .allcheck.length;i++){>
+		//チェックボックスであれば
+		if(document.AllCheck[i].type=="checkbox"){
+			// 『全て選択』以外全てチェックされていたら
+			// 『全て選択』をチェックする
+			if(document.AllCheck[i].checked==false
+			                 &amp;&amp;
+			   document.AllCheck[i].name!="chk99"){
+				return;
+			}
+		}
+	}
+
+	document.AllCheck.chk99.checked = true;
+
+}
+```
+
+```html
+<div>
+<form name="AllCheck">
+<input type="checkbox" name="chk99" onclick="AllChackInput(this)" />全選択・解除<br />
+<input type="checkbox" onclick="AllChackOnOut(this)" />チェック1<br />
+<input type="checkbox" onclick="AllChackOnOut(this)" />チェック1<br />
+<input type="checkbox" onclick="AllChackOnOut(this)" />チェック1<br />
+<input type="checkbox" onclick="AllChackOnOut(this)" />チェック1
+</form>
+</div>
+```
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

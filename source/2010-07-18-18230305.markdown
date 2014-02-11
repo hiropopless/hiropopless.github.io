@@ -1,0 +1,52 @@
+---
+title: '* Arduino 入門してみた - フィジカルコンピューティング'
+published: true
+date: 2010-07-18 23:03
+comments: true
+categories:
+- Arduino
+- Processing
+- フィジカルコンピューティング
+tags:
+- Arduino
+- Processing
+keywords:
+- Arduino
+- Processing
+- フィジカルコンピューティング
+- Arduino
+- Processing
+---
+最近は割とWeb方面に飽きてきたので、ちょっと新しい趣味がてら、話題になっている（？）フィジカルコンピューティングなるものに入門してみた。
+GainerやらArduinoやらたくさんのマイコンがあるのだけれど、Arduinoが一番ドキュメント類や書籍が充実してそうだなと思い、Arduinoに入門してみた。
+
+まずは何もないと始まらないので、Amazonで下記の二つを買った。
+
+▽Arduinoをはじめようキット
+<iframe src="http://rcm-jp.amazon.co.jp/e/cm?lt1=_blank&bc1=FFFFFF&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=hirozxcustomd-22&o=9&p=8&l=as1&m=amazon&f=ifr&md=1X69VDGQCMF7Z30FM082&asins=B0025Y6C5G" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+
+▽Arduinoをはじめよう
+<iframe src="http://rcm-jp.amazon.co.jp/e/cm?lt1=_blank&bc1=FFFFFF&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=hirozxcustomd-22&o=9&p=8&l=as1&m=amazon&f=ifr&md=1X69VDGQCMF7Z30FM082&asins=4873113989" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+
+早速組み立ててみた。
+<div><a href="/imgs/archives/2010/07/hello_world_1.jpg"><img class="alignleft size-medium wp-image-508" title="hello_world_1" src="/imgs/archives/2010/07/hello_world_1-300x208.jpg" alt="" width="300" height="208" /></a></div>
+<br clear="all" />
+Arduino SDK でC言語でProcessingに似た形式でプログラムを書くことができる。
+[c]
+#define LED 13
+
+void setup(){
+pinMode(LED, OUTPUT);
+}
+void loop(){
+digitalWrite(LED, HIGH);
+delay(1000);
+digitalWrite(LED, LOW);
+delay(1000);
+}
+[/c]
+
+1秒ごとにLEDが点いたり消えたりするようになった。
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

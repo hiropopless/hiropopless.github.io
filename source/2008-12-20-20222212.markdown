@@ -1,0 +1,231 @@
+---
+title: '* 「ブラッディ・マンデイ」の藤丸がもってるUSBメモリの作り方'
+published: true
+date: 2008-12-20 22:22
+comments: true
+categories:
+- backtrack
+- crack
+- hack
+- Linux
+- VirtualPC
+tags: []
+keywords:
+- backtrack
+- crack
+- hack
+- Linux
+- VirtualPC
+---
+ブラッディ・マンデイ、ついに最終回が終わりましたね。
+今回はブラッディ・マンデイの主人公、高木藤丸がもっているUSBメモリ（的な）の作り方を。
+（※自己責任でつくってねん。ちなみに不正侵入は犯罪だよ！ダメ！絶対！）
+
+このUSBメモリの中身を作るにあたって、参考にしたサイトは下記の通りです。
+■[高校生サーバー管理者の考察日誌](http://japan.cnet.com/blog/isidai/ "高校生サーバー管理者の考察日誌")
+ブラッディ・マンデイが始まってから『「ブラッディ・マンデイ」を考察する』というブログを書き始められたのですが、
+このブログを書いてるのはなんと高校生！脱帽です。
+■[【BackTrack 3】：Royal Windows](http://royalwin.blog.so-net.ne.jp/2008-07-01 "【BackTrack 3】：Royal Windows")
+今回のUSBメモリ作成にあたって選んだOS『backtrack3』について記事を書かれているatc-500 さんのブログ。
+今回の作成方法もここを丸パクりと言っていほど参考にしています。
+
+高木藤丸仕様ですが、USBメモリ内にＵＳＢブート可能なＯＳを入れて、
+そいつをもろもろカスタマイズして使ってるんではないかと。
+という訳で、ＵＳＢブート可能なＬｉｎｕｘを使います。
+ubuntuでも良いし、ＵＳＢブートできるFedoraでも良いし、ＯＳは何でも良いです。
+今回僕はペネトレーションテスト用ＯＳ、『backtrack3』を使います。
+（backtrackについては自分で調べてくださいね。）
+
+[ちなみに、ざっくりとした作り方はこちら](http://hiropo.co.uk/archives/95 "ちなみに、ざっくりとした作り方はこちら")
+<blockquote>▼準備するもの
+[1] [ubuntu Linux （ＬｉｖｅCD）](http://www.ubuntulinux.jp/products/JA-Localized/download "ubuntu Linux （ＬｉｖｅCD）") or [VMware版 ubuntu Linux](http://www.ubuntulinux.jp/products/JA-Localized/vmware "VMware版 ubuntu Linux")
+※ubuntuはUSBメモリのパーティションを分割するために使います。
+※パーティション分割できればOKなので、OSはubuntuじゃなくても可。
+[2] USBメモリ（4GB以上がオススメ）</blockquote>
+とりあえず上記があればつくれます。あとUSBブートできるパソコンも必要ね！
+[3][backtrack3final （ペネトレーション用OS）](http://www.remote-exploit.org/backtrack_download.html "backtrack3final （ペネトレーション用OS）")
+[4][ophcrack （windowsパスワードクラッカー）](http://ophcrack.sourceforge.net/download.php "ophcrack （windowsパスワードクラッカー）")
+
+要は、[2]に[3]と[4]をぶっこむというわけです。（完成！？ｗ）
+
+まずはUSBメモリを分割します。
+fdiskを使って分割していきましょう。
+```sh
+root@ubuntu-vm:~# fdisk /dev/sdb
+Command (m for help): p
+
+Disk /dev/sdb: 4009 MB, 4009754624 bytes
+5 heads, 32 sectors/track, 48947 cylinders
+Units = cylinders of 160 * 512 = 81920 bytes
+Disk identifier: 0x9fe248cd
+
+   Device Boot      Start         End      Blocks   Id  System
+```
+まず、fdiskのpコマンドで、USBメモリ内にパーティションがないことを確認。
+通常は、パーティションが何かしらあると思うので、dコマンドでパーティションを削除しておくこと。
+
+では、パーティションがないという前提ですすめていく。
+```sh
+Command (m for help): n
+Command action
+   e   extended
+   p   primary partition (1-4)
+p
+Partition number (1-4): 1
+First cylinder (1-48947, default 1):
+Using default value 1
+Last cylinder or +size or +sizeM or +sizeK (1-48947, default 48947): 24473
+```
+fdiskのnコマンドでプライマリパーティションを切っていく。
+まず一つ目。シリンダーサイズが48947となっているので、半分（24473）のところでパーティションをぶち切る。
+そして、ファーストパーティションはwindows形式（FAT32）にする。
+```sh
+Command (m for help): t
+Selected partition 1
+Hex code (type L to list codes): b
+Changed system type of partition 1 to b (W95 FAT32)
+
+Command (m for help): p
+
+Disk /dev/sdb: 4009 MB, 4009754624 bytes
+5 heads, 32 sectors/track, 48947 cylinders
+Units = cylinders of 160 * 512 = 81920 bytes
+Disk identifier: 0x9fe248cd
+
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sdb1               1       24473     1957824    b  W95 FAT32
+```
+tコマンドで、b を選ぶとファイルシステムがwindows形式（FAT32）になった。
+
+同じ要領でセカンドパーティションを作っていく。
+```sh
+Command (m for help): n
+Command action
+   e   extended
+   p   primary partition (1-4)
+p
+Partition number (1-4): 2
+First cylinder (24474-48947, default 24474):
+Using default value 24474
+Last cylinder or +size or +sizeM or +sizeK (24474-48947, default 48947):
+Using default value 48947
+
+Command (m for help): t
+Partition number (1-4): 2
+Hex code (type L to list codes): 83
+
+Command (m for help): p
+
+Disk /dev/sdb: 4009 MB, 4009754624 bytes
+5 heads, 32 sectors/track, 48947 cylinders
+Units = cylinders of 160 * 512 = 81920 bytes
+Disk identifier: 0x9fe248cd
+
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sdb1               1       24473     1957824    b  W95 FAT32
+/dev/sdb2           24474       48947     1957920   83  Linux
+```
+セカンドパーティションはファイルシステムをLinuxにした。
+セカンドパーティションは設定データなどを保存するためのディスクになる。
+
+ここまでできたら、fdisk の w コマンドで設定を保存し終了する。
+fdiskを抜けたら、ふたつのパーティションをフォーマットする。
+
+もしマウントされていたら、umountコマンドでアンマウントしておくこと。
+```sh
+root@ubuntu-vm:~# mkfs.vfat /dev/sdb1
+root@ubuntu-vm:~# mkfs.ext2 /dev/sdb2
+```
+次に、データ保存用の"changes"フォルダをつくる。
+```sh
+root@ubuntu-vm:~# mount /dev/sdb2 /media/disk
+root@ubuntu-vm:~# cd /media/disk/
+root@ubuntu-vm:/media/disk# ls
+lost+found
+root@ubuntu-vm:/media/disk# mkdir changes
+root@ubuntu-vm:/media/disk# ls
+changes  lost+found
+```
+上記例では、/media/disk にUSBメモリのセカンドパーティションをマウントして、
+mkdir で "changes"フォルダを作っている。
+
+ここまでで、USBメモリ側の準備はできた。
+
+さて、これからが本番である。
+backtrack本体とophcrackをUSBメモリにつっこんでいく。
+MBRはbacktrack3のものを使う。そして、backtrack3とophcrackのカーネルを共存させる。
+
+ここからはwindowsでもmacでもLinuxでも作業方法は何でも良い。
+ここではwindowsをベースに説明していく。（ここからは超簡単。）
+
+まずはダウンロードしてきたbacktrackを解凍する。
+すると中に、
+<blockquote>/boot
+/BT3</blockquote>
+というフォルダがあるので、こいつらをUSBメモリのファーストパーティションにコピーする。
+そしたら次にダウンロードしたophcrackを解凍して中身を確認する。
+<blockquote>/boot
+/ophcrack</blockquote>
+というフォルダが確認できるだろう。
+そしたら、"/ophcrack"フォルダだけ、USBメモリにコピーする。
+（レインボーテーブルもダウンロードした人はレインボーテーブルも。）
+
+ここまでできたら、次にUSBメモリ内に移動する。
+そして、"/boot" フォルダ内に "oph"というフォルダをつくる。
+<blockquote>＃ここまでのUSBメモリ内
+/boot
+/boot/oph
+/ophcrack
+/BT3
+
+※他にもフォルダやファイルはあるが、割愛する。</blockquote>
+ここまでできたら、"/boot/oph" フォルダ内に、ophcrackのカーネルイメージを入れる。
+<blockquote>＃ophcrackを解凍した際にできた"/boot"フォルダ内から、
+"vmlinuz" と "initrd.gz" をUSBメモリ内の"/boot/oph" にコピーする。</blockquote>
+これでUSBメモリ内に必要なファイルはすべて揃った。
+
+次にブートメニューをいじっていく。
+USBメモリ内にある、"/boot/syslinux" フォルダ内の"syslinux.cfg" をカスタマイズする。
+このファイルがブートメニューの設定ファイルである。
+
+必要なものは下記の３つあたりだろう。
+ちなみに下記は僕がすでにカスタマイズしたあとです。
+ポイントは"changes=/dev/sdb2" ←こいつ。
+セカンドパーティションが設定やらのデータ保存領域になります。
+```sh
+#backtrack3 グラフィックモード
+LABEL pchanges
+MENU LABEL BackTrack3
+KERNEL /boot/vmlinuz
+APPEND initrd=/boot/initrd.gz ramdisk_size=6666 root=/dev/ram0 rw changes=/dev/sdb2 autoexec=xconf;kdm
+
+#backtrack3 テキストモード
+LABEL BT3
+MENU LABEL BackTrack3 text_mode
+KERNEL /boot/vmlinuz
+APPEND initrd=/boot/initrd.gz ramdisk_size=6666 root=/dev/ram0 rw changes=/dev/sdb2
+
+#ophcrack グラフィックモード
+LABEL oph
+MENU LABEL Ophcrack
+KERNEL /boot/oph/vmlinuz
+APPEND initrd=/boot/oph/initrd.gz ramdisk_size=6666 root=/dev/ram0 rw autoexec=xconf;startx changes=/slax/
+```
+これですべての準備は整いましたね。
+最後に、下記のファイルを実行して、USBブートを可能にする。
+```sh
+＃USBメモリ内の、下記ファイルを実行。※必ずUSBメモリ内で実行してください！
+＃windowsのローカル上で実行するとwindowsがぶっこわれる可能性が。
+
+/boot/bootinst.bat
+```
+これで完成です。長かったですね・・・。
+あとは、USBメモリをブートすれば、藤丸仕様っぽいUSBメモリが完成です。
+パスワードクラックでも、侵入テストでも何でもテキトーにやってみてください。
+（自分のマシンを対象にやってねん。人のマシンはダメよ！）
+
+ってな感じで以上です。
+なんか間違ってる部分とかあったらご指摘くださいませ。（まだまだ勉強中です…。）
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

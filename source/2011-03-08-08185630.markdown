@@ -1,0 +1,48 @@
+---
+title: '* Powershell でのシェルスクリプティング'
+published: true
+date: 2011-03-08 18:56
+comments: true
+categories:
+- Powershell
+tags: []
+keywords:
+- Powershell
+---
+連投です。
+普段はLinux上でシェルスクリプティングをすることはありますが、あまりWindows上でやることがないのでちょっとやってみました。
+
+MS-DOS使ってバッチファイル書いたりすることはありますが、コマンドも少なくいまいち使いにくい感が否めません。Linuxに慣れてる身としては、Powershellを使ってパワフルなシェルスクリプティングをやっちゃおうかと思います。
+
+まずはPowershellがインストールされているかどうか確認しなくてはいけませんが、ここは割愛します。
+
+1）MS-DOSプロンプトを開いて、Powershell を起動します。
+```sh
+C:\Documents and Settings\ooiwa> powershell
+Windows Powershell
+```
+<img src="/imgs/archives/2011/03/1.gif" alt="" title="1" class="alignnone size-full wp-image-590" />
+
+
+2) Set-ExecutionPolicyコマンドを実行してps1ファイルをまま実行できるようにします。
+```sh
+PS C:\Documents and Settings\ooiwa> Set-ExecutionPolicy RemoteSigned
+PS C:\Documents and Settings\ooiwa> Get-ExecutionPolicy
+RemoteSigned
+PS C:\Documents and Settings\ooiwa>
+```
+<img src="/imgs/archives/2011/03/2.gif" alt="" title="2" class="alignnone size-full wp-image-591" />
+
+3)テキストエディタでシェルスクリプトを書く。例としてtest.ps1 として保存して、シェルスクリプトを実行
+```sh
+PS C:\Documents and Settings\ooiwa> notepad
+PS C:\Documents and Settings\ooiwa> .\test.ps1
+test
+PS C:\Documents and Settings\ooiwa>
+```
+<img src="/imgs/archives/2011/03/3.gif" alt="" title="3" class="alignnone size-full wp-image-592" />
+
+割と簡単にPowershellスクリプトが書けるので、GUIでのめんどくさい作業はどんどんシェルスクリプト書いて実行してしまえば良いと思う。
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

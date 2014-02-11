@@ -1,0 +1,37 @@
+---
+title: '* codeColorer test'
+published: false
+date: 2010-10-06 17:39
+comments: true
+categories:
+- 未分類
+tags: []
+keywords:
+- 未分類
+---
+[java]
+class Mickey{
+  //プロパティを定義
+  float x,y;  //X座標とY座標
+  float w,h;  //width, height
+  
+  //コンストラクタ
+  Mickey( float spos, float xpos, float ypos )
+  {
+    //プロパティセット
+    this.x = xpos;
+    this.y = ypos;
+    this.w = spos;
+    this.h = spos * 0.8;
+    
+    //svgシェイプを読み込む
+    PShape ms = loadShape("mickey.svg");
+    
+    shapeMode(CENTER);
+    shape( ms, this.x, this.y, this.w, this.h );
+  }
+}
+[/java]
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

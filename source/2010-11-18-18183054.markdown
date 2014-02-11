@@ -1,0 +1,171 @@
+---
+title: '* passenger をインストールする'
+published: true
+date: 2010-11-18 18:30
+comments: true
+categories:
+- Linux
+- Ruby
+- Ruby on Rails
+tags: []
+keywords:
+- Linux
+- Ruby
+- Ruby on Rails
+---
+そういえばpassenger をインストールしてなかったので、インストールする。
+
+```sh
+# gem install passenger
+# passenger-install-apache2-module
+
+Checking for required software...
+
+ * GNU C++ compiler... found at /usr/bin/g++
+ * Curl development headers with SSL support... not found
+ * OpenSSL development headers... not found
+ * Zlib development headers... found
+ * Ruby development headers... found
+ * OpenSSL support for Ruby... not found
+ * RubyGems... found
+ * Rake... found at /usr/local/bin/rake
+ * rack... found
+ * Apache 2... found at /usr/sbin/httpd
+ * Apache 2 development headers... not found
+ * Apache Portable Runtime (APR) development headers... not found
+ * Apache Portable Runtime Utility (APU) development headers... not found
+
+```
+
+2つ目の質問で、いくつかモジュールが足りないと言われたので一旦Ctrl+C で抜けて、足りないモジュールをインストールする。
+
+```sh
+# yum install httpd-devel openssl openssl-devel apr-devel
+Installed:
+  apr-devel.i386 0:1.2.7-11.el5_5.3          apr-devel.x86_64 0:1.2.7-11.el5_5.3
+  httpd-devel.i386 0:2.2.3-43.el5.centos.3   httpd-devel.x86_64 0:2.2.3-43.el5.centos.3
+  openssl-devel.i386 0:0.9.8e-12.el5_4.6     openssl-devel.x86_64 0:0.9.8e-12.el5_4.6
+
+Dependency Installed:
+  apr-util-devel.x86_64 0:1.2.7-11.el5_5.1   cyrus-sasl-devel.x86_64 0:2.1.22-5.el5_4.3
+  db4-devel.x86_64 0:4.3.29-10.el5_5.2       e2fsprogs-devel.x86_64 0:1.39-23.el5_5.1
+  expat-devel.x86_64 0:1.95.8-8.3.el5_5.3    keyutils-libs-devel.x86_64 0:1.2-1.el5
+  krb5-devel.x86_64 0:1.6.1-36.el5_5.5       libselinux-devel.x86_64 0:1.33.4-5.5.el5
+  libsepol-devel.x86_64 0:1.15.2-3.el5       openldap-devel.x86_64 0:2.3.43-12.el5_5.2
+```
+
+もう一度インストールを試みる
+```sh
+# passenger-install-apache2-module
+* Curl development headers with SSL support... not found
+* OpenSSL support for Ruby... not found
+```
+
+
+まだエラーが二つ。
+"OpenSSL support for Ruby" に関しては、zlibと同様に Ruby の持つ SSL サポートモジュールをコンパイルすることで解決できるようです。
+
+```sh
+# cd ./ruby-1.8.7-p249/ext/openssl/
+# ruby extconf.rb
+# make
+# make install
+```
+
+Curl-devel もインストールする。
+```sh
+# yum install curl-devel
+
+Running Transaction
+  Installing     : libidn                                                             1/5
+  Installing     : libidn-devel                                                       2/5
+  Installing     : curl                                                               3/5
+  Installing     : curl-devel                                                         4/5
+  Installing     : curl-devel                                                         5/5
+
+Installed:
+  curl-devel.i386 0:7.15.5-9.el5             curl-devel.x86_64 0:7.15.5-9.el5
+
+Dependency Installed:
+  curl.i386 0:7.15.5-9.el5   libidn.i386 0:0.6.5-1.1   libidn-devel.x86_64 0:0.6.5-1.1
+
+Complete!
+```
+
+
+3度目の正直を試す。
+```sh
+# passenger-install-apache2-module
+
+The Apache 2 module was successfully installed.
+
+Please edit your Apache configuration file, and add these lines:
+
+   LoadModule passenger_module /usr/local/lib/ruby/gems/1.8/gems/passenger-3.0.0/ext/apache2/mod_passenger.so
+   PassengerRoot /usr/local/lib/ruby/gems/1.8/gems/passenger-3.0.0
+   PassengerRuby /usr/local/bin/ruby
+
+After you restart Apache, you are ready to deploy any number of Ruby on Rails
+applications on Apache, without any further Ruby on Rails-specific
+configuration!
+
+Press ENTER to continue.
+```
+
+不足モジュールがすべて解決済みならインストールが継続される。
+すると以下のようなメッセージが表示される。下記の部分は Passenger の動作設定となるので、必ずメモを取ること。
+記述は動作環境によって異なります。
+```sh
+   LoadModule passenger_module /usr/local/lib/ruby/gems/1.8/gems/passenger-3.0.0/ext/apache2/mod_passenger.so
+   PassengerRoot /usr/local/lib/ruby/gems/1.8/gems/passenger-3.0.0
+   PassengerRuby /usr/local/bin/ruby
+```
+
+メモったらEnterキーを押す。次に、ドキュメントルールに関する設定が出るので、これもメモる。
+```sh
+Deploying a Ruby on Rails application: an example
+
+Suppose you have a Rails application in /somewhere. Add a virtual host to your
+Apache configuration file and set its DocumentRoot to /somewhere/public:
+
+   <VirtualHost *:80>
+      ServerName www.yourhost.com
+      DocumentRoot /somewhere/public    # <-- be sure to point to 'public'!
+      <Directory /somewhere/public>
+         AllowOverride all              # <-- relax Apache security settings
+         Options -MultiViews            # <-- MultiViews must be turned off
+      </Directory>
+   </VirtualHost>
+
+And that's it! You may also want to check the Users Guide for security and
+optimization tips, troubleshooting and other useful information:
+
+  /usr/local/lib/ruby/gems/1.8/gems/passenger-3.0.0/doc/Users guide Apache.html
+
+Enjoy Phusion Passenger, a product of Phusion (www.phusion.nl) :-)
+http://www.modrails.com/
+
+Phusion Passenger is a trademark of Hongli Lai & Ninh Bui.
+```
+
+passengerのインストールはこれで完了。
+次にさきほどのメモをapacheに反映させる。
+```sh
+# vi /etc/httpd/conf/httpd.conf
+
+LoadModule passenger_module /usr/local/lib/ruby/gems/1.8/gems/passenger-3.0.0/ext/apache2/mod_passenger.so
+PassengerRoot /usr/local/lib/ruby/gems/1.8/gems/passenger-3.0.0
+PassengerRuby /usr/local/bin/ruby
+```
+
+apacheの再起動を行う。
+```sh
+# /etc/rc.d/init.d/httpd restart
+Stopping httpd:                                            [  OK  ]
+Starting httpd:                                            [  OK  ]
+```
+
+これで無事完了なりー。
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

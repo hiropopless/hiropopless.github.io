@@ -1,0 +1,56 @@
+---
+title: '* 自動改行されない'
+published: true
+date: 2007-12-18 18:06
+comments: true
+categories:
+- (X)HTML
+- CSS
+- バグ
+tags: []
+keywords:
+- (X)HTML
+- CSS
+- バグ
+---
+FirefoxやNetscape 等、Geckoエンジンを用いたブラウザでは、連続した半角文字（長いURLや半角空白のないスクリプト等）を途中で折り返せない
+という既知のバグがあります。
+<blockquote>【前提：連続する半角英数字が改行されない】
+通常、テキストは右端で折り返しされるはずですが、URL (URI) 等の連続する半角文字は一つの単語と扱われ、折り返さない場合が多いです。
+
+つまり、
+
+"aaaaaaaaaaaaaaaaaaaaaaaaa"はコンピュータからみれば一つの単語で、途中に改行が入ることが許されません。
+
+ということです。
+
+参考資料：
+・半角文字列の折り返し（ブラウザ毎の比較があります）
+[http://pinotan.blog15.fc2.com/file/word-break.html](http://pinotan.blog15.fc2.com/file/word-break.html "http://pinotan.blog15.fc2.com/file/word-break.html")</blockquote>
+<blockquote>【通常の対処方法】
+
+- htmlタグbrで強制改行。
+- はみ出し部分をCSS（overflow:hidden)で切り落とす。（IE6は親ボックスの幅が広がるバグがあるので、widthで直接的に幅を指定しないと効かない)
+- CSSにword-break:break-allを指定し、IEだけ右端で改行。（ボックス幅の広がりを防げるが、単語区切りにならず英数字が読み辛い)
+- CSSにword-break:keep-allを指定し、IEだけ右端で改行。（単語区切りのみで改行。区切りが無いと全角でも改行されない)
+- 区切り記号を全角にする。（稀に折り返さないケースもある)
+- 半角記号を空白(スペース)で挟む。
+- 単語の区切りなどに&lt;wbr&gt;(&lt;wbr /&gt;)を入れる。
+
+参考資料：
+7以外は以下の引用です
+[ http://pinotan.blog15.fc2.com/blog-entry-106.html](http://pinotan.blog15.fc2.com/blog-entry-106.html " http://pinotan.blog15.fc2.com/blog-entry-106.html")</blockquote>
+<blockquote>Firefoxの場合、折り返すようにする拡張機能（url_breaker、url_breker_plusもしくはGreaseMonkeyを使う方法）があります
+
+ただ、この場合、ユーザーにインストールしてもらわないといけないので、入れていない人にも効かせて欲しい場合は、これをjs化することで対応できます。
+
+参考資料：
+Firefox・Netscapeで連続した半角文字を折り返す
+[ http://www.koikikukan.com/archives/2005/08/04-235647.php](http://www.koikikukan.com/archives/2005/08/04-235647.php " http://www.koikikukan.com/archives/2005/08/04-235647.php")</blockquote>
+<blockquote>NN7やmozillaでは、なんと全角数字も同じように扱われてしまいます。
+しかし記号もそうなのだとは知りませんでした。
+参考ページ。
+[ http://www.mozilla.gr.jp/forums/?mode=al2&amp;namber=6847&amp;rev=&amp;&amp;KLOG=47](http://www.mozilla.gr.jp/forums/?mode=al2&amp;namber=6847&amp;rev=&amp;&amp;KLOG=47 " http://www.mozilla.gr.jp/forums/?mode=al2&amp;namber=6847&amp;rev=&amp;&amp;KLOG=47")</blockquote>
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

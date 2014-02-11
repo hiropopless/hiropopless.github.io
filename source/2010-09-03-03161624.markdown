@@ -1,0 +1,58 @@
+---
+title: '* Processing に入門してみた'
+published: true
+date: 2010-09-03 16:16
+comments: true
+categories:
+- Processing
+tags: []
+keywords:
+- Processing
+---
+Processingちゃんに入門してみた。大分前から入門してたけど、ブログはまったく書いてなかったので殴り書き程度に書いていく。
+
+[Processingとは - Wikipedia](http://ja.wikipedia.org/wiki/Processing "Processingとは - Wikipedia")
+<blockquote>
+Processing（プロセッシング）は、Casey Reas と Benjamin Fry によるオープンソースプロジェクトであり、かつてはMITメディアラボで開発されていた。電子アートとビジュアルデザインのためのプログラミング言語であり、統合開発環境 (IDE) である。 視覚的なフィードバックが即座に得られるため、初心者がプログラミングを学習するのに適しており、電子スケッチブックの基盤としても利用できる。Javaを単純化し、グラフィック機能に特化した言語といえる。
+</blockquote>
+
+Javaがベースになっているので、文法さえわかれば誰でも簡単に入門できる。文法わかんなくても比較的直感的な関数しかないので初心向きなんじゃないかなと思う。"プログラミング" ではなく、ソースコードを書くことを "スケッチ" と呼ぶようです。
+
+下が"スケッチ"するスケッチブック
+<a href="/imgs/archives/2010/09/s11.gif"><img src="/imgs/archives/2010/09/s11.gif" alt="" title="s1" width="500" height="600" class="alignnone size-full wp-image-525" /></a>
+
+下のサンプルコードだけで下記が表示される。
+[java]
+void draw(){
+  rect(10,10,10,10);
+}
+[/java]
+<a href="/imgs/archives/2010/09/s2.gif"><img src="/imgs/archives/2010/09/s2.gif" alt="" title="s2" width="134" height="160" class="alignnone size-full wp-image-528" /></a>
+
+スケッチブックに白い四角形が描かれた。draw関数の中にrectメソッドを記述すると四角形を描いてくれる。
+他に、ellipseメソッドを使えば円を描いてくれるし、lineメソッドを使えば線を描く。textメソッドを使えばテキストを描く。
+このようにメソッドが直感的でデジタルアートに特化したシンプルな言語なようですぜ。
+
+応用編でマウスで絵を描ける風にしてみました。
+[java]
+void setup(){
+  size(500,400);
+  smooth();
+  background(255);
+}
+
+void draw(){
+  if(mousePressed){
+    fill(0);
+    ellipse(mouseX,mouseY,10,10);
+  }
+}
+[/java]
+
+描いてみたもの
+<a href="/imgs/archives/2010/09/s3.gif"><img src="/imgs/archives/2010/09/s3.gif" alt="" title="s3" width="506" height="432" class="alignnone size-full wp-image-530" /></a>
+
+たのしいお（＾ｑ＾）！
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

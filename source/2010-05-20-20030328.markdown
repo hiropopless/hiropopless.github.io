@@ -1,0 +1,21 @@
+---
+title: '* iPhone対応webサイトの制作について'
+published: false
+date: 2010-05-20 03:03
+comments: true
+categories:
+- (X)HTML+CSS
+- iPhone
+tags: []
+keywords:
+- (X)HTML+CSS
+- iPhone
+---
+iPhone対応webサイトの制作に関するAppleのDevelopからリンクを引用。
+
+[Webコンテンツの優れたユーザ体験の演出](http://developer.apple.com/jp/iphone/library/documentation/UserExperience/Conceptual/MobileHIG/WebContentPrinciples/chapter_18_section_1.html#//apple_ref/doc/uid/TP40006556-CH19-SW1 "Webコンテンツの優れたユーザ体験の演出")
+
+[Webコンテンツの寸法類、レイアウトのガイドライン、およびヒント](http://developer.apple.com/jp/iphone/library/documentation/UserExperience/Conceptual/MobileHIG/WebContentMetrics/chapter_19_section_1.html#//apple_ref/doc/uid/TP40006556-CH18-SW20 "Webコンテンツの寸法類、レイアウトのガイドライン、およびヒント")
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

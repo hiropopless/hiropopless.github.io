@@ -1,0 +1,106 @@
+---
+title: '* with文の名前領域 - ActionScript3.0'
+published: true
+date: 2010-04-23 17:55
+comments: true
+categories:
+- ActionScript3
+- Flash
+tags: []
+keywords:
+- ActionScript3
+- Flash
+---
+AS3を本気で勉強しようと思い過去に何度入門したかわからないAS3を再び始めました。今回は本気です！（ってみんな言うよね。）
+とりあえずTextField()から入門してHelloWorld的なことをやろうと思い頑張っていたら、with文がなかなか厄介でつまづきました。べつに使う必要ないんだけどね。
+
+とりあえず、HelloWorld的な。
+
+[as]
+//************************************************************
+// HelloWorld - TextField()
+// とりあえず文字を書き出してみる。
+//
+package {
+    import flash.display.*;
+    import flash.text.*;
+    public class Main extends Sprite {
+        //------------------------------------------------------------
+        // Mainコンストラクタ
+        //
+        public function Main() {
+			
+			//h1 TextFormat() を定義
+			var tf_h1:TextFormat = new TextFormat();
+			tf_h1.color = 0x666666;
+			tf_h1.size = 30;
+			tf_h1.font = 'Times New Roman';
+			tf_h1.align = TextFieldAutoSize.CENTER;
+			
+			//titleを定義
+			var title:TextField = new TextField();
+			title.text = 'HelloWorld!! - TextField()';
+			title.width = stage.stageWidth;
+			title.height = 40;
+			title.x = 0;
+			title.y = (stage.stageHeight/2);
+			title.setTextFormat( tf_h1 );
+			title.background = true;
+			title.backgroundColor = 0xEEEEEE;
+			
+			//stageに要素を追加
+			stage.addChild( title );
+        }
+    }
+}
+[/as]
+
+▽結果
+<div style="text-align:center;width:465px;"><iframe title="hellloWorld - TextField() - wonderfl build flash online" scrolling="no" src="http://wonderfl.net/blogparts/5okJ" width="465" height="490" style="border:1px black solid;"></iframe>[hellloWorld - TextField() - wonderfl build flash online](http://wonderfl.net/c/5okJ "hellloWorld - TextField() - wonderfl build flash online")</div>
+
+
+インスタンスのプロパティをwith文を使ってまとめてみる。
+
+[as]
+//titleを定義
+var title:TextField = new TextField();
+with( title ){
+	text = 'HelloWorld!! - TextField()';
+	width = stage.stageWidth;
+	height = 40;
+	x = 0;
+	y = (stage.stageHeight/2);
+	setTextFormat( tf_h1 );
+	background = true;
+	backgroundColor = 0xEEEEEE;
+}
+[/as]
+
+・・・これがですね、実は思わぬ落とし穴があって動いてくれないんです。
+
+with文の中身というのは、親オブジェクトの名前領域の中にいる状態（表現あってる？）です。ここで問題になっているのは、stageオブジェクトです。"stage.stageWidth" の部分。
+親が"title"オブジェクトなので、with文の中では、"title.stage.stageWidth" というように見られてしまいます。もちろん、titleインスタンスにはそんな階層のプロパティをもっていません。
+それでもwith文を使いたい場合はこのように書きます。
+
+[as]
+//titleを定義
+var title:TextField = new TextField();
+var stageInstance:Object = stage;
+with( title ){
+	text = 'HelloWorld!! - TextField()';
+	width = stageInstance.stageWidth;
+	height = 40;
+	x = 0;
+	y = (stageInstance.stageHeight/2);
+	setTextFormat( tf_h1 );
+	background = true;
+	backgroundColor = 0xEEEEEE;
+}
+[/as]
+
+一旦、上のスコープ内でstageを参照するオブジェクト"stageInstance" を生成して、"stageInstance" を参照しに行きます。この手間を考えると、そこまでしてwith文使う必要ないんじゃない？という気になります。名前領域に気を使うのはめんどくさ過ぎる気がします。
+
+そんなwith文ちゃんでした。
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

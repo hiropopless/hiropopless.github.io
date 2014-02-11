@@ -1,0 +1,21 @@
+---
+title: '* target="_blank" が使えない。'
+published: true
+date: 2008-02-18 10:59
+comments: true
+categories:
+- JavaScript
+tags: []
+keywords:
+- JavaScript
+---
+XHTML1.0 strict　では、&lt;a&gt;タグに target属性を使うことができなくなっている…。さてどう解決したろか…。すでに方法はたくさんありますが、やはりJavascriptを使うのが一般的なのかしら。
+```html
+<a href="example.html" onclick="window.open(
+this.href, 'mywindow6', 'width=400, height=300,
+menubar=no, toolbar=no, scrollbars=yes');
+ return false;">テスト</a>
+```
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

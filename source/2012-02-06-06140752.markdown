@@ -1,0 +1,96 @@
+---
+title: '* Processing.js 8x8 ドットマトリックスLEDっぽいのつくってみた canvas'
+published: true
+date: 2012-02-06 14:07
+comments: true
+categories:
+- canvas
+- HTML5
+- Java
+- JavaScript
+- Processing
+tags: []
+keywords:
+- canvas
+- HTML5
+- Java
+- JavaScript
+- Processing
+---
+canvasで使うライブラリはすっかりProcessing.jsに馴染んでしまった僕です、こんにちは。
+
+Arduinoを使った8x8ドットマトリックスLEDの点滅をやりたいなと思い、そのシミュレーションとしてjsdoitでまずはcanvasに描画してみようと思いたちProcessing.jsで書いてみました。
+
+<script type="application/processing">
+int[][] p = {
+  {0,0,1,0,0,0,0,0},
+  {0,1,1,1,1,1,0,0},
+  {0,0,1,0,0,0,0,0},
+  {0,0,1,1,1,1,0,0},
+  {0,1,1,0,1,0,1,0},
+  {1,0,1,1,0,0,1,0},
+  {0,1,1,0,0,1,0,0},
+  {0,0,0,0,0,0,0,0}
+};
+void setup(){
+  size(81, 81);
+  frameRate(30);
+}
+void draw(){
+  background(0);
+  stroke(0);
+  for(int y = 0; y < p.length; y++){
+  for(int x = 0; x < p[y].length; x++){
+    if(p[y][x] == 0){
+      fill(96, 96, 96);
+    }
+    else if(p[y][x] == 1){
+      fill(255, 0, 0);
+    }
+    ellipseMode(CORNER);
+    ellipse(x*10, y*10, 10, 10);
+  }}
+}
+</script>
+
+[java]
+int[][] p = {
+  {0,0,1,0,0,0,0,0},
+  {0,1,1,1,1,1,0,0},
+  {0,0,1,0,0,0,0,0},
+  {0,0,1,1,1,1,0,0},
+  {0,1,1,0,1,0,1,0},
+  {1,0,1,1,0,0,1,0},
+  {0,1,1,0,0,1,0,0},
+  {0,0,0,0,0,0,0,0}
+};
+void setup(){
+  size(81, 81);
+  frameRate(30);
+}
+void draw(){
+  background(0);
+  stroke(0);
+  for(int y = 0; y < p.length; y++){
+  for(int x = 0; x < p[y].length; x++){
+    if(p[y][x] == 0){
+      fill(96, 96, 96);
+    }
+    else if(p[y][x] == 1){
+      fill(255, 0, 0);
+    }
+    ellipseMode(CORNER);
+    ellipse(x*10, y*10, 10, 10);
+  }}
+}
+[/java]
+
+jsdoitにも投稿してあります。
+[Processing.js 8x8 ドットマトリックスLEDっぽいのつくってみた](http://jsdo.it/funnythingz/uhNO "Processing.js 8x8 ドットマトリックスLEDっぽいのつくってみた")
+<script type="text/javascript" src="http://jsdo.it/blogparts/uhNO/js?view=design"></script><p class="ttlBpJsdoit" style="width: 465px; margin: 0; text-align: right; font-size: 11px;">[Processing.js 8x8 ドットマトリックスLEDっぽいのつくってみた - jsdo.it - share JavaScript, HTML5 and CSS](http://jsdo.it/funnythingz/uhNO "Processing.js 8x8 ドットマトリックスLEDっぽいのつくってみた - jsdo.it - share JavaScript, HTML5 and CSS")</p>
+
+描画するだけだったら簡単だけど、x軸に対して1ドットずつ横に流してアニメーションさせたいなーと。
+アニメーションできたらまたうｐしますん。
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

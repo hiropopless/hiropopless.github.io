@@ -1,0 +1,171 @@
+---
+title: '* HTMLとCSSで二次元配列でドット絵 (Hex Color Codes)'
+published: true
+date: 2012-02-06 14:45
+comments: true
+categories:
+- (X)HTML+CSS
+- JavaScript
+tags: []
+keywords:
+- (X)HTML+CSS
+- JavaScript
+---
+これからcanvas盛り上がっていくという中、あえてHTMLタグとCSSを使ったドット絵を描いてみました。
+jsdoitに投稿したものなのでちょい古いですけど紹介します。
+
+といっても仕組みは簡単で、描画するデータ情報を二次元配列にもっておいて、それを&lt;li&gt;タグでfloatで並べて描画するというもの。描画のロジックはJavaScriptで実装しました。
+描画するターゲットがcanvasか、HTMLタグかの違いだけなので仕組みはとってもシンプルです。
+
+こちらが完成図です。
+<script type="text/javascript" src="http://jsdo.it/blogparts/etba/js?view=design"></script><p class="ttlBpJsdoit" style="width: 465px; margin: 0; text-align: right; font-size: 11px;">[二次元配列でドット絵 (Hex Color Codes) - jsdo.it - share JavaScript, HTML5 and CSS](http://jsdo.it/funnythingz/etba "二次元配列でドット絵 (Hex Color Codes) - jsdo.it - share JavaScript, HTML5 and CSS")</p>
+
+描画データとなる二次元配列マップにHexカラー値を直接書いて渡しているため、このように色は自由に指定できます。
+
+さて、ソースコードの紹介になります。
+
+### 【1】描画するHTML側でステージ的なものを用意します。
+```html
+<ul class="group tstList">
+    <li id="stage">
+
+```
+
+### 【2】CSSで見た目を制御します。
+```css
+* {
+	margin: 0;
+    	padding: 0;
+}
+.box {
+        width: 10px;
+	height: 10px;
+	overflow: hidden;
+	display: block;
+	float: left;
+}
+.wrap:after,
+.box:after {
+	content: ".";
+	display: block;
+	clear: both;
+	height: 0;
+	visibility: hidden;
+	font-size: 0.1em;
+	line-height: 0;
+}
+.wrap,
+.group {
+	zoom: 1;
+}
+.tstList {
+	width: 240px;
+}
+.tstList li {
+	float: left;
+    	list-style: none;
+}
+```
+
+### 【3】描画データを二次元配列で用意します。値にはHexカラー値を文字列でもちます。
+```js
+/*-------------------------------------------------
+* map
+*/
+var map = [
+	['ffffff','ffffff','ffffff','ffffff','ffffff','ffffff','ffffff','ffffff','ffffff','ffffff','ffffff','ffffff','ffffff','f5b199','f5b199','f5b199'],
+	['ffffff','ffffff','ffffff','ffffff','ffffff','ffffff','e10000','e10000','e10000','e10000','e10000','ffffff','ffffff','f5b199','f5b199','f5b199'],
+	['ffffff','ffffff','ffffff','ffffff','ffffff','e10000','e10000','e10000','e10000','e10000','e10000','e10000','e10000','e10000','f5b199','f5b199'],
+	['ffffff','ffffff','ffffff','ffffff','ffffff','FFFF00','FFFF00','FFFF00','f5b199','f5b199','000000','f5b199','ffffff','05299d','05299d','05299d'],
+	['ffffff','ffffff','ffffff','ffffff','FFFF00','f5b199','FFFF00','f5b199','f5b199','f5b199','000000','f5b199','f5b199','05299d','05299d','05299d'],
+	['ffffff','ffffff','ffffff','ffffff','FFFF00','f5b199','FFFF00','FFFF00','f5b199','f5b199','f5b199','000000','f5b199','f5b199','f5b199','05299d'],
+	['ffffff','ffffff','ffffff','ffffff','FFFF00','FFFF00','f5b199','f5b199','f5b199','f5b199','000000','000000','000000','000000','05299d','ffffff'],
+	['ffffff','ffffff','ffffff','ffffff','ffffff','ffffff','f5b199','f5b199','f5b199','f5b199','f5b199','f5b199','f5b199','05299d','ffffff','ffffff'],
+	['ffffff','ffffff','05299d','05299d','05299d','05299d','05299d','fb8a10','05299d','05299d','05299d','fb8a10','05299d','ffffff','ffffff','ffffff'],
+	['ffffff','05299d','05299d','05299d','05299d','05299d','05299d','05299d','fb8a10','05299d','05299d','05299d','fb8a10','ffffff','ffffff','05299d'],
+	['f5b199','f5b199','05299d','05299d','05299d','05299d','05299d','05299d','fb8a10','fb8a10','fb8a10','fb8a10','fb8a10','ffffff','ffffff','05299d'],
+	['f5b199','f5b199','f5b199','ffffff','fb8a10','fb8a10','05299d','fb8a10','fb8a10','EEEEEE','fb8a10','fb8a10','EEEEEE','fb8a10','05299d','05299d'],
+	['ffffff','f5b199','ffffff','05299d','fb8a10','fb8a10','fb8a10','fb8a10','fb8a10','fb8a10','fb8a10','fb8a10','fb8a10','fb8a10','05299d','05299d'],
+	['ffffff','ffffff','05299d','05299d','05299d','fb8a10','fb8a10','fb8a10','fb8a10','fb8a10','fb8a10','fb8a10','fb8a10','fb8a10','05299d','05299d'],
+	['ffffff','05299d','05299d','05299d','fb8a10','fb8a10','fb8a10','fb8a10','fb8a10','fb8a10','fb8a10','ffffff','ffffff','ffffff','ffffff','ffffff'],
+	['ffffff','05299d','ffffff','ffffff','fb8a10','fb8a10','fb8a10','fb8a10','ffffff','ffffff','ffffff','ffffff','ffffff','ffffff','ffffff','ffffff']
+]
+```
+
+### 【4】描画ロジックをJavaScriptで実装します。
+```js
+/*-------------------------------------------------
+* module
+*/
+var $ = function(id){
+	return document.getElementById(id);
+}
+var $$ = function(id, tag){
+	return document.getElementById(id).getElementsByTagName(tag);
+}
+var createElement = function(tag){
+	return document.createElement(tag);
+}
+
+/*-------------------------------------------------
+* Elements
+*/
+
+//Wrap
+var Wrap = function(){
+	return this.init();
+}
+Wrap.prototype = {
+	init: function(){
+		var div = createElement('div');
+		div.setAttribute('class', 'wrap');
+		div.innerHTML = '';
+		return div;
+	}
+}
+
+//Dot
+var Dot = function(args){
+	this.background = args.background;
+	return this.init();
+}
+Dot.prototype = {
+	init: function(){
+		var span = createElement('span');
+		span.style.background = "#" + this.background;
+		span.setAttribute('class', 'box');
+		span.innerHTML = '';
+		return span;
+	}
+}
+
+//Create
+var Create = function(obj){
+    var stage = obj;
+    var wrap = [];
+    for( var i = 0, L = map.length; i < L; i++ ){
+	    wrap[i] = new Wrap();
+	    for( var j = 0, M = map[i].length; j < M; j++ )
+    {
+	    wrap[i].appendChild( new Dot({ background: map[i][j] }) );
+	    }
+	    stage.appendChild(wrap[i]);
+    }
+}
+
+/*-------------------------------------------------
+* initilize
+*/
+var init = function(){
+    new Create( $('stage') );
+}
+window.addEventListener('load', init, false);
+```
+
+JavaScriptはライブラリは使っていません、ネイティブ実装です。
+jQueryとか使えばもっと簡単に実装できると思います。
+
+でもProcessing.js使う方が面白いのでcanvasに描画した方が良いんじゃないかなｗ
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

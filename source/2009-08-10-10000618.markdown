@@ -1,0 +1,33 @@
+---
+title: '* google Android をエミュレートしてみた'
+published: true
+date: 2009-08-10 00:06
+comments: true
+categories:
+- Android
+tags: []
+keywords:
+- Android
+---
+ドコモからgoogleのオープンソースOS、Androidを搭載したスマートフォンが発売された。
+ＬｉｎｕｘカーネルをベースにつくられたＡｎｄｒｏｉｄはオープンソースのため、誰でもカスタマイズができる。
+ＥｃｒｉｐｓｅでＡｎｄｒｏｉｄで動かすアプリの開発ができるので、早速環境を整え、Ａｎｄｒｏｉｄをエミュレートしてみた。
+
+▼自分のサイトを2つ開いてみた。
+
+<div><a href="/imgs/archives/2009/08/1.jpg"><img src="/imgs/archives/2009/08/1-157x300.jpg" alt="" title="1" width="157" height="300" class="alignnone size-medium wp-image-195" /></a></div>
+
+▼[funnythingz.com](http://www.funnythingz.com/ "funnythingz.com")をフルで開いてみた。
+
+<div><a href="/imgs/archives/2009/08/2.jpg"><img src="/imgs/archives/2009/08/2-157x300.jpg" alt="" title="2" width="157" height="300" class="alignnone size-medium wp-image-196" /></a></div>
+
+▼Ｌｉｎｕｘベースのため、ターミナルが使える。
+
+<div><a href="/imgs/archives/2009/08/3.jpg"><img src="/imgs/archives/2009/08/3-157x300.jpg" alt="" title="3" width="157" height="300" class="alignnone size-medium wp-image-197" /></a></div>
+
+ターミナルはiPhoneでも使えるが、[Ｊａｉlbreak](http://ja.wikipedia.org/wiki/Jailbreak "Ｊａｉlbreak")しなければならない。
+
+ＡｎｄｒｏｉｄはＪａｖａで開発できるので、iPhone開発のように、Objectiv-Cなど新たに覚える必要もないし、開発者にとっての敷居がかなり低いと思われるので、今後流行りそうな予感はするが、一般ユーザーに対しては全然iPhoneのほうがまだまだ強いんだろうなぁ。
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

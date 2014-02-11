@@ -1,0 +1,65 @@
+---
+title: '* .haribote CSS画像置換'
+published: true
+date: 2009-08-13 11:10
+comments: true
+categories:
+- (X)HTML+CSS
+tags: []
+keywords:
+- (X)HTML+CSS
+---
+CSSでの画像置換にはやり方がたくさんあるが、その中でもこの .haribote は最も強力な画像置換CSSと言えるだろう。
+画像オフの場合でもテキストが表示され、ロールオーバーも実現出来、かつ、SEO対策もばっちりである。
+
+text-indent: -9999em; や、spanでテキスト囲ってを visibility: hidden; にしたりといった従来のテキストを無理やり飛ばしたり隠したりするのではなく、テキストはそこに残したままなのである。
+テキストの上に画像を被せることによって .haribote は画像置換を実現している。
+
+#画像は200px×80pxで、上にロールオーバー前の画像、
+#下にロールーオーバー後の画像を上下にくっつける形で用意する。
+
+```html
+<div id="replace_img">[バナーボタン<span></span>](#dummy "バナーボタン<span></span>")</div>
+```
+
+```css
+/*
+*    haribote
+*/
+.haribote,
+.haribote span {
+    display: block;
+    overflow: hidden;
+}
+.haribote {
+    position: relative;
+}
+.haribote span {
+    position: absolute;
+    top: 0; left: 0;
+    cursor: pointer;
+}
+
+/**/
+#replace_img a,
+#replace_img a span {
+    width: 200px;
+    height: 40px;
+}
+#replace_img a span {
+    background: url(replace_img.gif) no-repeat 0 0;
+}
+#replace_img a:hover span {
+    background-position: 0 -40px;
+}
+```
+
+
+
+ソースをみてもらえばわかるが、テキストの上に、positionで画像をのっけているだけの非常にシンプルな構造になっている。
+
+個人的な見解ですが、今のところ .haribote を越えるCSS画像置換には未だ出会っていない。
+他に素晴らしいソースがあればぜひ教えてくださいませ。
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

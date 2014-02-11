@@ -1,0 +1,57 @@
+---
+title: '* JavaScriptのクロージャーでFizzBuzzやってみた'
+published: true
+date: 2011-12-03 12:28
+comments: true
+categories:
+- JavaScript
+tags: []
+keywords:
+- JavaScript
+---
+こんぬちは、私です。
+
+日常でちょこちょこプログラムは書きますが、脳みそが全然追いついていないため、トレーニングとして基本的なFizzBuzzに挑戦してみました。
+
+言語はいつものJavaScript。
+あと最近（今さら）覚えたクロージャーを使って書いてみました。
+
+```js
+var rtn = "";
+var fizzBuzz = function(fizz, buzz, max){
+    return function(){
+        max++;
+        if( (max % fizz === 0) && (max % buzz === 0) ){
+            return "FizzBuzz";
+        }
+        else{
+            if( max % fizz === 0 ){
+                return "Fizz"
+            }
+            else if( max % buzz === 0 ){
+                return "Buzz";
+            }
+            else {
+                return max;
+            }
+        }
+    }
+}
+
+var FizzBuzz = fizzBuzz(3, 5, 0);
+var n = 0;
+while(n < 20){
+    rtn += FizzBuzz() + "\n";
+    n++;
+}
+console.log(rtn);
+```
+
+実際やってみたもの
+<iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/funnythingz/682W3/15/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+10分くらいでできてしまった…。
+簡単だったけど面白かった。
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

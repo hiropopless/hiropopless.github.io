@@ -1,0 +1,53 @@
+---
+title: '* JavaScript OOP入門編2'
+published: true
+date: 2009-10-28 02:19
+comments: true
+categories:
+- JavaScript
+tags: []
+keywords:
+- JavaScript
+---
+こんぬつわ。JavaScript OOP入門その2です。久しぶりです。
+ちなみに[その1はこちら](http://hiropo.co.uk/archives/206 "その1はこちら")です。
+
+僕自身もJavaScript、そんなによくわかってる訳ではないのですが、つらづら書いていきまする。
+
+まず、型ってものをつくります。
+Javaでいうところのクラス的なものです。JavaScriptはClassというものが存在しないので、functionで定義します。
+
+```js
+var ObjectA = function(){
+	this._var;
+	this._method = function(arg){
+		return arg;
+	}
+}
+```
+
+1行目が型の定義になっています。functionになっていれば書き方は自由でおｋじゃないかと。
+そして、このObjectAがもっている子要素オブジェクト（JSはすべてがオブジェクトとして扱う）は、型のない"_var"プロパティと、引数を返すだけの"_method"メソッドが定義されています。ObjectAの子要素として定義するため、"this"を使って定義しています。この"this"はObjectA自身への参照となります。
+
+そして、この型はまだ実体化していないため、実体化して、実際に使える状態にします。
+
+```js
+var objectA = new ObjectA();
+objectA._var = 'hello world';
+alert( objectA._method( objectA._var ) );
+```
+
+1行目で ObjectAをnewしてobjectAとして実体化します。設計図から実際に実体を作った状態です。
+2行目では、_varプロパティにString型の"hello world" を代入しています。
+3行目では、_methodを使って、_varに代入された値を返し、それをアラート表示しています。
+
+
+なんだか文章が堅くなってつまんなくなってしまいました・・・。
+次回もっとわかりやすく書こうと思います。
+
+なんだか説明あってねーよ！まちがってんよ！とご指摘などありましたら恐縮ではございますが、ご指摘いただければ助かります。
+
+ってな訳でまた来週！（やるのかな？）
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

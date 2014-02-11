@@ -1,0 +1,60 @@
+---
+title: '* JavaScriptでロールオーバーを簡単に実装する - rollover.js'
+published: true
+date: 2008-05-27 19:19
+comments: true
+categories:
+- Ajax
+- JavaScript
+tags: []
+keywords:
+- Ajax
+- JavaScript
+---
+```js
+//
+window.onload = function(){
+	var conf = {
+		className : 'btn',	// クラス名
+		postfix : '_o'		// マウスオン時の画像のファイル名
+	};
+	var imgNodeList = getElementsByClassName(conf.className);
+	var node;
+	for (var i=0, len=imgNodeList.length; i++) {
+		node = imgNodeList[i];
+		node.originalSrc = node.src;
+		node.rolloverSrc = node.originalSrc.replace(/(.gif|.jpg|.png)/,
+			conf.postfix+"$1");
+		preloadImage(node.rolloverSrc);
+		node.onmouseover = function() {
+			this.src = this.rolloverSrc;
+		};
+		node.onmouseout = function() {
+			this.src = this.originalSrc;
+		};
+	}
+};
+//	クラス名によるエレメントノード配列取得
+function getElementsByClassName(name) {
+	var elements = [];
+	var allElements = document.getElementsByTagName('*');
+	var re = new RegExp("(^|\s)" + name + "($|\s)");
+	for (var i=0, len=allElements.length; i</len><len ;>
+		if (allElements[i].className.match(re)) {
+			elements.push(allElements[i]);
+		}
+	}
+	return elements;
+}
+//	プリロード
+preloadedImages = [];
+function preloadImage(url) {
+	var p = preloadedImages;
+	var l = p.length;
+	p[l] = new Image();
+	p[l].src = url;
+}
+```
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

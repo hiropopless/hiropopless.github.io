@@ -1,0 +1,93 @@
+---
+title: '* フルFlashのサイトにHTMLフッターをつけてみる'
+published: true
+date: 2009-10-02 16:39
+comments: true
+categories:
+- Flash
+- JavaScript
+tags: []
+keywords:
+- Flash
+- JavaScript
+---
+フルFlashのサイトに対して、HTMLフッターをつけたいという要望があったので、つけてみることにした。
+Flashの埋め込み方は、swfobject.js(versionは1.5)を使って埋めてみた。
+
+```html
+<div id="content"><!-- ここにFlashがロードされます --></div>
+<script type="text/javascript" src="js/swfobject.js"></script>
+<script type="text/javascript">
+// <![CDATA[
+
+var so = new SWFObject('swf/sample.swf', 'website', '100%', '100%', '9', '#ffffff');
+so.useExpressInstall('swf/expressinstall.swf');
+so.write('content');
+
+// ]]>
+</script>
+```
+
+
+これでFlashがフルサイズで読み込まれる。
+
+さて、今回はこれに対して、Flashの下に20pxばかりのHTMLでつくったフッターを埋め込みたい。
+実装内容は下記の通り。
+
+
+Flashを表示するエレメントの親要素に、全体レイアウトを設定する&lt;div id=&quot;wrapper&quot;&gt;を追加。この要素が実際にリサイズすることになる。
+ウィンドウのサイズを取得して、それから20px引き、下部にHTML部分がピタっと出現するつくりにする。
+フッターは、常にウィンドウ下部に固定することにする。
+
+
+```html
+<div id="wrapper">
+<div id="content"><!-- ここにFlashがロードされます --></div>
+</div>
+<div id="footer">HTMLフッター部分</div>
+<style type="text/css">
+body {
+	position: relative;
+}
+#footer {
+	width: 100%;
+	height: 20px;
+	background: #000;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	color: #fff;
+}
+</style>
+<script type="text/javascript" src="js/swfobject.js"></script>
+<script type="text/javascript">
+// <![CDATA[
+
+var so = new SWFObject('swf/sample.swf', 'website', '100%', '100%', '9', '#ffffff');
+so.useExpressInstall('swf/expressinstall.swf');
+so.write('content');
+(function(){
+	var resizeTo = function(e){
+		var winHeight = document.all ? (document.body.clientHeight - 20) : (window.innerHeight - 20);
+		var wrapper = document.getElementById(e);
+		wrapper.style.width = '100%';
+		wrapper.style.height = winHeight + 'px';
+	}
+	window.onload = function(){
+		resizeTo('wrapper');
+	}
+	window.onresize = function(){
+		resizeTo('wrapper');
+	}
+})();
+
+// ]]>
+</script>
+```
+
+
+これでHTML要素のフッターを下部に維持しつつ、フルFlashを実現できる。
+ってか、20pxあいてる時点でフルFlashじゃないじゃん！とかいう突っ込みはやめて～ｗ
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

@@ -1,0 +1,93 @@
+---
+title: '* 美人時計のGAL時計に若槻千夏が登場してた。'
+published: true
+date: 2010-01-04 01:27
+comments: true
+categories:
+- Ruby
+- web service
+- 美人時計
+tags: []
+keywords:
+- Ruby
+- web service
+- 美人時計
+---
+あけおめです！今年もがしがし開発していくんでよろしくです。（なにを？）
+前回書いた美人時計の画像取得スクリプトのCron化、GAL時計もはじめてみました。
+
+▽GAL時計
+[http://www.bijint.com/](http://www.bijint.com/ "http://www.bijint.com/")
+
+毎日0時にGAL時計の画像を収集し、2時に美人時計の画像を収集します。収集したからといって特に見ることなくツールつくっただけで満足しちゃってます。
+ただ毎日画像を収集していると、1日あたり400MB近く画像がたまっていくので、差分だけをHDDに残すようにしようと思い、比較差分のツールもつくりました。
+ただ単にマスターと今日落とした分のmd5を比較して、差分を別フォルダに保存するだけです。
+
+```ruby
+#------------------------------------------------------------
+#  ライブラリのインポート
+#
+require 'digest/md5'
+require './ooiwa_frame_work'
+
+$scriptPath = './gal_tokei/'
+$targetDir = getTimeNow(0) + '_gal'
+$todayDir = $scriptPath + $targetDir
+
+#------------------------------------------------------------
+#  前日と当日を比較するための関数
+#
+def hikaku( before, after )
+	#------------------------------------------------------------
+	#  前日の画像フォルダと、当日の画像フォルダから、
+	#  画像リストを配列に代入
+	#
+	beforeList = Dir::entries( before ).to_s.gsub('...'){''}.gsub( /g([0-9])/ ){ 'g ' + $1 }.split(' ').sort()
+
+	diffList = []
+
+	beforeList.each do |val|
+		rb = Digest::MD5.hexdigest( File.open( before + val, 'rb' ).read )
+		ra = Digest::MD5.hexdigest( File.open( after + val, 'rb' ).read )
+
+		if rb === ra
+			# 処理なし
+		else
+			FileUtils.cp( after + val, $todayDir + '_diff/' + val )
+			diffList.push( val )
+		end
+	end
+	# 差分リストの書き出し
+	if put_list( diffList, $scriptPath + 'log/' + $targetDir + '_list.txt' )
+		print 'GAL時計の差分ファイルログを"' + $targetDir + '_list.txt"' + 'に書き出しました。'
+		print "\n"
+		return true;
+	end
+end
+```
+
+上記のスクリプトはサンプルです。実際には、上記スクリプトのhikakuメソッドを使用して、差分のみを当日フォルダに保存するといった処理をかましています。
+ちなみに "ooiwa_frame_work" という謎の自作ライブラリをかましてるので、コピペだけじゃ動かないかも。（意味なし。）
+
+オマケに若槻千夏の画像でも。
+
+0：00
+<img src="/imgs/archives/2010/01/0000-300x228.jpg" alt="0000" title="0000" width="300" height="228" class="alignnone size-medium wp-image-349" />
+
+18：00
+<img src="/imgs/archives/2010/01/1800-300x228.jpg" alt="1800" title="1800" width="300" height="228" class="alignnone size-medium wp-image-350" />
+
+この美人時計とかGAL時計、けっこうコラボしてるんだよねー。美人時計に出てる娘とかも、ニコニコ動画で有名な踊ってる娘がいたりとか、けっこう収集してて面白いよね。
+
+何か最近、こずえちゃんとミンカちゃんとかとユニットを組んだらしい「いといくら」こといくらちゃん。
+可愛過ぎるわ。
+<script type="text/javascript" src="http://ext.nicovideo.jp/thumb_watch/sm4146159"></script><noscript>[【ニコニコ動画】キラッ☆星間飛行を踊ってみた＠いとくとら](http://www.nicovideo.jp/watch/sm4146159 "【ニコニコ動画】キラッ☆星間飛行を踊ってみた＠いとくとら")</noscript>
+
+いくらちゃんの美人時計
+<img src="/imgs/archives/2010/01/2004-300x228.jpg" alt="2004" title="2004" width="300" height="228" class="alignnone size-medium wp-image-351" />
+<img src="/imgs/archives/2010/01/2007-300x228.jpg" alt="2007" title="2007" width="300" height="228" class="alignnone size-medium wp-image-352" />
+
+むっちゃくちゃ可愛いですお（＾ｑ＾）オレの方が可愛いけどなっ！
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

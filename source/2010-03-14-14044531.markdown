@@ -1,0 +1,48 @@
+---
+title: '* Rubyでメールを送る（日本語非対応）'
+published: true
+date: 2010-03-14 04:45
+comments: true
+categories:
+- Ruby
+tags: []
+keywords:
+- Ruby
+---
+Rubyでメール送る関数欲しかったので、急遽リファレンス見ながらつくってみた。ちなみに急過ぎたので日本語非対応です・・・。
+
+```ruby
+#------------------------------------------------------------
+#  メール投稿
+#  ※ただし、日本語非対応です。
+#
+def mail( subject, message, to_address, from_address )
+	#------------------------------------------------------------
+	# インポート
+	require 'net/smtp'
+	
+	#------------------------------------------------------------
+	# セット
+	mail_server = 'mail.localhost'
+	
+	#------------------------------------------------------------
+	# 投稿
+	Net::SMTP.start( mail_server, 25 ) {|smtp|
+		smtp.ready( from_address, to_address ) {|f|
+			f.puts 'From: ' + from_address
+			f.puts 'To: ' + to_address
+			f.puts 'Subject: ' + subject
+			f.puts
+			f.puts message
+		}
+	}
+	p 'mail send!!'
+	
+	#------------------------------------------------------------
+end
+```
+
+次回、日本語対応版をつくろうと思うお。
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

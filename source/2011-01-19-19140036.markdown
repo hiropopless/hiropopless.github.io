@@ -1,0 +1,78 @@
+---
+title: '* Ruby1.9.2 をインストールする。'
+published: true
+date: 2011-01-19 14:00
+comments: true
+categories:
+- Linux
+- Ruby
+- Ruby on Rails
+tags: []
+keywords:
+- Linux
+- Ruby
+- Ruby on Rails
+---
+いつもyumでさらっとアプリケーションをインストールしているのでたまにはちょっと手間かけて最新版をソースからコンパイルしてインストールすることにする。あと最新版のRails3.x系を使いたいということで。
+
+Rails環境を整える準備として、RubyとRubyGemsをインストールする。
+
+
+まずはRuby1.9.2 をインストール。
+[Ruby最新版はここで確認する。](http://www.ruby-lang.org/ja/downloads/ "Ruby最新版はここで確認する。")
+
+```sh
+# wget ftp://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.2-p136.tar.gz
+# tar xvzf ruby-1.9.2-p136.tar.gz
+# cd ruby-1.9.2-p136
+# ./configure
+# make && make install
+# make clean
+```
+
+Rubyがインストールできたか確認
+```sh
+# ruby -v
+ruby 1.9.2p136 (2010-12-25 revision 30365) [i686-linux]
+```
+
+簡単なRubyスクリプトを作成して動作確認
+hello.rb
+```ruby
+def main arg
+    return arg
+end
+
+puts main("ahya")
+```
+
+実行結果
+```sh
+# ruby hello.rb
+ahya
+```
+
+でた。
+とりあえずRubyはこれでおｋ。
+
+Ruby.1.9.x系からRubyGems1.3.7が入ってるようなので、RubyGemsのインストールは不要。
+これでRubyとGemsが使える。
+
+RubyGemsのバージョンやらをいちお確認する。
+```sh
+# gem -v
+1.3.7
+
+# gem list
+
+*** LOCAL GEMS ***
+
+minitest (1.6.0)
+rake (0.8.7)
+rdoc (2.5.8)
+```
+
+これでおｋ。
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

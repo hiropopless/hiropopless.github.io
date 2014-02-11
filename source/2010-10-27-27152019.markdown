@@ -1,0 +1,38 @@
+---
+title: '* Wordpressで記事の並び替えを昇順または降順で並び替える'
+published: true
+date: 2010-10-27 15:20
+comments: true
+categories:
+- PHP
+- wordpress
+tags: []
+keywords:
+- PHP
+- wordpress
+---
+blog記事ってふつー最新から順に並べられているけど、あえて逆に並べたいときもある。
+そんなときの書き方
+
+▽古い順（デフォルトは、order=DESC）
+[php]
+query_posts("order=ASC");
+[/php]
+
+<blockquote>
+    * order=ASC - 昇順。小さい値から大きい値の順。
+    * order=DESC - 降順。大きい値から小さい値の順。 
+</blockquote>
+
+ただ、これだと全記事がソートされることになるので、カテゴリだけソートしたい場合は、category.php （テーマファイル）に対して、下記のように記述する。
+
+[php]
+$cat = get_query_var('cat');
+$paged = get_query_var('paged');
+query_posts("cat=".$cat."&order=ASC&orderby=date&posts_per_page=10&paged=".$paged);
+[/php]
+
+query_posts() 覚えちゃえばたいていのことはソートできちゃうね！
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

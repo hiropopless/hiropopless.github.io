@@ -1,0 +1,20 @@
+---
+title: '* ケータイ番号で似顔絵'
+published: true
+date: 2009-09-09 01:26
+comments: true
+categories:
+- Flash
+tags: []
+keywords:
+- Flash
+---
+<script type="text/javascript" src="http://mb.softbank.jp/mb/special/norikae/js/blogparts_l.js?user_id=e420960b3ac1eb9"></script>
+
+[ソフトバンクの乗り換えキャンペーンサイト](http://mb.softbank.jp/mb/special/norikae/index.html "ソフトバンクの乗り換えキャンペーンサイト")
+
+これ面白いけど、おれメガネかけてないし！髪ロン毛だし！ｗ
+にてないわぁ。
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

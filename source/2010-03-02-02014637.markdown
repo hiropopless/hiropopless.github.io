@@ -1,0 +1,27 @@
+---
+title: '* 美人時計のデジタルフォトフレーム版を作ってみた。 - DPF-D72N'
+published: true
+date: 2010-03-02 01:46
+comments: true
+categories:
+- hack
+- 美人時計
+tags: []
+keywords:
+- hack
+- 美人時計
+---
+デジタルフォトフレームに美人時計をいれてみた。
+
+<a href="/imgs/archives/2010/03/IMG_3448.jpg"><img src="/imgs/archives/2010/03/IMG_3448.jpg" alt="" title="IMG_3448" width="640" height="426" class="alignnone size-full wp-image-426" /></a>
+
+スライドショーで、1分置きに画像を切り替えるようにしてみたので、スタートを現在の時間にすることによって、美人時計のデジタルフォトフレーム版が完成！もちろん1440枚全部入ってますよ！
+
+<object width="560" height="340"><param name="movie" value="http://www.youtube.com/v/q2llpaxMDbY&hl=ja_JP&fs=1&"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/q2llpaxMDbY&hl=ja_JP&fs=1&" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="560" height="340"></embed></object>
+
+我ながらよくやるわと思った。
+
+<iframe src="http://rcm-jp.amazon.co.jp/e/cm?lt1=_blank&bc1=FFFFFF&IS2=1&npa=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=funnythingz-22&o=9&p=8&l=as1&m=amazon&f=ifr&asins=B002TO4N3K" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

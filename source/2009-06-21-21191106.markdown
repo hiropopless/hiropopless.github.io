@@ -1,0 +1,36 @@
+---
+title: '* メールaliases'
+published: true
+date: 2009-06-21 19:11
+comments: true
+categories:
+- aliases
+- CentOS
+- FedoraCore
+- Linux
+- sendmail
+tags: []
+keywords:
+- aliases
+- CentOS
+- FedoraCore
+- Linux
+- sendmail
+---
+ひとつのメールアドレスにくるメールをふたつのメールアドレスに転送することでバックアップ的なことをしたいと思う。
+どうやらaliasesで簡単にできるようです。
+
+
+
+aaa@localhost にくるメールを aaa@localhost と、bbb@etc.com に転送する。
+
+```sh
+#vi /etc/aliases
+aaa: aaa,bbb@etc.com
+```
+
+これだけでOKなのです。
+aliasesって便利！
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

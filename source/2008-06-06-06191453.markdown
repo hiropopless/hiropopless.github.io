@@ -1,0 +1,29 @@
+---
+title: '* MySQL インストールメモ'
+published: true
+date: 2008-06-06 19:14
+comments: true
+categories:
+- MySQL
+- PHP
+tags: []
+keywords:
+- MySQL
+- PHP
+---
+インスコメモです。
+
+
+```sh
+vi /etc/php.ini
+extension=php_mbstring.dll　←有効
+extension=php_mysql.dll　←有効
+```
+
+▽phpでmysqlを有効化する。
+```sh
+yum -y install php-mbstring php-mysql
+```
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

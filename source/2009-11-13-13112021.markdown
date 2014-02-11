@@ -1,0 +1,33 @@
+---
+title: '* JavaScriptのDateオブジェクトについて'
+published: true
+date: 2009-11-13 11:20
+comments: true
+categories:
+- JavaScript
+tags: []
+keywords:
+- JavaScript
+---
+ハマった・・・、がっつりハマった・・・。
+
+DateオブジェクトのgetMonth()という月をとるメソッドがあるんですが、0～11の値が返ってくるんです。
+0が1月で、11が12月。見事計算を間違えまして、(getMonth()+1) を先に変数に代入して、そこから1ヶ月計算する式をつくったのです。それがバグでした。11月から12月にかかるとき、11+1=12 にならないので、何でかなーと思っていたら、11までだったので、0に戻ってしまうんですね。なので、変数に代入せず、出力の際に直接、(getMonth()+1) を使えば良かったんです。
+
+間違ったコード
+```js
+var date = new Date( today.getFullYear(), (today.getMonth() + 1), (today.getDate() + arg) );
+return date.getFullYear() + '.' + date.getMonth() + '.' + date.getDate();
+```
+
+修正後
+```js
+var date = new Date( today.getFullYear(), today.getMonth(), (today.getDate() + arg) );
+return date.getFullYear() + '.' + (date.getMonth() + 1) + '.' + date.getDate();
+```
+
+んー、なかなかどうしてミスってしまった・・・。
+うっかりさんなんだぜ！
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

@@ -1,0 +1,109 @@
+---
+title: '* [mixiアプリ] マイミク一覧取得と、アプリ登録者を取得してみた'
+published: true
+date: 2009-09-09 00:45
+comments: true
+categories:
+- Ajax
+- JavaScript
+tags: []
+keywords:
+- Ajax
+- JavaScript
+---
+北海道旅行から帰ってきたら何もやる気が起きなくなった僕です。
+こんばんは。
+
+北の大地があまりに広大すぎて心が空っぽになってしまいました。
+
+さて、久しぶりにJavaScript書いてみました。
+今回もmixiアプリのチュートリアルです。
+
+前々回くらいで自分のユーザー情報を取得するスクリプトはつくってみました。
+今回は、マイミク一覧とアプリ使用者をフィルタリングして、アプリを使ってるマイミクのみを取得するというテストをつくってみました。
+
+```js
+(function(){
+
+	/******************************************************************************************************
+	*
+	*	マイミク一覧を取得
+	*	※このアプリに登録しているマイミクのみ
+	*/
+	/**-------------------------------------
+	*	initを定義
+	*/
+	function init(){
+		var ip = {};
+		ip[ opensocial.IdSpec.Field.USER_ID ] = opensocial.IdSpec.PersonId.VIEWER;
+		ip[ opensocial.IdSpec.Field.GROUP_ID ] = "FRIENDS";
+
+		var idSpec = opensocial.newIdSpec( ip );
+
+		var params = {};
+
+		//アプリ使用者だけを抽出
+		params[ opensocial.DataRequest.PeopleRequestFields.FILTER ] = opensocial.DataRequest.FilterType.HAS_APP;
+
+		//抽出したいパラメータをセット
+		params[ opensocial.DataRequest.PeopleRequestFields.PROFILE_DETAILS ] = [
+			opensocial.Person.Field.PROFILE_URL,
+			opensocial.Person.Field.ADDRESSES,
+			opensocial.Person.Field.AGE,
+			opensocial.Person.Field.DATE_OF_BIRTH,
+			opensocial.Person.Field.GENDER,
+			opensocial.Person.Field.HAS_APP,
+			mixi.PersonField.BLOOD_TYPE
+		];
+
+		var rtn = '';
+
+		var req = opensocial.newDataRequest();
+		req.add( req.newFetchPeopleRequest( idSpec, params ), "friends" );
+		req.send(function(data){
+			var friends = data.get( "friends" ).getData();
+			friends.each(function( friend ) {
+				var id = friend.getId();
+				var nickname = friend.getDisplayName();
+				var thumbnailUrl = friend.getField( opensocial.Person.Field.THUMBNAIL_URL );
+
+				// プロフィール情報を使って処理
+				rtn += '<div style="margin-bottom: 10px;">' + "\n";
+				rtn += '[id]'+ id +"\n";
+				rtn += '[nickname]'+ nickname + '<br />' +"\n";
+				rtn += '<img src="'+ thumbnailUrl +'" />' +"\n";
+				rtn += '</div>' + "\n";
+
+				var element = $( '#dev_field' );
+				element.html( rtn );
+			});
+		});
+	}
+
+	/*
+	*	init
+	*/
+	gadgets.util.registerOnLoadHandler( init );
+
+})();
+```
+
+デフォルトで表示される件数は20件までなようです。
+さらに表示したい場合は、
+```js
+params[ opensocial.DataRequest.PeopleRequestFields.MAX ] = 50;
+```
+をつかって、件数を取得するようです。
+なんか、lengthやgetMyMixiLength()みたいなのないのかなぁ。
+
+さらに、条件から一致した全体の数から、n件目から取得みたいなこともできる。
+```js
+params[ opensocial.DataRequest.PeopleRequestFields.MAX ] = 50;
+params[ opensocial.DataRequest.PeopleRequestFields.FIRST ] = 30;
+```
+
+上の例だと、「50件中、30件目から取得」みたいなことができる。
+公式のリファレンスまぁまぁわかりやすいんだけど、もっと細かいリファレンス欲しいなぁ。
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

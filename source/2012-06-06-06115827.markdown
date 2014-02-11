@@ -1,0 +1,20 @@
+---
+title: '* transition, transform をFirefoxでもJSで操作する際の注意【CSS3】'
+published: true
+date: 2012-06-06 11:58
+comments: true
+categories:
+- CSS3
+- JavaScript
+tags: []
+keywords:
+- CSS3
+- JavaScript
+---
+zflickjsをつくってて気づいたのですが、
+firefox対応にする場合、elm.style.mozTransition ではなく、elm.style.MozTransition という"m"が"M"ってことに注意です。これわかりづらいわー。
+
+<script src="https://gist.github.com/funnythingz/5127025.js"></script>
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

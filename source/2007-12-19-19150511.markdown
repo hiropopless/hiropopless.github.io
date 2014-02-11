@@ -1,0 +1,59 @@
+---
+title: '* fontまわりのハックについて'
+published: true
+date: 2007-12-19 15:05
+comments: true
+categories:
+- CSS
+tags: []
+keywords:
+- CSS
+---
+* （ユニバーサルセレクタ）ですべてのフォントサイズを100%に
+して、そこからタグごとの指定をするのが定石です。
+
+```css
+* {
+      font-size: 100%;
+}
+p {
+      font-size: 80%;
+}
+```
+
+この記述をハックを使用して記述するとこうなります。
+```css
+body {
+      font-size: 12px; /*モダンブラウザ*/
+      _font-size: x-small; /*IE*/
+}
+```
+
+でもこのハックはIE7では有効ではなくて、font-size: 12px; で
+絶対指定することになってしまいます。
+なので、「*（アスタリスク）ハック」を使用します。
+```css
+body {
+      font-size: 12px; /* モダンブラウザ */
+      *font-size: small; /* IE 7 */
+      *font: x-small; /* IE 6以下 */
+}
+```
+
+ショートハンドのfont プロパティには、font-sizeとfont-familyの値が
+必須となります。なので、3行目の技術は不正なプロパティとなり、
+仕様に準拠しているブラウザでは無視され、IEだけ読み込んでしまいます（笑）
+
+で、これらの文法違反をクリアしようとするとこうなります。
+```css
+body {
+      font-size: small !important; /* IE 7向け */
+      font-size: x-small; /* IE 6以下 */
+}
+html&gt;/**/body {
+      font-size: 13px; /* モダンブラウザ向け */
+}
+```
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

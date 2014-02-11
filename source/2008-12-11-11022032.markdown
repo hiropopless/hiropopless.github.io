@@ -1,0 +1,33 @@
+---
+title: '* FedoraCore6の起動オプションをいじってみた。'
+published: true
+date: 2008-12-11 02:20
+comments: true
+categories:
+- FedoraCore
+- Linux
+- VirtualPC
+tags: []
+keywords:
+- FedoraCore
+- Linux
+- VirtualPC
+---
+以前書いた記事↓
+
+[＃VirtualPC Fedoraの起動　Athlon系は起動オプション clock=pit をつける。](http://hiropo.co.uk/archives/49 "＃VirtualPC Fedoraの起動　Athlon系は起動オプション clock=pit をつける。")
+
+毎回、ブートオプションに "clock=pit" つけるのはめんどいので、
+FedoraCore6の grub.conf をいじってみたい。
+
+```sh
+[root@Asuka ~]# vi /boot/grub/grub.conf
+kernel /vmlinuz-2.6.18-1.2798.fc6 ro root=/dev/VolGroup00/LogVol00 clock=pit
+```
+
+shutdown -r now で、無事に reboot したお。
+
+これで毎回入れる手間が省ける。
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

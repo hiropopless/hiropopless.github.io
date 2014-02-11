@@ -1,0 +1,22 @@
+---
+title: '* Movable Typeがオープンソースに'
+published: true
+date: 2007-12-14 23:45
+comments: true
+categories:
+- CMS
+tags: []
+keywords:
+- CMS
+---
+<blockquote> 米Six Apartは12月12日、ブログツール「Movable Type」をオープンソース化すると発表した。
+
+「Movable Type Open Source」（MTOS）は、今年6月にリリースされたMovable Type 4.0（MT4）のすべての機能を含むとともに、マイナーな改良と、バグの修正が加えられている。またMT4で機能するすべてのプラグイン、テーマ、テンプレート、デザイン、APIはMTOSでも機能する。MTOSはまた、memcachedなどの、Six Apartが提供するそのほかのオープンソース技術にも対応するという。
+
+Movable Typeのライセンス料を支払った人々に対しては、テクニカルサポートやカスタムアドオンの提供など、通常であれば有償となるサービスを追加提供する。またEnterprise Solution、Community Solutionなどの有償版も継続して提供していく予定だ。</blockquote>
+MTが有償ってゆーので、一時期、Wordpressに移行する人が目立ち、「これからはWordpressの時代だ！」とｗｋｔｋしていた自分ですが、MTがオープンソースになってしまったらWordpressユーザーは…。
+
+これでMTやる人増えるし、MT離れもなくなるんだろうなぁ。かくいう自分はWordpress大好き人間ですが、オープンソース大好きなので、MTやり始めてはまってしまうかも…。
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

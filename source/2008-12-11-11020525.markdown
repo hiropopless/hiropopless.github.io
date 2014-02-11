@@ -1,0 +1,28 @@
+---
+title: '* 気になっちゃうシリーズ。 - youtube編'
+published: true
+date: 2008-12-11 02:05
+comments: true
+categories:
+- (X)HTML
+- (X)HTML+CSS
+- CSS
+tags:
+- 気になっちゃう
+keywords:
+- (X)HTML
+- (X)HTML+CSS
+- CSS
+- 気になっちゃう
+---
+<a href="/imgs/archives/2008/12/a.jpg"><img class="alignnone size-medium wp-image-56" title="びふぉあ" src="/imgs/archives/2008/12/a-300x196.jpg" alt="" width="300" height="196" /></a>
+
+↑の画像の「チャンネル登録」をクリックすると・・・、
+
+
+<a href="/imgs/archives/2008/12/e784a1e9a18c.jpg"><img class="alignnone size-medium wp-image-57" title="あふたぁ" src="/imgs/archives/2008/12/e784a1e9a18c-300x241.jpg" alt="" width="300" height="241" /></a>
+
+はい崩れた！今クリックしたら崩れたよ！！
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

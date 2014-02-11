@@ -1,0 +1,152 @@
+---
+title: '* OpenKinect と ofxKinect を導入してopenFrameworks でキネクトハック'
+published: true
+date: 2010-11-24 01:34
+comments: true
+categories:
+- hack
+- kinect
+- openFrameworks
+tags: []
+keywords:
+- hack
+- kinect
+- openFrameworks
+---
+あるスーパーハッカー様により、キネクトのドライバがオープンソースとして公開された（非公式）ので自分も便乗してキネクトハックに挑戦してみる。
+
+キネクトドライバとopenFrameworksのofxKinect をインストールすればとりあえず楽しめるらしい。
+
+参考にしたページはこちら
+[Compiling OpenKinect on a stubborn OSX 10.6.5 (Updated 21/Nov)](http://www.spoofscript.com/blog/?p=327 "Compiling OpenKinect on a stubborn OSX 10.6.5 (Updated 21/Nov)")
+
+まずキネクトドライバをインストールする前に、cmakeとgitをインストールする。
+```sh
+$ wget http://www.cmake.org/files/v2.8/cmake-2.8.3-Darwin-universal.dmg
+$ wget http://git-osx-installer.googlecode.com/files/git-1.7.3.2-intel-leopard.dmg
+```
+
+この２つを解凍してインストールする。
+終わったら次にコマンドラインでキネクトドライバをインストールする。
+
+OpenKinect と LibUSB をダウンロード。
+```sh
+$ git clone https://github.com/OpenKinect/libfreenect.git
+Cloning into libfreenect...
+remote: Counting objects: 712, done.
+remote: Compressing objects: 100% (369/369), done.
+remote: Total 712 (delta 398), reused 556 (delta 312)
+Receiving objects: 100% (712/712), 469.07 KiB | 170 KiB/s, done.
+Resolving deltas: 100% (398/398), done.
+
+$ git clone git://git.libusb.org/libusb.git
+Cloning into libusb...
+remote: Counting objects: 1659, done.
+remote: Compressing objects: 100% (769/769), done.
+remote: Total 1659 (delta 1178), reused 1251 (delta 888)
+Receiving objects: 100% (1659/1659), 494.63 KiB | 117 KiB/s, done.
+Resolving deltas: 100% (1178/1178), done.
+```
+
+OpenKinect に LibUSBパッチをあててインストールする。
+```sh
+$ cd libusb
+$ ./autogen.sh
+$ patch -p1 < ../libfreenect/platform/osx/libusb-osx-kinect.diff
+$ ./configure
+$ make
+$ sudo make install
+```
+
+cmake でmakefileをつくる。
+```sh
+$ cd ../libfreenect/cmake_modules/
+$ cmake ..
+-- The C compiler identification is GNU
+-- The CXX compiler identification is GNU
+-- Checking whether C compiler has -isysroot
+-- Checking whether C compiler has -isysroot - yes
+-- Checking whether C compiler supports OSX deployment target flag
+-- Checking whether C compiler supports OSX deployment target flag - yes
+-- Check for working C compiler: /usr/bin/gcc
+-- Check for working C compiler: /usr/bin/gcc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Checking whether CXX compiler has -isysroot
+-- Checking whether CXX compiler has -isysroot - yes
+-- Checking whether CXX compiler supports OSX deployment target flag
+-- Checking whether CXX compiler supports OSX deployment target flag - yes
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Operating system is Apple MacOS X
+-- Got System Processor i386
+-- libfreenect will be installed to /usr/local
+-- Headers will be installed to /usr/local/include/libfreenect
+-- Libraries will be installed to /usr/local/lib
+-- Found libusb-1.0:
+--  - Includes: /usr/local/include
+--  - Libraries: /usr/local/lib/libusb-1.0.dylib
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/funnymac/tmp/libfreenect/cmake_modules
+```
+
+
+makeし、make install する。
+```sh
+$ make
+Scanning dependencies of target freenect
+[ 11%] Building C object src/CMakeFiles/freenect.dir/core.c.o
+[ 22%] Building C object src/CMakeFiles/freenect.dir/tilt.c.o
+[ 33%] Building C object src/CMakeFiles/freenect.dir/cameras.c.o
+[ 44%] Building C object src/CMakeFiles/freenect.dir/usb_libusb10.c.o
+Linking C shared library ../lib/libfreenect.dylib
+[ 44%] Built target freenect
+Scanning dependencies of target freenectstatic
+[ 55%] Building C object src/CMakeFiles/freenectstatic.dir/core.c.o
+[ 66%] Building C object src/CMakeFiles/freenectstatic.dir/tilt.c.o
+[ 77%] Building C object src/CMakeFiles/freenectstatic.dir/cameras.c.o
+[ 88%] Building C object src/CMakeFiles/freenectstatic.dir/usb_libusb10.c.o
+Linking C static library ../lib/libfreenect.a
+[ 88%] Built target freenectstatic
+Scanning dependencies of target glview
+[100%] Building C object examples/CMakeFiles/glview.dir/glview.c.o
+Linking C executable ../bin/glview
+[100%] Built target glview
+
+$ sudo make install
+Password:
+[ 44%] Built target freenect
+[ 88%] Built target freenectstatic
+[100%] Built target glview
+Install the project...
+-- Install configuration: ""
+-- Installing: /usr/local/lib/libfreenect.0.0.1.dylib
+-- Installing: /usr/local/lib/libfreenect.0.0.dylib
+-- Installing: /usr/local/lib/libfreenect.dylib
+-- Installing: /usr/local/lib/libfreenect.a
+-- Installing: /usr/local/include/libfreenect/libfreenect.h
+-- Installing: /usr/local/include/libfreenect/libfreenect.hpp
+-- Installing: /usr/local/bin/glview
+```
+
+次に、openFrameworks用の ofxKinect をダウンロードし、適当な箇所で解凍する。
+[https://github.com/ofTheo/ofxKinect](https://github.com/ofTheo/ofxKinect "https://github.com/ofTheo/ofxKinect")
+
+解凍できたら下記ディレクトリ配下に移動。
+OpenFrameworks/apps/examples/ofxKinect
+
+中にあるXcodeのプロジェクトファイル ofxKinect.xcodeproj を開いて buildしてみる。
+
+<a href="/imgs/archives/2010/11/02c2a9a6a154bae8a909aed7a19dc2af.png"><img src="/imgs/archives/2010/11/02c2a9a6a154bae8a909aed7a19dc2af-1024x742.png" alt="" title="スクリーンショット（2010-11-24 1.18.58）" width="640" height="463" class="alignnone size-large wp-image-577" /></a>
+
+
+これでとりあえず動いたお！
+なんかつくるお！
+
+P.S. できちゃえば何ともないんだけど、ここまでが割と難しくいくらかつまずいたよ…。
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

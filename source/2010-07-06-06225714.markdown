@@ -1,0 +1,145 @@
+---
+title: '* CentOS5.xにPostgresqlをyumでインストールする'
+published: true
+date: 2010-07-06 22:57
+comments: true
+categories:
+- CentOS
+- Linux
+- PostgreSQL
+tags: []
+keywords:
+- CentOS
+- Linux
+- PostgreSQL
+---
+MySQLしか使ったことないのですが、案件でPostgresqlを使うことになりまして、CentOS5系にインストールしてみました。
+クライアント認証につまづいてなかなか壁を突破できませんでしたがググって頑張りましたよっと。
+
+まず、yumで必要なモジュールをインストール。
+```sh
+[root@localhost ~]# yum install -y postgresql-tcl postgresql-server postgresql-contrib postgresql php-pgsql
+```
+
+今回はPHPとの連動を行うので、下記もインストール
+```sh
+[root@localhost ~]# yum install -y php-pgsql
+```
+
+ひととおりインストールが終わったらpostgresqlを起動。
+```sh
+[root@localhost ~]# /etc/rc.d/init.d/postgresql start
+```
+
+それでは初期設定を行っていく。
+MySQLと違って、postgresというユーザーでログインしないと設定が行えない。
+```sh
+[root@localhost ~]# su - postgres
+-bash-3.2$ psql -l
+        List of databases
+   Name    |  Owner   | Encoding
+-----------+----------+----------
+ postgres  | postgres | UTF8
+ template0 | postgres | UTF8
+ template1 | postgres | UTF8
+(3 rows)
+```
+
+ユーザー名"test"、パスワード"test" のユーザーを作成する。
+権限はデータベースの作成を可能にする。
+```sh
+-bash-3.2$ psql
+Welcome to psql 8.1.21, the PostgreSQL interactive terminal.
+
+Type:  \copyright for distribution terms
+       \h for help with SQL commands
+       \? for help with psql commands
+       \g or terminate with semicolon to execute query
+       \q to quit
+
+postgres=# CREATE USER "test" CREATEDB PASSWORD 'test' LOGIN;
+CREATE ROLE
+postgres=# \q
+-bash-3.2$ exit
+logout
+
+[root@localhost ~]#
+```
+
+これで、Linux上のユーザー"test"からPostgresqlを操作できるようになる。
+そしたら、"test"ユーザーが使えるデータベース"test"を作成する。
+文字コードは"EUC_JP"にする。
+```sh
+[root@localhost ~]# su - test
+[test@localhost ~]# createdb test -E EUC_JP
+CREATE DATABASE
+[test@localhost ~]$ psql -l
+        List of databases
+   Name    |  Owner   | Encoding
+-----------+----------+----------
+ test      | test     | EUC_JP
+ postgres  | postgres | UTF8
+ template0 | postgres | UTF8
+ template1 | postgres | UTF8
+(4 rows)
+[test@localhost ~]$
+```
+
+ちなみにただ単に "creatdb test" とした場合、文字コードはデフォルトで"utf-8"になる。
+データベースを削除する場合は、"drop データベース名" とすれば良い。
+
+最後に、PHPなどと連携する場合は、クライアント認証ファイルを編集する必要がある。
+```sh
+[root@localhost ~]# vi /var/lib/pgsql/data/pg_hba.conf
+#local  all         all                               ident sameuser  #コメントアウト
+local   all         all                               trust
+
+#host   all         all         127.0.0.1/32          ident sameuser  #コメントアウト
+host    all         all         127.0.0.1/32          password
+```
+
+postgresqlとapacheを再起動する。
+```sh
+[root@localhost ~]# /etc/rc.d/init.d/postgresql restart
+Stopping postgresql service:                               [  OK  ]
+Starting postgresql service:                               [  OK  ]
+
+[root@localhost ~]# /etc/rc.d/init.d/httpd restart
+Stopping httpd:                                            [  OK  ]
+Starting httpd:                                            [  OK  ]
+```
+
+phpファイルを書いて、接続テストする。
+[php]
+<?php
+
+$data = "host=localhost user=test dbname=test password=test";
+$pg = pg_connect($data);
+
+if(!$pg){
+  echo '接続できませんでした。';
+}
+else{
+  echo '接続しちゃいました<br />';
+}
+
+if(!pg_close($pg)){
+}
+else{
+  echo '接続を閉じました。';
+}
+
+?>
+[/php]
+
+特に問題なく接続できたら下記のように表示される。
+```sh
+接続しちゃいました
+接続を閉じました。
+```
+
+
+クライアント認証んとこは本当にわかんなくてつまづいたけど、ちゃんと繋がると感動ですね！
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

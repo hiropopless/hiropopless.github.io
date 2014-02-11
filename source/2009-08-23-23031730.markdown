@@ -1,0 +1,140 @@
+---
+title: '* ディレクトリごとFTPでアップロードしてくれるスクリプト - コマンドラインPHP'
+published: true
+date: 2009-08-23 03:17
+comments: true
+categories:
+- Linux
+- pear
+- PHP
+tags: []
+keywords:
+- Linux
+- pear
+- PHP
+---
+JavaScriptネタばかりで飽きてきたので、PHPネタでも書いてみる。
+最近はまっているのは、webアプリケーションを作るためのPHPではなく、コマンドラインでいろいろできるPHPスクリプトを組むことです。
+
+bashでも良いんだけど、やはり物足りないので、（と言ってもそこまで使いこなしていない・・・。）Pythonという選択肢もあるけど、Pythonわかんないので、PHPを使って、ディレクトリごとFTPでアップロードしてくれるスクリプトを書いてみた。
+
+PEARライブラリを使ったソースコードになっているので、このクラスを使う場合、PEARのインストールが必要になってくる。
+
+まずは、型となる ftp_dir_put.class を定義する。
+ファイル名は ftp_dir_put.php で保存。
+[php]
+<?php
+
+/*****************************************************
+*
+*  ftp_dir_put.class
+*
+*  ftpアップロードをディレクトリ単位で実行するクラス
+*  Terminal上での実行専用
+*
+*****************************************************/
+
+require_once 'Net/FTP.php';
+
+class ftp_dir_put {
+
+  /*-------------------------------------
+  *  コンストラクタ
+  */
+  public function ftp_dir_put( $ftp_server, $ftp_user_name, $ftp_user_pass, $remote_dir, $local_dir, $mode ){
+    /*-------------------------------------
+    *  $target_hostオブジェクトを生成
+    */
+    $target_host = new Net_FTP( $ftp_server, 21 );
+
+    //ftpサーバに接続
+    if( $target_host->connect( $ftp_server  ) ){
+
+      print $ftp_server.' に接続しました'."\n";
+
+      //接続後、ログイン認証
+      if( $target_host->login( $ftp_user_name, $ftp_user_pass ) ){
+        print $ftp_server.' にログインしました'."\n";
+        print $local_dir.' を '.$remote_dir.' にアップロードしています・・・'."\n";
+
+        if( $target_host->putRecursive( $local_dir, $remote_dir, $mode ) ){
+
+          print 'アップロードが終わりました'."\n";
+          if( $target_host->disconnect() ){
+            print 'ログアウトしました'."\n";
+          }
+          else{
+            print 'ログアウトに失敗しました'."\n";
+          }
+        }
+        else{
+          print 'アップロードに失敗しました'."\n";
+          if( $target_host->disconnect() ){
+            print 'ログアウトしました'."\n";
+          }
+          else{
+            print 'ログアウトに失敗しました'."\n";
+          }
+        }
+      }
+      else{
+        print 'ログイン失敗しました'."\n";
+      }
+    }
+    else{
+      print $ftp_server.' に接続できません'."\n";
+    }
+  }
+}
+
+?>
+[/php]
+
+そして、この ftp_dir_put.class を newして実行するファイルを作成
+ファイル名は、test_host.php とかで保存。
+[php]
+<?php
+
+require_once 'ftp_dir_put.php';
+
+function init(){
+
+  /*-------------------------------------
+  *  プロパティセット
+  */
+  $ftp_server = 'host_name';       //ftpサーバーアドレス
+  $ftp_user_name = 'user_name';    //ユーザー名
+  $ftp_user_pass = 'user_pass';    //パスワード
+  $remote_dir = '/';               //サーバー側ディレクトリパス
+  $local_dir = '/var/www/html/';   //ローカル側ディレクトリパス
+  $mode = true;                    //オーバーライド
+
+  /*-------------------------------------
+  *  実行オブジェクト
+  */
+  $test_init = new ftp_dir_put(
+    $ftp_server,
+    $ftp_user_name,
+    $ftp_user_pass,
+    $remote_dir,
+    $local_dir,
+    $mode
+  );
+
+}
+
+init();
+
+?>
+[/php]
+
+これで、あとはコマンドラインにて、この test_host.php を実行
+```sh
+[user@host ~]$ php test_host.php
+```
+
+で、あとは勝手にアップロードしてくれる。
+PEAR、凄いよ、PEAR。
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

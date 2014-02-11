@@ -1,0 +1,25 @@
+---
+title: '* TypeScript入門'
+published: true
+date: 2013-07-04 23:23
+comments: true
+categories:
+- JavaScript
+tags: []
+keywords:
+- JavaScript
+---
+<p>仕事でTypeScriptをやることになったのでとりあえず入門しておく。まずインストールするところから。</p>
+<p>node.jsがインストールされている前提ですすんでいく。</p>
+<script src="https://gist.github.com/funnythingz/5927589.js"></script>
+<p>インストール完了。とりあえず "Hello World." 書いてみる。</p>
+<script src="https://gist.github.com/funnythingz/5928191.js"></script>
+<script src="https://gist.github.com/funnythingz/5928174.js"></script>
+<p>tsファイルをコンパイルしてみる。</p>
+<script src="https://gist.github.com/funnythingz/5928183.js"></script>
+<p>コンパイル結果。</p>
+<script src="https://gist.github.com/funnythingz/5928206.js"></script>
+<p>でけた！</p>
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

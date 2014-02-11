@@ -1,0 +1,37 @@
+---
+title: '* Objective-C 入門してみた'
+published: true
+date: 2010-05-14 10:58
+comments: true
+categories:
+- iPad
+- iPhone
+- MacOSX
+- Objective-C
+tags: []
+keywords:
+- iPad
+- iPhone
+- MacOSX
+- Objective-C
+---
+iPhoneアプリ開発をがっつりやりたいので、Objective-Cに入門してみた。
+C言語すらきちんとやったことないのに大丈夫かとも思ったけど、結構すんなり入れたんだお！
+
+[c]
+/*
+* NSStringクラスで文字列を扱ってみる。
+*/
+
+//NSStringクラスから、myStrインスタンスを生成
+//Class名 *変数名 = @"文字列";
+NSString *myStr = @"あひゃ";
+
+//NSLogで出力
+NSLog(@"\n%@", myStr);
+[/c]
+
+インタプリタでは使うことがない（？）フォーマット演算子だとか、結構ちゃんと書かなきゃいけないんだねって思った。
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

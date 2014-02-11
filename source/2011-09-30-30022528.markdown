@@ -1,0 +1,46 @@
+---
+title: '* MacOSX Lion にImageMagickをインストールする'
+published: true
+date: 2011-09-30 02:25
+comments: true
+categories:
+- ImageMagick
+- MacOSX
+tags: []
+keywords:
+- ImageMagick
+- MacOSX
+---
+Hello ImageMagick !!
+
+画像解析や画像加工をCUIでゴリっとやってみたかったので、ImageMagickをMacOSX Lion にインストールしてみました。
+
+MacPortsで楽々インストールしてみました。
+結構時間かかりました。
+
+```sh
+% sudo port install ImageMagick
+% which convert
+/opt/local/bin/convert
+```
+
+インストールが終わったらHello World的にImageMagickのロゴを生成してみましょう。
+```sh
+% convert logo: logo.png
+% ls
+logo.png
+```
+
+これでロゴが生成されました。
+displayコマンドでXwindowを立ち上げて、ロゴを確認できます。
+```sh
+display logo.png
+```
+
+<a href="/imgs/archives/2011/09/ddfed2e484b12ba9fa2ab6c98eddc793.png"><img src="/imgs/archives/2011/09/ddfed2e484b12ba9fa2ab6c98eddc793.png" alt="" title="スクリーンショット 2011-09-30 2.14.14" width="640" height="501" class="alignnone size-full wp-image-774" /></a>
+
+これでインストール完了。
+画像解析、加工、スタートです！
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

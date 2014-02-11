@@ -1,0 +1,23 @@
+---
+title: '* wordpressMU インストール'
+published: true
+date: 2008-06-06 19:11
+comments: true
+categories:
+- wordpress
+tags: []
+keywords:
+- wordpress
+---
+wordpress MU という、ブログをASP化（？）できるCMSがある。
+<blockquote>■公式サイト
+http://mu.wordpress.org/
+・ダウンロード
+http://mu.wordpress.org/download/
+・インストールと設定方法
+http://aoina.com/archives/99
+・実際にwordpressMU で構築されたサイト
+[http://wordpress.com/](http://wordpress.com/ "http://wordpress.com/")</blockquote>
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

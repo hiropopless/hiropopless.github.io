@@ -1,0 +1,9 @@
+---
+title: あかん
+date: 2013-12-30
+tags: design, setup
+---
+
+# あかん
+
+middlemanにwordpressからブログを移行しようと思ってまだ何もやっていない。このまま2013を終えてしまう。

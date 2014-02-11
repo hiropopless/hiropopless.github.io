@@ -1,0 +1,25 @@
+---
+title: '* Patchmatchが変態すぐるｗｗｗ - Adobe Photoshop CS5'
+published: true
+date: 2009-10-17 02:17
+comments: true
+categories:
+- Adobe
+tags: []
+keywords:
+- Adobe
+---
+Photoshop CS5 がやばすぐる件。
+前回のFlash Professional CS5 の記事でも書いたが、CS5がなんだかすごいことになっているらしいｗｗｗｗｗ
+
+今回はPatchmatchを紹介します。
+
+<object width="425" height="344"><param name="movie" value="http://www.youtube.com/v/dgKjs8ZjQNg&hl=ja&fs=1&"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/dgKjs8ZjQNg&hl=ja&fs=1&" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="344"></embed></object>
+
+他にももろもろ変態ツールがたっぷり搭載されているらしい。
+
+CS5、やばいよ、CS5。
+ってかCS3やCS4すら使いこなせてませんよ。
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

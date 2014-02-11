@@ -1,0 +1,134 @@
+---
+title: '* Processing でオブジェクト指向っぽくネズミさんを描いてみた'
+published: true
+date: 2010-10-06 19:17
+comments: true
+categories:
+- Java
+- Processing
+tags: []
+keywords:
+- Java
+- Processing
+---
+前回の[ブログ記事](http://hiropo.co.uk/archives/521 "ブログ記事")からまた時間が経ってしまいました。すっかりサボりぐせがついてしまってます。
+前回はellipse() を使って図形を描いてみましたが、今回はもうちょっとオブジェクト指向っぽく描いてみました。
+
+とりま、某有名なネズミさんに似た形をellipse()使って描いてみました。
+<a href="/imgs/archives/2010/10/mickey1.jpg"><img src="/imgs/archives/2010/10/mickey1.jpg" alt="" title="mickey1" width="406" height="432" class="alignnone size-full wp-image-538" /></a>
+
+[java]
+float positionX = 125;
+float positionY = 125;
+
+void setup(){
+  size(400,400);
+  background(255);
+  smooth();
+  noStroke();
+
+  fill(0);
+  ellipseMode(CORNER);
+  ellipse( 0 + positionX, 0 + positionY, 50, 50 );
+  ellipse( 100 + positionX, 0 + positionY, 50, 50 );
+  ellipse( 25 + positionX, 25 + positionY, 100, 100 );
+}
+void draw(){
+}
+[/java]
+
+割とキレイに描けてるんじゃないかなとｗｗ
+ただ、毎回こいつを繰り返し処理させるのはいかがなものかと思うので、クラスオブジェクトにまとめてみました。
+[java]
+class Mouse{
+  
+  //プロパティ
+  float x,y;  //positionX, positionY
+  float face; //face
+  int[] bg;
+  
+  //コンストラクタ
+  Mouse( float xpos, float ypos, int[] cpos )
+  {
+    //set
+    this.x = xpos;
+    this.y = ypos;
+    this.bg = cpos;
+    
+    //conf
+    fill( this.bg[0], this.bg[1], this.bg[2] );
+    ellipseMode(CORNER);
+    
+    //耳
+    ellipse( 0 + this.x, 0 + this.y, 50, 50 );
+    ellipse( 100 + this.x, 0 + this.y, 50, 50 );
+    //顔
+    ellipse( 25 + this.x, 25 + this.y, 100, 100 );
+  }
+}
+[/java]
+
+実際にこのMouseクラスを使ってテキトーに並べてみました。
+<a href="/imgs/archives/2010/10/mickey3.jpg"><img src="/imgs/archives/2010/10/mickey3.jpg" alt="" title="mickey3" width="406" height="432" class="alignnone size-full wp-image-545" /></a>
+
+[java]
+float positionX = 125;
+float positionY = 125;
+
+void setup(){
+  size(400,400);
+  background(255);
+  smooth();
+  noStroke();
+
+  int[][] bg = {
+    {255,191,194},
+    {204,191,255},
+    {191,250,255},
+    {255,255,206},
+    {228,238,191}
+  };
+  new Mouse( positionX, positionY, bg[0] );
+  new Mouse( positionX*2, positionY*2, bg[1] );
+  new Mouse( positionX*0, positionY*0, bg[2] );
+  new Mouse( positionX*2, positionY*0, bg[3] );
+  new Mouse( positionX*0, positionY*2, bg[4] );
+}
+void draw(){
+}
+
+class Mouse{
+  
+  //プロパティ
+  float x,y;  //positionX, positionY
+  float face; //face
+  int[] bg;
+  
+  //コンストラクタ
+  Mouse( float xpos, float ypos, int[] cpos )
+  {
+    //set
+    this.x = xpos;
+    this.y = ypos;
+    this.bg = cpos;
+    
+    //conf
+    fill( this.bg[0], this.bg[1], this.bg[2] );
+    ellipseMode(CORNER);
+    
+    //耳
+    ellipse( 0 + this.x, 0 + this.y, 50, 50 );
+    ellipse( 100 + this.x, 0 + this.y, 50, 50 );
+    //顔
+    ellipse( 25 + this.x, 25 + this.y, 100, 100 );
+  }
+}
+[/java]
+
+市松模様を描くクラスとかにさらにまとめれば市松模様描けちゃう！
+なんだか楽しくなってきた！
+
+とりあえずここまで。
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

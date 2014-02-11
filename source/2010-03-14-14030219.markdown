@@ -1,0 +1,86 @@
+---
+title: '* Rubyでtwitterに投稿できるrubygems'
+published: true
+date: 2010-03-14 03:02
+comments: true
+categories:
+- Ruby
+- twitter
+- 美人時計
+tags: []
+keywords:
+- Ruby
+- twitter
+- 美人時計
+---
+美人時計の画像を毎日収集してる僕です、こんばんみ！
+
+▽関連記事
+[美人時計の全画像を取得するスクリプトをバッチ化してみた](http://hiropo.co.uk/archives/331 "美人時計の全画像を取得するスクリプトをバッチ化してみた")
+
+毎日美人時計とGAL時計と美人時計（北海道版）の画像をウチのサーバちゃんが収集して差分まで比較して結果だけ教えてくれています。
+収集Bot、かわいいよ、収集Bot。
+
+そんな美人時計の差分が出たってのをtwitter経由で知らせてくれたらいいのに…と思いながら実装してみました。
+がしかし…、twitterには140文字という投稿制限があるんですね、見事140文字オーバーしたら投稿できませんでしたよ。
+
+とりあえず、Rubyでtwitterに投稿できるrubygemsのインストールの仕方です。
+
+```sh
+rdocのインストール
+# yum install rdoc
+
+rubygemsのダウンロード
+#wget http://rubyforge.org/frs/download.php/60718/rubygems-1.3.5.tgz
+
+rubygemsを解凍してインストール
+# tar xvfz rubygems-1.3.5.tgz
+# cd rubygems-1.3.5
+# ruby setup.rb
+
+gemでtwitterをインストール
+% sudo gem install twitter
+Successfully installed twitter-0.8.4
+1 gem installed
+Installing ri documentation for twitter-0.8.4...
+Installing RDoc documentation for twitter-0.8.4...
+```
+
+こんな感じでサーバーにインストール。そしてRubyの書き方は下記の通り。
+
+```ruby
+#------------------------------------------------------------
+# ./twit.rb
+def twit( v )
+	#------------------------------------------------------------
+	# twitter gems をインポート
+	require 'rubygems'
+	require 'twitter'
+
+	#------------------------------------------------------------
+	# Rubyから投稿
+	twit_username = 'アカウント名'
+	twit_password = 'ログインパスワード'
+	
+	auth = Twitter::HTTPAuth.new( twit_username, twit_password )
+	twit = Twitter::Base.new( auth )
+	twit.update( v )
+	p 'twit!!'
+	
+	#------------------------------------------------------------
+end
+
+twit( 'てすつ投稿やねん' )
+```
+
+コマンドラインでプログラムを実行する。
+
+```sh
+host~% ruby ./twit.rb
+```
+
+
+これでRubyからtwitterに投稿できちゃう！Ruby、簡単だよ、Ruby。
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

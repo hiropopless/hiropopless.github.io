@@ -1,0 +1,62 @@
+---
+title: '* phpで削除できなくなったファイルを削除する'
+published: true
+date: 2008-12-13 22:46
+comments: true
+categories:
+- PHP
+tags:
+- PHP
+keywords:
+- PHP
+- PHP
+---
+こんぬつわ。いまさらPHPの面白さがわかってきた僕です。
+
+はるか昔に構築したXOOPSサイトの残骸で、パーミッショエラーで
+FTP上から削除できなくなったファイルをどうにか削除する方法はないかと悩んでいました。
+
+そこで思いついたのが、PHPでした。
+
+unlink();というファイルを削除する関数があるので、
+PHPスクリプトをつくって対処することにしました。
+
+削除対象：
+/xoops/uploads/photos/*.jpg
+/xoops/uploads/thumbs/*.jpg
+※ "*" は、[1-*]の数字
+
+上記ディレクトリ内にあるjpgファイルをすべて削除したいので、
+下記のようなスクリプトを作成。
+
+[php]
+<?php
+$dir_photo = "uploads/photos/";
+$dir_thum = "uploads/thumbs/";
+
+for($i=0; $i<100;$i++){
+    $a = unlink($dir_photo . $i . ".jpg");
+    $b = unlink($dir_thum . $i . ".jpg");
+
+    if($a == true || $b == true){
+        echo("[".$dir_photo.$i."jpg"."]"."true"."\n");
+        echo("[".$dir_thum.$i."jpg"."]"."true"."\n");
+    }else{
+        echo("[".$dir_photo.$i."jpg"."]"."false"."\n");
+        echo("[".$dir_thum.$i."jpg"."]"."false"."\n");
+    }
+}
+?>
+[/php]
+
+削除に成功したら、"true"、失敗したら"false"を返すようにした。
+ファイル数の取得の仕方がわからなかったので、とりあえず
+ループで100回まわすことにした。
+
+で、実行した結果、無事にすべてのjpgファイルの削除に成功。
+これでようやく残骸を削除することができた。
+
+PHPって便利だねぇ。
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

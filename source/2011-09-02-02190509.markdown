@@ -1,0 +1,96 @@
+---
+title: '* Titanium Studio でデスクトップアプリ開発に入門してみた'
+published: true
+date: 2011-09-02 19:05
+comments: true
+categories:
+- (X)HTML+CSS
+- Ajax
+- Aptana
+- JavaScript
+- PHP
+- Python
+- Ruby
+- Titanium
+tags: []
+keywords:
+- (X)HTML+CSS
+- Ajax
+- Aptana
+- JavaScript
+- PHP
+- Python
+- Ruby
+- Titanium
+---
+こんぬつわ。ブログを放置してから早半年弱…。完全に放置してしまいました。
+技術的にはいろんなことできるようになったのですが全然メモってませんでした…。
+反省してます…。
+
+ということできちんとブログを買いていこうかなと思い、最近ちょっとやってみようと思ったのが、Titanium Studio によるデスクトップアプリケーション開発！
+なんと、みんなが大好きなHTML5+CSS3+JavaScript+Ruby+Python+PHP と、最近流行のweb系言語がだいたい使えちゃいます。Adobe AIRよりもこっちの方が良いんじゃないかって思ってみたり。
+
+Titanium Studio は、Aptanaを買収し、AptanaとTitaniumががっちゃんこしたもの（？）みたいです。
+Titanium はiPhone, Android でクロスデバイス開発をするための開発ツールで、iPhoneアプリやAndroidアプリを開発したことある人は知っているであろうと思うのでここでは割愛します。
+
+それでは早速Titanium Studio でHello Worldしてみます。
+
+まずはTitanium Studioをユーザー登録してダウンロードします。
+[http://www.appcelerator.com/](http://www.appcelerator.com/ "http://www.appcelerator.com/")
+
+### Titanium Studio を起動し、プロジェクトを新規でつくる
+<a href="/imgs/archives/2011/09/754de3cf2d164ca350e6ca3eea66196c1.png"><img src="/imgs/archives/2011/09/754de3cf2d164ca350e6ca3eea66196c1.png" alt="" title="CreateProject" width="228" height="125" class="alignnone size-full wp-image-696" /></a>
+
+### Titanium Desctop Project をつくる
+<a href="/imgs/archives/2011/09/65da3bfd87ed0a14e1c66afa31b6fa45.png"><img src="/imgs/archives/2011/09/65da3bfd87ed0a14e1c66afa31b6fa45.png" alt="" title="Titanium Desctop Project" width="527" height="504" class="alignnone size-full wp-image-698" /></a>
+
+### Project Name を設定し、使用言語にRuby, Python, PHP をチェック
+<a href="/imgs/archives/2011/09/583944337d08aed0c389ad1165e279fb.png"><img src="/imgs/archives/2011/09/583944337d08aed0c389ad1165e279fb.png" alt="" title="Use Language" width="532" height="501" class="alignnone size-full wp-image-699" /></a>
+
+### アプリケーション情報を設定する
+<a href="/imgs/archives/2011/09/b36f7164a016a593dde3baed5a14b240.png"><img src="/imgs/archives/2011/09/b36f7164a016a593dde3baed5a14b240.png" alt="" title="Config" width="408" height="475" class="alignnone size-full wp-image-703" /></a>
+
+### ソースコードを書くために /Resources/index.html を開く
+<a href="/imgs/archives/2011/09/3ca357de7e930f7da506a4b426695a86.png"><img src="/imgs/archives/2011/09/3ca357de7e930f7da506a4b426695a86.png" alt="" title="source" width="240" height="213" class="alignnone size-full wp-image-701" /></a>
+
+### ソースコードを書く
+```html
+<!Doctype html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<title>test</title>
+		<style type="text/css">
+			body {
+				background: #fff;
+			}
+		</style>
+	</head>
+	<body>
+# test
+		<script type="text/python">
+			def pyFunc(str):
+				document.write(str)
+			pyFunc("python")
+		</script>
+		<script type="text/ruby">
+			def rbFunc(str)
+				pyFunc(str)
+			end
+			rbFunc("ruby")
+		</script>
+	</body>
+</html>
+```
+
+### アプリを実行してみる
+<a href="/imgs/archives/2011/09/23951a9f864ad6d1ade13d6f72a46dea.png"><img src="/imgs/archives/2011/09/23951a9f864ad6d1ade13d6f72a46dea.png" alt="" title="実行" width="331" height="173" class="alignnone size-full wp-image-706" /></a>
+
+<a href="/imgs/archives/2011/09/9fa470a3d698a9d2c2414894676ee9af.png"><img src="/imgs/archives/2011/09/9fa470a3d698a9d2c2414894676ee9af.png" alt="" title="アプリ起動" width="717" height="507" class="alignnone size-full wp-image-707" /></a>
+
+デスクトップアプリができちゃった！
+
+Pythonの中にRubyを書いたりJS書いたり何だか何でもアリのカオス状態ですが、面白いことできそうな予感がぷんぷんします。こういうの嫌いじゃない。
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

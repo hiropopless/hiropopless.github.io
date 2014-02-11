@@ -1,0 +1,58 @@
+---
+title: '* Rails3 jquery-railsをインストールする'
+published: true
+date: 2011-10-05 01:59
+comments: true
+categories:
+- jQuery
+- Ruby
+- Ruby on Rails
+tags: []
+keywords:
+- jQuery
+- Ruby
+- Ruby on Rails
+---
+ようやくちゃんと（？）Railsを勉強し始めました。
+
+Railsはprototype.jsベースになってたりするのですが、最近はもっぱら世の中jQueryなので、Rails3でjQueryを使えるようにします。
+
+gemsでjquery-railsをインストールする。
+```sh
+% sudo gem install jquery-rails --no-RDoc --no-ri
+% gem list
+jquery-rails (1.0.14)
+```
+
+これでインストール完了。
+次に、Rails3アプリに組み込む。
+${RAILS_APP_PATH} は、railsアプリのパス。
+```sh
+% cd ${RAILS_APP_PATH}/
+% vi Gemfile
+#最後尾に下記を追加する。
+gem 'jquery-rails'
+```
+
+追記したらbundleして、railsサーバー起動。
+```sh
+% bundle
+% rails generate jquery:install
+     remove  public/javascripts/prototype.js
+     remove  public/javascripts/effects.js
+     remove  public/javascripts/dragdrop.js
+     remove  public/javascripts/controls.js
+     copying  jQuery (1.6.2)
+     create  public/javascripts/jquery.js
+     create  public/javascripts/jquery.min.js
+     copying  jQuery UJS adapter (c00a97)
+     remove  public/javascripts/rails.js
+     create  public/javascripts/jquery_ujs.js
+% rails s
+```
+
+ブラウザからソースを表示して、jQueryとjQueryUIが読み込まれてたら成功。
+これでjQueryが使えるようになった。
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

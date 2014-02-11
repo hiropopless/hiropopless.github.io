@@ -1,0 +1,31 @@
+---
+title: '* Facebookユーザーを標的にしたメール詐欺に対抗してみた2'
+published: true
+date: 2009-11-06 00:36
+comments: true
+categories:
+- Linux
+- sendmail
+tags: []
+keywords:
+- Linux
+- sendmail
+---
+[前記事](http://hiropo.co.uk/archives/322 "前記事")にて、特定ドメインからの受信を拒否してみたんだけど、全然メール拒否できてなかった。
+そりゃこれだけ手の込んだフィッシングメールなんだから当然だよね。メールヘッダ見たら全然違ったし、しかもドメイン複数あるし偽造されてるしで結局わからんちんだったので、webmaster宛にメールは届いていたので、webmaster宛のメールをすべて拒否することにした。
+
+```sh
+
+[root@host ~]# vi /etc/aliases
+webmaster: root
+　　↓に変更
+#webmaster: root
+
+[root@host ~]# newaliases
+```
+
+うん、ばっちり来なくなった。
+そもそもwebmasterとかinfoとかrootとか狙われやすいんだから、デフォルトでオフにしとくべきした。
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

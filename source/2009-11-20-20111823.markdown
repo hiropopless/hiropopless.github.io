@@ -1,0 +1,240 @@
+---
+title: '* 美人時計の全画像を取得するスクリプトをバッチ化してみた'
+published: true
+date: 2009-11-20 11:18
+comments: true
+categories:
+- Ruby
+- 美人時計
+tags: []
+keywords:
+- Ruby
+- 美人時計
+---
+最近流行り（？）の[美人時計](http://www.bijint.com/jp/ "美人時計")。Web業界の人間ならだいたいの人は知っているんじゃないでしょうかね。1分置きに女の子が変わるというこのサービス。女の子が変わるまでずーっと24時間も待っていられないので、全画像を取得するスクリプトをつくってしまいたくなりました。
+
+とりあえず誰かすでにつくってるんじゃないだろうかと思い、google先生にきいてみました。
+
+案の定すぐみつかりましたよ！素敵スクリプトをつくっている方が！
+
+▽こちら
+『[Yamashiro0217の日記](http://d.hatena.ne.jp/Yamashiro0217/20090930/1254305886 "Yamashiro0217の日記")』
+
+Rubyで組まれているようです。僕はPHP派なので、Rubyまったくわかりませんが、この際Rubyに入門してしまおう！ってことで、Yamashiro0217さんのスクリプトを参考にスクリプトをつくってみようと思います。
+
+
+まずはRubyスクリプトの動作確認
+Yamashiro0217さんのスクリプトをコピペで動かしてみます。
+
+▽開発環境
+Fedora10のインストールされたLinuxサーバ。
+Rubyはすでにインストール済み。
+
+▽美人時計の全画像取得スクリプト
+bijin.ruby
+```ruby
+require 'net/http'
+require 'uri'
+
+error_files = ""
+0..24.times do |hour|
+   0..60.times do |minute|
+      now_hour = sprintf("%0#{2}d", hour)
+      now_minute = sprintf("%0#{2}d", minute)
+      sleep 1
+      begin
+         Net::HTTP.start("bijint.com", 80) do |http|
+         response = http.get(
+         	"/jp/img/clk/#{now_hour}#{now_minute}.jpg",
+         	{"Referer" => "http://bijint.com/jp/" }
+         )
+         open( "#{now_hour}#{now_minute}.jpg", "wb" ) do |file|
+             file.puts response.body
+         end
+      end
+      rescue
+         p "#{now_hour}#{now_minute}.jpg can not get"
+         error_files += "http://bijint.com/jp/img/clk/#{now_hour}#{now_minute}.jpg\n"
+      end
+   end
+end
+```
+
+▽コマンドから実行
+```sh
+[ooiwa@eva bijin_tokei]$ ruby bijin.ruby
+```
+
+おぉー！画像がどんどん落ちてきたよー！これは感動！とりあえず動作確認はOKと。
+
+ただこの美人時計、落とした画像ファイルと、本番サイトの美人時計側で女の子の表示が違うときがあります。どうやら日々ちょこちょこ女の子が更新されているようです。これはなんということ！全女の子コンプリートするには定期的にチェックするしかないじゃないか！ということで、この際毎日取得してしまうスクリプトを組んでみようと思います。
+
+
+それではバッチをつくっていきます。
+定期的に1日毎に決まった時間に全画像を取得して、なおかつ日付ごとにディレクトリを分けて保存する、バッチをまわすのはCron、スクリプト言語はRubyをつかってつくっていきます。
+
+まず、Yamashiro0217さんのスクリプトをこのまま使うと、スクリプトと同じパスに画像をそのままダウンロードしてきますので、日付毎にディレクトリを切ってくれる関数を用意します。
+今回はわかりやすいようにスクリプトを起動した日の日付を取得して"yyyymmdd"形式で文字列を返す関数と、ディレクトリを生成する関数を用意します。
+
+▽今日の日付をyyyymmdd型の文字列に変換する関数
+```ruby
+def getTimeNow()
+    day = Time.now
+    putMonth = day.month.to_s
+    putDay = day.day.to_s
+
+    if day.month < 10 && day.day < 10
+        putMonth = '0' + day.month.to_s
+        putDay = '0' + day.day.to_s
+    elsif day.month < 10
+        putMonth = '0' + day.month.to_s
+    elsif day.day < 10
+        putDay = '0' + day.day.to_s
+    end
+
+    nowTime = day.year.to_s + putMonth + putDay
+    return nowTime
+end
+```
+
+▽ディレクトリの生成
+```ruby
+def mkdir(path)
+    if Dir::mkdir( path, 0777 )
+        return true
+    else
+        return false
+    end
+end
+```
+
+
+あとは、Yamashiro0217さんのスクリプトにディレクトリパスを突っ込んで、一通り完成させる。今回Cronでバッチ処理させるため、ディレクトリパスは絶対パスで書く。
+
+▽スクリプトをまとめたのがこれ
+bijin.ruby
+```ruby
+#——————————————————————————————
+#  美人時計の画像を全取得するスクリプト
+#
+#------------------------------------------------------------
+#  ライブラリのインポート
+#
+require 'net/http'
+require 'uri'
+
+#------------------------------------------------------------
+#  Global var
+#
+$scriptPath = 'bijin_tokei/'
+
+p $scriptPath
+
+#------------------------------------------------------------
+#  今日の日付をyyyymmdd型の文字列に変換する関数
+#
+def getTimeNow()
+	day = Time.now
+	putMonth = day.month.to_s
+	putDay = day.day.to_s
+	if day.month <10 && day.day <10
+		putMonth = '0' + day.month.to_s
+		putDay = '0' + day.day.to_s
+	elsif day.month <10
+		putMonth = '0' + day.month.to_s
+	elsif day.day <10
+		putDay = '0' + day.day.to_s
+	end
+	nowTime = day.year.to_s + putMonth + putDay
+	return nowTime
+end
+
+p getTimeNow()
+
+
+#------------------------------------------------------------
+#  ディレクトリの生成
+#
+def mkdir(path)
+	if Dir::mkdir( path, 0777 )
+		return true
+	else
+		return false
+	end
+end
+
+
+#------------------------------------------------------------
+#  美人時計から画像を取得
+#
+def getBijin()
+	error_files = ""
+	0..24.times do |hour|
+	   0..60.times do |minute|
+	      now_hour = sprintf("%0#{2}d", hour)
+	      now_minute = sprintf("%0#{2}d", minute)
+	      sleep 1
+	      begin
+	         Net::HTTP.start("bijint.com", 80) do |http|
+	         response = http.get("/jp/img/clk/#{now_hour}#{now_minute}.jpg",
+	                             {"Referer" => "http://bijint.com/jp/" })
+	         open( $scriptPath + getTimeNow() + "/#{now_hour}#{now_minute}.jpg", "wb" ) do |file|
+	             file.puts response.body
+	         end
+	      end
+	      rescue 
+	         p "#{now_hour}#{now_minute}.jpg can not get"
+	         error_files += "http://bijint.com/jp/img/clk/#{now_hour}#{now_minute}.jpg\n"
+	      end
+	   end
+	end
+end
+
+
+
+#------------------------------------------------------------
+#  初期実行関数
+#
+def init()
+	targetDir = $scriptPath + getTimeNow()
+	if File.exists?( targetDir )
+		getBijin()
+	else
+		if mkdir( targetDir )
+			p 'make!'
+			getBijin()
+		end
+	end
+end
+init()
+```
+
+Rubyは変数の定義がグローバルとローカルでスコープがわかりやすいから良いですね！なんかPHPより全然カンタンだし、オブジェクト指向言語だし、個人的にはだいぶ気に入りました。
+
+完成したスクリプトを早速実行してみます。
+
+```sh
+[ooiwa@eva bijin_tokei]$ ruby /home/ooiwa/tmp_ruby/bijin_tokei/bijin.ruby
+[ooiwa@eva bijin_tokei]$ ls
+20091120  bijin.ruby
+[ooiwa@eva bijin_tokei]$ ls 20091120/
+0000.jpg 0001.jpg 0002.jpg
+```
+
+うまく動いていれば、本日の日付ディレクトリが生成され、そのディレクトリの中に画像をどんどんたまっていっているのがわかります。
+
+最後はこの完成したスクリプトをCronでまわす処理をします。
+
+```sh
+[ooiwa@eva bijin_tokei]$ crontab -e
+#毎日10:00に bijin.ruby スクリプトを実行
+0 10 * * * ruby /home/ooiwa/tmp_ruby/bijin_tokei/bijin.ruby
+```
+
+あとは毎日10時になるとCronがRubyスクリプトを実行してくれます。
+これであとは目視で比較するか、md5で比較するツールでもつくって差分を分けるスクリプトを足すかでもすればどの女の子が削除されて追加されたかがわかりますね。
+
+美人時計、面白いです。
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

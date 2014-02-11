@@ -1,0 +1,77 @@
+---
+title: '* JavaScript OOP 入門編1'
+published: true
+date: 2009-08-13 12:09
+comments: true
+categories:
+- JavaScript
+- オブジェクト指向
+tags: []
+keywords:
+- JavaScript
+- オブジェクト指向
+---
+JavaScriptはプロトタイプベースのオブジェクト指向言語です。
+昨今ではJavaやC++、C#などによるクラスベースのオブジェクト指向言語が俗にいうオブジェクト指向と呼ばれてます。JavaScriptはプロトタイプベースというちょっと聞きなれないオブジェクト指向言語ですが、オブジェクト指向には代わりはないので、ようは慣れの問題なのかなぁと。
+
+ということで、JavaScript歴6ヶ月程度の僕が、JavaScriptのオブジェクト指向講座を気が向いたらこのブログに書いていきます。
+
+とりあえず入門編1ということで、簡易的なソースを書きます。
+
+```js
+(function(){
+    if( !ahya ){
+        var ahya = {}
+        ahya = function(arg){
+            alert(arg);
+        }
+        ahya.prototype = {
+            message: function(e){
+                return e;
+            }
+        }
+        var instance = new ahya('ahya');
+        alert( instance.message('ここにいれたテキストを表示') );
+    }
+})();
+```
+
+これを実行すると、アラートが2回表示されます。
+1回目は、'ahya'、2回目は、'ここにいれたテキストを表示' （←これは自由に書き換えて良いです。）が表示されると思います。
+
+さて、実際にはどんなことをしているのか、先ほどのソースに注釈を入れてみました。
+
+```js
+(function(){
+    //ahyaオブジェクトがない場合、
+    if( !ahya ){
+        //ahyaオブジェクトを初期化
+        var ahya = {}
+        //ahyaオブジェクトのコンストラクタを定義
+        ahya = function(arg){
+            alert(arg);
+        }
+        //ahyaオブジェクトへprototypeを通じて、子要素を追加
+        ahya.prototype = {
+            //messageメソッドを追加
+            message: function(e){
+                return e;
+            }
+        }
+        //ahyaオブジェクトからインスタンスを生成し、
+        //コンストラクタメソッドとmessageメソッドを実行
+        var instance = new ahya('ahya');
+        alert( instance.message('ここにいれたテキストを表示') );
+    }
+})();
+```
+
+これでだいたいやってることはわかると思います。
+プロトタイプベースもクラスベースと書き方のイメージは似ていると思います。
+型（クラス）をつくって、インスタンスを生成してコンストラクタがあればコンストラクタが実行されるという流れまでは同じかな？
+
+次回からもっと突っ込んだことを書いていこうと思います。
+今回はここまで！
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

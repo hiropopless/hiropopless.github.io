@@ -1,0 +1,30 @@
+---
+title: '* CentOS eth0 のネットワーク設定'
+published: true
+date: 2008-12-28 18:19
+comments: true
+categories:
+- CentOS
+- Linux
+tags: []
+keywords:
+- CentOS
+- Linux
+---
+自部用メモ
+
+```sh
+[root@host ~]# cd /etc/sysconfig/network-scripts/
+[root@host network-scripts]# vi ifcfg-eth0
+DEVICE=eth0
+BOOTPROTO=static
+BROADCAST=192.168.x.255
+HWADDR=xx:xx:xx:xx:xx:xx #MACアドレス
+IPADDR=192.168.x.xxx #現在のホストのIPアドレスを指定
+NETMASK=255.255.255.0 #IPアドレスに対応するサブネットマスク
+NETWORK=192.168.1.0
+ONBOOT=yes
+```
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

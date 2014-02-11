@@ -1,0 +1,55 @@
+---
+title: '* WordpressにProcessingJSプラグインを導入してみた。'
+published: true
+date: 2012-01-05 18:32
+comments: true
+categories:
+- JavaScript
+- Processing
+- wordpress
+tags: []
+keywords:
+- JavaScript
+- Processing
+- wordpress
+---
+最近がっつりProcessingにはまってます。Processing、かわいいよ、Processing。
+
+そこでProcessingで書いたソースをぺたぺたブログにもはってたのですが、実際に動いてるものをどうにか簡単にはれないかと思い探してみました。
+
+Processing JS WordPress Plugin
+[http://www.keyvan.net/code/processing-js/](http://www.keyvan.net/code/processing-js/ "http://www.keyvan.net/code/processing-js/")
+
+意図も簡単に見つけてしまったので早速導入してみました。
+
+<script type="application/processing">
+//Info: http://processingjs.org/reference
+void setup() {
+	size(400, 160);
+	frameRate(15);
+}
+void draw() {
+        int s = random(100);
+	background(#ffffff);
+        stroke(random(255), random(255), random(255));
+	ellipse(random(width), random(height), s, s);
+}
+</script>
+
+[java]
+void setup() {
+    size(400, 160);
+    frameRate(15);
+}
+void draw() {
+    int s = random(100);
+    background(#ffffff);
+    stroke(random(255), random(255), random(255));
+    ellipse(random(width), random(height), s, s);
+}
+[/java]
+
+良い感じに動いたー！すてきー！
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

@@ -1,0 +1,47 @@
+---
+title: '* Facebookユーザーを標的にしたメール詐欺に対抗してみた'
+published: true
+date: 2009-10-31 16:39
+comments: true
+categories:
+- Linux
+- sendmail
+tags: []
+keywords:
+- Linux
+- sendmail
+---
+最近、フィッシングサイトへの誘導メールがよく来る。なりすましはFacebookである。
+ググってみたらどうやら今全世界で流行っているらしいですねー。
+
+＃ニュース記事
+[Facebookユーザーを標的にしたメール詐欺--トロイの木馬「Zeus」で個人情報を盗む](http://japan.cnet.com/clip/global/story/0,3800097347,20402585,00.htm "Facebookユーザーを標的にしたメール詐欺--トロイの木馬「Zeus」で個人情報を盗む")
+
+メールのくる間隔としては、1日に2～3通は来るのでかなり迷惑。
+
+ってことで、送信元ドメインごとメール受信を拒否することにした。
+
+
+ウチはsendmailなので、まず設定ファイルを修正する。
+
+```sh
+[root@host ~]#vi /etc/mail/access
+#追記↓
+facebookmail.com  REJECT
+```
+
+"[ドメイン名] REJECT" と記述することで、このドメインのメールはすべて受信拒否にする。
+次に、アクセスファイルをデータベースに変換します。変換にはsendmailに付属のmakemapコマンドを使用します。
+その後、sendmailを再起動すれば設定が反映されます。
+```sh
+[root@host ~]# makemap -v hash /etc/mail/access.db < /etc/mail/access
+[root@host ~]# /etc/rc.d/init.d/sendmail restart
+```
+
+これで指定ドメインのメールが拒否できます。
+ちなみに受信したい場合は、"RELAY" を使うことでメールを受信することができるようになります。
+
+フィッシング、こわいよ、フィッシング。
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

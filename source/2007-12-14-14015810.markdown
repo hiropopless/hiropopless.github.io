@@ -1,0 +1,88 @@
+---
+title: '* XMLHttpRequest'
+published: true
+date: 2007-12-14 01:58
+comments: true
+categories:
+- Ajax
+- JavaScript
+tags: []
+keywords:
+- Ajax
+- JavaScript
+---
+[元記事はこちら](http://allabout.co.jp/internet/javascript/closeup/CU20050515A/ "元記事はこちら")
+
+```js
+//XMLHttpRequestオブジェクト生成
+function createHttpRequest(){//Win ie用
+	if(window.ActiveXObject){
+		try {
+			//MSXML2以降用
+			return new ActiveXObject(”Msxml2.XMLHTTP”); //[1]’
+		}
+		catch (e) {
+			try {
+				//旧MSXML用
+				return new ActiveXObject(”Microsoft.XMLHTTP”); //[1]’
+			}
+			catch (e2) {
+				return null;
+			}
+		}
+	}
+	else if(window.XMLHttpRequest){
+		//Win ie以外のXMLHttpRequestオブジェクト実装ブラウザ用
+		return new XMLHttpRequest(); //[1]’
+	}
+	else {
+		return null;
+	}
+}
+
+//ファイルにアクセスし受信内容を確認します
+function requestFile( data , method , fileName , async ){
+	//XMLHttpRequestオブジェクト生成
+	var httpoj = createHttpRequest(); //[1]
+
+	//open メソッド
+	httpoj.open( method , fileName , async ); //[2]
+
+	//受信時に起動するイベント
+	httpoj.onreadystatechange = function(){ //[4]
+		//readyState値は4で受信完了
+		if (httpoj.readyState==4){ //[5]
+			//コールバック
+			on_loaded(httpoj);
+		}
+	}
+	//send メソッド
+	httpoj.send( data ); //[3]
+}
+
+//コールバック関数 ( 受信時に実行されます )
+function on_loaded(oj){
+	//レスポンスを取得
+	res  = oj.responseText; //[6]
+
+	//ダイアログで表示
+	alert(res);
+}
+```
+
+```html
+<form>
+<input type="button" value="test.txtをリクエストした時のレスポンス”" onclick="requestFile( '', 'GET', './test.txt', true )"/>
+</form>
+```
+
+最初の関数、createHttpRequest()は、ブラウザ別にXMLHttpRequestオブジェクトを生成して返します。Win版IE 用にエラー回避しつつ新旧2種類のMSXML[1]’を試し、その他の実装ブラウザではnew XMLHttpRequest()[1]で生成します。もし、失敗すればnullを返します。
+
+そして、その次の関数、requestFile()で、このオブジェクトを利用し、送受信を行っています。openメソッド[2]で POST/GET、URLなどの設定を行い、send[3]で送信しています。 ( ちなみに、requestFile()内で、ここでは変数httpoj をvarによってローカル変数化していますが、もしここでvarを付けずにグローバル変数へ格納すると複数レスポンスを受信した時に問題が起こる可能性があります。)
+
+受信したデータは、受信時に起動するイベントonreadystatechange[4]内でreadyState値[5]が4の受信完了時に取得します。ここでは、コールバック用関数 on_loaded(httpoj)を作り、レスポンスを引数で渡し、受信データはresponseText[6]で受け取っています。 ( ちなみに、sendをonreadystatechangeの前に記述すると、ieでは動作しなくなります、、、。)
+
+ボタンクリック時に動作する関数requestFileの引数として、HTTPメソッドとして’GET’、リクエストURLに ‘./test.txt’ 、非同期オプションに trueを指定して、データは ” を渡しています。 ( よく見かけるサンプルでは、このsend()に渡されるデータをnullとするものが多いのですが、konquerorでエラーが発生するのでここでは、とりあえず、send('') としました。)
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

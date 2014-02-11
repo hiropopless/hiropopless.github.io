@@ -1,0 +1,31 @@
+---
+title: '* clearfix'
+published: true
+date: 2007-12-14 01:56
+comments: true
+categories:
+- (X)HTML
+- CSS
+tags: []
+keywords:
+- (X)HTML
+- CSS
+---
+```css
+.clearfix:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+.clearfix {display: inline-table;}
+
+/* Hides from IE-mac */
+* html .clearfix {height: 1%;}
+.clearfix {display: block;}
+```
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

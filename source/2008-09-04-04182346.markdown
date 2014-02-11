@@ -1,0 +1,35 @@
+---
+title: '* var_dumpの基礎をつくった - for in文'
+published: true
+date: 2008-09-04 18:23
+comments: true
+categories:
+- JavaScript
+- PHP
+tags: []
+keywords:
+- JavaScript
+- PHP
+---
+あれから自分でも var_dump関数 をつくってみました。
+
+
+```js
+var_dump(document);
+
+//var_dump
+function var_dump($obj) {
+	var $objList = "";
+	for($i in $obj) {
+		$objList += $i + "：" + $obj[$i] + "\n";
+	}
+	alert( $objList );
+}
+```
+
+windowとかやったら多分PC落ちるんじゃないかと・・・。
+
+alert(); じゃなくて、documentに書き出す仕様をつくったらまた公開しまする。
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

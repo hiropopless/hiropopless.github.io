@@ -1,0 +1,35 @@
+---
+title: '* Java始めました。'
+published: true
+date: 2008-10-07 16:30
+comments: true
+categories:
+- Java
+tags: []
+keywords:
+- Java
+---
+クラスベースのオブジェクト指向を勉強したかったので、なんとなくJavaを始めました。
+
+最初につくった "hello world" 的なもの。↓
+
+[java]
+class a {
+	public static void main(String[] args) {
+		System.out.print("引数の数は¥"" + args.length + "¥"やね。" + "¥n" );
+		for( int i = 0; i < args.length; i++ ) {
+			System.out.print("引数[" + i + "]の値は¥"" + args[i] + "¥"やね。" + "¥n" );
+		}
+		if(args.length != 0) {
+			System.out.print("¥n" + "せやな。引数あって良かったわな。" + "¥n");
+		}else{
+			System.out.print("¥n" + "引数ないとかありえへん。" + "¥n");
+		}
+	}
+}
+[/java]
+
+ぼちぼち頑張ってゆきまする。
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

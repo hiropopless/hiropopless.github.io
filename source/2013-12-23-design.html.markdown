@@ -1,0 +1,9 @@
+---
+title: design
+date: 2013-12-23
+tags: design
+---
+
+# Design
+
+middlemanでGitHubホスティングなブログをつくりはじめましたが、デザインがなかったので適当なCSSをひろってきてつくりはじめました。

@@ -1,0 +1,35 @@
+---
+title: '* JavaScriptでvar_dump()が使えるライブラリ - funny.js'
+published: true
+date: 2008-09-12 18:53
+comments: true
+categories:
+- Ajax
+- JavaScript
+- PHP
+tags: []
+keywords:
+- Ajax
+- JavaScript
+- PHP
+---
+PHPのvar_dump() が、JavaScriptで var_dump()できちゃうライブラリです。
+
+[var_dump() ver_0.5 ダウンロード](http://www.funnythingz.com/common/file/funny_0.5.lzh "var_dump() ver_0.5 ダウンロード")
+
+使い方は以下の通りです。
+funny.jsを読み込んで、PHPと同じ感覚で、var_dump() しちゃってください。
+シンタックスエラー以外は何かしら返ってくると思います。
+
+```html
+<script src="funny.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+var a = 123;
+funny.var_dump( a );
+
+</script>
+```
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

@@ -1,0 +1,71 @@
+---
+title: '* Value too large for defined data type - Tripwire'
+published: true
+date: 2010-04-23 10:55
+comments: true
+categories:
+- CentOS
+- Linux
+- Tripwire
+tags: []
+keywords:
+- CentOS
+- Linux
+- Tripwire
+---
+あるサーバを管理しているのだが、Tripwire で、下記のようなエラーが出ていた。
+
+```sh
+1.   File system error.
+     Filename: /var/lib/xen/images/CentOS5.img
+     Value too large for defined data type
+```
+
+ファイルサイズがでかすぎるんだよ！って怒られた。
+
+ググってみたら、ファイルサイズが 2G を越えているのが原因らしい。 UNIX では「2G の壁」というものが存在しているようで、これは lseek() など、ファイル内の読み出し位置を移動する関数に与えるオフセット値が伝統的に signed long であるためらしい（もうよくわからん）。
+signed long では 2147483647 、要するに 2G バイトまでしか表現できないので、これを越えると単に fseek()に渡せないだけでなく、 内部の位置計算処理に多大な混乱が起こる（ということらしい）。ちなみに相対位置指定のために負の値も必要（だそうです）。
+
+いろいろとめんどくさいのねー。もう1TBとかが当たり前の時代ですのに。
+
+さて、解決方法である。
+Tripwireのファイルチェックをスキップしてしまえばよいのである。
+
+```sh
+#ポリシーファイル（テキスト版）の復元
+[root@host ~]# twadmin -m p -c /etc/tripwire/tw.cfg -p /etc/tripwire/tw.pol -S /etc/tripwire/site.key > /etc/tripwire/twpol.txt
+[root@host ~]# vi /etc/tripwire/twpol.txt
+  ################################################
+ #                                              ##
+################################################ #
+#                                              # #
+#  Monitor Filesystems                         # #
+#                                              ##
+################################################
+(
+  rulename = "Monitor Filesystems",
+)
+{
+  /                             -> $(ReadOnly) ;
+  /home                         -> $(ReadOnly) ;  # Modify as needed
+  /usr                          -> $(ReadOnly) ;
+  /var                          -> $(ReadOnly) ;
+  !/var/lib/xen/images;   #<- 追加
+}
+
+#ポリシーファイル（暗号署名版）を作成
+[root@host ~]# twadmin -m P -c /etc/tripwire/tw.cfg -p /etc/tripwire/tw.pol -S /etc/tripwire/site.key /etc/tripwire/twpol.txt
+Please enter your site passphrase:     #<- サイトパスフレーズ応答
+
+#ポリシーファイル（テキスト版）削除
+[root@host ~]# rm -f /etc/tripwire/twpol.txt
+
+#データベース初期化
+[root@host ~]# tripwire -m i -s -c /etc/tripwire/tw.cfg
+Please enter your local passphrase:     #<- ローカルパスフレーズ応答
+```
+
+他にも動画ファイルを保存していたりなどで2GB超えてしまうファイル群を格納しているディレクトリがあったら、そこを登録しておいても良いと思う。
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

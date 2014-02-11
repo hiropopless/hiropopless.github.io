@@ -1,0 +1,51 @@
+---
+title: '* Webサイトをクロールするためのメモ。wgetとpavuk。'
+published: true
+date: 2012-02-29 18:45
+comments: true
+categories:
+- Linux
+- pavuk
+- wget
+tags: []
+keywords:
+- Linux
+- pavuk
+- wget
+---
+久しぶりの更新です。
+
+Web制作の現場でWebサイトをまるまるクロールすることがあると思います。例えばサイトマップをつくらなくてはならないときなど。そこでWebサイトをすべて把握するために全ページを手動で見ていっては膨大な工数がかかりますしかなり大変です。（最終的には全ページ把握しなくてはいけないので見るんですけど。）
+
+それを少しでもラクにするためにWebサイト全体をクロールするのに[wget](http://www.gnu.org/software/wget/ "wget")や[pavuk](http://www.pavuk.org/ "pavuk")といったツールがとても便利です！
+
+例えばwgetのxオプションが便利です。
+xをつけるとドメインのディレクトリをつくり強制的にディレクトリ構造を保ったままファイルを取得してくれます。
+さらにベーシック認証(もしくはダイジェスト認証)がかかっている場合は下記オプションをつけることで取得できます。
+```sh
+wget -x --http-user=[ベーシック認証ID] --http-password=[ベーシック認証パスワード] http://yahoo.com/index.html
+```
+
+"http://yahoo.com/index.html" からつながる下層リンク含めてすべて取得したい場合は、pavuk使ったほうが便利です。
+オプションが豊富なのでwgetより便利かもしれません。
+```sh
+pavuk -base_level 1 \
+ -auth_scheme Digest \
+ -auth_name [id] \
+ -auth_passwd [パスワード] \
+ -lmax 5 \
+ -progress \
+ -force_reget \
+ -adomain yahoo.com \
+ -noRelocate \
+ -all_to_local \
+ -enable_js \
+ -dont_leave_dir \
+ -logfile log \
+ -index_name index.html \
+ http://yahoo.com/index.html
+```
+実際"yahoo.com"にはベーシック認証(もしくはダイジェスト認証)ないですけど、上記のように指定すればベーシック認証(もしくはダイジェスト認証)を突破しつつすべてのページをクロールしてくれます。超便利ですpavuk
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

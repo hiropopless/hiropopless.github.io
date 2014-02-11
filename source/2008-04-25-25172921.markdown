@@ -1,0 +1,58 @@
+---
+title: '* pearインストール メモ'
+published: true
+date: 2008-04-25 17:29
+comments: true
+categories:
+- PHP
+tags: []
+keywords:
+- PHP
+---
+pearをインストールしてみた。
+
+```sh
+[ooiwa@EVA01_TEST ~]$ pwd
+/home/ooiwa/
+[ooiwa@EVA01_TEST ~]$ mkdir pear
+[ooiwa@EVA01_TEST ~]$ cd pear/
+[ooiwa@EVA01_TEST pear]$ wget http://pear.php.net/go-pear
+[ooiwa@EVA01_TEST pear]$ mv go-pear go-pear.php
+[ooiwa@EVA01_TEST pear]$ php -Cq go-pear.php
+
+[ooiwa@EVA01_TEST pear]$ /home/ooiwa/pear/bin/pear install PEAR
+WARNING: channel "pear.php.net" has updated its protocols, use "channel-update pear.php.net" to update
+Did not download optional dependencies: pear/XML_RPC, use --alldeps to download automatically
+pear/PEAR can optionally use package "pear/XML_RPC" (version >= 1.4.0)
+downloading PEAR-1.7.1.tgz ...
+Starting to download PEAR-1.7.1.tgz (302,377 bytes)
+.........................done: 302,377 bytes
+downloading Archive_Tar-1.3.2.tgz ...
+Starting to download Archive_Tar-1.3.2.tgz (17,150 bytes)
+...done: 17,150 bytes
+downloading Structures_Graph-1.0.2.tgz ...
+Starting to download Structures_Graph-1.0.2.tgz (30,947 bytes)
+...done: 30,947 bytes
+downloading Console_Getopt-1.2.3.tgz ...
+Starting to download Console_Getopt-1.2.3.tgz (4,011 bytes)
+...done: 4,011 bytes
+install ok: channel://pear.php.net/Archive_Tar-1.3.2
+install ok: channel://pear.php.net/Structures_Graph-1.0.2
+install ok: channel://pear.php.net/Console_Getopt-1.2.3
+install ok: channel://pear.php.net/PEAR-1.7.1
+PEAR: Optional feature webinstaller available (PEAR's web-based installer)
+PEAR: Optional feature gtkinstaller available (PEAR's PHP-GTK-based installer)
+PEAR: Optional feature gtk2installer available (PEAR's PHP-GTK2-based installer)
+PEAR: To install optional features use "pear install pear/PEAR#featurename"
+[ooiwa@EVA01_TEST pear]$ bin/pear list
+Installed packages, channel pear.php.net:
+=========================================
+Package          Version State
+Archive_Tar      1.3.2   stable
+Console_Getopt   1.2.3   stable
+PEAR             1.7.1   stable
+Structures_Graph 1.0.2   stable
+```
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

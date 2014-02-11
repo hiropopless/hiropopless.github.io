@@ -1,0 +1,46 @@
+---
+title: '* TypeScriptでqflipper.jsというものを書いた'
+published: true
+date: 2013-10-06 16:16
+comments: true
+categories:
+- TypeScript
+tags: []
+keywords:
+- TypeScript
+---
+TypeScriptのおかげでネイティブなJavaScriptを書けなくなってきた今日このごろ。TypeScript最高！うまし！
+
+最近はスマートフォン向けのフリッカブルなJSライブラリがたくさんあふれてきましたね。
+僕も過去に2つほどライブラリは書いたので<del>(仕事ではもっと書いてるけど)</del>ちらっと紹介。
+
+レスポンシブに対応したjQueryライブラリとして開発したjQuery.jcflick.js。今はよき思い出。
+
+<dl>
+<dt>[jQuery.jcflick.js](http://tpl.funnythingz.com/js/jcflick/reference.html "jQuery.jcflick.js")</dt>
+<dd>[https://github.com/funnythingz/jcflick](https://github.com/funnythingz/jcflick "https://github.com/funnythingz/jcflick")</dd>
+</dl>
+
+フリッカブルなJSなんてどうせiOSとAndroidでしか使わないじゃん！それってwebkitだけ対応しておけばおｋ！
+っていうオラオラなスタンスで開発したのがzflick.js。ほぼすべてをオプション化しほぼ全自動で初期化して動く。
+
+<dl>
+<dt>[zflick.js](http://funnythingz.github.io/zflickjs/ "zflick.js")</dt>
+<dd>[https://github.com/funnythingz/zflickjs](https://github.com/funnythingz/zflickjs "https://github.com/funnythingz/zflickjs")</dd>
+</dl>
+
+しかしjQuery.jcflick.jsもzflick.jsもDOMを自動生成してしまうので独自の動きをつけたりカスタムがやりづらい部分がありました。
+
+フリッカブルJS界隈ではflipsnap.jsが圧倒的な人気を誇っているようなのでどんなものかとみてみたところ開発者にとっては扱いやすい仕様になっていました。よくできてるってばよ！ってことで自分も最強のフリッカブルなJSを書いてやるぜ！ってな感じで書いてみました。
+
+最近はお仕事でTypeScriptを書いているのでせっかくなのでTypeScriptで書いてみました。
+
+<dl>
+<dt>[qflipper.js](http://funnythingz.github.io/qflipper/ "qflipper.js")</dt>
+<dd>[https://github.com/funnythingz/qflipper](https://github.com/funnythingz/qflipper "https://github.com/funnythingz/qflipper")</dt>
+</dl>
+
+とりあえずtouchイベントで対応。iOS, Androidで割りとさくさく動きます。よかったらぜひおためしくださいませ(^q^
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

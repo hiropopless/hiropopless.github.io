@@ -1,0 +1,22 @@
+---
+title: '* プルダウンメニューでリンク切り替え'
+published: true
+date: 2008-05-20 18:35
+comments: true
+categories:
+- JavaScript
+tags: []
+keywords:
+- JavaScript
+---
+```html
+<select onchange="location.href = value;">
+<option value="page01.html">こうもく1</option>
+<option value="page02.html">こうもく2</option>
+<option value="page03.html">こうもく3</option>
+<option value="page04.html">こうもく4</option>
+</select>
+```
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

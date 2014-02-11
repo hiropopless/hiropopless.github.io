@@ -1,0 +1,18 @@
+---
+title: '* mixiのFlash広告、こういうの流行ってるのかねぇ'
+published: true
+date: 2009-12-02 00:41
+comments: true
+categories:
+- Flash
+tags: []
+keywords:
+- Flash
+---
+これこれ。またmixiのあしあとページのFlash広告。
+流行ってるのかねぇ、こういう見せ方。
+
+<img src="/imgs/archives/2009/12/google_ad1-300x175.jpg" alt="google_ad" title="google_ad" width="300" height="175" class="alignnone size-medium wp-image-346" />
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

@@ -1,0 +1,195 @@
+---
+title: '* [mixiアプリ] ユーザー情報を取得してみた。'
+published: true
+date: 2009-08-23 17:52
+comments: true
+categories:
+- Ajax
+- API
+- JavaScript
+tags: []
+keywords:
+- Ajax
+- API
+- JavaScript
+---
+mixiで[ソーシャルアプリケーションアワード](http://developer.mixi.co.jp/award "ソーシャルアプリケーションアワード")という開発者のためのイベントが行われているようです。
+よくわかんないけど、mixiの情報を使って、アプリケーションが作れるmixiアプリを作って応募しよう！というものであるようです。
+
+[mixiアプリ開発のためのサイト](http://developer.mixi.co.jp/ "mixiアプリ開発のためのサイト")までできている。
+で、このmixiアプリ、APIを公開しているので、APIを使ったAjax開発経験者なら誰でもすぐに開発ができるようです。mixiAPIは情報がリアルなユーザー情報だけに何だか面白そう！
+
+ってなことで、mixiアプリに入門してみました。
+mixiアプリを開発するには公開環境を登録するみたいなことをしなきゃならないようです。
+（ここでは割愛します。）
+
+まずは、mixiアプリの基盤ともいえるガジェットXMLを作ります。
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<module>
+  <modulePrefs title="mixiアプリのてすとやねん">
+    <require feature="opensocial-0.8" />
+  </modulePrefs>
+  <content type="html"><![CDATA[
+
+  <!--||| head |||-->
+
+  <!--||| StyleSheet |||-->
+  <link rel="stylesheet" href="http://funnythingz.com/mixi/test/css/style.css" type="text/css" media="screen,all" />
+
+  <!--|| JavaScript FrameWork ||-->
+  <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+  <script type="text/javascript">google.load("jquery", "1.3.2");</script>
+
+  <!--|| OriginalScript ||-->
+  <script type="text/javascript" src="http://funnythingz.com/mixi/test/js/test.js"></script>
+
+  <!--||| /head |||-->
+
+  <!--||| body |||-->
+
+  <div id="dev_field"></div>
+
+  <!--||| /body |||-->
+
+  ]]></content>
+</module>
+```
+
+HTMLの書き方わかる人なら、普通のHTMLを書くように、書けば特に問題なし。
+外部JSやCSSの読み込みもできる。
+
+ちなみに、外部JSや外部CSSのパスは絶対パスで書くこと。
+ファイルは自分で用意したサーバに置く。
+
+
+次に、外部CSSと外部JSを用意する。
+ガジェットXMLのみですべて済ませたい人はそれで特に問題なし。
+大規模な開発を行うならやはりファイルは分けておいたほうが後々わかり易い。
+
+CSSはフィールド背景に色をつけてみた。
+これで出力される場所がわかる。
+
+```css
+@charset "utf-8";
+/*
+*  mixiアプリ用CSS
+*/
+
+#dev_field {
+  background: #ddd;
+}
+```
+
+
+次にJSファイルの用意。コア部分のプログラミングになるので、JSは外部ファイルにすることを推奨。
+今回はmixiアプリにアクセスしたユーザー情報を取得してみる。
+
+```js
+(function(){
+
+  /******************************************************************************************************
+  *
+  *  mixiアプリAPIを使ってユーザー情報を取得してみる
+  */
+  /**-------------------------------------
+  *  initを定義
+  */
+  function init() {
+
+    /**-------------------------------------
+    *  取得したい情報パラメータをセット
+    */
+    var params = {};
+    params[ opensocial.DataRequest.PeopleRequestFields.PROFILE_DETAILS ] = [
+      opensocial.Person.Field.PROFILE_URL,
+      opensocial.Person.Field.ADDRESSES,
+      opensocial.Person.Field.AGE,
+      opensocial.Person.Field.DATE_OF_BIRTH,
+      opensocial.Person.Field.GENDER,
+      opensocial.Person.Field.HAS_APP,
+      mixi.PersonField.BLOOD_TYPE
+    ];
+    /**-------------------------------------
+    *  リクエストを生成
+    */
+    var req = opensocial.newDataRequest();
+    req.add( req.newFetchPersonRequest( opensocial.IdSpec.PersonId.VIEWER, params ), 'viewer' );
+    req.send(function( data ){
+
+      /**--------------------------------------------------------------------------
+      *  var プロフィール情報を取得
+      */
+      /**-------------------------------------
+      *  エレメントセット
+      */
+      var element = $( '#dev_field' );
+
+      /**-------------------------------------
+      *  アプリを使用しているユーザー情報をセット
+      */
+      var viewer = data.get( 'viewer' ).getData();
+
+      //ニックネーム
+      var user_name = viewer.getDisplayName();
+      //ID
+      var user_id = viewer.getId();
+      //サムネイル画像
+      var user_thumbnail = viewer.getField( opensocial.Person.Field.THUMBNAIL_URL );
+      //プロフィールURL
+      var user_url = viewer.getField( opensocial.Person.Field.PROFILE_URL );
+      //出身地
+      var user_pref = viewer.getField( opensocial.Person.Field.ADDRESSES)[0].getField(opensocial.Address.Field.UNSTRUCTURED_ADDRESS );
+      //年齢
+      var user_age = viewer.getField( opensocial.Person.Field.AGE );
+      //誕生日
+      var user_birth = viewer.getField( opensocial.Person.Field.DATE_OF_BIRTH );
+      //性別
+      var user_gender = viewer.getField( opensocial.Person.Field.GENDER ).getKey();
+      //血液型
+      var user_blood_type = viewer.getField( mixi.PersonField.BLOOD_TYPE );
+      //このアプリをインストールしているか（戻り値:bool）
+      var hasApp = viewer.getField( opensocial.Person.Field.HAS_APP );
+
+      /**--------------------------------------------------------------------------
+      *  プロフィール情報を使った処理
+      */
+      //HTMLテンプレート
+      var template = '';
+      template += '<div>[user_name] '+ user_name +'</div>' + "\n";
+      template += '<div>[user_id] '+ user_id +'</div>' + "\n";
+      template += '<div>[user_thumbnail]<br /><img src="'+ user_thumbnail +'" alt="'+ user_name +'" /></div>' + "\n";
+      template += '<div>[user_url] ['+ user_url +']('+ user_url +' "'+ user_url +'")</div>' + "\n";
+      template += '<div>[user_pref] '+ user_pref +'</div>' + "\n";
+      template += '<div>[user_age] '+ user_age +'</div>' + "\n";
+      template += '<div>[user_birth] '+ user_birth +'</div>' + "\n";
+      template += '<div>[user_gender] '+ user_gender +'</div>' + "\n";
+      template += '<div>[user_blood_type] '+ user_blood_type +'</div>' + "\n";
+      template += '<div>[hasApp] '+ hasApp +'</div>' + "\n";
+
+      //出力
+      element.html( template );
+
+    });
+
+  }
+
+  //init
+  gadgets.util.registerOnLoadHandler( init );
+
+})();
+```
+
+これで、ユーザー情報の取得ができる。
+あとは煮るなり焼くなり好きに調理してアプリを開発すればおｋ。
+
+つくったmixiアプリの実行方法だが、[mixiアプリ オープンβ](http://platform001.mixi.jp/view_community.pl?id=3217244 "mixiアプリ オープンβ")というコミュニティに参加しなくてはならない。
+まだβ版だから仕方ないのか？いまいちこのめんどくさい作業は省いてもらいたいなぁ。
+
+他に指定IDのユーザー情報やマイミク一覧の情報なども取得できるよう。
+他APIと組み合わせてアプリを開発することも可能なので、けっこう盛り上がる予感がしますね。
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

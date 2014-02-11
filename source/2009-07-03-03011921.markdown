@@ -1,0 +1,31 @@
+---
+title: '* pearでHTTP_Requestクラスを使うには (1)'
+published: true
+date: 2009-07-03 01:19
+comments: true
+categories:
+- pear
+- PHP
+tags: []
+keywords:
+- pear
+- PHP
+---
+phpネイティブだとHTTP_Request通信はソースをいっぱい書かなきゃいけないが、PEAR拡張モジュールを使うことによってかなりラクができる。
+
+▼参考サイト
+http://www.phppro.jp/school/pear/vol8/1
+
+HTTP_Requestクラスを使うには、下記のコマンドを実行する。
+
+
+
+```sh
+[root@host]# pear install HTTP_Request
+```
+
+これで晴れてHTTP_Requestが使いまくりである。
+リファレンスはまた後日。
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

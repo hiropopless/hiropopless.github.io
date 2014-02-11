@@ -1,0 +1,41 @@
+---
+title: '* ブックマークレットでjQueryを使う方法'
+published: true
+date: 2011-10-12 11:53
+comments: true
+categories:
+- JavaScript
+- jQuery
+tags: []
+keywords:
+- JavaScript
+- jQuery
+---
+こにちは。今さらながらブックマークレットにちょろっとはまってます。
+
+普段はjQuery使いなので、HTMLのパースがネイティブだともの凄い骨が折れます。
+なので、ブックマークレットでjQueryを読み込ませてみました。
+
+こちらを参考にしました。
+[http://h2ham.seesaa.net/article/115498697.html](http://h2ham.seesaa.net/article/115498697.html "http://h2ham.seesaa.net/article/115498697.html")
+
+```js
+javascript: (function(){
+	var d = document;
+	var s = d.createElement('script');
+	s.src = 'http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js';
+	d.body.appendChild(s);
+	setTimeout(function(){
+	//ここに記述
+	}, 1000);
+})();
+```
+
+jQueryをgoogleAPIから読み込んで、bodyにappendしています。
+読み込んだ後に実行させるため、1秒間ウェイトをおいています。
+これでブックマークレットでjQueryが使えるようになります。
+
+超便利！
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

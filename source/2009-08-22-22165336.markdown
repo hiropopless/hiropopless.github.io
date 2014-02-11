@@ -1,0 +1,55 @@
+---
+title: '* yumで、proftpd インストール - CentOS'
+published: true
+date: 2009-08-22 16:53
+comments: true
+categories:
+- Linux
+- proftpd
+tags: []
+keywords:
+- Linux
+- proftpd
+---
+SCPを使ってファイルのアップロードを行っていたが、WinSCPの使い勝手が悪いので、proftpdを突っ込んで、FTPサーバを作ることにした。やっぱりNeｘｔFTPを使いたい。
+
+OSはCenｔOS、Fedora系は全般的にやり方は同じ。
+ソースからのコンパイルインストールではなく、yumでインストールすることにする。
+
+proftpdを直接起動するのではなく、xinetd経由での起動にする。
+
+```sh
+[root@host ~]# rpm -q proftpd
+パッケージ proftpd はインストールされていません。
+[root@host ~]# yum install proftpd
+
+[root@host ~]# rpm -q xinetd
+パッケージ xinetd はインストールされていません。
+[root@host ~]# yum install xinetd
+
+[root@host ~]# vi /etc/proftpd.conf
+
+▽変更箇所
+
+#ServerType                     standalone
+ServerType                      inetd
+
+#DefaultRoot                    ~ !adm
+DefaultRoot                     ~/public_html !wheel
+
+
+[root@host ~]# vi /etc/xinetd.d/xproftpd
+
+#disable                 = yes
+disable                 = no
+
+[root@host ~]# /etc/rc.d/init.d/xinetd start
+```
+
+xinetd経由でないと起動できないようにしたので、万が一、proftpdを単体起動しようとしても、エラーが出て起動できず。
+あとはFTPクライアントソフト（NextFTPやFFFTPなど）を使ってFTP接続できてるなら成功である。
+
+繋がらない場合は、ファイヤーウォールなどポートの見直しなどをすること。
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

@@ -1,0 +1,32 @@
+---
+title: '* JavaScriptで桃鉄っぽいもの作り始めてみた #jsdoit'
+published: true
+date: 2011-12-29 13:25
+comments: true
+categories:
+- JavaScript
+tags: []
+keywords:
+- JavaScript
+---
+おひさしぶりこです。
+最近はProcessingばかりやってました。久しぶりにJavaScriptで何かつくろうと思ったので以前からつくりたかった桃鉄っぽいものつくってみました。
+
+### 仕組み
+
+- 2次元配列でマップ作成。
+- とりあえずコマをマップ上で動かしてみる。
+
+
+あたり判定用と見た目用で配列分けようかとも思いましたが、特に必要ないかなと思い配列マップは1つにまとめました。
+
+ソースはこちらです。
+<script type="text/javascript" src="http://jsdo.it/blogparts/gawo/js"></script><p class="ttlBpJsdoit" style="width: 465px; margin: 0; text-align: right; font-size: 11px;">[桃鉄っぽいもの。 - jsdo.it - share JavaScript, HTML5 and CSS](http://jsdo.it/funnythingz/gawo "桃鉄っぽいもの。 - jsdo.it - share JavaScript, HTML5 and CSS")</p>
+
+まだマップは未完成ですが、できたものがこちら。
+<script type="text/javascript" src="http://jsdo.it/blogparts/gawo/js?view=design"></script><p class="ttlBpJsdoit" style="width: 465px; margin: 0; text-align: right; font-size: 11px;">[桃鉄っぽいもの。 - jsdo.it - share JavaScript, HTML5 and CSS](http://jsdo.it/funnythingz/gawo "桃鉄っぽいもの。 - jsdo.it - share JavaScript, HTML5 and CSS")</p>
+
+jsdo.it で全部完成できたらいいね！
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

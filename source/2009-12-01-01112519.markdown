@@ -1,0 +1,97 @@
+---
+title: '* クリックでくるくるコンテンツが変わるJavaScript'
+published: true
+date: 2009-12-01 11:25
+comments: true
+categories:
+- JavaScript
+tags: []
+keywords:
+- JavaScript
+---
+久しぶりにJavaScript書いた。最近はもっぱらRubyばかり。
+けっこうよく使ったりするので、メモっとく。いつもソースを残しておかないからゼロから作り直すのめんどくさい。
+
+▽完成イメージ（ソースコピペで動作確認してください。）
+<img src="/imgs/archives/2009/12/kurukuru.gif" alt="kurukuru" title="kurukuru" width="411" height="343" class="alignnone size-full wp-image-340" />
+
+HTMLはこんな感じ。displayの、noneとblockを切り替えるだけ。
+```html
+<div id="col_1" class="colDes">コンテンツ1だよー</div>
+<div id="col_2" class="colDes" style="display:none;">コンテンツ2だよー</div>
+<div id="col_3" class="colDes" style="display:none;">コンテンツ3だよー</div>
+<div id="col_4" class="colDes" style="display:none;">コンテンツ4だよー</div>
+<div id="col_5" class="colDes" style="display:none;">コンテンツ5だよー</div>
+<div id="col_6" class="colDes" style="display:none;">コンテンツ6だよー</div>
+
+<div>
+<span id="to_back">戻る</span>
+<span id="to_next">次へ</span>
+</div>
+```
+
+CSSは、とりあえず動きがわかりやすいようにやっつけ。
+```css
+#to_next,#to_back {
+	cursor: pointer;
+	font-size: 200%;
+}
+#to_next {
+	margin-left: 20px;
+}
+.colDes {
+	background: #eee;
+	width: 400px;
+	height: 300px;
+}
+```
+
+JSもシンプルだね。
+```js
+(function(){
+	var col = [];
+	for( var i = 0; i < 6; i++ )
+	{
+		col[i] = document.getElementById( 'col_' + (i+1) );
+	}
+	var to_next = document.getElementById('to_next');
+	var to_back = document.getElementById('to_back');
+
+	var elm = function(arg)
+	{
+		for( var i = 0; i < col.length; i++ ){
+			col[i].style.display = 'none';
+		}
+		return col[arg].style.display = 'block';
+	}
+
+	var i = 0;
+	to_next.onclick = function()
+	{
+		if( col.length > 0 ){
+			if( i < col.length - 1 ){
+				i++;
+				elm(i);
+			}
+		}
+	}
+	to_back.onclick = function()
+	{
+		if( col.length > 0 ){
+			if( i == 0 ){
+				i = 0;
+				elm(i);
+			}
+			else{
+				i--;
+				elm(i);
+			}
+		}
+	}
+})();
+```
+
+応用すればAjaxで本とか作れるね！
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

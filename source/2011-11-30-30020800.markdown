@@ -1,0 +1,163 @@
+---
+title: '* ProcessingのVideoライブラリを試してみた'
+published: true
+date: 2011-11-30 02:08
+comments: true
+categories:
+- Processing
+tags: []
+keywords:
+- Processing
+---
+Processingネタを1年以上振りに書きます。
+もうほとんど触ってもいませんでしたProcessing。
+そんなProcessingちゃんを久しぶりにちょこっと書いてみました。
+
+Processingの拡張ライブラリでVideoライブラリがあります。
+Macの場合、モニタの上部分についてるあのカメラを使ってProcessingにキャプチャ画像を取り込むことができるのです。
+
+まずはカメラを使う準備から。
+下記のソースコードでカメラから取り込んだキャプチャをProcessingに渡します。
+[java]
+import processing.video.*;
+
+Capture cam;
+
+void setup(){
+  size(420, 320);
+  cam = new Capture(this, width, height, 15);
+}
+
+void captureEvent(Capture cam){
+  cam.read();
+}
+
+void draw(){
+  image(cam, 0, 0);
+}
+[/java]
+
+そしたらピクセル解析の準備をします。
+loadPixels()をセットすることで、pixels[]にピクセルデータを渡します。
+[java]
+void draw(){
+  image(cam, 0, 0);
+  loadPixels();  //ディスプレイウィンドウへピクセルデータをロードします。
+}
+[/java]
+
+ここからはキャプチャを加工するための関数を定義して読み出します。
+
+
+### rect版モザイク
+<a href="/imgs/archives/2011/11/ca49c20ec8023714493c1e9be7a17703.png"><img src="/imgs/archives/2011/11/ca49c20ec8023714493c1e9be7a17703.png" alt="" title="スクリーンショット 2011-11-29 23.27.21" width="420" height="321" class="alignnone size-full wp-image-853" /></a>
+[java]
+import processing.video.*;
+ 
+Capture cam;
+ 
+void setup(){
+  size(420, 320);
+  cam = new Capture(this, width, height, 15);
+}
+ 
+void captureEvent(Capture cam){
+  cam.read();
+}
+ 
+void draw(){
+  image(cam, 0, 0);
+  loadPixels();
+  mosaic(10, 10);
+}
+
+void mosaic(int w, int h){
+  for( int y = 0; y < height; y += h ){
+  for( int x = 0; x < width; x += w ){
+    color c = pixels[ y * width + x ];
+    fill(c);
+    rect(x, y, w, h);
+  }
+  }
+}
+[/java]
+
+
+### ellipse版モザイク
+<a href="/imgs/archives/2011/11/f68ac3e907b52df26b26a45fcb7db787.png"><img src="/imgs/archives/2011/11/f68ac3e907b52df26b26a45fcb7db787.png" alt="" title="スクリーンショット 2011-11-30 0.58.54" width="419" height="322" class="alignnone size-full wp-image-855" /></a>
+[java]
+import processing.video.*;
+ 
+Capture cam;
+ 
+void setup(){
+  size(420, 320);
+  cam = new Capture(this, width, height, 15);
+}
+ 
+void captureEvent(Capture cam){
+  cam.read();
+}
+ 
+void draw(){
+  image(cam, 0, 0);
+  loadPixels();
+  fillMosaic(cam, 10, 10);
+}
+
+void fillMosaic(PImage img, int w, int h){
+  for( int y = 0; y < height; y += h ){
+  for( int x = 0; x < width; x += w ){
+    color c = pixels[ y * width + x ];
+    fill(c);
+    ellipse(x, y, brightness(c)/7.0, brightness(c)/7.0);
+  }
+  }
+}
+[/java]
+
+
+### 斬新な何か
+<a href="/imgs/archives/2011/11/6c3ad99e87ec9eb07ec8c82902354f8b.png"><img src="/imgs/archives/2011/11/6c3ad99e87ec9eb07ec8c82902354f8b.png" alt="" title="スクリーンショット 2011-11-30 2.00.50" width="418" height="322" class="alignnone size-full wp-image-857" /></a>
+[java]
+import processing.video.*;
+ 
+Capture cam;
+ 
+void setup(){
+  size(420, 320);
+  cam = new Capture(this, width, height, 15);
+}
+ 
+void captureEvent(Capture cam){
+  cam.read();
+}
+ 
+void draw(){
+  image(cam, 0, 0);
+  loadPixels();
+  fractalSolidMosaic(cam, 10, 10);
+}
+
+void fractalSolidMosaic(PImage img, int w, int h){
+  for( int y = 0; y < height; y += h ){
+  for( int x = 0; x < width; x += w ){
+    color c = pixels[ y * width + x ];
+    fill(c);
+    pushMatrix();
+    translate(x, y);
+    rotate(brightness(c));
+    rect(0, 0, brightness(c)/2.0, 2);
+    popMatrix();
+  }
+  }
+}
+[/java]
+
+実際に動かしてもらった方が面白いと思います。
+次回はAR系に挑戦してみようと思います。
+
+[参考記事】[yoppa.org - Processingで画像データを扱う](http://yoppa.org/proga10/1353.html "yoppa.org - Processingで画像データを扱う")
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

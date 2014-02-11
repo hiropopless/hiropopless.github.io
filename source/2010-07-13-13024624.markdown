@@ -1,0 +1,38 @@
+---
+title: '* まさかの4ヶ月待ち。GuruPlugが届いた！'
+published: true
+date: 2010-07-13 02:46
+comments: true
+categories:
+- GuruPlug
+- Linux
+tags:
+- GuruPlug
+keywords:
+- GuruPlug
+- Linux
+- GuruPlug
+---
+ついに念願のアレが届いた。
+SekenではiPhone4やらiPadやら話題になりまくってるけど、どんなApple製品よりも手に入りにくくて品薄な商品が世の中にはあるんだぜ…。
+
+
+それがこちら↓ 
+<a href="/imgs/archives/2010/07/IMG_02502.jpg"><img src="/imgs/archives/2010/07/IMG_02502-225x300.jpg" alt="" title="IMG_0250" width="225" height="300" class="size-medium wp-image-500" /></a>
+
+GuruPlug！電源内蔵のプラグコンピュータとして話題になったSheevaPlugの後継機！
+なんと無線LANも使えちゃうんだってばよ。 
+
+<div><a href="/imgs/archives/2010/07/IMG_02521.jpg"><img src="/imgs/archives/2010/07/IMG_02521-225x300.jpg" alt="" title="IMG_0252" width="225" height="300" class="size-medium wp-image-497" /></a></div>
+
+<div><a href="/imgs/archives/2010/07/IMG_02541.jpg"><img src="/imgs/archives/2010/07/IMG_02541-225x300.jpg" alt="" title="IMG_0254" width="225" height="300" class="size-medium wp-image-498" /></a></div>
+
+形はACアダプタと同じ形だけど重さはタバコ2箱分くらいの重さでむちゃくちゃ軽い。
+これがパソコンだなんて全然見えないんす。
+
+これも製造元（US）に直接発注して、製造が追いつかず、発注から約4ヶ月の時を経てようやく我が家に届きました。日本には代理店なども特にないので、直接個人輸入しないと手に入らないのです。
+
+これ10台繋いでグリッドコンピューティングしてみたいすな！
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

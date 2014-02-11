@@ -1,0 +1,75 @@
+---
+title: '* import.js って流行ってるの？ってことで自分なりにつくってみた'
+published: true
+date: 2009-10-08 00:43
+comments: true
+categories:
+- JavaScript
+tags: []
+keywords:
+- JavaScript
+---
+いつもならばJSファイルの読み込み方って、
+
+```html
+<html lang="ja">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+
+<script type="text/javascript" src="./xxxxxxx.js"></script>
+<script type="text/javascript" src="./yyyyyyy.js"></script>
+<script type="text/javascript" src="./zzzzzzz.js"></script>
+
+</head>
+<body>
+
+# hello test
+
+</body>
+</html>
+```
+
+みたいな感じで、headタグ内に読み込むJSファイルを直接書くけど、最近流行ってるのか、それとも廃れたのかわからないが、こんな感じのソースを見た。
+```html
+<script type="text/javascript" src="./import.js"></script>
+```
+
+1つのJSファイルだけを読み込んで、その import.js にグローバルで読み込みたいJSファイルを document.write() で読み込むようだ。
+
+そのソースには、
+```js
+document.write( '<script type="text/javascript" src="./xxxxxxxx.js"></script>' );
+document.write( '<script type="text/javascript" src="./yyyyyyyy.js"></script>' );
+document.write( '<script type="text/javascript" src="./zzzzzzzz.js"></script>' );
+```
+
+というように書かれていた。
+
+コレはなかなか面白いし、まとまって良いなと思ったので、自分も簡単にまとめてつくってみた。
+```js
+/**
+*
+*	import.js
+*	JSファイルをまとめて読み込む
+*/
+(function(){
+	var importSrc = function(e){
+		return '<script type="text/javascript" src="'+ e +'"></script>' + "\n";
+	}
+	var path = './static/common/js/';
+	//jQueryフレームワーク
+	document.write( importSrc( path + 'jquery-1.3.2.min.js' ) );
+	//サイト全体で使用するJS
+	document.write( importSrc( path + 'global.js' ) );
+})();
+```
+
+scriptタグを毎回書くのもめんどくさかったので、importSrc() というショートカット関数をつくってまとめてみた。
+
+import.js を使ってみんなまとめちゃえば良いと思うよ！
+そのページ独自で使うJSはまとめちゃダメだと思うけどねｗ
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

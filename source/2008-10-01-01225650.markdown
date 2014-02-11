@@ -1,0 +1,26 @@
+---
+title: '* VirtualPC Fedoraの起動　Athlon系は起動オプション clock=pit をつける。'
+published: true
+date: 2008-10-01 22:56
+comments: true
+categories:
+- FedoraCore
+- VirtualPC
+- 鯖
+tags: []
+keywords:
+- FedoraCore
+- VirtualPC
+- 鯖
+---
+FedoraCore6 がインスコされてるVirtualHDDをVirtualPCで読みだそうとしたところ、起動途中で止まってしまう。
+いろいろ調べていくうちに、intel系は特に問題なさそうだが、Athlon系は、Fedoraの起動オプションに、clock=pit をつけてあげないと起動しないらしい。
+
+試しに　clock=pit　を起動オプションにつけてみた。
+
+・・・動いた。
+
+イラっとするなぁ～、MSちゃん！
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

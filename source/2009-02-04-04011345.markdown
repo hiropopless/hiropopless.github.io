@@ -1,0 +1,31 @@
+---
+title: '* 原付改造ブログ MovableType（MT）で構築'
+published: true
+date: 2009-02-04 01:13
+comments: true
+categories:
+- (X)HTML+CSS
+- JavaScript
+- MovableType
+tags: []
+keywords:
+- (X)HTML+CSS
+- JavaScript
+- MovableType
+---
+こんぬつわ。久しぶりの更新です。
+
+wordpress大好きな僕としては、個人的にMovableTypeとかアンチだったんですが、MTを組み込む仕事があったことをきっかけにMTにはまっちゃいました！
+
+そこで、専門学校の時につくったサイトをMTに組み込んで再構築してみました。
+
+<p style="text-align: center;"><a href="http://www.makingmachinez.com/"><img src="/imgs/archives/2009/02/makingmachinez-198x300.jpg" alt="" title="makingmachinez" width="198" height="300" class="alignnone size-medium wp-image-130" /></a></p>
+
+当時、「原付改造日記」というものをフルスクラッチで作っていました。
+（その頃、ブログはまだ一般的でなかったのです。）
+
+MT組み込んだら更新もめちゃめちゃ簡単だし、もうラクっていうかなんていうか…。
+今の世の中って凄いです。
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

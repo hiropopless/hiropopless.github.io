@@ -1,0 +1,39 @@
+---
+title: '* スパム対策？setInterval()を使って、10秒後にメールアドレスを表示するJS'
+published: true
+date: 2009-05-25 14:54
+comments: true
+categories:
+- JavaScript
+tags: []
+keywords:
+- JavaScript
+---
+[ロケットスタート](http://rocketstart.jp "ロケットスタート")のページで面白いスクリプトを見つけた。
+
+```js
+var timer = setInterval(function(){
+	var i = document.getElementById(&quot;count&quot;).childNodes[0].nodeValue  * 1;
+	i-- ;
+	if( i &lt;= 0 ){
+		var address = [ &quot;info&quot; , &quot;rocketstart.jp&quot; ];
+		var a = document.createElement(&quot;a&quot;);
+		a.setAttribute(&quot;href&quot;,&quot;mailto:&quot; + address.join(&quot;@&quot;) );
+		a.appendChild(document.createTextNode(address.join(&quot;@&quot;) ));
+		document.getElementById(&quot;mail&quot;).innerHTML =&quot;&quot;;
+		document.getElementById(&quot;mail&quot;).appendChild(a);
+		clearInterval(timer);
+	}
+	else{
+		document.getElementById(&quot;count&quot;).innerHTML = i;
+	}
+} , 1000);
+```
+
+「メールアドレス表示まで、あと・・秒」という文字がある。
+10秒経過するとJSで生成されたメールアドレスがめでたく登場する。
+
+これはユーモアかつ、非常に面白いしスパム対策にもなる（？）なと思った。
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

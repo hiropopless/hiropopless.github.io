@@ -1,0 +1,28 @@
+---
+title: '* jQueryを使わない iOS, Androidに特化したJSフリックzflickjsを公開'
+published: true
+date: 2012-06-05 00:38
+comments: true
+categories:
+- Android
+- iPad
+- iPhone
+- JavaScript
+tags: []
+keywords:
+- Android
+- iPad
+- iPhone
+- JavaScript
+---
+予告通り、公開しました。
+[zflickjs v0.1a](http://funnythingz.github.com/zflickjs/ "zflickjs v0.1a")
+
+iOS,Androidに最適化するならjQueryを使う理由がないのでネイティブで書きました。
+次へ戻るボタンつけたからwebkitブラウザならカルーセルとしても動きます。
+[zflickjs DEMO](http://funnythingz.github.com/zflickjs/demo.html "zflickjs DEMO")
+
+まだまだ改良の余地や足りない機能があるけど随時アップデートしていきます。
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

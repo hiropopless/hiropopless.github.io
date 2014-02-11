@@ -1,0 +1,40 @@
+---
+title: '* コンストラクタ - JavaScript'
+published: true
+date: 2009-07-11 04:06
+comments: true
+categories:
+- JavaScript
+tags: []
+keywords:
+- JavaScript
+---
+[前回は無名関数と無名コンストラクタについて書きました。](http://hiropo.co.uk/archives/168 "前回は無名関数と無名コンストラクタについて書きました。")
+今回は、通常のコンストラクタについて書いてみます。
+
+JavaScriptはプロトタイプベースなので、クラスという概念はありませんが、クラスっぽいものを定義してインスタンスを生成するっぽいことができます。
+
+```js
+/**
+*	Class Ahyaとコンストラクタ
+*/
+function Ahya(arg){
+	this.arg = arg;
+	alert(arg);
+}
+//public init() method
+Ahya.prototype.init = function(){
+	return this.arg;
+}
+var ahya = new Ahya('moe');	// 'moe'がアラート表示
+alert( ahya.init() );	// 'moe'がアラート表示
+```
+
+
+まぁこんな感じ。
+クラスベースをがっつりの人には、プロトタイプベースはわかりにくいかもしれない。
+
+という自分もよく理解してないけど…。
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

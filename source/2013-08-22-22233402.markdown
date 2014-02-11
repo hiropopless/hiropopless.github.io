@@ -1,0 +1,199 @@
+---
+title: '* GruntでTypeScriptとSass/Compassの面倒なコンパイルを自動化する'
+published: true
+date: 2013-08-22 23:34
+comments: true
+categories:
+- Grunt
+- JavaScript
+- Sass/Compass
+- TypeScript
+tags: []
+keywords:
+- Grunt
+- JavaScript
+- Sass/Compass
+- TypeScript
+---
+Grunt便利です！
+最近のモダンなWeb開発環境はGruntでタスク管理するのがはやってるみたいですね。職場でもGruntの恩恵をがっつり受けています。
+
+ここ1年半くらいはCSSもSass/Compassを導入していて、CSSをそのまま書くってこともすっかりなくなりました。JavaScriptも最近はTypeScriptで書いているのでそのままJavaScriptを書くということも減っていってます。
+
+そんな感じですっかりTypeScriptとSass/Compassにどっぷりになってきたので面倒な手間をGruntで自動化するプロジェクトテンプレ的なものをつくってみました。
+
+# typeSC - This is TypeScript & Sass/Compass Project Template.
+[https://github.com/funnythingz/typeSC](https://github.com/funnythingz/typeSC "https://github.com/funnythingz/typeSC")
+
+
+## Sass/Compassをインストール
+Rubyが入っている前提ですすめていきます。
+
+```sh
+% gem install sass
+% gem install compass
+
+% gem list
+
+*** LOCAL GEMS ***
+compass (0.12.2)
+sass (3.2.9)
+
+% which sass
+/usr/bin/sass
+
+% which compass
+/usr/bin/compass
+```
+
+こんな感じでインストール完了。
+
+
+## NodeJSをインストール
+
+まずはNodeJSをインストールする。公式からインストーラーを落としてインストールする。
+[http://nodejs.org/](http://nodejs.org/ "http://nodejs.org/")
+
+インストールできるとこんな感じになる。
+```sh
+% which node
+/usr/local/bin/node
+
+% node -v
+v0.10.17
+```
+
+
+## TypeScriptをインストール
+
+nodeがインストールできたらTypeScriptをインストールする。
+
+```sh
+% sudo npm install -g typescript
+
+% which tsc
+/usr/local/bin/tsc
+
+% tsc -v
+Version 0.9.0.1
+```
+
+
+## grunt-cliをインストール
+
+次にgrunt-cliをインストールします。
+```sh
+% sudo npm install -g grunt-cli
+```
+
+
+## typeSCを使う準備
+
+githubのリポジトリからgit cloneします。
+cloneしたらgrunt関連のファイルをインストールします。
+
+```sh
+% git clone https://github.com/funnythingz/typeSC.git
+% cd typeSC
+% npm install
+```
+
+エラーが出なければインストール完了です。
+
+
+## typeSCを使ってみる
+
+typeSCのデフォルト設定では、各ソースファイルは下記のように管理します。
+```sh
+.ts ... src/**/*.ts
+.scss ... src/sass/**/*.scss
+```
+
+コンパイル後は公開ディレクトリに下記のように書きだされます。
+複数のtsファイルはコンパイル後、typesc.jsというひとつのJSファイルになります。さらに圧縮されたtypesc.min.jsも同時に書きだされます。
+```sh
+.js ... public/typesc.js, public/typesc.min.js
+.css ... public/css/typesc.css
+```
+
+それではソースを書いてみます。
+とりあえずSassはこんな感じで適当に。
+
+### sass/typesc.scss
+<script src="https://gist.github.com/funnythingz/6307603.js"></script>
+
+TypeScriptを書いてみます。
+typeSCのデフォルト設定ではsrcディレクトリにある複数のtsファイルはJSコンパイルの際に結合されるので、human.ts, name.ts, age.ts のように複数のtsファイルを書いてみました。
+
+### src/human.ts
+<script src="https://gist.github.com/funnythingz/6307610.js"></script>
+
+### src/name.ts
+<script src="https://gist.github.com/funnythingz/6307633.js"></script>
+
+### src/age.ts
+<script src="https://gist.github.com/funnythingz/6307645.js"></script>
+
+書き終わったらいよいよコンパイルです。
+
+## gruntでコンパイルする
+
+コマンドは下記の通りです。
+
+
+
+<blockquote>
+<b>% grunt</b>
+ => コンパイル
+
+<b>% grunt watch</b>
+ => 監視しながらリアルタイムでコンパイル
+
+<b>% grunt server</b>
+ => webサーバーを起動します。http://localhost:8000 にアクセスするとpublicフォルダがみれます
+</blockquote>
+
+
+
+それではコンパイルしてみましょう。
+
+```sh
+% grunt
+
+Running &quot;typescript:base&quot; (typescript) task
+3 files created. js: 3 files, map: 0 files, declaration: 0 files
+
+Running &quot;concat:dist&quot; (concat) task
+File &quot;public/typesc.js&quot; created.
+
+Running &quot;uglify:build&quot; (uglify) task
+File &quot;public/typesc.min.js&quot; created.
+
+Running &quot;clean:0&quot; (clean) task
+Cleaning src/age.js...OK
+Cleaning src/human.js...OK
+Cleaning src/name.js...OK
+
+Running &quot;compass:dist&quot; (compass) task
+directory public/css/
+   create public/css/typesc.css (0.117s)
+Compilation took 0.117s
+
+Done, without errors.
+```
+
+こんな感じでコンパイルできたら成功です！
+コンパイルされたファイルはこんな感じであると思います。
+```sh
+public
+├── css
+│   └── typesc.css
+├── index.html
+├── typesc.js
+└── typesc.min.js
+```
+
+こんな感じでSass/CompassもTypeScriptも面倒なコンパイルから開放されるのでさくさくと開発に集中できます。Gruntいいね！
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

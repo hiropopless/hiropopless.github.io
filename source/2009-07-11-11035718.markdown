@@ -1,0 +1,65 @@
+---
+title: '* 無名関数、無名コンストラクタ - JavaScript'
+published: true
+date: 2009-07-11 03:57
+comments: true
+categories:
+- JavaScript
+tags: []
+keywords:
+- JavaScript
+---
+JavaScript（Ajax）デビューしてから半年ほど経過した自分です。
+JavaScriptって本当に柔軟な言語で、いろんな書き方できるから本当に面白いです。
+
+今回は関数（function）についてちょっと書いてみます。
+
+▼基本的なfunctionの書き方
+```js
+function ahya(arg){
+	return arg
+}
+ahya('moe');	//戻り値 'moe'
+```
+
+
+これが一般的なスタンダードなやつですね。
+
+他にもこんな書き方ができます。
+
+```js
+var ahya = function(arg){
+	return arg;
+}
+ahya('moe');
+```
+
+
+あと、関数名を使わない無名関数（匿名関数）という書き方もできます。
+```js
+(function(arg){
+	return arg;
+})('moe');
+```
+
+
+さらに、JavaScriptはオブジェクト指向言語なので、コンストラクタも使えます。
+下記は無名コンストラクタです。
+
+```js
+new function(arg){
+	return arg
+}('moe');
+```
+
+
+どれも返ってくる戻り値は同じですが、関数とコンストラクタでは決定的な違いがあります。
+それは、thisが示すオブジェクトが違うということです。
+
+▼詳しくはこちら
+[```js(function() {})()とnew function() {}の違い](http://liosk.blog103.fc2.com/blog-entry-32.html "```js(function() {})()とnew function() {}の違い")
+
+といったように、JavaScriptはとても柔軟な言語なので、好みや状況に合わせていろんな書き方ができるということです。
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

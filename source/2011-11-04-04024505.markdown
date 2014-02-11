@@ -1,0 +1,47 @@
+---
+title: '* ルンバにルミカライトつけてバルブモードで軌跡を撮ってみた'
+published: true
+date: 2011-11-04 02:45
+comments: true
+categories:
+- ルンバ
+tags: []
+keywords:
+- ルンバ
+---
+<a href="/imgs/archives/2011/11/IMG_2602.jpg"><img src="/imgs/archives/2011/11/IMG_2602.jpg" alt="" title="IMG_2602" width="600" height="400" class="alignnone size-full wp-image-807" /></a>
+
+ウチです。自宅です。リビングです。
+
+前々からやってみたかったのがルンバの軌跡の撮影。
+一眼レフでバルブモードにして長い間露光させておけばシャッターを押してから離すまでの部分を撮影できるのです。これを利用してルンバちゃんの軌跡を撮影してみました。
+
+
+<a href="/imgs/archives/2011/11/IMG_2593.jpg"><img src="/imgs/archives/2011/11/IMG_2593.jpg" alt="" title="IMG_2593" width="600" height="400" class="alignnone size-full wp-image-806" /></a>
+まずはバルブモードで7分ほど撮影。ちょっと手ブレしちゃった…。
+
+
+
+<a href="/imgs/archives/2011/11/IMG_2611.jpg"><img src="/imgs/archives/2011/11/IMG_2611.jpg" alt="" title="IMG_2611" width="600" height="400" class="alignnone size-full wp-image-809" /></a>
+まっすぐからのスポット掃除。
+
+
+
+<a href="/imgs/archives/2011/11/IMG_2589.jpg"><img src="/imgs/archives/2011/11/IMG_2589.jpg" alt="" title="IMG_2589" width="600" height="400" class="alignnone size-full wp-image-805" /></a>
+どこ行っちゃうのかなー？
+
+
+
+<a href="/imgs/archives/2011/11/IMG_2608.jpg"><img src="/imgs/archives/2011/11/IMG_2608.jpg" alt="" title="IMG_2608" width="600" height="400" class="alignnone size-full wp-image-808" /></a>
+スポットしすぎ。
+
+
+
+<a href="/imgs/archives/2011/11/IMG_2612.jpg"><img src="/imgs/archives/2011/11/IMG_2612.jpg" alt="" title="IMG_2612" width="600" height="400" class="alignnone size-full wp-image-810" /></a>
+手動操作でいろいろ動かしてみた。
+
+
+今回は動きを観察して撮影してみましたが、次はリモコンで操作してルンバで描いた写真を共有できたらなと思います。
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

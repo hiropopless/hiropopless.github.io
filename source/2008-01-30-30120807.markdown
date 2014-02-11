@@ -1,0 +1,27 @@
+---
+title: '* getElementsByClass'
+published: true
+date: 2008-01-30 12:08
+comments: true
+categories:
+- JavaScript
+tags: []
+keywords:
+- JavaScript
+---
+```js
+function getElementsByClass(className) {
+    className = ' ' + className + ' ';
+    var all = document.getElementsByTagName('*');
+    var elements = new Array();
+    for (var i = 0; i < all.length; i++) {
+        if (0 <= (' ' + all[i].className + ' ').indexOf(className)) {
+            elements[elements.length] = all[i];
+        }
+    }
+    return elements;
+}
+```
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

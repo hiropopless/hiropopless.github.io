@@ -1,0 +1,137 @@
+---
+title: '* wordpressにProcessingを埋め込むプラグインを導入してみた'
+published: true
+date: 2010-11-02 11:36
+comments: true
+categories:
+- Java
+- Processing
+tags: []
+keywords:
+- Java
+- Processing
+---
+最近インタラクティブ・メディアアートという言葉が流行ってますね。流行り物大好きです！
+その流行り物のベースとなっている言語であるProcessingを埋め込むためのプラグインをつっこんでみました。
+
+Processingとは、Javaを単純化し、グラフィック機能に特化した言語です。(Wikipedia 談)
+Javaというとオブジェクト指向でとても難しい言語だというイメージがあるかもですが、Processingはかなり単純化されているので、
+オブジェクト指向を気にしなくても気軽にJavaでメディアアートができます。
+
+
+<blockquote>
+
+- Processing本家（英語）<br />
+[http://processing.org/](http://processing.org/ "http://processing.org/")
+
+- Processing.js JavaScript Framework<br />
+[http://processingjs.org/](http://processingjs.org/ "http://processingjs.org/")
+
+
+</blockquote>
+
+
+もちろん、インタラクティブにゴリッゴリの凄いやつをつくろう！ってなるとクラスを定義したりなどオブジェクト指向が必要になりますが、それでもネイティブなJavaよりProcessingは簡単にそれを実現できます。
+
+最近はHTML5でゴリッゴリに動くメディアアートなどもありますが、jQueryの開発者でもある、ジョンがProcessing.js というJavaScriptでProcessingを描けるステキライブラリを開発してくれたので、Processingを覚えちゃえば誰でも割と簡単にインタラクティブ・メディアアートができます。まさに夢の言語です！
+
+Processingの実際の書き方などはここでは割愛しちゃいますが、
+とりあえず、このブログにてProcessingでつくられた作品を公開できるようにしてみました。
+
+ProcessingはJavaベースなので、書き出す際には、Javaアプレットとして書き出します。
+そして、書き出したjarファイルを下記の場所におきます。
+
+<blockquote>
+例：threeballsclass.jar の場合
+/wp-content/plugins/wp-proc-embed/threeballsclass/applet/threeballsclass.jar
+</blockquote>
+
+次に記事投稿画面で、HTMLモードで下記のように記述します。
+<blockquote>
+processing=threeballsclass 200 200
+※実際は "[]" で囲ってください。
+</blockquote>
+これで埋め込みができるはずです。
+
+
+下記が実際にProcessingで組まれた作品です。
+[processing=threeballsclass 200 200]
+
+
+実際のProcessing内でのソースはこちら
+[java]
+int dim = 200;
+Ball ball1, ball2, ball3, ball4;
+
+void setup(){
+  size(dim,dim);
+  noStroke();
+  frameRate(30);
+  smooth();
+  ellipseMode(CENTER);
+  ball1 = new Ball();
+  ball2 = new Ball();
+  ball3 = new Ball();
+  ball4 = new Ball();
+}
+
+void draw(){
+  background(255,255,255);
+  ball1.move();
+  ball2.move();
+  ball3.move();
+  ball4.move();
+  
+  ball1.display();
+  ball2.display();
+  ball3.display();
+  ball4.display();
+}
+
+class Ball{
+  int xvel;
+  int yvel;
+  int xpos;
+  int ypos;
+  int c1, c2, c3;
+  
+  Ball(){
+    xpos = int(random(11,(dim-11)));
+    ypos = int(random(11,(dim-11)));
+    xvel = 3;
+    yvel = 3;
+  }
+
+  void move(){
+    xpos = xpos+xvel;
+    ypos = ypos+yvel;
+  
+    if ( xpos < 10 || xpos > (dim-10) ){
+      xvel = -1 * xvel;
+      c1 = int(random(0,255));
+      c2 = int(random(0,255));
+      c3 = int(random(0,255));
+    }
+  
+    if ( ypos < 10 || ypos > (dim-10) ){
+      yvel = -1 * yvel;
+      c1 = int(random(0,255));
+      c2 = int(random(0,255));
+      c3 = int(random(0,255));
+    }   
+  }
+  
+  void display(){
+    fill(c1,c2,c3);
+    ellipse(xpos,ypos,20,20);
+  }
+  
+}
+[/java]
+
+こんな感じで興味があればぜひぜひどうぞー！
+
+アプレット、たのしいよ、アプレット。
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

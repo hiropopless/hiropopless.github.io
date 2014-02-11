@@ -1,0 +1,62 @@
+---
+title: '* 配列と多次元配列 - Objective-C'
+published: true
+date: 2010-05-21 17:45
+comments: true
+categories:
+- C言語
+- Objective-C
+- 配列
+tags: []
+keywords:
+- C言語
+- Objective-C
+- 配列
+---
+JavaScriptしかロクに書けない自分です。こんぬつわ。
+C言語における配列をメモって置きます。
+
+JSだと配列ってすごい簡単に扱えますが、C言語だとリソースをきちんと確保してあげないとダメなんですね。ちゃんと頑張って書いてみましたよっと。
+
+まずは配列。
+[c]
+//配列の初期化
+int ary1[] = {0,1,2,3,4,5,6,7,8,9};
+
+//lengthの取得
+const int _ary1Length_ = sizeof ary1 / sizeof ary1[0];
+
+//配列の中身をすべて取り出す
+for( int i = 0; i < _ary1Length_; i++ ){
+	NSLog(@"%d", ary1[i]);
+}
+[/c]
+
+多次元配列の場合。
+[c]
+/**
+ * 多次元配列処理
+ */
+int ary2[7][10] = {
+	{0,1,2,3,4,5,6,7,8,9},
+	{10,11,12,13,14,15,16,17,18,19},
+	{20,21,22,23,24,25,26,27,28,29},
+	{30,31,32,33,34,35,36,37,38,39},
+	{40,41,42,43,44,45,46,47,48,49},
+	{50,51,52,53,54,55,56,57,58,59},
+	{60,61,62,63,64,65,66,67,68,69}
+};
+
+const int _ary2Length_i_ = sizeof ary2 / sizeof ary2[0];
+const int _ary2Length_j_ = sizeof ary2[0] / sizeof ary2[0][0];
+for( int i = 0; i < _ary2Length_i_; i++ ){
+	for( int j = 0; j < _ary2Length_j_; j++ ){
+		NSLog(@"%d", ary2[i][j]);
+	}
+}
+[/c]
+
+JSだとarrayObj.lengthとかで簡単にとれるものも、きちんと計算してあげないととれないんですね。これはなんだか挫けそうです！w
+
+---
+※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。
