@@ -11,14 +11,79 @@ keywords:
 ---
 <p>仕事でTypeScriptをやることになったのでとりあえず入門しておく。まずインストールするところから。</p>
 <p>node.jsがインストールされている前提ですすんでいく。</p>
-<script src="https://gist.github.com/funnythingz/5927589.js"></script>
+
+```sh
+% sudo npm install -g typescript
+Password:
+npm http GET https://registry.npmjs.org/typescript
+npm http 200 https://registry.npmjs.org/typescript
+npm http GET https://registry.npmjs.org/typescript/-/typescript-0.9.0-1.tgz
+npm http 200 https://registry.npmjs.org/typescript/-/typescript-0.9.0-1.tgz
+/usr/local/bin/tsc -> /usr/local/lib/node_modules/typescript/bin/tsc
+npm WARN package.json github-url-from-git@1.1.1 No repository field.
+npm WARN package.json assert-plus@0.1.2 No repository field.
+npm WARN package.json ctype@0.5.2 No repository field.
+npm WARN unmet dependency /usr/local/lib/node_modules/npm/node_modules/couch-login requires request@'~2.9.202' but will load
+npm WARN unmet dependency /usr/local/lib/node_modules/npm/node_modules/request,
+npm WARN unmet dependency which is version 2.21.0
+typescript@0.9.0-1 /usr/local/lib/node_modules/typescript
+
+% which tsc
+/usr/local/bin/tsc
+
+% tsc -c
+Version 0.9.0.1
+```
+
 <p>インストール完了。とりあえず "Hello World." 書いてみる。</p>
-<script src="https://gist.github.com/funnythingz/5928191.js"></script>
-<script src="https://gist.github.com/funnythingz/5928174.js"></script>
+
+```sh
+% vim toggle.ts
+```
+
+```typescript
+class Ore {
+
+  message : string = "Hello World.";
+
+  constructor() {
+  }
+
+  say(message : string) : void {
+    this.message = message;
+    console.log(this.message);
+  }
+}
+
+var ore : Ore = new Ore();
+ore.say('Hello World.');
+```
+
+
 <p>tsファイルをコンパイルしてみる。</p>
-<script src="https://gist.github.com/funnythingz/5928183.js"></script>
+
+```sh
+% tsc toggle.ts
+```
+
 <p>コンパイル結果。</p>
-<script src="https://gist.github.com/funnythingz/5928206.js"></script>
+
+```javascript
+var Ore = (function () {
+  function Ore() {
+    this.message = "Hello World.";
+  }
+  Ore.prototype.say = function (message) {
+    this.message = message;
+    console.log(this.message);
+  };
+  return Ore;
+})();
+
+var ore = new Ore();
+ore.say('Hello World.');
+```
+
 <p>でけた！</p>
 
 ---

@@ -120,19 +120,100 @@ typeSCのデフォルト設定では、各ソースファイルは下記のよ�
 とりあえずSassはこんな感じで適当に。
 
 ### sass/typesc.scss
-<script src="https://gist.github.com/funnythingz/6307603.js"></script>
+
+```scss
+@charset "utf-8";
+@import "compass/css3";
+
+@mixin medium {
+  font-size: 14px;
+}
+@mixin small {
+  font-size: 12px;
+}
+
+.cassette {
+  display: block;
+}
+
+.item {
+  @extend .cassette;
+  @include medium;
+}
+.list {
+  @extend .cassette;
+  @include small;
+}
+```
 
 TypeScriptを書いてみます。
 typeSCのデフォルト設定ではsrcディレクトリにある複数のtsファイルはJSコンパイルの際に結合されるので、human.ts, name.ts, age.ts のように複数のtsファイルを書いてみました。
 
 ### src/human.ts
-<script src="https://gist.github.com/funnythingz/6307610.js"></script>
+
+```typescript
+/// <reference path="name.ts" />
+/// <reference path="age.ts" />
+ 
+ module TYPESC {
+  
+ export class Human {
+   private name: Name<string>;
+   private age: Age;
+
+   constructor(first: string, last: string, age: number) {
+     this.name = new Name(first, last);
+     this.age = new Age(age);
+   }
+
+   public sayName(): Name<string> {
+     return this.name;
+   }
+
+   public sayAge(): Age {
+     return this.age;
+   }
+ }
+
+ export class M extends Human {}
+ export class F extends Human {}
+
+}
+```
 
 ### src/name.ts
-<script src="https://gist.github.com/funnythingz/6307633.js"></script>
+
+```typescript
+module TYPESC {
+
+  export class Name<T> {
+    public first: T;
+    public last: T;
+
+    constructor(first: T, last: T) {
+      this.first = first;
+      this.last = last;
+    }
+  }
+
+}
+```
 
 ### src/age.ts
-<script src="https://gist.github.com/funnythingz/6307645.js"></script>
+
+```typescript
+module TYPESC {
+
+  export class Age {
+    public count: number;
+
+    constructor(count: number) {
+      this.count = count;
+    }
+  }
+
+}
+```
 
 書き終わったらいよいよコンパイルです。
 
@@ -140,20 +221,23 @@ typeSCのデフォルト設定ではsrcディレクトリにある複数のtsフ
 
 コマンドは下記の通りです。
 
+> コンパイル
 
+```sh
+% grunt
+```
 
-<blockquote>
-<b>% grunt</b>
- => コンパイル
+> 監視しながらリアルタイムでコンパイル
 
-<b>% grunt watch</b>
- => 監視しながらリアルタイムでコンパイル
+```sh
+% grunt watch
+```
 
-<b>% grunt server</b>
- => webサーバーを起動します。http://localhost:8000 にアクセスするとpublicフォルダがみれます
-</blockquote>
+> webサーバーを起動します。http://localhost:8000 にアクセスするとpublicフォルダがみれます
 
-
+```sh
+% grunt server
+```
 
 それではコンパイルしてみましょう。
 
@@ -184,6 +268,7 @@ Done, without errors.
 
 こんな感じでコンパイルできたら成功です！
 コンパイルされたファイルはこんな感じであると思います。
+
 ```sh
 public
 ├── css
