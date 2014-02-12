@@ -21,18 +21,48 @@ keywords:
 [https://github.com/Shougo/neobundle.vim](https://github.com/Shougo/neobundle.vim "https://github.com/Shougo/neobundle.vim")</p>
 
 <p>git cloneする</p>
-<script src="https://gist.github.com/funnythingz/5889520.js"></script>
+
+```sh
+% mkdir -p ~/.vim/bundle
+% git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
+```
+
 <p>git clone終わったら.vimrcに↓を追加</p>
-<script src="https://gist.github.com/funnythingz/5889521.js"></script>
+
+```sh
+set nocompatible
+if has('vim_starting')
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+call neobundle#rc(expand('~/.vim/bundle/'))
+filetype plugin indent on
+
+NeoBundleFetch 'Shougo/neobundle.vim'
+NeoBundle 'Shougo/vimproc
+```
+
 <p>.vimrcに追加したらvim開いて↓を実行</p>
-<script src="https://gist.github.com/funnythingz/5889527.js"></script>
+
+```sh
+:NeoBundleInstall
+```
 
 <p>NeoBundleが使えるようになったらkchmck/vim-coffee-scriptをインストールする。<br>
 .vimrcに↓を追記する。</p>
-<script src="https://gist.github.com/funnythingz/5889548.js"></script>
+
+```
+NeoBundle 'kchmck/vim-coffee-script'
+
+au BufRead,BufNewFile,BufReadPre *.coffee    set filetype=coffee
+autocmd FileType coffee    setlocal sw=2 sts=2 ts=2 et
+au BufWritePost *.coffee silent CoffeeMake! -b | cwindow | redraw!
+nnoremap <silent> <C-C> :CoffeeCompile vert <CR><C-w>h
+```
 
 <p>.vimrcに追加したらvim開いて↓を実行</p>
-<script src="https://gist.github.com/funnythingz/5889527.js"></script>
+```sh
+:NeoBundleInstall
+```
 
 <p>vimでhoge.coffeeを開いてCoffeeScriptを書いたらCtrl+Cで右側にコンパイルされたJSのプレビューが表示されます。</p>
 <a href="/imgs/archives/2013/06/4dc99b061cc67594868072a17dfb57d5.png"><img src="/imgs/archives/2013/06/4dc99b061cc67594868072a17dfb57d5.png" alt="hoge.coffee____tmp_coffee__-_VIM_—_vim_—_102×38" class="alignnone size-full wp-image-946" /></a>
