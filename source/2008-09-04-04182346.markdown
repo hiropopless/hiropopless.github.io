@@ -1,5 +1,5 @@
 ---
-title: '* var_dumpの基礎をつくった - for in文'
+title: 'var_dumpの基礎をつくった - for in文'
 published: true
 date: 2008-09-04 18:23
 comments: true
@@ -30,6 +30,3 @@ function var_dump($obj) {
 windowとかやったら多分PC落ちるんじゃないかと・・・。
 
 alert(); じゃなくて、documentに書き出す仕様をつくったらまた公開しまする。
-
----
-※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

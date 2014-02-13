@@ -1,5 +1,5 @@
 ---
-title: '* フルFlashのサイトにHTMLフッターをつけてみる'
+title: 'フルFlashのサイトにHTMLフッターをつけてみる'
 published: true
 date: 2009-10-02 16:39
 comments: true
@@ -61,8 +61,6 @@ body {
 </style>
 <script type="text/javascript" src="js/swfobject.js"></script>
 <script type="text/javascript">
-// <![CDATA[
-
 var so = new SWFObject('swf/sample.swf', 'website', '100%', '100%', '9', '#ffffff');
 so.useExpressInstall('swf/expressinstall.swf');
 so.write('content');
@@ -80,14 +78,9 @@ so.write('content');
 		resizeTo('wrapper');
 	}
 })();
-
-// ]]>
 </script>
 ```
 
 
 これでHTML要素のフッターを下部に維持しつつ、フルFlashを実現できる。
 ってか、20pxあいてる時点でフルFlashじゃないじゃん！とかいう突っ込みはやめて～ｗ
-
----
-※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

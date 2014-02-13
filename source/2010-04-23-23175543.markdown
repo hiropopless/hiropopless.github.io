@@ -1,5 +1,5 @@
 ---
-title: '* with文の名前領域 - ActionScript3.0'
+title: 'with文の名前領域 - ActionScript3.0'
 published: true
 date: 2010-04-23 17:55
 comments: true
@@ -16,7 +16,7 @@ AS3を本気で勉強しようと思い過去に何度入門したかわから�
 
 とりあえず、HelloWorld的な。
 
-[as]
+```actionscript
 //************************************************************
 // HelloWorld - TextField()
 // とりあえず文字を書き出してみる。
@@ -53,7 +53,7 @@ package {
         }
     }
 }
-[/as]
+```
 
 ▽結果
 <div style="text-align:center;width:465px;"><iframe title="hellloWorld - TextField() - wonderfl build flash online" scrolling="no" src="http://wonderfl.net/blogparts/5okJ" width="465" height="490" style="border:1px black solid;"></iframe>[hellloWorld - TextField() - wonderfl build flash online](http://wonderfl.net/c/5okJ "hellloWorld - TextField() - wonderfl build flash online")</div>
@@ -61,7 +61,7 @@ package {
 
 インスタンスのプロパティをwith文を使ってまとめてみる。
 
-[as]
+```actionscript
 //titleを定義
 var title:TextField = new TextField();
 with( title ){
@@ -74,7 +74,7 @@ with( title ){
 	background = true;
 	backgroundColor = 0xEEEEEE;
 }
-[/as]
+```
 
 ・・・これがですね、実は思わぬ落とし穴があって動いてくれないんです。
 
@@ -82,7 +82,7 @@ with文の中身というのは、親オブジェクトの名前領域の中に�
 親が"title"オブジェクトなので、with文の中では、"title.stage.stageWidth" というように見られてしまいます。もちろん、titleインスタンスにはそんな階層のプロパティをもっていません。
 それでもwith文を使いたい場合はこのように書きます。
 
-[as]
+```actionscript
 //titleを定義
 var title:TextField = new TextField();
 var stageInstance:Object = stage;
@@ -96,11 +96,8 @@ with( title ){
 	background = true;
 	backgroundColor = 0xEEEEEE;
 }
-[/as]
+```
 
 一旦、上のスコープ内でstageを参照するオブジェクト"stageInstance" を生成して、"stageInstance" を参照しに行きます。この手間を考えると、そこまでしてwith文使う必要ないんじゃない？という気になります。名前領域に気を使うのはめんどくさ過ぎる気がします。
 
 そんなwith文ちゃんでした。
-
----
-※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

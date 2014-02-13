@@ -1,5 +1,5 @@
 ---
-title: '* tomcatのHelloWorld的な。 - JSP編'
+title: 'tomcatのHelloWorld的な。 - JSP編'
 published: true
 date: 2009-01-10 04:44
 comments: true
@@ -16,18 +16,15 @@ tomcat6をインストールした。
 "web.xml" とか "WEB-INF" とか初めて知りました。
 
 とりあえず、JSPのHelloWorld的な。
-[java]
+```java
 <%
   String ahya= "# JSPのテストやね。";
   out.println(ahya);
 %>
-[/java]
+```
 
 ▼テストURL
 [http://funnythingz.com/tomcat/funnythingz/test.jsp](http://funnythingz.com/tomcat/funnythingz/test.jsp "http://funnythingz.com/tomcat/funnythingz/test.jsp")
 
 JSPはコンパイルとか要らないから良いね。
 サーブレットはまた次回。
-
----
-※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

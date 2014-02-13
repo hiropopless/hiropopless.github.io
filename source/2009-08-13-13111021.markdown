@@ -1,5 +1,5 @@
 ---
-title: '* .haribote CSS画像置換'
+title: '.haribote CSS画像置換'
 published: true
 date: 2009-08-13 11:10
 comments: true
@@ -60,6 +60,3 @@ text-indent: -9999em; や、spanでテキスト囲ってを visibility: hidden; 
 
 個人的な見解ですが、今のところ .haribote を越えるCSS画像置換には未だ出会っていない。
 他に素晴らしいソースがあればぜひ教えてくださいませ。
-
----
-※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

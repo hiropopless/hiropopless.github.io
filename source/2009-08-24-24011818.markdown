@@ -1,5 +1,5 @@
 ---
-title: '* [mixiアプリ] 2ちゃんねるまとめサイトのRSSリーダーをつくってみた'
+title: '[mixiアプリ] 2ちゃんねるまとめサイトのRSSリーダーをつくってみた'
 published: true
 date: 2009-08-24 01:18
 comments: true
@@ -21,6 +21,3 @@ google Ajax APIを使ったので、めちゃめちゃ簡単にできたお。
 [[mixi] 2ちゃんまとめRSSリーダー](http://platform001.mixi.jp/run_appli.pl?id=6869 "[mixi] 2ちゃんまとめRSSリーダー")
 
 mixiアプリおもしれいお（＾ｑ＾）
-
----
-※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

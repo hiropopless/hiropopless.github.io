@@ -1,5 +1,5 @@
 ---
-title: '* fedora13 がもうすぐリリース！'
+title: 'fedora13 がもうすぐリリース！'
 published: true
 date: 2010-05-10 11:11
 comments: true
@@ -14,6 +14,3 @@ keywords:
 <script id="fedora-banner" type="text/javascript" src="http://fedoraproject.org/static/js/release-counter-ext.js?lang=ja"></script>
 
 公式サイトに行ったら上のタグがあったので貼ってみた。
-
----
-※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

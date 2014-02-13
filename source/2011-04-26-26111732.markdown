@@ -1,5 +1,5 @@
 ---
-title: '* 配列を拡張してみた。Array.shuffle() Array.clone() - JavaScript'
+title: '配列を拡張してみた。Array.shuffle() Array.clone() - JavaScript'
 published: true
 date: 2011-04-26 11:17
 comments: true
@@ -74,6 +74,3 @@ console.log( foo )       // [2,4,1,3,5]
 
 この2つとても便利ちゃんなのです。
 JavaScriptはどんどん拡張しちゃえば良いと思います。
-
----
-※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

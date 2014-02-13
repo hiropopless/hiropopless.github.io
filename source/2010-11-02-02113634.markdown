@@ -1,5 +1,5 @@
 ---
-title: '* wordpressにProcessingを埋め込むプラグインを導入してみた'
+title: 'wordpressにProcessingを埋め込むプラグインを導入してみた'
 published: true
 date: 2010-11-02 11:36
 comments: true
@@ -59,7 +59,7 @@ processing=threeballsclass 200 200
 
 
 実際のProcessing内でのソースはこちら
-[java]
+```java
 int dim = 200;
 Ball ball1, ball2, ball3, ball4;
 
@@ -127,11 +127,8 @@ class Ball{
   }
   
 }
-[/java]
+```
 
 こんな感じで興味があればぜひぜひどうぞー！
 
 アプレット、たのしいよ、アプレット。
-
----
-※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

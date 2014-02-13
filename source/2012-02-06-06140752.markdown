@@ -1,5 +1,5 @@
 ---
-title: '* Processing.js 8x8 ドットマトリックスLEDっぽいのつくってみた canvas'
+title: 'Processing.js 8x8 ドットマトリックスLEDっぽいのつくってみた canvas'
 published: true
 date: 2012-02-06 14:07
 comments: true
@@ -21,6 +21,7 @@ canvasで使うライブラリはすっかりProcessing.jsに馴染んでしま�
 
 Arduinoを使った8x8ドットマトリックスLEDの点滅をやりたいなと思い、そのシミュレーションとしてjsdoitでまずはcanvasに描画してみようと思いたちProcessing.jsで書いてみました。
 
+```javascript
 <script type="application/processing">
 int[][] p = {
   {0,0,1,0,0,0,0,0},
@@ -52,8 +53,9 @@ void draw(){
   }}
 }
 </script>
+```
 
-[java]
+```java
 int[][] p = {
   {0,0,1,0,0,0,0,0},
   {0,1,1,1,1,1,0,0},
@@ -83,7 +85,7 @@ void draw(){
     ellipse(x*10, y*10, 10, 10);
   }}
 }
-[/java]
+```
 
 jsdoitにも投稿してあります。
 [Processing.js 8x8 ドットマトリックスLEDっぽいのつくってみた](http://jsdo.it/funnythingz/uhNO "Processing.js 8x8 ドットマトリックスLEDっぽいのつくってみた")
@@ -91,6 +93,3 @@ jsdoitにも投稿してあります。
 
 描画するだけだったら簡単だけど、x軸に対して1ドットずつ横に流してアニメーションさせたいなーと。
 アニメーションできたらまたうｐしますん。
-
----
-※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

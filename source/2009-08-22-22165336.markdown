@@ -1,5 +1,5 @@
 ---
-title: '* yumで、proftpd インストール - CentOS'
+title: 'yumで、proftpd インストール - CentOS'
 published: true
 date: 2009-08-22 16:53
 comments: true
@@ -50,6 +50,3 @@ xinetd経由でないと起動できないようにしたので、万が一、pr
 あとはFTPクライアントソフト（NextFTPやFFFTPなど）を使ってFTP接続できてるなら成功である。
 
 繋がらない場合は、ファイヤーウォールなどポートの見直しなどをすること。
-
----
-※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

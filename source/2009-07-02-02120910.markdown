@@ -1,5 +1,5 @@
 ---
-title: '* DEATH:REBIRTH'
+title: 'DEATH:REBIRTH'
 published: true
 date: 2009-07-02 12:09
 comments: true
@@ -14,6 +14,3 @@ keywords:
 <object width="425" height="344"><param name="movie" value="http://www.youtube.com/v/-hqvCn3tA24&hl=ja&fs=1&"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/-hqvCn3tA24&hl=ja&fs=1&" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="344"></embed></object>
 
 <object width="425" height="344"><param name="movie" value="http://www.youtube.com/v/wzIcK73iG9o&hl=ja&fs=1&"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/wzIcK73iG9o&hl=ja&fs=1&" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="344"></embed></object>
-
----
-※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

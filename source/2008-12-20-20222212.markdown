@@ -1,5 +1,5 @@
 ---
-title: '* 「ブラッディ・マンデイ」の藤丸がもってるUSBメモリの作り方'
+title: '「ブラッディ・マンデイ」の藤丸がもってるUSBメモリの作り方'
 published: true
 date: 2008-12-20 22:22
 comments: true
@@ -226,6 +226,3 @@ APPEND initrd=/boot/oph/initrd.gz ramdisk_size=6666 root=/dev/ram0 rw autoexec=x
 
 ってな感じで以上です。
 なんか間違ってる部分とかあったらご指摘くださいませ。（まだまだ勉強中です…。）
-
----
-※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

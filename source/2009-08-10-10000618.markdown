@@ -1,5 +1,5 @@
 ---
-title: '* google Android をエミュレートしてみた'
+title: 'google Android をエミュレートしてみた'
 published: true
 date: 2009-08-10 00:06
 comments: true
@@ -28,6 +28,3 @@ keywords:
 ターミナルはiPhoneでも使えるが、[Ｊａｉlbreak](http://ja.wikipedia.org/wiki/Jailbreak "Ｊａｉlbreak")しなければならない。
 
 ＡｎｄｒｏｉｄはＪａｖａで開発できるので、iPhone開発のように、Objectiv-Cなど新たに覚える必要もないし、開発者にとっての敷居がかなり低いと思われるので、今後流行りそうな予感はするが、一般ユーザーに対しては全然iPhoneのほうがまだまだ強いんだろうなぁ。
-
----
-※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

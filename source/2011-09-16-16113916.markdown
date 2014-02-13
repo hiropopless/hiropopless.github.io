@@ -1,5 +1,5 @@
 ---
-title: '* MacにGoogle App Engine開発環境を構築してHello worldする。'
+title: 'MacにGoogle App Engine開発環境を構築してHello worldする。'
 published: true
 date: 2011-09-16 11:39
 comments: true
@@ -82,6 +82,3 @@ GAEのアカウント登録をすませてから下記からMac用のSDKをダ�
 
 Runして無事に動けばOK！あとは開発するのみ！
 <a href="/imgs/archives/2011/09/f6caab2b832280e6d19ef654c26898b6.png"><img src="/imgs/archives/2011/09/f6caab2b832280e6d19ef654c26898b6.png" alt="" title="スクリーンショット（2011-09-16 11.38.12）" width="556" height="451" class="alignnone size-full wp-image-753" /></a>
-
----
-※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

@@ -1,5 +1,5 @@
 ---
-title: '* 【Linux】findとxargsとmvで検索したファイルを任意のフォルダに移動する'
+title: '【Linux】findとxargsとmvで検索したファイルを任意のフォルダに移動する'
 published: true
 date: 2012-03-12 11:28
 comments: true
@@ -36,6 +36,3 @@ find ./ -path ./old/images -prune -o -type f -name '*.gif' | egrep '\.gif$' | xa
 ```
 
 さすが神様、脱帽です！
-
----
-※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

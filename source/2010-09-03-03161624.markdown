@@ -1,5 +1,5 @@
 ---
-title: '* Processing に入門してみた'
+title: 'Processing に入門してみた'
 published: true
 date: 2010-09-03 16:16
 comments: true
@@ -22,11 +22,11 @@ Javaがベースになっているので、文法さえわかれば誰でも簡�
 <a href="/imgs/archives/2010/09/s11.gif"><img src="/imgs/archives/2010/09/s11.gif" alt="" title="s1" width="500" height="600" class="alignnone size-full wp-image-525" /></a>
 
 下のサンプルコードだけで下記が表示される。
-[java]
+```java
 void draw(){
   rect(10,10,10,10);
 }
-[/java]
+```
 <a href="/imgs/archives/2010/09/s2.gif"><img src="/imgs/archives/2010/09/s2.gif" alt="" title="s2" width="134" height="160" class="alignnone size-full wp-image-528" /></a>
 
 スケッチブックに白い四角形が描かれた。draw関数の中にrectメソッドを記述すると四角形を描いてくれる。
@@ -34,7 +34,7 @@ void draw(){
 このようにメソッドが直感的でデジタルアートに特化したシンプルな言語なようですぜ。
 
 応用編でマウスで絵を描ける風にしてみました。
-[java]
+```java
 void setup(){
   size(500,400);
   smooth();
@@ -47,12 +47,9 @@ void draw(){
     ellipse(mouseX,mouseY,10,10);
   }
 }
-[/java]
+```
 
 描いてみたもの
 <a href="/imgs/archives/2010/09/s3.gif"><img src="/imgs/archives/2010/09/s3.gif" alt="" title="s3" width="506" height="432" class="alignnone size-full wp-image-530" /></a>
 
 たのしいお（＾ｑ＾）！
-
----
-※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

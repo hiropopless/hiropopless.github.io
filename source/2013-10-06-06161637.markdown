@@ -1,5 +1,5 @@
 ---
-title: '* TypeScriptでqflipper.jsというものを書いた'
+title: 'TypeScriptでqflipper.jsというものを書いた'
 published: true
 date: 2013-10-06 16:16
 comments: true
@@ -41,6 +41,3 @@ TypeScriptのおかげでネイティブなJavaScriptを書けなくなってき
 </dl>
 
 とりあえずtouchイベントで対応。iOS, Androidで割りとさくさく動きます。よかったらぜひおためしくださいませ(^q^
-
----
-※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

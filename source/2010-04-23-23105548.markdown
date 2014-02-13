@@ -1,5 +1,5 @@
 ---
-title: '* Value too large for defined data type - Tripwire'
+title: 'Value too large for defined data type - Tripwire'
 published: true
 date: 2010-04-23 10:55
 comments: true
@@ -66,6 +66,3 @@ Please enter your local passphrase:     #<- ローカルパスフレーズ応答
 ```
 
 他にも動画ファイルを保存していたりなどで2GB超えてしまうファイル群を格納しているディレクトリがあったら、そこを登録しておいても良いと思う。
-
----
-※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

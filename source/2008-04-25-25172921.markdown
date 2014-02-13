@@ -1,5 +1,5 @@
 ---
-title: '* pearインストール メモ'
+title: 'pearインストール メモ'
 published: true
 date: 2008-04-25 17:29
 comments: true
@@ -53,6 +53,3 @@ Console_Getopt   1.2.3   stable
 PEAR             1.7.1   stable
 Structures_Graph 1.0.2   stable
 ```
-
----
-※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

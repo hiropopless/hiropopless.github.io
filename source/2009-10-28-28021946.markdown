@@ -1,5 +1,5 @@
 ---
-title: '* JavaScript OOP入門編2'
+title: 'JavaScript OOP入門編2'
 published: true
 date: 2009-10-28 02:19
 comments: true
@@ -48,6 +48,3 @@ alert( objectA._method( objectA._var ) );
 なんだか説明あってねーよ！まちがってんよ！とご指摘などありましたら恐縮ではございますが、ご指摘いただければ助かります。
 
 ってな訳でまた来週！（やるのかな？）
-
----
-※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

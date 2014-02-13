@@ -1,5 +1,5 @@
 ---
-title: '* 田代砲的なもの（DOSアタックで耐久テスト）'
+title: '田代砲的なもの（DOSアタックで耐久テスト）'
 published: true
 date: 2011-11-30 12:07
 comments: true
@@ -11,7 +11,7 @@ keywords:
 ---
 たまにサイトの耐久テストをやったりするので、2ちゃんねるで有名な田代砲的な（ＤＯＳアタック）ものをブックマークレット用につくってみました。
 
-```js
+```javascript
 javascript:(function(){ setInterval(function(){var dd = new Date(); console.log( dd.getUTCHours() + ":" + dd.getUTCMinutes() + ":" + dd.getUTCSeconds() ); location.reload()}, 5000) })();
 ```
 
@@ -22,5 +22,4 @@ javascript:(function(){ setInterval(function(){var dd = new Date(); console.log(
 
 そんなメモでした。
 
----
-※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。
+

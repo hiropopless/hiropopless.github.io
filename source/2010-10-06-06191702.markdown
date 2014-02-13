@@ -1,5 +1,5 @@
 ---
-title: '* Processing でオブジェクト指向っぽくネズミさんを描いてみた'
+title: 'Processing でオブジェクト指向っぽくネズミさんを描いてみた'
 published: true
 date: 2010-10-06 19:17
 comments: true
@@ -17,7 +17,7 @@ keywords:
 とりま、某有名なネズミさんに似た形をellipse()使って描いてみました。
 <a href="/imgs/archives/2010/10/mickey1.jpg"><img src="/imgs/archives/2010/10/mickey1.jpg" alt="" title="mickey1" width="406" height="432" class="alignnone size-full wp-image-538" /></a>
 
-[java]
+```java
 float positionX = 125;
 float positionY = 125;
 
@@ -35,11 +35,11 @@ void setup(){
 }
 void draw(){
 }
-[/java]
+```
 
 割とキレイに描けてるんじゃないかなとｗｗ
 ただ、毎回こいつを繰り返し処理させるのはいかがなものかと思うので、クラスオブジェクトにまとめてみました。
-[java]
+```java
 class Mouse{
   
   //プロパティ
@@ -66,12 +66,12 @@ class Mouse{
     ellipse( 25 + this.x, 25 + this.y, 100, 100 );
   }
 }
-[/java]
+```
 
 実際にこのMouseクラスを使ってテキトーに並べてみました。
 <a href="/imgs/archives/2010/10/mickey3.jpg"><img src="/imgs/archives/2010/10/mickey3.jpg" alt="" title="mickey3" width="406" height="432" class="alignnone size-full wp-image-545" /></a>
 
-[java]
+```java
 float positionX = 125;
 float positionY = 125;
 
@@ -123,12 +123,9 @@ class Mouse{
     ellipse( 25 + this.x, 25 + this.y, 100, 100 );
   }
 }
-[/java]
+```
 
 市松模様を描くクラスとかにさらにまとめれば市松模様描けちゃう！
 なんだか楽しくなってきた！
 
 とりあえずここまで。
-
----
-※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

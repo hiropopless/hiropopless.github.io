@@ -1,5 +1,5 @@
 ---
-title: '* さくらVPSにRubyとRuby on Railsをインストールする'
+title: 'さくらVPSにRubyとRuby on Railsをインストールする'
 published: true
 date: 2010-11-09 12:02
 comments: true
@@ -14,9 +14,6 @@ keywords:
 - Ruby on Rails
 ---
 さくらVPSにRubyとRuby on Railsをインストールする
-
-
-
 
 先日借りたさくらVPSでRubyを使おうと思ったらデフォルトでインストールされていないようなのでRuby環境を構築することにする。ついでにRuby on Railsもインストールすることにする。
 
@@ -493,6 +490,3 @@ http://localhost:3000/ にアクセス。
 <a href="/imgs/archives/2010/11/rails.gif"><img src="/imgs/archives/2010/11/rails-300x230.gif" alt="" title="rails" width="300" height="230" class="alignnone size-medium wp-image-563" /></a>
 
 やったー！うごいたー！
-
----
-※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

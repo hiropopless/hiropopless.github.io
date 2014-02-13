@@ -1,5 +1,5 @@
 ---
-title: '* 原付改造ブログ MovableType（MT）で構築'
+title: '原付改造ブログ MovableType（MT）で構築'
 published: true
 date: 2009-02-04 01:13
 comments: true
@@ -26,6 +26,3 @@ wordpress大好きな僕としては、個人的にMovableTypeとかアンチだ
 
 MT組み込んだら更新もめちゃめちゃ簡単だし、もうラクっていうかなんていうか…。
 今の世の中って凄いです。
-
----
-※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

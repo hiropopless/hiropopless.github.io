@@ -1,5 +1,5 @@
 ---
-title: '* XMLHttpRequest'
+title: 'XMLHttpRequest'
 published: true
 date: 2007-12-14 01:58
 comments: true
@@ -83,6 +83,3 @@ function on_loaded(oj){
 受信したデータは、受信時に起動するイベントonreadystatechange[4]内でreadyState値[5]が4の受信完了時に取得します。ここでは、コールバック用関数 on_loaded(httpoj)を作り、レスポンスを引数で渡し、受信データはresponseText[6]で受け取っています。 ( ちなみに、sendをonreadystatechangeの前に記述すると、ieでは動作しなくなります、、、。)
 
 ボタンクリック時に動作する関数requestFileの引数として、HTTPメソッドとして’GET’、リクエストURLに ‘./test.txt’ 、非同期オプションに trueを指定して、データは ” を渡しています。 ( よく見かけるサンプルでは、このsend()に渡されるデータをnullとするものが多いのですが、konquerorでエラーが発生するのでここでは、とりあえず、send('') としました。)
-
----
-※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

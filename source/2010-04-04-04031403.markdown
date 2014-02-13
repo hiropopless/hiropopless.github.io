@@ -1,5 +1,5 @@
 ---
-title: '* 美人時計のカワイイ子をまとめた動画をつくってみた'
+title: '美人時計のカワイイ子をまとめた動画をつくってみた'
 published: true
 date: 2010-04-04 03:14
 comments: true
@@ -17,6 +17,3 @@ youtubeやニコ動でもよく見るのですが、動画編集をやってみ�
 <object width="480" height="385"><param name="movie" value="http://www.youtube.com/v/YF2jihCUPRQ&hl=ja_JP&fs=1&"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/YF2jihCUPRQ&hl=ja_JP&fs=1&" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="480" height="385"></embed></object>
 
 ※美人時計様、ご本人様からの削除要請がありましたら削除します。
-
----
-※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

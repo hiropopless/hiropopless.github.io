@@ -1,5 +1,5 @@
 ---
-title: '* Powershell でのシェルスクリプティング'
+title: 'Powershell でのシェルスクリプティング'
 published: true
 date: 2011-03-08 18:56
 comments: true
@@ -43,6 +43,3 @@ PS C:\Documents and Settings\ooiwa>
 <img src="/imgs/archives/2011/03/3.gif" alt="" title="3" class="alignnone size-full wp-image-592" />
 
 割と簡単にPowershellスクリプトが書けるので、GUIでのめんどくさい作業はどんどんシェルスクリプト書いて実行してしまえば良いと思う。
-
----
-※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

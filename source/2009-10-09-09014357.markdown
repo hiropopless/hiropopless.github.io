@@ -1,5 +1,5 @@
 ---
-title: '* ActionScript3.0でiPhoneアプリ開発がAdobe CS5で実現！？'
+title: 'ActionScript3.0でiPhoneアプリ開発がAdobe CS5で実現！？'
 published: true
 date: 2009-10-09 01:43
 comments: true
@@ -34,6 +34,3 @@ iPhoneアプリをObjective-CじゃなくてもAS3で開発できちゃうって
 それに比べ、googleのAndroid使ったみましたが、動きはもっさりだし、あいつイマイチっす。やっぱりJavaってとこがあかんじゃないのかなー。重いし、iPhoneに慣れてしまっていると、どうしてもiPhoneと同じような操作しちゃうんだけど、けっこう融通が利かない。ユーザビリティもいまいちでwebブラウジングもイマイチだし、売れても流行らないと思う。結果、売れないと思う。
 
 JavaScriptやってる人は今からActionScript3.0にどっぷりいっちゃって良いと思うよ！（＾ω＾）
-
----
-※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

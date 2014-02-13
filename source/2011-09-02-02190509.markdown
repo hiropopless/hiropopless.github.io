@@ -1,5 +1,5 @@
 ---
-title: '* Titanium Studio でデスクトップアプリ開発に入門してみた'
+title: 'Titanium Studio でデスクトップアプリ開発に入門してみた'
 published: true
 date: 2011-09-02 19:05
 comments: true
@@ -61,13 +61,12 @@ Titanium はiPhone, Android でクロスデバイス開発をするための開�
 		<meta charset="utf-8">
 		<title>test</title>
 		<style type="text/css">
-			body {
-				background: #fff;
-			}
+		body {
+			background: #fff;
+		}
 		</style>
 	</head>
 	<body>
-# test
 		<script type="text/python">
 			def pyFunc(str):
 				document.write(str)
@@ -91,6 +90,3 @@ Titanium はiPhone, Android でクロスデバイス開発をするための開�
 デスクトップアプリができちゃった！
 
 Pythonの中にRubyを書いたりJS書いたり何だか何でもアリのカオス状態ですが、面白いことできそうな予感がぷんぷんします。こういうの嫌いじゃない。
-
----
-※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

@@ -1,5 +1,5 @@
 ---
-title: '* iPhone,AndroidなどでフリックできるjQueryプラグインjcflick update!!'
+title: 'iPhone,AndroidなどでフリックできるjQueryプラグインjcflick update!!'
 published: true
 date: 2012-06-01 00:47
 comments: true
@@ -20,6 +20,3 @@ iPhone, Androidはもちろんのこと、マルチデバイスに対応した�
 [jQuery.jcflick v0.0.6](http://tpl.funnythingz.com/js/jcflick/ "jQuery.jcflick v0.0.6")
 
 あと最近ですが、webkit(iPhone, Android)に特化したパフォーマンス重視で書いた新しいフリックJSの開発をはじめました。jcflickはスマフォ、タブレット、PCを視野にいれているのでパフォーマンスが犠牲になっているためライブラリを使わずネイティブのJavaScriptコードで記述しています。完成したら公開しますお。
-
----
-※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

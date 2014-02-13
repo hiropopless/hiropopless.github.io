@@ -1,5 +1,5 @@
 ---
-title: '* MacPortsをアンインストールし、Homebrewをインストールする'
+title: 'MacPortsをアンインストールし、Homebrewをインストールする'
 published: true
 date: 2011-09-03 18:09
 comments: true
@@ -37,51 +37,3 @@ $ rmdir Library/Homebrew Library/Aliases Library/Formula Library/Contributions
 $ rm -rf .git
 $ rm -rf ~/Library/Caches/Homebrew
 ```
-
-基本的なコマンドは下記の通り
-
-<table>
-<thead>
-<tr>
-<th>コマンド</th><th>説明</th>
-</tr>
-</thead>
-<tbody>
-<tr><td>$ brew update</td><td>Homebrew本体をアップグレードします。</td></tr>
-<tr><td>$ brew install パッケージ名</td><td>指定したパッケージが入っていなければインストールを。
-<br>
-最新版でないものに対してはアップグレードを実施します。</td></tr>
-<tr><td>$ brew uninstall パッケージ名
-<br>
-$ brew remove パッケージ名
-<br>
-$ brew rm パッケージ名</td><td>指定したパッケージをアンインストールします。</td></tr>
-
-<tr><td>$ brew outdated</td><td>導入済みのパッケージで、最新版ではないものを表示します。</td></tr>
-<tr><td>$ brew upgrade</td><td>最新版ではないパッケージをまとめてアップグレードします。</td></tr>
-<tr><td>$ brew search パッケージ名<br>
-$ brew -S パッケージ名</td><td>インストール可能なパッケージを検索します。</td></tr>
-<tr><td>
-$ brew options パッケージ名
-</td>
-<td>
-インストール時に指定できるオプションを表示します。
-</td>
-</tr>
-<tr><td>$ brew --help<br>
-$ brew -h</td>
-<td>ヘルプを表示します。</td>
-</tr>
-<tr><td>$ brew cleanup</td>
-<td>古いバージョンのパッケージを削除します。</td></tr>
-<tr>
-<td>$ brew cleanup パッケージ名</td>
-<td>
-指定したパッケージのみ古いバージョンを削除します。</td></tr>
-<tr><td>$ brew -v</td>
-<td>Homebrewのバージョンを表示します。</td></tr>
-
-</tbody></table>
-
----
-※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

@@ -1,5 +1,5 @@
 ---
-title: '* transition, transform をFirefoxでもJSで操作する際の注意【CSS3】'
+title: 'transition, transform をFirefoxでもJSで操作する際の注意【CSS3】'
 published: true
 date: 2012-06-06 11:58
 comments: true
@@ -27,6 +27,3 @@ firefox対応にする場合、elm.style.mozTransition ではなく、elm.style.
 </script>
 <div id="hoge">hoge</div>
 ```
-
----
-※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

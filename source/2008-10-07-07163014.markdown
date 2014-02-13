@@ -1,5 +1,5 @@
 ---
-title: '* Java始めました。'
+title: 'Java始めました。'
 published: true
 date: 2008-10-07 16:30
 comments: true
@@ -13,7 +13,7 @@ keywords:
 
 最初につくった "hello world" 的なもの。↓
 
-[java]
+```java
 class a {
 	public static void main(String[] args) {
 		System.out.print("引数の数は¥"" + args.length + "¥"やね。" + "¥n" );
@@ -27,9 +27,6 @@ class a {
 		}
 	}
 }
-[/java]
+```
 
 ぼちぼち頑張ってゆきまする。
-
----
-※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

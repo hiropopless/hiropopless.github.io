@@ -1,5 +1,5 @@
 ---
-title: '* JavaScriptのクロージャーでFizzBuzzやってみた'
+title: 'JavaScriptのクロージャーでFizzBuzzやってみた'
 published: true
 date: 2011-12-03 12:28
 comments: true
@@ -16,7 +16,7 @@ keywords:
 言語はいつものJavaScript。
 あと最近（今さら）覚えたクロージャーを使って書いてみました。
 
-```js
+```javascript
 var rtn = "";
 var fizzBuzz = function(fizz, buzz, max){
     return function(){
@@ -52,6 +52,3 @@ console.log(rtn);
 
 10分くらいでできてしまった…。
 簡単だったけど面白かった。
-
----
-※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

@@ -1,5 +1,5 @@
 ---
-title: '* アド広告 - mixi Flash編'
+title: 'アド広告 - mixi Flash編'
 published: true
 date: 2009-08-09 16:27
 comments: true
@@ -20,6 +20,3 @@ mixiで面白いアド広告を見つけた。
 <div><a href="/imgs/archives/2009/08/mixi_ad_1.jpg"><img src="/imgs/archives/2009/08/mixi_ad_1-300x191.jpg" alt="" title="mixi_ad_1" width="300" height="191" class="alignnone size-medium wp-image-192" /></a></div>
 
 これはなかなか面白いなぁと思ったので書き留めてみた。
-
----
-※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

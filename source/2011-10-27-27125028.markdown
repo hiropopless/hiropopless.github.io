@@ -1,5 +1,5 @@
 ---
-title: '* 【追記あり】PHP5.3.8 をCentOS5系にソースからインストールする'
+title: '【追記あり】PHP5.3.8 をCentOS5系にソースからインストールする'
 published: true
 date: 2011-10-27 12:50
 comments: true
@@ -54,6 +54,3 @@ Curlを使う場合。
 ```sh
 ./configure --enable-mbstring --with-apxs2 --with-mysql --with-gd --with-zlib --with-libdir=lib64 --with-pear --with-gd --with-curl --enable-sockets --enable-maintainer-zts --cache-file=../config.cache
 ```
-
----
-※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

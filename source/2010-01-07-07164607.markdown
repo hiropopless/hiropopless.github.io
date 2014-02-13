@@ -1,5 +1,5 @@
 ---
-title: '* flashplayerの有無判別'
+title: 'flashplayerの有無判別'
 published: true
 date: 2010-01-07 16:46
 comments: true
@@ -39,6 +39,3 @@ function FlashPlayerVer(){
 
 FlashPlayerVer() を実行したときに 0 が返ってきたら入っていないということに。
 他にもいろいろJSあるけど、これシンプルで結構好き。
-
----
-※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

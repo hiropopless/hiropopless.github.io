@@ -1,5 +1,5 @@
 ---
-title: '* 美人時計のGAL時計に若槻千夏が登場してた。'
+title: '美人時計のGAL時計に若槻千夏が登場してた。'
 published: true
 date: 2010-01-04 01:27
 comments: true
@@ -88,6 +88,3 @@ end
 <img src="/imgs/archives/2010/01/2007-300x228.jpg" alt="2007" title="2007" width="300" height="228" class="alignnone size-medium wp-image-352" />
 
 むっちゃくちゃ可愛いですお（＾ｑ＾）オレの方が可愛いけどなっ！
-
----
-※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

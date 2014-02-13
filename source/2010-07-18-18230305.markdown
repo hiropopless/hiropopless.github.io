@@ -1,5 +1,5 @@
 ---
-title: '* Arduino 入門してみた - フィジカルコンピューティング'
+title: 'Arduino 入門してみた - フィジカルコンピューティング'
 published: true
 date: 2010-07-18 23:03
 comments: true
@@ -32,21 +32,19 @@ GainerやらArduinoやらたくさんのマイコンがあるのだけれど、A
 <div><a href="/imgs/archives/2010/07/hello_world_1.jpg"><img class="alignleft size-medium wp-image-508" title="hello_world_1" src="/imgs/archives/2010/07/hello_world_1-300x208.jpg" alt="" width="300" height="208" /></a></div>
 <br clear="all" />
 Arduino SDK でC言語でProcessingに似た形式でプログラムを書くことができる。
-[c]
+
+```c
 #define LED 13
 
 void setup(){
-pinMode(LED, OUTPUT);
+	pinMode(LED, OUTPUT);
 }
 void loop(){
-digitalWrite(LED, HIGH);
-delay(1000);
-digitalWrite(LED, LOW);
-delay(1000);
+	digitalWrite(LED, HIGH);
+	delay(1000);
+	digitalWrite(LED, LOW);
+	delay(1000);
 }
-[/c]
+```
 
 1秒ごとにLEDが点いたり消えたりするようになった。
-
----
-※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

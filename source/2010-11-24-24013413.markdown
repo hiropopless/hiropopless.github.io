@@ -1,5 +1,5 @@
 ---
-title: '* OpenKinect と ofxKinect を導入してopenFrameworks でキネクトハック'
+title: 'OpenKinect と ofxKinect を導入してopenFrameworks でキネクトハック'
 published: true
 date: 2010-11-24 01:34
 comments: true
@@ -147,6 +147,3 @@ OpenFrameworks/apps/examples/ofxKinect
 なんかつくるお！
 
 P.S. できちゃえば何ともないんだけど、ここまでが割と難しくいくらかつまずいたよ…。
-
----
-※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

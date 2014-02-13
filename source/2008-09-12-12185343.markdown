@@ -1,5 +1,5 @@
 ---
-title: '* JavaScriptでvar_dump()が使えるライブラリ - funny.js'
+title: 'JavaScriptでvar_dump()が使えるライブラリ - funny.js'
 published: true
 date: 2008-09-12 18:53
 comments: true
@@ -30,6 +30,3 @@ funny.var_dump( a );
 
 </script>
 ```
-
----
-※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

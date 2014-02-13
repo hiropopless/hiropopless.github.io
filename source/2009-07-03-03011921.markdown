@@ -1,5 +1,5 @@
 ---
-title: '* pearでHTTP_Requestクラスを使うには (1)'
+title: 'pearでHTTP_Requestクラスを使うには (1)'
 published: true
 date: 2009-07-03 01:19
 comments: true
@@ -26,6 +26,3 @@ HTTP_Requestクラスを使うには、下記のコマンドを実行する。
 
 これで晴れてHTTP_Requestが使いまくりである。
 リファレンスはまた後日。
-
----
-※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。

@@ -1,5 +1,5 @@
 ---
-title: '* 自動改行されない'
+title: '自動改行されない'
 published: true
 date: 2007-12-18 18:06
 comments: true
@@ -51,6 +51,3 @@ Firefox・Netscapeで連続した半角文字を折り返す
 しかし記号もそうなのだとは知りませんでした。
 参考ページ。
 [ http://www.mozilla.gr.jp/forums/?mode=al2&amp;namber=6847&amp;rev=&amp;&amp;KLOG=47](http://www.mozilla.gr.jp/forums/?mode=al2&amp;namber=6847&amp;rev=&amp;&amp;KLOG=47 " http://www.mozilla.gr.jp/forums/?mode=al2&amp;namber=6847&amp;rev=&amp;&amp;KLOG=47")</blockquote>
-
----
-※この記事は WordPress に投稿した記事を変換したものです。一部不自然な表示があるかも知れません。ご了承ください。また、記事タイトル先頭の * は WordPress から移行した記事である印です。
