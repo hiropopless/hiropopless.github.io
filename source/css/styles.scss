@@ -14,3 +14,7 @@
 .content {
   @extend %inner_box;
 }
+
+p {
+  line-height: 1.4;
+}
