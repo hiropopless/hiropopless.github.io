@@ -16,18 +16,16 @@ TypeScriptのおかげでネイティブなJavaScriptを書けなくなってき
 
 レスポンシブに対応したjQueryライブラリとして開発したjQuery.jcflick.js。今はよき思い出。
 
-<dl>
-<dt>[jQuery.jcflick.js](http://tpl.funnythingz.com/js/jcflick/reference.html "jQuery.jcflick.js")</dt>
-<dd>[https://github.com/funnythingz/jcflick](https://github.com/funnythingz/jcflick "https://github.com/funnythingz/jcflick")</dd>
-</dl>
+[jQuery.jcflick.js](http://tpl.funnythingz.com/js/jcflick/reference.html "jQuery.jcflick.js")
+[https://github.com/funnythingz/jcflick](https://github.com/funnythingz/jcflick "https://github.com/funnythingz/jcflick")
 
 フリッカブルなJSなんてどうせiOSとAndroidでしか使わないじゃん！それってwebkitだけ対応しておけばおｋ！
 っていうオラオラなスタンスで開発したのがzflick.js。ほぼすべてをオプション化しほぼ全自動で初期化して動く。
 
-<dl>
-<dt>[zflick.js](http://funnythingz.github.io/zflickjs/ "zflick.js")</dt>
-<dd>[https://github.com/funnythingz/zflickjs](https://github.com/funnythingz/zflickjs "https://github.com/funnythingz/zflickjs")</dd>
-</dl>
+
+[zflick.js](http://funnythingz.github.io/zflickjs/ "zflick.js")
+[https://github.com/funnythingz/zflickjs](https://github.com/funnythingz/zflickjs "https://github.com/funnythingz/zflickjs")
+
 
 しかしjQuery.jcflick.jsもzflick.jsもDOMを自動生成してしまうので独自の動きをつけたりカスタムがやりづらい部分がありました。
 
@@ -35,9 +33,9 @@ TypeScriptのおかげでネイティブなJavaScriptを書けなくなってき
 
 最近はお仕事でTypeScriptを書いているのでせっかくなのでTypeScriptで書いてみました。
 
-<dl>
-<dt>[qflipper.js](http://funnythingz.github.io/qflipper/ "qflipper.js")</dt>
-<dd>[https://github.com/funnythingz/qflipper](https://github.com/funnythingz/qflipper "https://github.com/funnythingz/qflipper")</dt>
-</dl>
+
+[qflipper.js](http://funnythingz.github.io/qflipper/ "qflipper.js")
+[https://github.com/funnythingz/qflipper](https://github.com/funnythingz/qflipper "https://github.com/funnythingz/qflipper")
+
 
 とりあえずtouchイベントで対応。iOS, Androidで割りとさくさく動きます。よかったらぜひおためしくださいませ(^q^
