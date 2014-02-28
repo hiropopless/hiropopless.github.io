@@ -83,6 +83,16 @@ li {
   font-size: 120%;
   @extend %sentence;
 }
+.figure-profile {
+  margin-bottom: 1em;
+
+  img {
+    @include border-radius(.5em);
+    overflow: hidden;
+    width: 100%;
+    max-width: 720px;
+  }
+}
 .entry {
   padding-bottom: 1.5em;
   margin-bottom: 1.5em;
