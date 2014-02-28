@@ -4,12 +4,22 @@
 @import "pre";
 @import "monokai";
 
+%sentence {
+  line-height: 1.4;
+  font-size: 100%;
+}
+
 %inner_box {
   margin: 0 10px;
+}
+* {
+  @include box-sizing(border-box);
 }
 
 .header {
   @extend %inner_box;
+  text-align :center;
+  margin: 1em;
 }
 
 .content {
@@ -17,5 +27,23 @@
 }
 
 p {
-  line-height: 1.4;
+  @extend %sentence;
+}
+
+.hero-site {
+  font-size: 200%;
+  color: #345;
+  margin: 0 0 .5em;
+  @extend %sentence;
+
+  a {
+    text-decoration: none;
+    color: #345;
+  }
+}
+
+.description-site {
+  font-size: 120%;
+  color: #345;
+  @extend %sentence;
 }

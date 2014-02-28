@@ -2,16 +2,24 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0, maximum-scale=10">
     <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1'>
     <title>ひろぽっぽれす - hiropopless<%= ' - ' + current_article.title unless current_article.nil? %></title>
     <%= feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed" %>
     <link rel="stylesheet" type="text/css" href="/css/styles.css">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="ひろぽっぽれす">
+    <meta property="og:url" content="http://hiropo.co.uk">
+    <meta property="og:description" content="いくらが大好きです。Webの開発やってます。">
+    <meta property="og:site_name" content="ひろぽっぽれす">
+
   </head>
   <body>
 
-    <header>
-      <h1><a href="http://hiropo.co.uk">ひろぽっぽれす - hiropopless</a></h1>
-      <div>いくらが大好きです。Webの開発やってます。</div>
+    <header class="header">
+      <h1 class="hero-site"><a href="http://hiropo.co.uk">ひろぽっぽれす - hiropopless</a></h1>
+      <div class="description-site">いくらが大好きです。Webの開発やってます。</div>
     </header>
     
     <section id="main" class="content" role="main">
@@ -21,7 +29,7 @@
       <%= yield %>
     </section>
     
-    <aside>
+    <aside class="aside">
       <h2>Recent Articles</h2>
       <ol>
         <% blog.articles[0...10].each do |article| %>
