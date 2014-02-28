@@ -3,7 +3,7 @@ title: 'TypeScriptでqflipper.jsというものを書いた'
 published: true
 date: 2013-10-06 16:16
 comments: true
-categories:
+tags:
 - TypeScript
 
 keywords:

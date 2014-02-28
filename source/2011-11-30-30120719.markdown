@@ -3,7 +3,7 @@ title: '田代砲的なもの（DOSアタックで耐久テスト）'
 published: true
 date: 2011-11-30 12:07
 comments: true
-categories:
+tags:
 - JavaScript
 
 keywords:

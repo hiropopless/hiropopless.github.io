@@ -3,7 +3,7 @@ title: 'メディアクエリ ワンソース・マルチデバイステンプ�
 published: true
 date: 2011-09-16 21:31
 comments: true
-categories:
+tags:
 - Android
 - HTML5
 - iPad

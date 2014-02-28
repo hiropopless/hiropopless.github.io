@@ -1,8 +1,6 @@
 ---
-title: 'Wordpressからmiddleman/GitHubに移行した'
-published: true
-date: 2014-02-28 14:00
-comments: true
+title: Wordpressからmiddleman/GitHubに移行した
+date: 2014-02-28 05:06 UTC
 tags:
 - middleman
 ---
@@ -13,6 +11,6 @@ tags:
 
 参考にしたのは下記らへん。
 
-http://middlemanapp.com/jp/basics/blogging/
+[](http://middlemanapp.com/jp/basics/blogging/)
 
 middleman超いいです！

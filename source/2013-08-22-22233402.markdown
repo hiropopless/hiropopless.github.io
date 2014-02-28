@@ -3,7 +3,7 @@ title: 'GruntでTypeScriptとSass/Compassの面倒なコンパイルを自動化
 published: true
 date: 2013-08-22 23:34
 comments: true
-categories:
+tags:
 - Grunt
 - JavaScript
 - Sass/Compass

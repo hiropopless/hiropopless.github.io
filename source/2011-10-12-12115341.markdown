@@ -3,7 +3,7 @@ title: 'ブックマークレットでjQueryを使う方法'
 published: true
 date: 2011-10-12 11:53
 comments: true
-categories:
+tags:
 - JavaScript
 - jQuery
 

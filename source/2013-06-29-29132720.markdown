@@ -3,7 +3,7 @@ title: 'CoffeeScript入門 - .vimrc設定編'
 published: true
 date: 2013-06-29 13:27
 comments: true
-categories:
+tags:
 - CoffeeScript
 - JavaScript
 

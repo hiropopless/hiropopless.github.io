@@ -3,7 +3,7 @@ title: 'Processing.js 8x8 ドットマトリックスLEDっぽいのつくって
 published: true
 date: 2012-02-06 14:07
 comments: true
-categories:
+tags:
 - canvas
 - HTML5
 - Java

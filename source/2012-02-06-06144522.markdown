@@ -3,7 +3,7 @@ title: 'HTMLとCSSで二次元配列でドット絵 (Hex Color Codes)'
 published: true
 date: 2012-02-06 14:45
 comments: true
-categories:
+tags:
 - (X)HTML+CSS
 - JavaScript
 

@@ -3,7 +3,7 @@ title: 'JavaScriptで桃鉄っぽいもの作り始めてみた #jsdoit'
 published: true
 date: 2011-12-29 13:25
 comments: true
-categories:
+tags:
 - JavaScript
 
 keywords:

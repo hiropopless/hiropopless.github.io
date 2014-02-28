@@ -3,7 +3,7 @@ title: 'MacOSX Lion にImageMagickをインストールする'
 published: true
 date: 2011-09-30 02:25
 comments: true
-categories:
+tags:
 - ImageMagick
 - MacOSX
 

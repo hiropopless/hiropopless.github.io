@@ -3,7 +3,7 @@ title: 'TypeScript入門'
 published: true
 date: 2013-07-04 23:23
 comments: true
-categories:
+tags:
 - JavaScript
 
 keywords:

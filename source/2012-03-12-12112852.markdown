@@ -3,7 +3,7 @@ title: '【Linux】findとxargsとmvで検索したファイルを任意のフ�
 published: true
 date: 2012-03-12 11:28
 comments: true
-categories:
+tags:
 - find
 - Linux
 - xargs

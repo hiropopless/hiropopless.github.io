@@ -3,7 +3,7 @@ title: 'Webサイトをクロールするためのメモ。wgetとpavuk。'
 published: true
 date: 2012-02-29 18:45
 comments: true
-categories:
+tags:
 - Linux
 - pavuk
 - wget

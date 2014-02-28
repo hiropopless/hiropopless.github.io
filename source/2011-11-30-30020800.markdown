@@ -3,7 +3,7 @@ title: 'ProcessingのVideoライブラリを試してみた'
 published: true
 date: 2011-11-30 02:08
 comments: true
-categories:
+tags:
 - Processing
 
 keywords:

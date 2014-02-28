@@ -3,7 +3,7 @@ title: 'Rails3 jquery-railsをインストールする'
 published: true
 date: 2011-10-05 01:59
 comments: true
-categories:
+tags:
 - jQuery
 - Ruby
 - Ruby on Rails

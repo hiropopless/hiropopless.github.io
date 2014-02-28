@@ -3,7 +3,7 @@ title: '【追記あり】PHP5.3.8 をCentOS5系にソースからインスト�
 published: true
 date: 2011-10-27 12:50
 comments: true
-categories:
+tags:
 - PHP
 
 keywords:

@@ -3,7 +3,7 @@ title: '【PaaS】fluxflexにRedmine（ベーシック認証付き）を構築�
 published: true
 date: 2011-10-15 00:47
 comments: true
-categories:
+tags:
 - PaaS
 - Redmine
 - Ruby

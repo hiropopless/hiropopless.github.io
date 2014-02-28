@@ -3,7 +3,7 @@ title: 'transition, transform をFirefoxでもJSで操作する際の注意【CS
 published: true
 date: 2012-06-06 11:58
 comments: true
-categories:
+tags:
 - CSS3
 - JavaScript
 

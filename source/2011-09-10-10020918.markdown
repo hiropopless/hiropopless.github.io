@@ -3,7 +3,7 @@ title: 'test'
 published: false
 date: 2011-09-10 02:09
 comments: true
-categories:
+tags:
 - 未分類
 
 keywords:
