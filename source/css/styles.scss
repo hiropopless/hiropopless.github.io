@@ -63,6 +63,14 @@ h3 {
 p {
   color: #888;
 }
+blockquote {
+  margin: 1em .5em;
+  padding: 1em;
+  color: #999;
+  line-height: 1.4;
+  background-color: #f7f8f9;
+  @include border-radius(5px);
+}
 li {
   @extend %sentence;
 }
