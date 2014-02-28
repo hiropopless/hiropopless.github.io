@@ -3,35 +3,37 @@ pageable: true
 per_page: 10
 ---
 <% if paginate && num_pages > 1 %>
-  <p>Page <%= page_number %> of <%= num_pages %></p>
+  <p class="page-number">Page <%= page_number %> of <%= num_pages %></p>
 
   <% if paginate %>
-    <ul>
+    <ul class="pagenations">
     <% if next_page %>
-      <li><%= link_to 'Next page', next_page %></li>
+      <li class="old-page"><%= link_to 'Old entry', next_page %></li>
     <% end %>
     <% if prev_page %>
-      <li><%= link_to 'Previous page', prev_page %></li>
+      <li class="new-page"><%= link_to 'New entry', prev_page %></li>
     <% end %>
     </ul>
   <% end %>
 <% end %>
 
 <% page_articles.each_with_index do |article, i| %>
-  <h2><%= link_to article.title, article %> <span><%= article.date.strftime('%b %e') %></span></h2>
-  <!-- use article.summary(250) if you have Nokogiri available to show just
-       the first 250 characters -->
-  <%= article.body %>
+  <article class="entry">
+    <h2><%= link_to article.title, article %> <span><%= article.date.strftime('%b %e') %></span></h2>
+    <!-- use article.summary(250) if you have Nokogiri available to show just
+         the first 250 characters -->
+    <%= article.body %>
+  </article>
 <% end %>
 
 
 <% if paginate %>
-  <ul>
+  <ul class="pagenations">
   <% if next_page %>
-    <li><%= link_to 'Next page', next_page %></li>
+    <li class="old-page"><%= link_to 'Old entry', next_page %></li>
   <% end %>
   <% if prev_page %>
-    <li><%= link_to 'Previous page', prev_page %></li>
+    <li class="new-page"><%= link_to 'New entry', prev_page %></li>
   <% end %>
   </ul>
 <% end %>
