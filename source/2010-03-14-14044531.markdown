@@ -3,9 +3,9 @@ title: 'Rubyでメールを送る（日本語非対応）'
 published: true
 date: 2010-03-14 04:45
 comments: true
-categories:
+tags:
 - Ruby
-tags: []
+
 keywords:
 - Ruby
 ---

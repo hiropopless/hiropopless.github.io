@@ -3,11 +3,11 @@ title: 'CentOS5.xにPostgresqlをyumでインストールする'
 published: true
 date: 2010-07-06 22:57
 comments: true
-categories:
+tags:
 - CentOS
 - Linux
 - PostgreSQL
-tags: []
+
 keywords:
 - CentOS
 - Linux

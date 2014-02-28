@@ -3,9 +3,9 @@ title: 'mixiのFlash広告、こういうの流行ってるのかねぇ'
 published: true
 date: 2009-12-02 00:41
 comments: true
-categories:
+tags:
 - Flash
-tags: []
+
 keywords:
 - Flash
 ---

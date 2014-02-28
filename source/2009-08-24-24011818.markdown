@@ -3,11 +3,11 @@ title: '[mixiアプリ] 2ちゃんねるまとめサイトのRSSリーダーを�
 published: true
 date: 2009-08-24 01:18
 comments: true
-categories:
+tags:
 - Ajax
 - API
 - JavaScript
-tags: []
+
 keywords:
 - Ajax
 - API

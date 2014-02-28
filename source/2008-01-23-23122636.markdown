@@ -3,9 +3,9 @@ title: '全選択・解除 JavaScript'
 published: true
 date: 2008-01-23 12:26
 comments: true
-categories:
+tags:
 - JavaScript
-tags: []
+
 keywords:
 - JavaScript
 ---

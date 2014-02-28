@@ -3,9 +3,9 @@ title: 'コマンドプロンプトで.svnディレクトリを再帰的に削�
 published: true
 date: 2011-03-08 18:54
 comments: true
-categories:
+tags:
 - MS-DOS
-tags: []
+
 keywords:
 - MS-DOS
 ---

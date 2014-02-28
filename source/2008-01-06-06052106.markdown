@@ -3,9 +3,9 @@ title: 'あけおめな感じ'
 published: true
 date: 2008-01-06 05:21
 comments: true
-categories:
+tags:
 - つれDUれ
-tags: []
+
 keywords:
 - つれDUれ
 ---

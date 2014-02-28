@@ -3,9 +3,9 @@ title: 'cssハック まとめ'
 published: true
 date: 2008-06-11 10:47
 comments: true
-categories:
+tags:
 - CSS
-tags: []
+
 keywords:
 - CSS
 ---

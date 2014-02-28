@@ -3,10 +3,10 @@ title: 'SecureShell2関数を使う。 - SSH2インストール'
 published: true
 date: 2008-04-30 12:48
 comments: true
-categories:
+tags:
 - FedoraCore
 - PHP
-tags: []
+
 keywords:
 - FedoraCore
 - PHP

@@ -3,11 +3,11 @@ title: 'fedora core6 を fedora10 にアップデートするメモ'
 published: true
 date: 2009-05-20 14:21
 comments: true
-categories:
+tags:
 - Fedora
 - FedoraCore
 - Linux
-tags: []
+
 keywords:
 - Fedora
 - FedoraCore

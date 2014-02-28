@@ -3,11 +3,11 @@ title: 'Xcodeをアンインストールする'
 published: true
 date: 2010-06-20 04:01
 comments: true
-categories:
+tags:
 - MacOSX
 - Objective-C
 - Xcode
-tags: []
+
 keywords:
 - MacOSX
 - Objective-C

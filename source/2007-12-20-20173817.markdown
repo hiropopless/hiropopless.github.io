@@ -3,11 +3,11 @@ title: 'デザインちょっちリニューアル'
 published: true
 date: 2007-12-20 17:38
 comments: true
-categories:
+tags:
 - (X)HTML
 - CSS
 - ｦﾁらせ
-tags: []
+
 keywords:
 - (X)HTML
 - CSS

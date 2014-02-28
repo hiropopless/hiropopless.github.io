@@ -3,11 +3,11 @@ title: '【美人時計】ニコニコ踊り娘 - ミンカ、Ire、いとくと
 published: true
 date: 2010-01-31 02:05
 comments: true
-categories:
+tags:
 - Ruby
 - web service
 - 美人時計
-tags: []
+
 keywords:
 - Ruby
 - web service

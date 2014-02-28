@@ -3,10 +3,10 @@ title: 'Facebookユーザーを標的にしたメール詐欺に対抗してみ�
 published: true
 date: 2009-11-06 00:36
 comments: true
-categories:
+tags:
 - Linux
 - sendmail
-tags: []
+
 keywords:
 - Linux
 - sendmail

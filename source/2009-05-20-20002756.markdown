@@ -3,11 +3,9 @@ title: 'ntfsをmountする - CentOS'
 published: true
 date: 2009-05-20 00:27
 comments: true
-categories:
+tags:
 - CentOS
 - Linux
-tags:
-- mount
 keywords:
 - CentOS
 - Linux

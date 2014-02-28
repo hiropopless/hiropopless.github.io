@@ -3,10 +3,10 @@ title: 'フォントサイズをうにゅうにゅさせてみた。'
 published: true
 date: 2009-03-05 01:11
 comments: true
-categories:
+tags:
 - Ajax
 - JavaScript
-tags: []
+
 keywords:
 - Ajax
 - JavaScript

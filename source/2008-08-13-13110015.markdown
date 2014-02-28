@@ -3,10 +3,10 @@ title: 'JavaScriptが無効なときのメッセージ'
 published: true
 date: 2008-08-13 11:00
 comments: true
-categories:
+tags:
 - Ajax
 - JavaScript
-tags: []
+
 keywords:
 - Ajax
 - JavaScript

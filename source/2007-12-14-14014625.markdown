@@ -3,9 +3,9 @@ title: 'り'
 published: true
 date: 2007-12-14 01:46
 comments: true
-categories:
+tags:
 - ｦﾁらせ
-tags: []
+
 keywords:
 - ｦﾁらせ
 ---

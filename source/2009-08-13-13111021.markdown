@@ -3,9 +3,9 @@ title: '.haribote CSS画像置換'
 published: true
 date: 2009-08-13 11:10
 comments: true
-categories:
+tags:
 - (X)HTML+CSS
-tags: []
+
 keywords:
 - (X)HTML+CSS
 ---

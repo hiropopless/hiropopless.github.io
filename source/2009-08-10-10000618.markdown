@@ -3,9 +3,9 @@ title: 'google Android をエミュレートしてみた'
 published: true
 date: 2009-08-10 00:06
 comments: true
-categories:
+tags:
 - Android
-tags: []
+
 keywords:
 - Android
 ---

@@ -3,10 +3,10 @@ title: '[mixiアプリ] マイミク一覧取得と、アプリ登録者を取�
 published: true
 date: 2009-09-09 00:45
 comments: true
-categories:
+tags:
 - Ajax
 - JavaScript
-tags: []
+
 keywords:
 - Ajax
 - JavaScript

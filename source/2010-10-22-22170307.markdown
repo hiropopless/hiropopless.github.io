@@ -3,9 +3,9 @@ title: 'スマートフォン Xperia ユーザーエージェント'
 published: true
 date: 2010-10-22 17:03
 comments: true
-categories:
+tags:
 - スマートフォン
-tags: []
+
 keywords:
 - スマートフォン
 ---

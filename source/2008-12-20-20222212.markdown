@@ -3,13 +3,13 @@ title: '「ブラッディ・マンデイ」の藤丸がもってるUSBメモリ
 published: true
 date: 2008-12-20 22:22
 comments: true
-categories:
+tags:
 - backtrack
 - crack
 - hack
 - Linux
 - VirtualPC
-tags: []
+
 keywords:
 - backtrack
 - crack

@@ -5,7 +5,7 @@ date: 2013-10-06 16:16
 comments: true
 categories:
 - TypeScript
-tags: []
+
 keywords:
 - TypeScript
 ---
@@ -16,14 +16,14 @@ TypeScriptのおかげでネイティブなJavaScriptを書けなくなってき
 
 レスポンシブに対応したjQueryライブラリとして開発したjQuery.jcflick.js。今はよき思い出。
 
-[jQuery.jcflick.js](http://tpl.funnythingz.com/js/jcflick/reference.html "jQuery.jcflick.js")
+[jQuery.jcflick.js](http://www.funnythingz.com/responsive/jcflick/reference.html "jQuery.jcflick.js")
 [https://github.com/funnythingz/jcflick](https://github.com/funnythingz/jcflick "https://github.com/funnythingz/jcflick")
 
 フリッカブルなJSなんてどうせiOSとAndroidでしか使わないじゃん！それってwebkitだけ対応しておけばおｋ！
 っていうオラオラなスタンスで開発したのがzflick.js。ほぼすべてをオプション化しほぼ全自動で初期化して動く。
 
 
-[zflick.js](http://funnythingz.github.io/zflickjs/ "zflick.js")
+[zflick.js](http://www.funnythingz.com/zflickjs/ "zflick.js")
 [https://github.com/funnythingz/zflickjs](https://github.com/funnythingz/zflickjs "https://github.com/funnythingz/zflickjs")
 
 
@@ -34,7 +34,7 @@ TypeScriptのおかげでネイティブなJavaScriptを書けなくなってき
 最近はお仕事でTypeScriptを書いているのでせっかくなのでTypeScriptで書いてみました。
 
 
-[qflipper.js](http://funnythingz.github.io/qflipper/ "qflipper.js")
+[qflipper.js](http://www.funnythingz.com/qflipper/ "qflipper.js")
 [https://github.com/funnythingz/qflipper](https://github.com/funnythingz/qflipper "https://github.com/funnythingz/qflipper")
 
 

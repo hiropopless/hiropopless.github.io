@@ -3,11 +3,11 @@ title: 'OpenKinect と ofxKinect を導入してopenFrameworks でキネクト�
 published: true
 date: 2010-11-24 01:34
 comments: true
-categories:
+tags:
 - hack
 - kinect
 - openFrameworks
-tags: []
+
 keywords:
 - hack
 - kinect

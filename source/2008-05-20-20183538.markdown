@@ -3,9 +3,9 @@ title: 'プルダウンメニューでリンク切り替え'
 published: true
 date: 2008-05-20 18:35
 comments: true
-categories:
+tags:
 - JavaScript
-tags: []
+
 keywords:
 - JavaScript
 ---

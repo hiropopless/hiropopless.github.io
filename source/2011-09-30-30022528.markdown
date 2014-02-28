@@ -6,7 +6,7 @@ comments: true
 categories:
 - ImageMagick
 - MacOSX
-tags: []
+
 keywords:
 - ImageMagick
 - MacOSX

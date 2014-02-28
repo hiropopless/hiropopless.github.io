@@ -3,10 +3,10 @@ title: 'FlashPlayerの有無を判別する構文 - JavaScript'
 published: true
 date: 2009-06-03 11:44
 comments: true
-categories:
+tags:
 - Ajax
 - JavaScript
-tags: []
+
 keywords:
 - Ajax
 - JavaScript

@@ -3,10 +3,10 @@ title: 'MySQL インストールメモ'
 published: true
 date: 2008-06-06 19:14
 comments: true
-categories:
+tags:
 - MySQL
 - PHP
-tags: []
+
 keywords:
 - MySQL
 - PHP

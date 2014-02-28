@@ -3,9 +3,9 @@ title: 'clearfix - IE7対応'
 published: true
 date: 2008-01-23 19:48
 comments: true
-categories:
+tags:
 - CSS
-tags: []
+
 keywords:
 - CSS
 ---

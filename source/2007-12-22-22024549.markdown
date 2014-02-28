@@ -3,12 +3,12 @@ title: 'mixi wordpress テーマ ver.0.0.4（バグ取り完了っぽい）'
 published: true
 date: 2007-12-22 02:45
 comments: true
-categories:
+tags:
 - (X)HTML
 - CSS
 - wordpress
 - ｦﾁらせ
-tags: []
+
 keywords:
 - (X)HTML
 - CSS

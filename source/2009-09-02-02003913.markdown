@@ -3,10 +3,10 @@ title: 'めちゃめちゃ若いのに…。 - jQueryちゃん'
 published: true
 date: 2009-09-02 00:39
 comments: true
-categories:
+tags:
 - Ajax
 - JavaScript
-tags: []
+
 keywords:
 - Ajax
 - JavaScript

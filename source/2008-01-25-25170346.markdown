@@ -3,9 +3,9 @@ title: 'SSIを動かす。'
 published: true
 date: 2008-01-25 17:03
 comments: true
-categories:
+tags:
 - apache
-tags: []
+
 keywords:
 - apache
 ---

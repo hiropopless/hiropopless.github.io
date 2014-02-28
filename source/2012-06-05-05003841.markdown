@@ -8,7 +8,7 @@ categories:
 - iPad
 - iPhone
 - JavaScript
-tags: []
+
 keywords:
 - Android
 - iPad

@@ -3,9 +3,9 @@ title: 'アド広告 - mixi Flash編'
 published: true
 date: 2009-08-09 16:27
 comments: true
-categories:
+tags:
 - Flash
-tags: []
+
 keywords:
 - Flash
 ---

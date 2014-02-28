@@ -3,12 +3,12 @@ title: 'Objective-C 入門してみた'
 published: true
 date: 2010-05-14 10:58
 comments: true
-categories:
+tags:
 - iPad
 - iPhone
 - MacOSX
 - Objective-C
-tags: []
+
 keywords:
 - iPad
 - iPhone

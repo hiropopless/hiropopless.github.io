@@ -3,9 +3,9 @@ title: 'rsyncでデータバックアップ的な。'
 published: true
 date: 2010-07-01 11:50
 comments: true
-categories:
+tags:
 - Rsync
-tags: []
+
 keywords:
 - Rsync
 ---

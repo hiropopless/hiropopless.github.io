@@ -3,11 +3,11 @@ title: '原付改造ブログ MovableType（MT）で構築'
 published: true
 date: 2009-02-04 01:13
 comments: true
-categories:
+tags:
 - (X)HTML+CSS
 - JavaScript
 - MovableType
-tags: []
+
 keywords:
 - (X)HTML+CSS
 - JavaScript

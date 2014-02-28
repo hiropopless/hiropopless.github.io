@@ -3,10 +3,10 @@ title: 'OS判別JS'
 published: true
 date: 2009-05-20 10:29
 comments: true
-categories:
+tags:
 - Ajax
 - JavaScript
-tags: []
+
 keywords:
 - Ajax
 - JavaScript

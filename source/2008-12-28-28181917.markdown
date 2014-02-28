@@ -3,10 +3,10 @@ title: 'CentOS eth0 のネットワーク設定'
 published: true
 date: 2008-12-28 18:19
 comments: true
-categories:
+tags:
 - CentOS
 - Linux
-tags: []
+
 keywords:
 - CentOS
 - Linux

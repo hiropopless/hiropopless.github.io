@@ -3,11 +3,11 @@ title: '配列と多次元配列 - Objective-C'
 published: true
 date: 2010-05-21 17:45
 comments: true
-categories:
+tags:
 - C言語
 - Objective-C
 - 配列
-tags: []
+
 keywords:
 - C言語
 - Objective-C

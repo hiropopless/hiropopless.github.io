@@ -7,7 +7,7 @@ categories:
 - jQuery
 - Ruby
 - Ruby on Rails
-tags: []
+
 keywords:
 - jQuery
 - Ruby

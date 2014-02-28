@@ -3,11 +3,11 @@ title: 'funnythingz公式サイトについて'
 published: true
 date: 2007-12-15 20:26
 comments: true
-categories:
+tags:
 - (X)HTML
 - CSS
 - つれDUれ
-tags: []
+
 keywords:
 - (X)HTML
 - CSS

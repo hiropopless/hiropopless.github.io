@@ -3,9 +3,9 @@ title: 'スパム対策？setInterval()を使って、10秒後にメールアド
 published: true
 date: 2009-05-25 14:54
 comments: true
-categories:
+tags:
 - JavaScript
-tags: []
+
 keywords:
 - JavaScript
 ---

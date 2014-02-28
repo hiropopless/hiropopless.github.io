@@ -3,10 +3,10 @@ title: '美人時計の全画像を取得するスクリプトをバッチ化し
 published: true
 date: 2009-11-20 11:18
 comments: true
-categories:
+tags:
 - Ruby
 - 美人時計
-tags: []
+
 keywords:
 - Ruby
 - 美人時計

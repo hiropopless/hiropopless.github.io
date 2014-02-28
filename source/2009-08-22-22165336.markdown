@@ -3,10 +3,10 @@ title: 'yumで、proftpd インストール - CentOS'
 published: true
 date: 2009-08-22 16:53
 comments: true
-categories:
+tags:
 - Linux
 - proftpd
-tags: []
+
 keywords:
 - Linux
 - proftpd

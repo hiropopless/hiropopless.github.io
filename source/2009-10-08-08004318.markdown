@@ -3,9 +3,9 @@ title: 'import.js って流行ってるの？ってことで自分なりにつ�
 published: true
 date: 2009-10-08 00:43
 comments: true
-categories:
+tags:
 - JavaScript
-tags: []
+
 keywords:
 - JavaScript
 ---

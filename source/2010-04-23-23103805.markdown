@@ -3,9 +3,9 @@ title: 'spam！'
 published: true
 date: 2010-04-23 10:38
 comments: true
-categories:
+tags:
 - つれDUれ
-tags: []
+
 keywords:
 - つれDUれ
 ---

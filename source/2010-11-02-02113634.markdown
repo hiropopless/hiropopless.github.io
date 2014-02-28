@@ -3,10 +3,10 @@ title: 'wordpressにProcessingを埋め込むプラグインを導入してみ�
 published: true
 date: 2010-11-02 11:36
 comments: true
-categories:
+tags:
 - Java
 - Processing
-tags: []
+
 keywords:
 - Java
 - Processing

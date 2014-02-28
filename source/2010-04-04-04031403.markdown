@@ -3,9 +3,9 @@ title: '美人時計のカワイイ子をまとめた動画をつくってみた
 published: true
 date: 2010-04-04 03:14
 comments: true
-categories:
+tags:
 - 美人時計
-tags: []
+
 keywords:
 - 美人時計
 ---

@@ -3,10 +3,10 @@ title: 'Spamassassin が動いてない'
 published: true
 date: 2010-06-17 01:27
 comments: true
-categories:
+tags:
 - Linux
 - Spamassassin
-tags: []
+
 keywords:
 - Linux
 - Spamassassin

@@ -3,9 +3,9 @@ title: '「覚醒、そして降臨」 - エヴァのMADがカッコ良すぎる
 published: true
 date: 2010-04-17 03:34
 comments: true
-categories:
+tags:
 - エヴァ
-tags: []
+
 keywords:
 - エヴァ
 ---

@@ -3,11 +3,11 @@ title: '[mixiアプリ] ユーザー情報を取得してみた。'
 published: true
 date: 2009-08-23 17:52
 comments: true
-categories:
+tags:
 - Ajax
 - API
 - JavaScript
-tags: []
+
 keywords:
 - Ajax
 - API

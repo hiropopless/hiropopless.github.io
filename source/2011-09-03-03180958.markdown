@@ -3,9 +3,9 @@ title: 'MacPortsをアンインストールし、Homebrewをインストール�
 published: true
 date: 2011-09-03 18:09
 comments: true
-categories:
+tags:
 - MacOSX
-tags: []
+
 keywords:
 - MacOSX
 ---

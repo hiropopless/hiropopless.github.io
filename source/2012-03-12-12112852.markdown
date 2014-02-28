@@ -7,7 +7,7 @@ categories:
 - find
 - Linux
 - xargs
-tags: []
+
 keywords:
 - find
 - Linux

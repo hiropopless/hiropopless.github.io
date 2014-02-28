@@ -3,11 +3,11 @@ title: 'ディレクトリごとFTPでアップロードしてくれるスクリ
 published: true
 date: 2009-08-23 03:17
 comments: true
-categories:
+tags:
 - Linux
 - pear
 - PHP
-tags: []
+
 keywords:
 - Linux
 - pear

@@ -3,9 +3,9 @@ title: 'Java始めました。'
 published: true
 date: 2008-10-07 16:30
 comments: true
-categories:
+tags:
 - Java
-tags: []
+
 keywords:
 - Java
 ---

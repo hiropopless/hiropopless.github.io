@@ -3,10 +3,10 @@ title: 'zshでテトリス'
 published: true
 date: 2010-05-21 13:02
 comments: true
-categories:
+tags:
 - Linux
 - zsh
-tags: []
+
 keywords:
 - Linux
 - zsh

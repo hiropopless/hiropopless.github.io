@@ -3,9 +3,9 @@ title: 'ブログデザインをかえますた。'
 published: true
 date: 2010-11-02 12:33
 comments: true
-categories:
+tags:
 - ｦﾁらせ
-tags: []
+
 keywords:
 - ｦﾁらせ
 ---

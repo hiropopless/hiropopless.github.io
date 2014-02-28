@@ -6,7 +6,7 @@ comments: true
 categories:
 - CSS3
 - JavaScript
-tags: []
+
 keywords:
 - CSS3
 - JavaScript

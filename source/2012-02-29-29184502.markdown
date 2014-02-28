@@ -7,7 +7,7 @@ categories:
 - Linux
 - pavuk
 - wget
-tags: []
+
 keywords:
 - Linux
 - pavuk

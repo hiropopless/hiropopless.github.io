@@ -3,10 +3,10 @@ title: 'clearfix'
 published: true
 date: 2007-12-14 01:56
 comments: true
-categories:
+tags:
 - (X)HTML
 - CSS
-tags: []
+
 keywords:
 - (X)HTML
 - CSS

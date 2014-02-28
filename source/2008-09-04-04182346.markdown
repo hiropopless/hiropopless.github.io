@@ -3,10 +3,10 @@ title: 'var_dumpの基礎をつくった - for in文'
 published: true
 date: 2008-09-04 18:23
 comments: true
-categories:
+tags:
 - JavaScript
 - PHP
-tags: []
+
 keywords:
 - JavaScript
 - PHP

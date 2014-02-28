@@ -3,13 +3,10 @@ title: 'Arduino 入門してみた - フィジカルコンピューティング'
 published: true
 date: 2010-07-18 23:03
 comments: true
-categories:
-- Arduino
-- Processing
-- フィジカルコンピューティング
 tags:
 - Arduino
 - Processing
+- フィジカルコンピューティング
 keywords:
 - Arduino
 - Processing

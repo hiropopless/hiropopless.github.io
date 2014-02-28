@@ -9,7 +9,7 @@ categories:
 - Java
 - JavaScript
 - Processing
-tags: []
+
 keywords:
 - canvas
 - HTML5

@@ -3,11 +3,11 @@ title: '美人時計のGAL時計に若槻千夏が登場してた。'
 published: true
 date: 2010-01-04 01:27
 comments: true
-categories:
+tags:
 - Ruby
 - web service
 - 美人時計
-tags: []
+
 keywords:
 - Ruby
 - web service

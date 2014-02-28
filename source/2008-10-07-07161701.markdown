@@ -3,9 +3,9 @@ title: '微妙に調整。'
 published: true
 date: 2008-10-07 16:17
 comments: true
-categories:
+tags:
 - ｦﾁらせ
-tags: []
+
 keywords:
 - ｦﾁらせ
 ---

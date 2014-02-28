@@ -3,11 +3,11 @@ title: '自動改行されない'
 published: true
 date: 2007-12-18 18:06
 comments: true
-categories:
+tags:
 - (X)HTML
 - CSS
 - バグ
-tags: []
+
 keywords:
 - (X)HTML
 - CSS

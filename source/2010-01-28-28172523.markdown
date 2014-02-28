@@ -3,9 +3,9 @@ title: 'find でベーシック認証が書いてある.htaccess を検索'
 published: true
 date: 2010-01-28 17:25
 comments: true
-categories:
+tags:
 - 未分類
-tags: []
+
 keywords:
 - 未分類
 ---

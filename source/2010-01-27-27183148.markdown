@@ -3,10 +3,10 @@ title: '美人時計で画像を収集する際に使った計算式'
 published: true
 date: 2010-01-27 18:31
 comments: true
-categories:
+tags:
 - JavaScript
 - 美人時計
-tags: []
+
 keywords:
 - JavaScript
 - 美人時計

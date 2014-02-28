@@ -3,10 +3,10 @@ title: 'WordPressで今見ているカテゴリーのIDを取得'
 published: true
 date: 2010-10-27 15:07
 comments: true
-categories:
+tags:
 - PHP
 - wordpress
-tags: []
+
 keywords:
 - PHP
 - wordpress

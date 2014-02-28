@@ -3,11 +3,11 @@ title: 'Ruby1.9.2 をインストールする。'
 published: true
 date: 2011-01-19 14:00
 comments: true
-categories:
+tags:
 - Linux
 - Ruby
 - Ruby on Rails
-tags: []
+
 keywords:
 - Linux
 - Ruby

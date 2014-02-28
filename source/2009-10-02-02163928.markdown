@@ -3,10 +3,10 @@ title: 'フルFlashのサイトにHTMLフッターをつけてみる'
 published: true
 date: 2009-10-02 16:39
 comments: true
-categories:
+tags:
 - Flash
 - JavaScript
-tags: []
+
 keywords:
 - Flash
 - JavaScript

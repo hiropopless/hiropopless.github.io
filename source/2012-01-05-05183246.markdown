@@ -7,7 +7,7 @@ categories:
 - JavaScript
 - Processing
 - wordpress
-tags: []
+
 keywords:
 - JavaScript
 - Processing

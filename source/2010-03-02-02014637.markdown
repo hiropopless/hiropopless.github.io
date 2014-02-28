@@ -3,10 +3,10 @@ title: '美人時計のデジタルフォトフレーム版を作ってみた。
 published: true
 date: 2010-03-02 01:46
 comments: true
-categories:
+tags:
 - hack
 - 美人時計
-tags: []
+
 keywords:
 - hack
 - 美人時計

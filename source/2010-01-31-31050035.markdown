@@ -3,10 +3,10 @@ title: 'Linux標準コマンドでローレベルフォーマット'
 published: true
 date: 2010-01-31 05:00
 comments: true
-categories:
+tags:
 - bash
 - Linux
-tags: []
+
 keywords:
 - bash
 - Linux

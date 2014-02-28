@@ -3,10 +3,10 @@ title: '.asファイルを外部で読み込む'
 published: true
 date: 2009-06-10 18:04
 comments: true
-categories:
+tags:
 - ActionScript3
 - Flash
-tags: []
+
 keywords:
 - ActionScript3
 - Flash

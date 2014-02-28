@@ -3,9 +3,9 @@ title: 'クリックでくるくるコンテンツが変わるJavaScript'
 published: true
 date: 2009-12-01 11:25
 comments: true
-categories:
+tags:
 - JavaScript
-tags: []
+
 keywords:
 - JavaScript
 ---

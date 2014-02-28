@@ -3,8 +3,6 @@ title: 'phpで削除できなくなったファイルを削除する'
 published: true
 date: 2008-12-13 22:46
 comments: true
-categories:
-- PHP
 tags:
 - PHP
 keywords:

@@ -3,7 +3,7 @@ title: 'Titanium Studio でデスクトップアプリ開発に入門してみ�
 published: true
 date: 2011-09-02 19:05
 comments: true
-categories:
+tags:
 - (X)HTML+CSS
 - Ajax
 - Aptana
@@ -12,7 +12,7 @@ categories:
 - Python
 - Ruby
 - Titanium
-tags: []
+
 keywords:
 - (X)HTML+CSS
 - Ajax

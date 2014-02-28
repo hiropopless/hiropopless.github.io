@@ -3,11 +3,9 @@ title: 'まさかの4ヶ月待ち。GuruPlugが届いた！'
 published: true
 date: 2010-07-13 02:46
 comments: true
-categories:
-- GuruPlug
-- Linux
 tags:
 - GuruPlug
+- Linux
 keywords:
 - GuruPlug
 - Linux

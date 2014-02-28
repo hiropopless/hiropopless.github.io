@@ -3,12 +3,10 @@ title: '気になっちゃうシリーズ。 - youtube編'
 published: true
 date: 2008-12-11 02:05
 comments: true
-categories:
+tags:
 - (X)HTML
 - (X)HTML+CSS
 - CSS
-tags:
-- 気になっちゃう
 keywords:
 - (X)HTML
 - (X)HTML+CSS

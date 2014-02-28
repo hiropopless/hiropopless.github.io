@@ -3,10 +3,10 @@ title: 'flashplayerの有無判別'
 published: true
 date: 2010-01-07 16:46
 comments: true
-categories:
+tags:
 - Flash
 - JavaScript
-tags: []
+
 keywords:
 - Flash
 - JavaScript

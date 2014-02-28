@@ -11,7 +11,7 @@ categories:
 - JavaScript
 - jQuery
 - マルチデバイス
-tags: []
+
 keywords:
 - Android
 - HTML5

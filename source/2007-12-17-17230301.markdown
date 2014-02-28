@@ -3,9 +3,9 @@ title: 'リングメニューみたいなもの'
 published: true
 date: 2007-12-17 23:03
 comments: true
-categories:
+tags:
 - JavaScript
-tags: []
+
 keywords:
 - JavaScript
 ---

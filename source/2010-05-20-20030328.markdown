@@ -3,10 +3,10 @@ title: 'iPhone対応webサイトの制作について'
 published: false
 date: 2010-05-20 03:03
 comments: true
-categories:
+tags:
 - (X)HTML+CSS
 - iPhone
-tags: []
+
 keywords:
 - (X)HTML+CSS
 - iPhone

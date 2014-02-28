@@ -3,10 +3,10 @@ title: '新「ブラッディ・マンデイ」の藤丸が持ってるUSBメモ
 published: true
 date: 2010-02-12 01:44
 comments: true
-categories:
+tags:
 - backtrack
 - Linux
-tags: []
+
 keywords:
 - backtrack
 - Linux

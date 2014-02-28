@@ -3,10 +3,10 @@ title: 'ProFTPで.htaccess等のドットファイルが見えない場合'
 published: true
 date: 2008-07-23 14:41
 comments: true
-categories:
+tags:
 - FedoraCore
 - proftpd
-tags: []
+
 keywords:
 - FedoraCore
 - proftpd

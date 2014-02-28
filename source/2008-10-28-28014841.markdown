@@ -3,9 +3,9 @@ title: 'wordpress ME から、wordpress へアップデート'
 published: true
 date: 2008-10-28 01:48
 comments: true
-categories:
+tags:
 - wordpress
-tags: []
+
 keywords:
 - wordpress
 ---

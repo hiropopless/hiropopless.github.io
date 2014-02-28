@@ -3,9 +3,9 @@ title: 'ブラじゃないよ！大胸筋矯正サポーターだよっ！'
 published: true
 date: 2008-01-20 23:57
 comments: true
-categories:
+tags:
 - funny
-tags: []
+
 keywords:
 - funny
 ---

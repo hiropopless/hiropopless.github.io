@@ -3,9 +3,9 @@ title: 'Processing に入門してみた'
 published: true
 date: 2010-09-03 16:16
 comments: true
-categories:
+tags:
 - Processing
-tags: []
+
 keywords:
 - Processing
 ---

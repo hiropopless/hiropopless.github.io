@@ -8,7 +8,7 @@ categories:
 - JavaScript
 - Sass/Compass
 - TypeScript
-tags: []
+
 keywords:
 - Grunt
 - JavaScript

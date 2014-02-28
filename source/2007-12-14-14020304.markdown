@@ -3,9 +3,9 @@ title: 'mixi風wordpressテーマ'
 published: true
 date: 2007-12-14 02:03
 comments: true
-categories:
+tags:
 - 未分類
-tags: []
+
 keywords:
 - 未分類
 ---

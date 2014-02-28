@@ -3,13 +3,13 @@ title: 'メールaliases'
 published: true
 date: 2009-06-21 19:11
 comments: true
-categories:
+tags:
 - aliases
 - CentOS
 - FedoraCore
 - Linux
 - sendmail
-tags: []
+
 keywords:
 - aliases
 - CentOS

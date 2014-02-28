@@ -6,7 +6,7 @@ comments: true
 categories:
 - JavaScript
 - jQuery
-tags: []
+
 keywords:
 - JavaScript
 - jQuery

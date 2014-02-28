@@ -3,9 +3,9 @@ title: 'target="_blank" が使えない。'
 published: true
 date: 2008-02-18 10:59
 comments: true
-categories:
+tags:
 - JavaScript
-tags: []
+
 keywords:
 - JavaScript
 ---

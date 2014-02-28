@@ -3,10 +3,10 @@ title: 'ActionScript3を入門してみた。'
 published: true
 date: 2009-03-19 02:00
 comments: true
-categories:
+tags:
 - ActionScript3
 - Flash
-tags: []
+
 keywords:
 - ActionScript3
 - Flash

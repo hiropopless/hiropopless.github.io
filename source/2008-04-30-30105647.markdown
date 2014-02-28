@@ -3,9 +3,9 @@ title: 'rootパスワード忘れた場合 - FedoraCore6'
 published: true
 date: 2008-04-30 10:56
 comments: true
-categories:
+tags:
 - FedoraCore
-tags: []
+
 keywords:
 - FedoraCore
 ---

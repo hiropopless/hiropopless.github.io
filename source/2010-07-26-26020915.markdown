@@ -3,10 +3,10 @@ title: 'wav形式からcaf形式のサウンドファイルへ変換'
 published: true
 date: 2010-07-26 02:09
 comments: true
-categories:
+tags:
 - iPad
 - iPhone
-tags: []
+
 keywords:
 - iPad
 - iPhone

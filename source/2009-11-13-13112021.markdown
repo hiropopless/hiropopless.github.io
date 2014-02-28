@@ -3,9 +3,9 @@ title: 'JavaScriptのDateオブジェクトについて'
 published: true
 date: 2009-11-13 11:20
 comments: true
-categories:
+tags:
 - JavaScript
-tags: []
+
 keywords:
 - JavaScript
 ---

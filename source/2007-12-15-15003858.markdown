@@ -3,9 +3,9 @@ title: 'スパム集めてました。'
 published: true
 date: 2007-12-15 00:38
 comments: true
-categories:
+tags:
 - つれDUれ
-tags: []
+
 keywords:
 - つれDUれ
 ---

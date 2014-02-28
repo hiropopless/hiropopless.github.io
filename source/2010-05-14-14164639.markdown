@@ -3,11 +3,11 @@ title: 'Objective-Cにおける文字列の連結'
 published: true
 date: 2010-05-14 16:46
 comments: true
-categories:
+tags:
 - iPad
 - iPhone
 - Objective-C
-tags: []
+
 keywords:
 - iPad
 - iPhone

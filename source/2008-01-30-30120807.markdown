@@ -3,9 +3,9 @@ title: 'getElementsByClass'
 published: true
 date: 2008-01-30 12:08
 comments: true
-categories:
+tags:
 - JavaScript
-tags: []
+
 keywords:
 - JavaScript
 ---

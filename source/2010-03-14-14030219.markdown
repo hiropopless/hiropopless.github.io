@@ -3,11 +3,11 @@ title: 'Rubyでtwitterに投稿できるrubygems'
 published: true
 date: 2010-03-14 03:02
 comments: true
-categories:
+tags:
 - Ruby
 - twitter
 - 美人時計
-tags: []
+
 keywords:
 - Ruby
 - twitter

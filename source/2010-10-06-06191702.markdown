@@ -3,10 +3,10 @@ title: 'Processing でオブジェクト指向っぽくネズミさんを描い�
 published: true
 date: 2010-10-06 19:17
 comments: true
-categories:
+tags:
 - Java
 - Processing
-tags: []
+
 keywords:
 - Java
 - Processing

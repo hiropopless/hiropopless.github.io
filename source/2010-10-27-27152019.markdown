@@ -3,10 +3,10 @@ title: 'Wordpressで記事の並び替えを昇順または降順で並び替え
 published: true
 date: 2010-10-27 15:20
 comments: true
-categories:
+tags:
 - PHP
 - wordpress
-tags: []
+
 keywords:
 - PHP
 - wordpress

@@ -6,7 +6,7 @@ comments: true
 categories:
 - Google App Engine
 - Python
-tags: []
+
 keywords:
 - Google App Engine
 - Python

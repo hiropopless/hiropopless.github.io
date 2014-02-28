@@ -3,9 +3,9 @@ title: 'wordpressMU インストール'
 published: true
 date: 2008-06-06 19:11
 comments: true
-categories:
+tags:
 - wordpress
-tags: []
+
 keywords:
 - wordpress
 ---

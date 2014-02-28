@@ -3,11 +3,11 @@ title: 'JavaScriptでvar_dump()が使えるライブラリ - funny.js'
 published: true
 date: 2008-09-12 18:53
 comments: true
-categories:
+tags:
 - Ajax
 - JavaScript
 - PHP
-tags: []
+
 keywords:
 - Ajax
 - JavaScript

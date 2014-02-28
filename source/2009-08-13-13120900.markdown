@@ -3,10 +3,10 @@ title: 'JavaScript OOP 入門編1'
 published: true
 date: 2009-08-13 12:09
 comments: true
-categories:
+tags:
 - JavaScript
 - オブジェクト指向
-tags: []
+
 keywords:
 - JavaScript
 - オブジェクト指向

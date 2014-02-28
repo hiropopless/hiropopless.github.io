@@ -3,10 +3,10 @@ title: 'with文の名前領域 - ActionScript3.0'
 published: true
 date: 2010-04-23 17:55
 comments: true
-categories:
+tags:
 - ActionScript3
 - Flash
-tags: []
+
 keywords:
 - ActionScript3
 - Flash

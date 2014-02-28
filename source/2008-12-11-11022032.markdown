@@ -3,11 +3,11 @@ title: 'FedoraCore6の起動オプションをいじってみた。'
 published: true
 date: 2008-12-11 02:20
 comments: true
-categories:
+tags:
 - FedoraCore
 - Linux
 - VirtualPC
-tags: []
+
 keywords:
 - FedoraCore
 - Linux

@@ -6,7 +6,7 @@ comments: true
 categories:
 - (X)HTML+CSS
 - JavaScript
-tags: []
+
 keywords:
 - (X)HTML+CSS
 - JavaScript

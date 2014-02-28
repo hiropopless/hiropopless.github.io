@@ -3,9 +3,9 @@ title: 'デスソース'
 published: true
 date: 2008-12-20 02:43
 comments: true
-categories:
+tags:
 - funny
-tags: []
+
 keywords:
 - funny
 ---

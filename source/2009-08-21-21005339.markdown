@@ -3,11 +3,11 @@ title: '幼少期のゲイツ - Crazy frog bros !Very funny!'
 published: true
 date: 2009-08-21 00:53
 comments: true
-categories:
+tags:
 - crack
 - つれDUれ
 - バグ
-tags: []
+
 keywords:
 - crack
 - つれDUれ

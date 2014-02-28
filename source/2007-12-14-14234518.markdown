@@ -3,9 +3,9 @@ title: 'Movable Typeがオープンソースに'
 published: true
 date: 2007-12-14 23:45
 comments: true
-categories:
+tags:
 - CMS
-tags: []
+
 keywords:
 - CMS
 ---

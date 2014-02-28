@@ -3,11 +3,11 @@ title: 'ヘテムルへサーバ移行中テスト'
 published: true
 date: 2010-03-15 01:33
 comments: true
-categories:
+tags:
 - バグ
 - 未分類
 - ｦﾁらせ
-tags: []
+
 keywords:
 - バグ
 - 未分類
