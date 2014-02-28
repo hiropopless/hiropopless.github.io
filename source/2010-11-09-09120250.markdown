@@ -19,6 +19,7 @@ keywords:
 
 
 まずRubyをインストール
+
 ```sh
 $ sudo su -
 # yum install ruby
@@ -36,6 +37,7 @@ Complete!
 
 次にRubyGemsをインストールする。
 ただし、Ruby1.8.5だと、Gemsは1.3.5でないとインストールできない。1.3.6以降を使いたい場合は、Ruby1.8.6以上をインストールする。
+
 
 
 ```sh
@@ -58,6 +60,7 @@ RubyGems 1.3.5 installed
 
 
 rdocがないって言われたので、rdocをインストールして、再びGemsインストールを実行
+
 ```sh
 # yum install rdoc
 Installed:
@@ -96,6 +99,7 @@ RubyGems installed the following executables:
 
 
 次にRuby on Rails をインストールする。
+
 ```sh
 # gem install rails
 ERROR:  Error installing rails:
@@ -109,6 +113,7 @@ Ruby1.8.7 以上いれろって怒られた。
 
 仕方がないので、Ruby1.8.7をインストールする。
 最新版のソースを落としてビルドする。
+
 ```sh
 # wget ftp://ftp.ruby-lang.org/pub/ruby/1.8/ruby-1.8.7-p249.tar.bz2
 # tar jvxf ruby-1.8.7-p249.tar.bz2
@@ -120,6 +125,7 @@ Ruby1.8.7 以上いれろって怒られた。
 
 
 Ruby1.8.7がインストールできたので、Ruby1.8.5を削除する。
+
 ```sh
 # yum remove ruby
 Removed:
@@ -133,6 +139,7 @@ Complete!
 
 
 Rubyのバージョンを確認する。
+
 ```sh
 # ruby -v
 ruby 1.8.7 (2010-01-10 patchlevel 249) [x86_64-linux]
@@ -141,6 +148,7 @@ ruby 1.8.7 (2010-01-10 patchlevel 249) [x86_64-linux]
 
 gemsも最新版をインストールする。
 [最新版URLはこちらで確認](http://rubyforge.org/frs/?group_id=126 "最新版URLはこちらで確認")
+
 
 
 ```sh
@@ -155,6 +163,7 @@ gemsも最新版をインストールする。
 
 これで、Ruby1.8.7、RubyGems1.3.7がインストールできた。
 と思いきや、リストを参照したらエラーがでた。
+
 ```sh
 # gem list
 ERROR:  Loading command: list (LoadError)
@@ -166,6 +175,7 @@ ERROR:  While executing gem ... (NameError)
 
 zlibないって言われた。でもzlib入ってるし。
 ググったら同じ問題にぶつかった人がいたので[こちらを参考](http://fujiiyuuki.blogspot.com/2010/03/centosrails.html "こちらを参考")にzlib-devel入れて再コンパイルしてみた。そしたらすんなり通りやがりましたよ。
+
 
 
 ```sh
@@ -192,6 +202,7 @@ creating Makefile
 
 
 でーけたー！これでやっとRailsをインストールできるはず。
+
 ```sh
 # gem install rails
 Successfully installed activesupport-3.0.1
@@ -253,6 +264,7 @@ File not found: lib
 
 なんか途中エラーでた。なんじゃこりゃ。
 とりあえず確認してみる。
+
 ```sh
 # rails -v
 Rails 3.0.1
@@ -260,6 +272,7 @@ Rails 3.0.1
 
 
 Rails3.x系になってから、createコマンドがRails2系と違うみたいで、下記ではcreateできなかった。
+
 ```sh
 $ rails testapp
 Usage:
@@ -268,6 +281,7 @@ Usage:
 
 
 ので、Rails3.0にのっとってcreateしてみる。
+
 ```sh
 $ rails new testapp
       create
@@ -350,6 +364,7 @@ $ rails new testapp
 
 
 testappを動かしてみる
+
 ```sh
 $ cd testapp/
 $ rails server
@@ -360,6 +375,7 @@ Try running `bundle install`.
 
 "sqlite3-ruby" が入ってないとのこと。
 "sqlite3-ruby" を入れる。
+
 ```sh
 $ cd testapp/
 $ vi Gemfile
@@ -389,6 +405,7 @@ Results logged to /usr/local/lib/ruby/gems/1.8/gems/sqlite3-ruby-1.3.2/ext/sqlit
 
 
 sqlite3のバージョン確認
+
 ```sh
 $ rpm -q sqlite
 sqlite-3.3.6-5
@@ -396,6 +413,7 @@ sqlite-3.3.6-5
 
 
 古い。そういえばsqlite-develも入っていなかったので、インストールする。
+
 ```sh
 # yum install sqlite-devel
 Installed:
@@ -406,6 +424,7 @@ Complete!
 
 
 sqlite3をソースからインストールする。
+
 ```sh
 $ cd /usr/local/src
 $ sudo wget http://www.sqlite.org/sqlite-amalgamation-3.7.3.tar.gz
@@ -420,6 +439,7 @@ $ sudo make install
 
 
 再びsqlite3-ruby をインストール
+
 ```sh
 $ sudo gem install sqlite3-ruby
 Building native extensions.  This could take a while...
@@ -439,6 +459,7 @@ Enclosing class/module 'mSqlite3' for class Statement not known
 
 
 sqlite3-ruby を確認
+
 ```sh
 $ gem list
 
@@ -477,6 +498,7 @@ tzinfo (0.3.23)
 
 はいったー！
 railsサーバーを立ち上げてみる。
+
 ```sh
 $ cd
 $ cd dev/rails/testapp/

@@ -52,11 +52,15 @@ Redmineのパスワードの変更が終わったら、ベーシック認証を�
 fluxflexはgitで更新やデプロイができるので、ターミナルからもろもろ操作します。
 
 プロジェクトのリポジトリからgit cloneしてください。
+
+
 ```sh
 $ git clone ssh://git@git.fluxflex.com:443/PROJETCT_NAME
 ```
 
 ローカルリポジトリができたら、.htaccessを編集して、ベーシック認証が使えるようにします。
+
+
 ```sh
 $ cd PROJECT_NAME
 $ vi public/.htaccess
@@ -68,11 +72,15 @@ require valid-user
 ```
 
 次に.htpasswdを生成します。
+
+
 ```sh
 $ htpasswd -mc .htpasswd userName
 ```
 
 .htpasswd を生成したら、コミットして、デプロイします。
+
+
 ```sh
 $ git add .htpasswd
 $ git commit -a -m "basic auth"

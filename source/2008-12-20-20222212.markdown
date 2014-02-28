@@ -50,6 +50,7 @@ ubuntuでも良いし、ＵＳＢブートできるFedoraでも良いし、Ｏ�
 
 まずはUSBメモリを分割します。
 fdiskを使って分割していきましょう。
+
 ```sh
 root@ubuntu-vm:~# fdisk /dev/sdb
 Command (m for help): p
@@ -65,6 +66,7 @@ Disk identifier: 0x9fe248cd
 通常は、パーティションが何かしらあると思うので、dコマンドでパーティションを削除しておくこと。
 
 では、パーティションがないという前提ですすめていく。
+
 ```sh
 Command (m for help): n
 Command action
@@ -79,6 +81,7 @@ Last cylinder or +size or +sizeM or +sizeK (1-48947, default 48947): 24473
 fdiskのnコマンドでプライマリパーティションを切っていく。
 まず一つ目。シリンダーサイズが48947となっているので、半分（24473）のところでパーティションをぶち切る。
 そして、ファーストパーティションはwindows形式（FAT32）にする。
+
 ```sh
 Command (m for help): t
 Selected partition 1
@@ -98,6 +101,7 @@ Disk identifier: 0x9fe248cd
 tコマンドで、b を選ぶとファイルシステムがwindows形式（FAT32）になった。
 
 同じ要領でセカンドパーティションを作っていく。
+
 ```sh
 Command (m for help): n
 Command action
@@ -132,11 +136,13 @@ Disk identifier: 0x9fe248cd
 fdiskを抜けたら、ふたつのパーティションをフォーマットする。
 
 もしマウントされていたら、umountコマンドでアンマウントしておくこと。
+
 ```sh
 root@ubuntu-vm:~# mkfs.vfat /dev/sdb1
 root@ubuntu-vm:~# mkfs.ext2 /dev/sdb2
 ```
 次に、データ保存用の"changes"フォルダをつくる。
+
 ```sh
 root@ubuntu-vm:~# mount /dev/sdb2 /media/disk
 root@ubuntu-vm:~# cd /media/disk/
@@ -192,6 +198,7 @@ USBメモリ内にある、"/boot/syslinux" フォルダ内の"syslinux.cfg" を
 ちなみに下記は僕がすでにカスタマイズしたあとです。
 ポイントは"changes=/dev/sdb2" ←こいつ。
 セカンドパーティションが設定やらのデータ保存領域になります。
+
 ```sh
 #backtrack3 グラフィックモード
 LABEL pchanges
@@ -213,6 +220,7 @@ APPEND initrd=/boot/oph/initrd.gz ramdisk_size=6666 root=/dev/ram0 rw autoexec=x
 ```
 これですべての準備は整いましたね。
 最後に、下記のファイルを実行して、USBブートを可能にする。
+
 ```sh
 ＃USBメモリ内の、下記ファイルを実行。※必ずUSBメモリ内で実行してください！
 ＃windowsのローカル上で実行するとwindowsがぶっこわれる可能性が。

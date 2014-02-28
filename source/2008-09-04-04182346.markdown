@@ -14,6 +14,7 @@ keywords:
 あれから自分でも var_dump関数 をつくってみました。
 
 
+
 ```js
 var_dump(document);
 

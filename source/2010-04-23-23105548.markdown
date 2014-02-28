@@ -15,6 +15,7 @@ keywords:
 ---
 あるサーバを管理しているのだが、Tripwire で、下記のようなエラーが出ていた。
 
+
 ```sh
 1.   File system error.
      Filename: /var/lib/xen/images/CentOS5.img
@@ -30,6 +31,7 @@ signed long では 2147483647 、要するに 2G バイトまでしか表現で�
 
 さて、解決方法である。
 Tripwireのファイルチェックをスキップしてしまえばよいのである。
+
 
 ```sh
 #ポリシーファイル（テキスト版）の復元

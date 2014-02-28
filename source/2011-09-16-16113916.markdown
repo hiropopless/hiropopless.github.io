@@ -24,6 +24,7 @@ MacPortsは、MacPorts自身を含めたファイルをすべて/opt/local以下
 
 zshは.zsh_profile、bashは.bash_profile に下記を追記する。
 環境によっては.zshrc、.bashrcだったりする。
+
 ```sh
 % vi .zsh_profile
 export PATH=/opt/local/bin:/opt/local/sbin/:$PATH
@@ -34,6 +35,7 @@ export MANPATH=/opt/local/man:$MANPATH
 
 ### MacPortsをアップデートする。
 基本的にMacPortsは /opt/local 以下にインストールされるので、sudoを使って実行する。
+
 ```sh
 % sudo port -d selfupdate
 % sudo port -d sync
@@ -41,6 +43,7 @@ export MANPATH=/opt/local/man:$MANPATH
 
 ### Pythonをインストールする。
 GAEはPython2.5を使用するため、2.5をまるっとMacPortsでインストールする。
+
 ```sh
 % sudo port install python25
 % sudo port install py25-hashlib
@@ -49,6 +52,7 @@ GAEはPython2.5を使用するため、2.5をまるっとMacPortsでインスト
 ```
 
 pythonのパスを確認する。
+
 ```sh
 % which python
 /usr/bin/python
@@ -58,12 +62,14 @@ Python 2.6
 ```
 
 Python2.6やPython2.7ではGAEは動かないので、MacPortsでインストールしたPython2.5にシンボリックリンクを張る。
+
 ```sh
 % sudo mv /usr/bin/python /usr/bin/python_bk
 % sudo ln -s /opt/local/bin/python2.5 /usr/bin/python
 ```
 
 再度Pythonのパスを確認する。
+
 ```sh
 % ls -l /usr/bin/python
 lrwxr-xr-x  1 root  wheel  24  9 16 10:44 /usr/bin/python -> /opt/local/bin/python2.5

@@ -12,6 +12,8 @@ keywords:
 いまさらながらPHPのインストールでしくじることがあったのでメモ。
 
 まずPHPをインストールする。
+
+
 ```sh
 # wget http://jp.php.net/get/php-5.3.8.tar.gz/from/us.php.net/mirror
 # tar xvfz php-5.3.8.tar.gz
@@ -28,6 +30,8 @@ Zend Engine v2.3.0, Copyright (c) 1998-2011 Zend Technologies
 ```
 
 apacheとの連携
+
+
 ```sh
 # vi /etc/httpd/conf/httpd.conf
 LoadModule php5_module        /usr/lib/httpd/modules/libphp5.so
@@ -41,16 +45,22 @@ AddType application/x-httpd-php .php
 正常にphpinfo()できればおｋ。
 
 ### 【追記】
+
 64bit版の場合、./configureのオプションがちょっと変わります。
 さくらVPSが64bit版だったっぽくちょっと悩みました。
 
 オプションに "--with-libdir=lib64" を追加してください。
+
+
 ```sh
 ./configure --enable-mbstring --with-apxs2 --with-mysql --with-gd --with-zlib --with-libdir=lib64 --with-pear --with-gd --enable-maintainer-zts --cache-file=../config.cache
 ```
 
 ### 【追記2】
+
 Curlを使う場合。
+
+
 ```sh
 ./configure --enable-mbstring --with-apxs2 --with-mysql --with-gd --with-zlib --with-libdir=lib64 --with-pear --with-gd --with-curl --enable-sockets --enable-maintainer-zts --cache-file=../config.cache
 ```

@@ -18,9 +18,11 @@ keywords:
 **text-indent: -9999px を使ったテクニック**
 
 
+
 ```html
 <div>[テキスト</span>](# "テキスト</span>")</div>
 ```
+
 
 ```css
 div a {
@@ -39,9 +41,11 @@ div a:hover {
 
 **display: none; を使った画像置換テクニック**
 
+
 ```html
 <div>[テキスト</span>](# "テキスト</span>")</div>
 ```
+
 
 ```css
 div a {

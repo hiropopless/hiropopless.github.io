@@ -21,6 +21,7 @@ keywords:
 [Compiling OpenKinect on a stubborn OSX 10.6.5 (Updated 21/Nov)](http://www.spoofscript.com/blog/?p=327 "Compiling OpenKinect on a stubborn OSX 10.6.5 (Updated 21/Nov)")
 
 まずキネクトドライバをインストールする前に、cmakeとgitをインストールする。
+
 ```sh
 $ wget http://www.cmake.org/files/v2.8/cmake-2.8.3-Darwin-universal.dmg
 $ wget http://git-osx-installer.googlecode.com/files/git-1.7.3.2-intel-leopard.dmg
@@ -30,6 +31,7 @@ $ wget http://git-osx-installer.googlecode.com/files/git-1.7.3.2-intel-leopard.d
 終わったら次にコマンドラインでキネクトドライバをインストールする。
 
 OpenKinect と LibUSB をダウンロード。
+
 ```sh
 $ git clone https://github.com/OpenKinect/libfreenect.git
 Cloning into libfreenect...
@@ -49,6 +51,7 @@ Resolving deltas: 100% (1178/1178), done.
 ```
 
 OpenKinect に LibUSBパッチをあててインストールする。
+
 ```sh
 $ cd libusb
 $ ./autogen.sh
@@ -59,6 +62,7 @@ $ sudo make install
 ```
 
 cmake でmakefileをつくる。
+
 ```sh
 $ cd ../libfreenect/cmake_modules/
 $ cmake ..
@@ -95,6 +99,7 @@ $ cmake ..
 
 
 makeし、make install する。
+
 ```sh
 $ make
 Scanning dependencies of target freenect

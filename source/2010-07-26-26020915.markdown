@@ -13,6 +13,7 @@ keywords:
 ---
 iPhone/iPadアプリの開発が楽しいです。今回は、音を扱う上で Core Audio Format(.caf)という形式に変換する必要があったので、そのコマンドをメモっておきます。
 
+
 ```sh
 % afconvert -f caff -d ima4 -d LEI16@22050 -c 1 -o [出力ファイル名].caf [入力ファイル名].wav
 ```

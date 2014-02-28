@@ -32,6 +32,7 @@ Rubyはすでにインストール済み。
 
 ▽美人時計の全画像取得スクリプト
 bijin.ruby
+
 ```ruby
 require 'net/http'
 require 'uri'
@@ -61,6 +62,7 @@ end
 ```
 
 ▽コマンドから実行
+
 ```sh
 [ooiwa@eva bijin_tokei]$ ruby bijin.ruby
 ```
@@ -77,6 +79,7 @@ end
 今回はわかりやすいようにスクリプトを起動した日の日付を取得して"yyyymmdd"形式で文字列を返す関数と、ディレクトリを生成する関数を用意します。
 
 ▽今日の日付をyyyymmdd型の文字列に変換する関数
+
 ```ruby
 def getTimeNow()
     day = Time.now
@@ -98,6 +101,7 @@ end
 ```
 
 ▽ディレクトリの生成
+
 ```ruby
 def mkdir(path)
     if Dir::mkdir( path, 0777 )
@@ -113,6 +117,7 @@ end
 
 ▽スクリプトをまとめたのがこれ
 bijin.ruby
+
 ```ruby
 #——————————————————————————————
 #  美人時計の画像を全取得するスクリプト
@@ -213,6 +218,7 @@ Rubyは変数の定義がグローバルとローカルでスコープがわか�
 
 完成したスクリプトを早速実行してみます。
 
+
 ```sh
 [ooiwa@eva bijin_tokei]$ ruby /home/ooiwa/tmp_ruby/bijin_tokei/bijin.ruby
 [ooiwa@eva bijin_tokei]$ ls
@@ -224,6 +230,7 @@ Rubyは変数の定義がグローバルとローカルでスコープがわか�
 うまく動いていれば、本日の日付ディレクトリが生成され、そのディレクトリの中に画像をどんどんたまっていっているのがわかります。
 
 最後はこの完成したスクリプトをCronでまわす処理をします。
+
 
 ```sh
 [ooiwa@eva bijin_tokei]$ crontab -e

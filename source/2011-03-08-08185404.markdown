@@ -14,6 +14,7 @@ Subversionを使ってる方々、.svnディレクトリを全部削除したい
 
 そこで、再帰的に一気に.svnディレクトリを削除するコマンドを書いておきます。
 
+
 ```sh
 for /f "tokens=*" %d in ('"dir /b/s/a | findstr /r \.svn$"') do rmdir /q/s "%d"
 ```

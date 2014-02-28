@@ -17,22 +17,26 @@ MySQLしか使ったことないのですが、案件でPostgresqlを使うこ�
 クライアント認証につまづいてなかなか壁を突破できませんでしたがググって頑張りましたよっと。
 
 まず、yumで必要なモジュールをインストール。
+
 ```sh
 [root@localhost ~]# yum install -y postgresql-tcl postgresql-server postgresql-contrib postgresql php-pgsql
 ```
 
 今回はPHPとの連動を行うので、下記もインストール
+
 ```sh
 [root@localhost ~]# yum install -y php-pgsql
 ```
 
 ひととおりインストールが終わったらpostgresqlを起動。
+
 ```sh
 [root@localhost ~]# /etc/rc.d/init.d/postgresql start
 ```
 
 それでは初期設定を行っていく。
 MySQLと違って、postgresというユーザーでログインしないと設定が行えない。
+
 ```sh
 [root@localhost ~]# su - postgres
 -bash-3.2$ psql -l
@@ -47,6 +51,7 @@ MySQLと違って、postgresというユーザーでログインしないと設�
 
 ユーザー名"test"、パスワード"test" のユーザーを作成する。
 権限はデータベースの作成を可能にする。
+
 ```sh
 -bash-3.2$ psql
 Welcome to psql 8.1.21, the PostgreSQL interactive terminal.
@@ -69,6 +74,7 @@ logout
 これで、Linux上のユーザー"test"からPostgresqlを操作できるようになる。
 そしたら、"test"ユーザーが使えるデータベース"test"を作成する。
 文字コードは"EUC_JP"にする。
+
 ```sh
 [root@localhost ~]# su - test
 [test@localhost ~]# createdb test -E EUC_JP
@@ -89,6 +95,7 @@ CREATE DATABASE
 データベースを削除する場合は、"drop データベース名" とすれば良い。
 
 最後に、PHPなどと連携する場合は、クライアント認証ファイルを編集する必要がある。
+
 ```sh
 [root@localhost ~]# vi /var/lib/pgsql/data/pg_hba.conf
 #local  all         all                               ident sameuser  #コメントアウト
@@ -99,6 +106,7 @@ host    all         all         127.0.0.1/32          password
 ```
 
 postgresqlとapacheを再起動する。
+
 ```sh
 [root@localhost ~]# /etc/rc.d/init.d/postgresql restart
 Stopping postgresql service:                               [  OK  ]
@@ -110,6 +118,7 @@ Starting httpd:                                            [  OK  ]
 ```
 
 phpファイルを書いて、接続テストする。
+
 ```php
 <?php
 
@@ -133,6 +142,7 @@ else{
 ```
 
 特に問題なく接続できたら下記のように表示される。
+
 ```sh
 接続しちゃいました
 接続を閉じました。

@@ -11,6 +11,7 @@ keywords:
 ---
 いつもならばJSファイルの読み込み方って、
 
+
 ```html
 <html lang="ja">
 <head>
@@ -32,6 +33,7 @@ keywords:
 ```
 
 みたいな感じで、headタグ内に読み込むJSファイルを直接書くけど、最近流行ってるのか、それとも廃れたのかわからないが、こんな感じのソースを見た。
+
 ```html
 <script type="text/javascript" src="./import.js"></script>
 ```
@@ -39,6 +41,7 @@ keywords:
 1つのJSファイルだけを読み込んで、その import.js にグローバルで読み込みたいJSファイルを document.write() で読み込むようだ。
 
 そのソースには、
+
 ```js
 document.write( '<script type="text/javascript" src="./xxxxxxxx.js"></script>' );
 document.write( '<script type="text/javascript" src="./yyyyyyyy.js"></script>' );
@@ -48,6 +51,7 @@ document.write( '<script type="text/javascript" src="./zzzzzzzz.js"></script>' )
 というように書かれていた。
 
 コレはなかなか面白いし、まとまって良いなと思ったので、自分も簡単にまとめてつくってみた。
+
 ```js
 /**
 *

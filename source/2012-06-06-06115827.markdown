@@ -14,6 +14,7 @@ keywords:
 zflickjsをつくってて気づいたのですが、
 firefox対応にする場合、elm.style.mozTransition ではなく、elm.style.MozTransition という"m"が"M"ってことに注意です。これわかりづらいわー。
 
+
 ```html
 <script>
 (function(){

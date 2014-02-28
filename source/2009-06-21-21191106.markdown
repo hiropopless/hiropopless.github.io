@@ -24,6 +24,7 @@ keywords:
 
 aaa@localhost にくるメールを aaa@localhost と、bbb@etc.com に転送する。
 
+
 ```sh
 #vi /etc/aliases
 aaa: aaa,bbb@etc.com

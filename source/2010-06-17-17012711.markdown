@@ -13,6 +13,7 @@ keywords:
 ---
 スパムメールが増えたのかなんなのか、ウチのサーバのログが暴れだしたので、ちょこっと調べてみることにした。
 
+
 ```sh
 host spamc[9130]: connect to spamd on 127.0.0.1 failed, retrying (#1 of 3): Connection refused
 host spamc[9130]: connect to spamd on 127.0.0.1 failed, retrying (#2 of 3): Connection refused
@@ -21,6 +22,7 @@ host spamc[9130]: connect to spamd on 127.0.0.1 failed, retrying (#3 of 3): Conn
 
 このようなログがけっこう前からあった。どうも Spamassassin が動いていないようだ。
 リブートしてみようと思い下記のコマンドを実行
+
 
 ```sh
 [root@host]~# /etc/init.d/spamassassin start
@@ -40,6 +42,7 @@ Hope this works also for others!
 </blockquote>
 
 と書いてあるので、下記コマンドを実行後、改めてSpamassassin を起動してみた。
+
 ```sh
 [root@host]~# sa-update
 [root@host]~# /etc/rc.d/init.d/spamassassin start

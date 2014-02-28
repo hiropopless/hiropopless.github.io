@@ -11,6 +11,6 @@ tags:
 
 参考にしたのは下記らへん。
 
-[](http://middlemanapp.com/jp/basics/blogging/)
+[http://middlemanapp.com/jp/basics/blogging/](http://middlemanapp.com/jp/basics/blogging/)
 
 middleman超いいです！

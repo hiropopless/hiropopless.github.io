@@ -14,6 +14,7 @@ keywords:
 JavaScriptが無効なときと、ロード中のメッセージを超簡単に表示する方法。
 
 
+
 ```html
 <div class="noJS">
 <script type="text/javascript">

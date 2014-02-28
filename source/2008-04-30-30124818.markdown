@@ -17,23 +17,27 @@ SSH2インストール
 http://www.php.net/manual/ja/book.ssh2.php
 
 ・OpenSSLインストール
+
 ```sh
 # yum install openssl-devel
 ```
 
 ・libssh2をダウンロードしてインストール
 http://sourceforge.net/projects/libssh2/
+
 ```sh
 # ./configure && make all install
 ```
 
 ・ssh2モジュールのインストール
+
 ```sh
 # pecl download ssh2-beta
 # phpize && ./configure –with-ssh2
 ```
 
 ※phpizeがない場合、
+
 ```sh
 # yum install php-dev
 ```
@@ -42,6 +46,7 @@ http://sourceforge.net/projects/libssh2/
 config.h に
 「#define LIBSSH2_APINO 200412301450」
 を追記する。
+
 ```sh
 # vi config.h
 # make
@@ -51,6 +56,7 @@ php.ini ファイルの extension_dir で指定された場所に ssh2.so をコ
 php.iniにextention=ssh2.soを追記
 
 php.ini の設定を再読込させるため、Web サーバを再起動します。
+
 ```sh
 # /etc/rc.d/init.d/httpd restart
 ```

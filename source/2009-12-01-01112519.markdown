@@ -16,6 +16,7 @@ keywords:
 <img src="/imgs/archives/2009/12/kurukuru.gif" alt="kurukuru" title="kurukuru" width="411" height="343" class="alignnone size-full wp-image-340" />
 
 HTMLはこんな感じ。displayの、noneとblockを切り替えるだけ。
+
 ```html
 <div id="col_1" class="colDes">コンテンツ1だよー</div>
 <div id="col_2" class="colDes" style="display:none;">コンテンツ2だよー</div>
@@ -31,6 +32,7 @@ HTMLはこんな感じ。displayの、noneとblockを切り替えるだけ。
 ```
 
 CSSは、とりあえず動きがわかりやすいようにやっつけ。
+
 ```css
 #to_next,#to_back {
 	cursor: pointer;
@@ -47,6 +49,7 @@ CSSは、とりあえず動きがわかりやすいようにやっつけ。
 ```
 
 JSもシンプルだね。
+
 ```js
 (function(){
 	var col = [];

@@ -21,6 +21,7 @@ canvasで使うライブラリはすっかりProcessing.jsに馴染んでしま�
 
 Arduinoを使った8x8ドットマトリックスLEDの点滅をやりたいなと思い、そのシミュレーションとしてjsdoitでまずはcanvasに描画してみようと思いたちProcessing.jsで書いてみました。
 
+
 ```javascript
 <script type="application/processing">
 int[][] p = {
@@ -54,6 +55,7 @@ void draw(){
 }
 </script>
 ```
+
 
 ```java
 int[][] p = {

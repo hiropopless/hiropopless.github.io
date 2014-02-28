@@ -19,6 +19,7 @@ bashを全然使いこなせないので、ちょっと頑張ってもろもろ�
 このマウント作業を手作業で行っていたため、マシンをリブートした時に、また再度手作業で行わなくてはいけない。毎回これはめんどくさいので、いい加減自動化しようと思ったのがことの経緯であるわけです。
 
 外部HDDはwindowsでも使えるようにNTFSでフォーマットしてあるため、下記のコマンドでいつもマウントしている
+
 ```sh
 host# mount.ntfs-3g /dev/sdb1 /home/hiroki/samba/mnt/
 ```
@@ -27,11 +28,13 @@ host# mount.ntfs-3g /dev/sdb1 /home/hiroki/samba/mnt/
 
 /etc/rc.d/init.d/ ディレクトリにbashでスクリプトを組む。
 startとstopで起動、終了を制御するため、start関数とstop関数を用意する。
+
 ```sh
 host# vi /etc/rc.d/init.d/mnt_music
 ```
 
 スクリプトの中身
+
 ```sh
 #!/bin/bash
 
@@ -61,17 +64,20 @@ esac
 数値部分は、「ランレベル」「起動プライオリティ」「終了プライオリティ」の順である。
 
 スクリプトを実行する。
+
 ```sh
 host# /etc/rc.d/init.d/mnt_music start
 umount success!!
 ```
 
 ランレベル3に、シンボリックリンクを登録する。
+
 ```sh
 host# ln -s /etc/rc.d/init.d/mnt_music /etc/rc3.d/S97mnt_music
 ```
 
 chkconfigに "mnt_music" を登録し、起動時のブートを有効にする。
+
 ```sh
 host# chkconfig --add mnt_music
 host# chkconfig mnt_music on

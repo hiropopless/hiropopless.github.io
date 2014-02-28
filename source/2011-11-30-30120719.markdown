@@ -11,6 +11,7 @@ keywords:
 ---
 たまにサイトの耐久テストをやったりするので、2ちゃんねるで有名な田代砲的な（ＤＯＳアタック）ものをブックマークレット用につくってみました。
 
+
 ```javascript
 javascript:(function(){ setInterval(function(){var dd = new Date(); console.log( dd.getUTCHours() + ":" + dd.getUTCMinutes() + ":" + dd.getUTCSeconds() ); location.reload()}, 5000) })();
 ```

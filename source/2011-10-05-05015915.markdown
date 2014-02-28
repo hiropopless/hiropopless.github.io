@@ -18,6 +18,8 @@ keywords:
 Railsはprototype.jsベースになってたりするのですが、最近はもっぱら世の中jQueryなので、Rails3でjQueryを使えるようにします。
 
 gemsでjquery-railsをインストールする。
+
+
 ```sh
 % sudo gem install jquery-rails --no-RDoc --no-ri
 % gem list
@@ -27,6 +29,8 @@ jquery-rails (1.0.14)
 これでインストール完了。
 次に、Rails3アプリに組み込む。
 ${RAILS_APP_PATH} は、railsアプリのパス。
+
+
 ```sh
 % cd ${RAILS_APP_PATH}/
 % vi Gemfile
@@ -35,6 +39,8 @@ gem 'jquery-rails'
 ```
 
 追記したらbundleして、railsサーバー起動。
+
+
 ```sh
 % bundle
 % rails generate jquery:install

@@ -14,6 +14,7 @@ keywords:
 インスコメモです。
 
 
+
 ```sh
 vi /etc/php.ini
 extension=php_mbstring.dll　←有効
@@ -21,6 +22,7 @@ extension=php_mysql.dll　←有効
 ```
 
 ▽phpでmysqlを有効化する。
+
 ```sh
 yum -y install php-mbstring php-mysql
 ```

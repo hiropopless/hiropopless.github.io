@@ -11,6 +11,7 @@ keywords:
 - Linux
 - zsh
 ---
+
 ```sh
 zsh
 autoload -U tetris

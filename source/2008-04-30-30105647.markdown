@@ -19,6 +19,7 @@ keywords:
 
 
 # 実例
+
 ```sh
 grub> kernel /vmlinuz-2.6.18-1.2798.fc6 ro root=「ラベル」/ -s
 grub> initrd /initrd-2.6.18-1.2798.fc6.img
@@ -26,6 +27,7 @@ grub> boot
 ```
 
 # パスワード設定
+
 ```sh
 root# passwd root
 ```

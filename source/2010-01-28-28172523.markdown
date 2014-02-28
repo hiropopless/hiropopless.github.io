@@ -10,6 +10,7 @@ keywords:
 - 未分類
 ---
 ベーシック認証が書いてある.htaccess を検索するメモ
+
 ```sh
 find ./htdocs -type f -exec grep 'AuthType Basic' {} /dev/null \; -print
 ```

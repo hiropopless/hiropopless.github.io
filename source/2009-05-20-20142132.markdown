@@ -15,6 +15,7 @@ keywords:
 ---
 まずは、fedora-release と fedora-release-notes をアップデートする。
 
+
 ```sh
 [root@host ~]# rpm -Uvh \
 http://download.fedora.redhat.com/pub/fedora/linux/releases/10/Fedora/i386/os/Packages/fedora-release-10-1.noarch.rpm \
@@ -24,12 +25,14 @@ http://download.fedora.redhat.com/pub/fedora/linux/releases/10/Fedora/i386/os/Pa
 
 次に、rpm と yum を先にアップデート
 
+
 ```sh
 [root@host ~]# yum update rpm\* yum\*
 ```
 
 
 次に、clean と upgrade を行う
+
 
 ```sh
 [root@host ~]# yum clean all
@@ -38,6 +41,7 @@ http://download.fedora.redhat.com/pub/fedora/linux/releases/10/Fedora/i386/os/Pa
 
 
 パッケージのダウンロード終了後、トランザクションテストスタート
+
 
 ```sh
 Is this ok [y/N]: y

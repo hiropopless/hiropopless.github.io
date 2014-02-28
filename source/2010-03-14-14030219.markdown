@@ -26,6 +26,7 @@ keywords:
 
 とりあえず、Rubyでtwitterに投稿できるrubygemsのインストールの仕方です。
 
+
 ```sh
 rdocのインストール
 # yum install rdoc
@@ -47,6 +48,7 @@ Installing RDoc documentation for twitter-0.8.4...
 ```
 
 こんな感じでサーバーにインストール。そしてRubyの書き方は下記の通り。
+
 
 ```ruby
 #------------------------------------------------------------
@@ -74,6 +76,7 @@ twit( 'てすつ投稿やねん' )
 ```
 
 コマンドラインでプログラムを実行する。
+
 
 ```sh
 host~% ruby ./twit.rb

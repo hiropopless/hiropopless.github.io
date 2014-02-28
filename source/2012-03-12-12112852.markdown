@@ -16,6 +16,8 @@ keywords:
 findで検索した結果をそのままmv使って任意のディレクトリに移動したかったのでやってみた。
 
 例えば、とあるフォルダを検索して、"/old/images/"内に移動する場合。
+
+
 ```sh
 $ find ./ -name "*.gif" | xargs -i mv {} ./old/images/
 ```
@@ -26,11 +28,15 @@ $ find ./ -name "*.gif" | xargs -i mv {} ./old/images/
 とある神様よりこれでは同じファイル名の画像があったら上書きされちゃうとのご指摘があったため、神様よりスクリプトをいただきました。
 
 神様手抜き版(rsyncを使っちゃう。)
+
+
 ```sh
 find ./ -path ./old/images -prune -o -type f -name '*.gif' | rsync --files-from=- -av . ./old/images/ && find ./ -path ./old/images -prune -o -type f -name '*.gif' -exec rm -v {} \;
 ```
 
 神様手抜かない版。
+
+
 ```sh
 find ./ -path ./old/images -prune -o -type f -name '*.gif' | egrep '\.gif$' | xargs -i ksh -c 'a=`dirname {}`;mkdir -pv ./old/images/$a;mv -v {} ./old/images/{}'
 ```

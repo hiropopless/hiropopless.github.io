@@ -16,6 +16,7 @@ keywords:
 言語はいつものJavaScript。
 あと最近（今さら）覚えたクロージャーを使って書いてみました。
 
+
 ```javascript
 var rtn = "";
 var fizzBuzz = function(fizz, buzz, max){

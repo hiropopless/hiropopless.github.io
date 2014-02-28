@@ -15,6 +15,7 @@ keywords:
 ---
 iPhone SDK4.0 GM版が何かと曲者で不便なので、3.2に戻す。今インストールされているXcodeをアンインストールする。
 
+
 ```sh
 $ sudo /Developer/Library/uninstall-devtools --mode=all
 ```

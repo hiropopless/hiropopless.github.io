@@ -22,6 +22,7 @@ keywords:
 前々回くらいで自分のユーザー情報を取得するスクリプトはつくってみました。
 今回は、マイミク一覧とアプリ使用者をフィルタリングして、アプリを使ってるマイミクのみを取得するというテストをつくってみました。
 
+
 ```js
 (function(){
 
@@ -90,6 +91,7 @@ keywords:
 
 デフォルトで表示される件数は20件までなようです。
 さらに表示したい場合は、
+
 ```js
 params[ opensocial.DataRequest.PeopleRequestFields.MAX ] = 50;
 ```
@@ -97,6 +99,7 @@ params[ opensocial.DataRequest.PeopleRequestFields.MAX ] = 50;
 なんか、lengthやgetMyMixiLength()みたいなのないのかなぁ。
 
 さらに、条件から一致した全体の数から、n件目から取得みたいなこともできる。
+
 ```js
 params[ opensocial.DataRequest.PeopleRequestFields.MAX ] = 50;
 params[ opensocial.DataRequest.PeopleRequestFields.FIRST ] = 30;

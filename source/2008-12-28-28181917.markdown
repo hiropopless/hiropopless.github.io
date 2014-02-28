@@ -13,6 +13,7 @@ keywords:
 ---
 自部用メモ
 
+
 ```sh
 [root@host ~]# cd /etc/sysconfig/network-scripts/
 [root@host network-scripts]# vi ifcfg-eth0

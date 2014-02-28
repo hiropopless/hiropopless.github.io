@@ -20,6 +20,7 @@ keywords:
 
 まず、下記コマンドを打ってみる。
 
+
 ```sh
 [root@host ~]# mount -t ntfs /dev/sdb1 /mnt/sdb1
 mount: マウントポイント /mnt/sdb1 が存在しません
@@ -27,6 +28,7 @@ mount: マウントポイント /mnt/sdb1 が存在しません
 
 
 そこで、マウントポイントを作成して、マウントを再試行する。
+
 
 ```sh
 [root@host ~]# mkdir /mnt/o
@@ -39,12 +41,14 @@ mount: unknown filesystem type 'ntfs'
 調べてみたら、'mount -t ntfs-3g' というコマンドでマウントするらしい。
 そこで、ntfs-3gをインストールする。
 
+
 ```sh
 [root@host ~]# yum install ntfs-3g
 ```
 
 
 インストールが終わったところ、再マウント。
+
 
 ```sh
 [root@host ~]# mount -t ntfs-3g /dev/sdb1 /mnt/o
@@ -55,6 +59,7 @@ ntfs-3g-mount: fuse device is missing, try 'modprobe fuse' as root
 
 'modprobe fuse'を試せとのことで、試してみる。
 
+
 ```sh
 [root@host ~]# modprobe fuse
 FATAL: Module fuse not found.
@@ -64,11 +69,13 @@ FATAL: Module fuse not found.
 'not found' って・・・。
 さらに調べると、'dkms-fuse'ってのをインストールしなくてはならないよう。
 
+
 ```sh
 [root@host ~]# yum --enablerepo=rpmforge install dkms-fuse
 ```
 
 そして、'modprobe fuse' を実行して、マウントに再挑戦
+
 
 ```sh
 [root@host ~]# modprobe fuse
@@ -77,6 +84,7 @@ FATAL: Module fuse not found.
 
 
 エラーが返ってこないので成功か？確認してみる。
+
 
 ```sh
 [root@host ~]# ls /mnt/o/

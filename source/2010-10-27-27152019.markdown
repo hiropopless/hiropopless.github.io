@@ -16,6 +16,7 @@ blog記事ってふつー最新から順に並べられているけど、あえ�
 
 ▽古い順（デフォルトは、order=DESC）
 
+
 ```php
 query_posts("order=ASC");
 ```
@@ -26,6 +27,7 @@ query_posts("order=ASC");
 </blockquote>
 
 ただ、これだと全記事がソートされることになるので、カテゴリだけソートしたい場合は、category.php （テーマファイル）に対して、下記のように記述する。
+
 
 ```php
 $cat = get_query_var('cat');

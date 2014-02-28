@@ -11,6 +11,7 @@ keywords:
 ---
 pearをインストールしてみた。
 
+
 ```sh
 [ooiwa@EVA01_TEST ~]$ pwd
 /home/ooiwa/

@@ -22,6 +22,7 @@ Processing JS WordPress Plugin
 
 意図も簡単に見つけてしまったので早速導入してみました。
 
+
 ```javascript
 <script type="application/processing">
 //Info: http://processingjs.org/reference
@@ -37,6 +38,7 @@ void draw() {
 }
 </script>
 ```
+
 
 ```java
 void setup() {

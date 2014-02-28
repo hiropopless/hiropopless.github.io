@@ -10,26 +10,31 @@ keywords:
 - CSS
 ---
 firefox
+
 ```css
 div {}
 ```
 
 opera
+
 ```css
 html:first-child div {}
 ```
 
 safari
+
 ```css
 html* div {}
 ```
 
 Ie6
+
 ```css
 *html div {}
 ```
 
 Ie7
+
 ```css
 *+html div {}
 ```

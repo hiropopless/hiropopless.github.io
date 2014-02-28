@@ -17,6 +17,7 @@ keywords:
 まず、型ってものをつくります。
 Javaでいうところのクラス的なものです。JavaScriptはClassというものが存在しないので、functionで定義します。
 
+
 ```js
 var ObjectA = function(){
 	this._var;
@@ -30,6 +31,7 @@ var ObjectA = function(){
 そして、このObjectAがもっている子要素オブジェクト（JSはすべてがオブジェクトとして扱う）は、型のない"_var"プロパティと、引数を返すだけの"_method"メソッドが定義されています。ObjectAの子要素として定義するため、"this"を使って定義しています。この"this"はObjectA自身への参照となります。
 
 そして、この型はまだ実体化していないため、実体化して、実際に使える状態にします。
+
 
 ```js
 var objectA = new ObjectA();

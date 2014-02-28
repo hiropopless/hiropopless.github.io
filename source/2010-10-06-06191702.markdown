@@ -17,6 +17,7 @@ keywords:
 とりま、某有名なネズミさんに似た形をellipse()使って描いてみました。
 <a href="/imgs/archives/2010/10/mickey1.jpg"><img src="/imgs/archives/2010/10/mickey1.jpg" alt="" title="mickey1" width="406" height="432" class="alignnone size-full wp-image-538" /></a>
 
+
 ```java
 float positionX = 125;
 float positionY = 125;
@@ -39,6 +40,7 @@ void draw(){
 
 割とキレイに描けてるんじゃないかなとｗｗ
 ただ、毎回こいつを繰り返し処理させるのはいかがなものかと思うので、クラスオブジェクトにまとめてみました。
+
 ```java
 class Mouse{
   
@@ -70,6 +72,7 @@ class Mouse{
 
 実際にこのMouseクラスを使ってテキトーに並べてみました。
 <a href="/imgs/archives/2010/10/mickey3.jpg"><img src="/imgs/archives/2010/10/mickey3.jpg" alt="" title="mickey3" width="406" height="432" class="alignnone size-full wp-image-545" /></a>
+
 
 ```java
 float positionX = 125;

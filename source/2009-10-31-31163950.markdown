@@ -24,6 +24,7 @@ keywords:
 
 ウチはsendmailなので、まず設定ファイルを修正する。
 
+
 ```sh
 [root@host ~]#vi /etc/mail/access
 #追記↓
@@ -33,6 +34,7 @@ facebookmail.com  REJECT
 "[ドメイン名] REJECT" と記述することで、このドメインのメールはすべて受信拒否にする。
 次に、アクセスファイルをデータベースに変換します。変換にはsendmailに付属のmakemapコマンドを使用します。
 その後、sendmailを再起動すれば設定が反映されます。
+
 ```sh
 [root@host ~]# makemap -v hash /etc/mail/access.db < /etc/mail/access
 [root@host ~]# /etc/rc.d/init.d/sendmail restart

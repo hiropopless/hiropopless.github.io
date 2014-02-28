@@ -16,6 +16,7 @@ JavaScriptを拡張するのはあまり気が進まないのですが、ネイ�
 今回は超絶によく使うArrayオブジェクト(配列)の拡張を書いておきます。
 
 まずは配列のシャッフル。
+
 ```js
 Array.shuffle()
 ```
@@ -26,6 +27,7 @@ Array.shuffle()
 [Fisher–Yatesアルゴリズムについて](http://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle "Fisher–Yatesアルゴリズムについて")
 
 JavaScriptの実装は下記の通り
+
 ```js
 Array.prototype.shuffle = function() {
 	var i = this.length;
@@ -42,6 +44,7 @@ Array.prototype.shuffle = function() {
 これで簡単に配列の中身をシャッフルできます。
 
 次に配列のコピー(クローン)をつくるためのメソッド。
+
 ```js
 Array.clone()
 ```
@@ -50,6 +53,7 @@ JavaScriptの配列は別変数に代入した場合、それはコピーにな�
 それを一発で解決する方法が、Array.clone() をつくっちゃえば簡単だよねってことなのです。
 
 実装はこちら
+
 ```js
 Array.prototype.clone = function(){
 	return Array.apply(null,this);
@@ -60,6 +64,7 @@ Array.prototype.clone = function(){
 
 
 Array.shuffle() と Array.clone() を両方の使い方はこちら。
+
 ```js
 //配列hogeを生成
 var hoge = Array(1,2,3,4,5);

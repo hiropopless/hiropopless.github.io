@@ -12,6 +12,7 @@ keywords:
 <p>仕事でTypeScriptをやることになったのでとりあえず入門しておく。まずインストールするところから。</p>
 <p>node.jsがインストールされている前提ですすんでいく。</p>
 
+
 ```sh
 % sudo npm install -g typescript
 Password:
@@ -37,9 +38,11 @@ Version 0.9.0.1
 
 <p>インストール完了。とりあえず "Hello World." 書いてみる。</p>
 
+
 ```sh
 % vim toggle.ts
 ```
+
 
 ```typescript
 class Ore {
@@ -62,11 +65,13 @@ ore.say('Hello World.');
 
 <p>tsファイルをコンパイルしてみる。</p>
 
+
 ```sh
 % tsc toggle.ts
 ```
 
 <p>コンパイル結果。</p>
+
 
 ```javascript
 var Ore = (function () {

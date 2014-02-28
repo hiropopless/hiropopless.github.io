@@ -16,6 +16,7 @@ AS3を本気で勉強しようと思い過去に何度入門したかわから�
 
 とりあえず、HelloWorld的な。
 
+
 ```actionscript
 //************************************************************
 // HelloWorld - TextField()
@@ -61,6 +62,7 @@ package {
 
 インスタンスのプロパティをwith文を使ってまとめてみる。
 
+
 ```actionscript
 //titleを定義
 var title:TextField = new TextField();
@@ -81,6 +83,7 @@ with( title ){
 with文の中身というのは、親オブジェクトの名前領域の中にいる状態（表現あってる？）です。ここで問題になっているのは、stageオブジェクトです。"stage.stageWidth" の部分。
 親が"title"オブジェクトなので、with文の中では、"title.stage.stageWidth" というように見られてしまいます。もちろん、titleインスタンスにはそんな階層のプロパティをもっていません。
 それでもwith文を使いたい場合はこのように書きます。
+
 
 ```actionscript
 //titleを定義

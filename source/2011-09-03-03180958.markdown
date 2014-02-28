@@ -16,6 +16,7 @@ MacPortsよりHomebrewの方がおすすめということで、MacPortsをア�
 
 ### MacPortsのアンインストール
 MacPortsと不要なアカウントを削除する。
+
 ```sh
 % sudo port -f uninstall installed
 % sudo dscl . -delete /Users/macports
@@ -23,11 +24,13 @@ MacPortsと不要なアカウントを削除する。
 ```
 
 ### Homebrewをインストールする
+
 ```sh
 % ruby -e "$(curl -fsSL https://gist.github.com/raw/323731/install_homebrew.rb)"
 ```
 
 ### Homebrewをアンインストールする順序も書いておく
+
 ```sh
 $ cd `brew --prefix`
 $ rm -rf Cellar

@@ -21,6 +21,7 @@ Rails環境を整える準備として、RubyとRubyGemsをインストールす
 まずはRuby1.9.2 をインストール。
 [Ruby最新版はここで確認する。](http://www.ruby-lang.org/ja/downloads/ "Ruby最新版はここで確認する。")
 
+
 ```sh
 # wget ftp://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.2-p136.tar.gz
 # tar xvzf ruby-1.9.2-p136.tar.gz
@@ -31,6 +32,7 @@ Rails環境を整える準備として、RubyとRubyGemsをインストールす
 ```
 
 Rubyがインストールできたか確認
+
 ```sh
 # ruby -v
 ruby 1.9.2p136 (2010-12-25 revision 30365) [i686-linux]
@@ -38,6 +40,7 @@ ruby 1.9.2p136 (2010-12-25 revision 30365) [i686-linux]
 
 簡単なRubyスクリプトを作成して動作確認
 hello.rb
+
 ```ruby
 def main arg
     return arg
@@ -47,6 +50,7 @@ puts main("ahya")
 ```
 
 実行結果
+
 ```sh
 # ruby hello.rb
 ahya
@@ -59,6 +63,7 @@ Ruby.1.9.x系からRubyGems1.3.7が入ってるようなので、RubyGemsのイ�
 これでRubyとGemsが使える。
 
 RubyGemsのバージョンやらをいちお確認する。
+
 ```sh
 # gem -v
 1.3.7

@@ -13,6 +13,7 @@ keywords:
 ---
 [元記事はこちら](http://allabout.co.jp/internet/javascript/closeup/CU20050515A/ "元記事はこちら")
 
+
 ```js
 //XMLHttpRequestオブジェクト生成
 function createHttpRequest(){//Win ie用
@@ -69,6 +70,7 @@ function on_loaded(oj){
 	alert(res);
 }
 ```
+
 
 ```html
 <form>

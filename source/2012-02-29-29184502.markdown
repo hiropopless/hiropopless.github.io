@@ -22,12 +22,16 @@ Web制作の現場でWebサイトをまるまるクロールすることがあ�
 例えばwgetのxオプションが便利です。
 xをつけるとドメインのディレクトリをつくり強制的にディレクトリ構造を保ったままファイルを取得してくれます。
 さらにベーシック認証(もしくはダイジェスト認証)がかかっている場合は下記オプションをつけることで取得できます。
+
+
 ```sh
 wget -x --http-user=[ベーシック認証ID] --http-password=[ベーシック認証パスワード] http://yahoo.com/index.html
 ```
 
 "http://yahoo.com/index.html" からつながる下層リンク含めてすべて取得したい場合は、pavuk使ったほうが便利です。
 オプションが豊富なのでwgetより便利かもしれません。
+
+
 ```sh
 pavuk -base_level 1 \
  -auth_scheme Digest \
@@ -45,4 +49,5 @@ pavuk -base_level 1 \
  -index_name index.html \
  http://yahoo.com/index.html
 ```
+
 実際"yahoo.com"にはベーシック認証(もしくはダイジェスト認証)ないですけど、上記のように指定すればベーシック認証(もしくはダイジェスト認証)を突破しつつすべてのページをクロールしてくれます。超便利ですpavuk

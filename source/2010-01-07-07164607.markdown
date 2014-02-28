@@ -13,6 +13,7 @@ keywords:
 ---
 flashplayerの有無判別は非常にややこしい・・・。どこかのサイトにあったものをコピペではっておく。
 
+
 ```js
 function FlashPlayerVer(){
 	//初期設定

@@ -15,6 +15,7 @@ keywords:
 ---
 そういえばpassenger をインストールしてなかったので、インストールする。
 
+
 ```sh
 # gem install passenger
 # passenger-install-apache2-module
@@ -39,6 +40,7 @@ Checking for required software...
 
 2つ目の質問で、いくつかモジュールが足りないと言われたので一旦Ctrl+C で抜けて、足りないモジュールをインストールする。
 
+
 ```sh
 # yum install httpd-devel openssl openssl-devel apr-devel
 Installed:
@@ -55,6 +57,7 @@ Dependency Installed:
 ```
 
 もう一度インストールを試みる
+
 ```sh
 # passenger-install-apache2-module
 * Curl development headers with SSL support... not found
@@ -65,6 +68,7 @@ Dependency Installed:
 まだエラーが二つ。
 "OpenSSL support for Ruby" に関しては、zlibと同様に Ruby の持つ SSL サポートモジュールをコンパイルすることで解決できるようです。
 
+
 ```sh
 # cd ./ruby-1.8.7-p249/ext/openssl/
 # ruby extconf.rb
@@ -73,6 +77,7 @@ Dependency Installed:
 ```
 
 Curl-devel もインストールする。
+
 ```sh
 # yum install curl-devel
 
@@ -94,6 +99,7 @@ Complete!
 
 
 3度目の正直を試す。
+
 ```sh
 # passenger-install-apache2-module
 
@@ -115,6 +121,7 @@ Press ENTER to continue.
 不足モジュールがすべて解決済みならインストールが継続される。
 すると以下のようなメッセージが表示される。下記の部分は Passenger の動作設定となるので、必ずメモを取ること。
 記述は動作環境によって異なります。
+
 ```sh
    LoadModule passenger_module /usr/local/lib/ruby/gems/1.8/gems/passenger-3.0.0/ext/apache2/mod_passenger.so
    PassengerRoot /usr/local/lib/ruby/gems/1.8/gems/passenger-3.0.0
@@ -122,6 +129,7 @@ Press ENTER to continue.
 ```
 
 メモったらEnterキーを押す。次に、ドキュメントルールに関する設定が出るので、これもメモる。
+
 ```sh
 Deploying a Ruby on Rails application: an example
 
@@ -150,6 +158,7 @@ Phusion Passenger is a trademark of Hongli Lai & Ninh Bui.
 
 passengerのインストールはこれで完了。
 次にさきほどのメモをapacheに反映させる。
+
 ```sh
 # vi /etc/httpd/conf/httpd.conf
 
@@ -159,6 +168,7 @@ PassengerRuby /usr/local/bin/ruby
 ```
 
 apacheの再起動を行う。
+
 ```sh
 # /etc/rc.d/init.d/httpd restart
 Stopping httpd:                                            [  OK  ]

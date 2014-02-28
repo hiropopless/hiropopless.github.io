@@ -17,6 +17,7 @@ MS-DOS使ってバッチファイル書いたりすることはありますが�
 まずはPowershellがインストールされているかどうか確認しなくてはいけませんが、ここは割愛します。
 
 1）MS-DOSプロンプトを開いて、Powershell を起動します。
+
 ```sh
 C:\Documents and Settings\ooiwa> powershell
 Windows Powershell
@@ -25,6 +26,7 @@ Windows Powershell
 
 
 2) Set-ExecutionPolicyコマンドを実行してps1ファイルをまま実行できるようにします。
+
 ```sh
 PS C:\Documents and Settings\ooiwa> Set-ExecutionPolicy RemoteSigned
 PS C:\Documents and Settings\ooiwa> Get-ExecutionPolicy
@@ -34,6 +36,7 @@ PS C:\Documents and Settings\ooiwa>
 <img src="/imgs/archives/2011/03/2.gif" alt="" title="2" class="alignnone size-full wp-image-591" />
 
 3)テキストエディタでシェルスクリプトを書く。例としてtest.ps1 として保存して、シェルスクリプトを実行
+
 ```sh
 PS C:\Documents and Settings\ooiwa> notepad
 PS C:\Documents and Settings\ooiwa> .\test.ps1

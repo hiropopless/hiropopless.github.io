@@ -29,6 +29,7 @@ Grunt便利です！
 ## Sass/Compassをインストール
 Rubyが入っている前提ですすめていきます。
 
+
 ```sh
 % gem install sass
 % gem install compass
@@ -55,6 +56,7 @@ sass (3.2.9)
 [http://nodejs.org/](http://nodejs.org/ "http://nodejs.org/")
 
 インストールできるとこんな感じになる。
+
 ```sh
 % which node
 /usr/local/bin/node
@@ -67,6 +69,7 @@ v0.10.17
 ## TypeScriptをインストール
 
 nodeがインストールできたらTypeScriptをインストールする。
+
 
 ```sh
 % sudo npm install -g typescript
@@ -82,6 +85,7 @@ Version 0.9.0.1
 ## grunt-cliをインストール
 
 次にgrunt-cliをインストールします。
+
 ```sh
 % sudo npm install -g grunt-cli
 ```
@@ -91,6 +95,7 @@ Version 0.9.0.1
 
 githubのリポジトリからgit cloneします。
 cloneしたらgrunt関連のファイルをインストールします。
+
 
 ```sh
 % git clone https://github.com/funnythingz/typeSC.git
@@ -104,6 +109,7 @@ cloneしたらgrunt関連のファイルをインストールします。
 ## typeSCを使ってみる
 
 typeSCのデフォルト設定では、各ソースファイルは下記のように管理します。
+
 ```sh
 .ts ... src/**/*.ts
 .scss ... src/sass/**/*.scss
@@ -111,6 +117,7 @@ typeSCのデフォルト設定では、各ソースファイルは下記のよ�
 
 コンパイル後は公開ディレクトリに下記のように書きだされます。
 複数のtsファイルはコンパイル後、typesc.jsというひとつのJSファイルになります。さらに圧縮されたtypesc.min.jsも同時に書きだされます。
+
 ```sh
 .js ... public/typesc.js, public/typesc.min.js
 .css ... public/css/typesc.css
@@ -120,6 +127,7 @@ typeSCのデフォルト設定では、各ソースファイルは下記のよ�
 とりあえずSassはこんな感じで適当に。
 
 ### sass/typesc.scss
+
 
 ```scss
 @charset "utf-8";
@@ -150,6 +158,7 @@ TypeScriptを書いてみます。
 typeSCのデフォルト設定ではsrcディレクトリにある複数のtsファイルはJSコンパイルの際に結合されるので、human.ts, name.ts, age.ts のように複数のtsファイルを書いてみました。
 
 ### src/human.ts
+
 
 ```typescript
 /// <reference path="name.ts" />
@@ -183,6 +192,7 @@ typeSCのデフォルト設定ではsrcディレクトリにある複数のtsフ
 
 ### src/name.ts
 
+
 ```typescript
 module TYPESC {
 
@@ -200,6 +210,7 @@ module TYPESC {
 ```
 
 ### src/age.ts
+
 
 ```typescript
 module TYPESC {
@@ -223,11 +234,13 @@ module TYPESC {
 
 > コンパイル
 
+
 ```sh
 % grunt
 ```
 
 > 監視しながらリアルタイムでコンパイル
+
 
 ```sh
 % grunt watch
@@ -235,11 +248,13 @@ module TYPESC {
 
 > webサーバーを起動します。http://localhost:8000 にアクセスするとpublicフォルダがみれます
 
+
 ```sh
 % grunt server
 ```
 
 それではコンパイルしてみましょう。
+
 
 ```sh
 % grunt
@@ -268,6 +283,7 @@ Done, without errors.
 
 こんな感じでコンパイルできたら成功です！
 コンパイルされたファイルはこんな感じであると思います。
+
 
 ```sh
 public

@@ -20,10 +20,12 @@ keywords:
 毎回、ブートオプションに "clock=pit" つけるのはめんどいので、
 FedoraCore6の grub.conf をいじってみたい。
 
+
 ```sh
 [root@Asuka ~]# vi /boot/grub/grub.conf
 kernel /vmlinuz-2.6.18-1.2798.fc6 ro root=/dev/VolGroup00/LogVol00 clock=pit
 ```
+
 
 ```sh
 shutdown -r now

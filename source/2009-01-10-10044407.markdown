@@ -16,6 +16,7 @@ tomcat6をインストールした。
 "web.xml" とか "WEB-INF" とか初めて知りました。
 
 とりあえず、JSPのHelloWorld的な。
+
 ```java
 <%
   String ahya= "# JSPのテストやね。";

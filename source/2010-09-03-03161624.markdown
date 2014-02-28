@@ -22,6 +22,7 @@ Javaがベースになっているので、文法さえわかれば誰でも簡�
 <a href="/imgs/archives/2010/09/s11.gif"><img src="/imgs/archives/2010/09/s11.gif" alt="" title="s1" width="500" height="600" class="alignnone size-full wp-image-525" /></a>
 
 下のサンプルコードだけで下記が表示される。
+
 ```java
 void draw(){
   rect(10,10,10,10);
@@ -34,6 +35,7 @@ void draw(){
 このようにメソッドが直感的でデジタルアートに特化したシンプルな言語なようですぜ。
 
 応用編でマウスで絵を描ける風にしてみました。
+
 ```java
 void setup(){
   size(500,400);

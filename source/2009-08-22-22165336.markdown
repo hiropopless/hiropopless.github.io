@@ -18,6 +18,7 @@ OSはCenｔOS、Fedora系は全般的にやり方は同じ。
 
 proftpdを直接起動するのではなく、xinetd経由での起動にする。
 
+
 ```sh
 [root@host ~]# rpm -q proftpd
 パッケージ proftpd はインストールされていません。

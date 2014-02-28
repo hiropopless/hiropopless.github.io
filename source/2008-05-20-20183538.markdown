@@ -9,6 +9,7 @@ tags:
 keywords:
 - JavaScript
 ---
+
 ```html
 <select onchange="location.href = value;">
 <option value="page01.html">こうもく1</option>

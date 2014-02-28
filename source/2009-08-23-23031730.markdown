@@ -22,6 +22,7 @@ PEARライブラリを使ったソースコードになっているので、こ�
 
 まずは、型となる ftp_dir_put.class を定義する。
 ファイル名は ftp_dir_put.php で保存。
+
 ```php
 <?php
 
@@ -92,6 +93,7 @@ class ftp_dir_put {
 
 そして、この ftp_dir_put.class を newして実行するファイルを作成
 ファイル名は、test_host.php とかで保存。
+
 ```php
 <?php
 
@@ -129,6 +131,7 @@ init();
 ```
 
 これで、あとはコマンドラインにて、この test_host.php を実行
+
 ```sh
 [user@host ~]$ php test_host.php
 ```

@@ -14,6 +14,7 @@ keywords:
 FlashのActionScriptエディタがものすごく使いにくいので、EmEditorで編集できるようにする。
 方法は簡単。ASで実行したいパーツにinclude文を書くだけ。
 
+
 ```actionscript
 include "sample.as";
 ```
