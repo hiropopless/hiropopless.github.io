@@ -4,14 +4,12 @@ published: true
 date: 2010-05-21 17:45
 comments: true
 tags:
-- C言語
+- C
 - Objective-C
-- 配列
 
 keywords:
-- C言語
+- C
 - Objective-C
-- 配列
 ---
 JavaScriptしかロクに書けない自分です。こんぬつわ。
 C言語における配列をメモって置きます。

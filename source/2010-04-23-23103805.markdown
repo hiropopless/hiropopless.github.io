@@ -4,10 +4,10 @@ published: true
 date: 2010-04-23 10:38
 comments: true
 tags:
-- つれDUれ
+- TsureZure
 
 keywords:
-- つれDUれ
+- TsureZure
 ---
 ブログを更新しようと管理画面にログインしてみたら、
 

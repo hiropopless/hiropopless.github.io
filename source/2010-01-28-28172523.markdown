@@ -4,10 +4,10 @@ published: true
 date: 2010-01-28 17:25
 comments: true
 tags:
-- 未分類
+- untitle
 
 keywords:
-- 未分類
+- untitle
 ---
 ベーシック認証が書いてある.htaccess を検索するメモ
 

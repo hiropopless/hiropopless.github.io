@@ -5,13 +5,13 @@ date: 2009-08-21 00:53
 comments: true
 tags:
 - crack
-- つれDUれ
-- バグ
+- TsureZure
+- bug
 
 keywords:
 - crack
-- つれDUれ
-- バグ
+- TsureZure
+- bug
 ---
 どうやらオリジナルなようです。
 

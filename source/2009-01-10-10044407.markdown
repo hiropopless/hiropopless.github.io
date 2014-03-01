@@ -4,10 +4,10 @@ published: true
 date: 2009-01-10 04:44
 comments: true
 tags:
-- 未分類
+- untitle
 
 keywords:
-- 未分類
+- untitle
 ---
 tomcat6をインストールした。
 超めんどかった。

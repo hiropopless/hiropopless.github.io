@@ -4,13 +4,13 @@ published: true
 date: 2010-03-15 01:33
 comments: true
 tags:
-- バグ
-- 未分類
+- bug
+- untitle
 - ｦﾁらせ
 
 keywords:
-- バグ
-- 未分類
+- bug
+- untitle
 - ｦﾁらせ
 ---
 チカッパからヘテムルへサーバ移行中テストなうパーティ！

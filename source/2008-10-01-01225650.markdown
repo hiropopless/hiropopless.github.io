@@ -6,12 +6,10 @@ comments: true
 tags:
 - FedoraCore
 - VirtualPC
-- 鯖
 
 keywords:
 - FedoraCore
 - VirtualPC
-- 鯖
 ---
 FedoraCore6 がインスコされてるVirtualHDDをVirtualPCで読みだそうとしたところ、起動途中で止まってしまう。
 いろいろ調べていくうちに、intel系は特に問題なさそうだが、Athlon系は、Fedoraの起動オプションに、clock=pit をつけてあげないと起動しないらしい。

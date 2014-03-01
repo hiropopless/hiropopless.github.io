@@ -4,10 +4,10 @@ published: true
 date: 2007-12-29 16:40
 comments: true
 tags:
-- つれDUれ
+- TsureZure
 
 keywords:
-- つれDUれ
+- TsureZure
 ---
 昨日で仕事納めでした。昨日納品の案件があったので、ラスト1週間は怒涛のコーディングラッシュでしたよ。
 

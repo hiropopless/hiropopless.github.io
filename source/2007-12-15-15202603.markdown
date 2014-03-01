@@ -6,12 +6,12 @@ comments: true
 tags:
 - (X)HTML
 - CSS
-- つれDUれ
+- TsureZure
 
 keywords:
 - (X)HTML
 - CSS
-- つれDUれ
+- TsureZure
 ---
 こんちゃす。ぴです。
 自分、funnythingzというWeb屋の集まり集団の代表やってます。

@@ -4,10 +4,10 @@ published: true
 date: 2007-12-15 00:38
 comments: true
 tags:
-- つれDUれ
+- TsureZure
 
 keywords:
-- つれDUれ
+- TsureZure
 ---
 <img src="/imgs/archives/2007/12/10024675168_s1.jpg" alt="スパム" />
 

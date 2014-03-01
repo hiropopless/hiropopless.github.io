@@ -6,12 +6,12 @@ comments: true
 tags:
 - (X)HTML
 - CSS
-- バグ
+- bug
 
 keywords:
 - (X)HTML
 - CSS
-- バグ
+- bug
 ---
 FirefoxやNetscape 等、Geckoエンジンを用いたブラウザでは、連続した半角文字（長いURLや半角空白のないスクリプト等）を途中で折り返せない
 という既知のバグがあります。

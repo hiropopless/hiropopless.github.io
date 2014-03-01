@@ -4,9 +4,9 @@ published: true
 date: 2007-12-14 02:03
 comments: true
 tags:
-- 未分類
+- untitle
 
 keywords:
-- 未分類
+- untitle
 ---
 [mixi風wordpressテーマ配布してます。](http://www.ikepo.com "mixi風wordpressテーマ配布してます。")
