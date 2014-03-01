@@ -42,7 +42,7 @@ keywords:
 
 そのソースには、
 
-```js
+```JavaScript
 document.write( '<script type="text/javascript" src="./xxxxxxxx.js"></script>' );
 document.write( '<script type="text/javascript" src="./yyyyyyyy.js"></script>' );
 document.write( '<script type="text/javascript" src="./zzzzzzzz.js"></script>' );
@@ -52,7 +52,7 @@ document.write( '<script type="text/javascript" src="./zzzzzzzz.js"></script>' )
 
 コレはなかなか面白いし、まとまって良いなと思ったので、自分も簡単にまとめてつくってみた。
 
-```js
+```JavaScript
 /**
 *
 *	import.js

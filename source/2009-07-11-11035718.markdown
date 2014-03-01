@@ -16,7 +16,7 @@ JavaScriptって本当に柔軟な言語で、いろんな書き方できるか�
 
 ▼基本的なfunctionの書き方
 
-```js
+```JavaScript
 function ahya(arg){
 	return arg
 }
@@ -29,7 +29,7 @@ ahya('moe');	//戻り値 'moe'
 他にもこんな書き方ができます。
 
 
-```js
+```JavaScript
 var ahya = function(arg){
 	return arg;
 }
@@ -39,7 +39,7 @@ ahya('moe');
 
 あと、関数名を使わない無名関数（匿名関数）という書き方もできます。
 
-```js
+```JavaScript
 (function(arg){
 	return arg;
 })('moe');
@@ -50,7 +50,7 @@ ahya('moe');
 下記は無名コンストラクタです。
 
 
-```js
+```JavaScript
 new function(arg){
 	return arg
 }('moe');

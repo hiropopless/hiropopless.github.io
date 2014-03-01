@@ -10,7 +10,7 @@ keywords:
 - JavaScript
 ---
 
-```js
+```JavaScript
 function getElementsByClass(className) {
     className = ' ' + className + ' ';
     var all = document.getElementsByTagName('*');

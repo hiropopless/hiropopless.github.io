@@ -13,7 +13,7 @@ keywords:
 そんなときはどうしているのかというと、大抵、
 
 
-```js
+```JavaScript
 var a = 'string';
 function b(){
    return a;
@@ -25,7 +25,7 @@ function b(){
 ひどい場合は、
 
 
-```js
+```JavaScript
 var ahya = function(){
    return;
 }
@@ -34,7 +34,7 @@ var ahya = function(){
 とか、
 
 
-```js
+```JavaScript
 var moe = 'ahyao';
 var ooiwa = function(){
    return moe;
@@ -48,7 +48,7 @@ var ooiwa = function(){
 まずは、無名関数でグローバル領域を汚さないようにする
 
 
-```js
+```JavaScript
 //無名関数
 (function(){
    //ここにソース
@@ -58,7 +58,7 @@ var ooiwa = function(){
 そして、いきなり実行する無名コンストラクタを実装する
 
 
-```js
+```JavaScript
 //無名関数
 (function(){
    //無名コンストラクタ
@@ -72,7 +72,7 @@ var ooiwa = function(){
 無名関数の中に実装する。
 
 
-```js
+```JavaScript
 //無名関数
 (function(){
    //無名コンストラクタ
@@ -97,7 +97,7 @@ var ooiwa = function(){
 引数を配列として取得するなり、オブジェクトにしてしまうなり方法は色々ある。
 
 
-```js
+```JavaScript
 new function(arg){
    var name = arg.name;
    var age = arg.age;

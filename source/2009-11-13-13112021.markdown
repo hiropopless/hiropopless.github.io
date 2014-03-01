@@ -16,14 +16,14 @@ DateオブジェクトのgetMonth()という月をとるメソッドがあるん
 
 間違ったコード
 
-```js
+```JavaScript
 var date = new Date( today.getFullYear(), (today.getMonth() + 1), (today.getDate() + arg) );
 return date.getFullYear() + '.' + date.getMonth() + '.' + date.getDate();
 ```
 
 修正後
 
-```js
+```JavaScript
 var date = new Date( today.getFullYear(), today.getMonth(), (today.getDate() + arg) );
 return date.getFullYear() + '.' + (date.getMonth() + 1) + '.' + date.getDate();
 ```

@@ -14,7 +14,7 @@ keywords:
 flashplayerの有無判別は非常にややこしい・・・。どこかのサイトにあったものをコピペではっておく。
 
 
-```js
+```JavaScript
 function FlashPlayerVer(){
 	//初期設定
 	var flashplayer_ver = 0;

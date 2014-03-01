@@ -10,7 +10,7 @@ keywords:
 - JavaScript
 ---
 
-```js
+```JavaScript
 // 全て選択押下処理
 function AllChackInput(objAll){
 

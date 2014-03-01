@@ -12,7 +12,7 @@ keywords:
 - JavaScript
 ---
 
-```js
+```JavaScript
 //
 window.onload = function(){
 	var conf = {

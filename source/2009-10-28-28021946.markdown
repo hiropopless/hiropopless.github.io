@@ -18,7 +18,7 @@ keywords:
 Javaでいうところのクラス的なものです。JavaScriptはClassというものが存在しないので、functionで定義します。
 
 
-```js
+```JavaScript
 var ObjectA = function(){
 	this._var;
 	this._method = function(arg){
@@ -33,7 +33,7 @@ var ObjectA = function(){
 そして、この型はまだ実体化していないため、実体化して、実際に使える状態にします。
 
 
-```js
+```JavaScript
 var objectA = new ObjectA();
 objectA._var = 'hello world';
 alert( objectA._method( objectA._var ) );

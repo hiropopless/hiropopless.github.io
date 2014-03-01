@@ -23,7 +23,7 @@ keywords:
 今回は、マイミク一覧とアプリ使用者をフィルタリングして、アプリを使ってるマイミクのみを取得するというテストをつくってみました。
 
 
-```js
+```JavaScript
 (function(){
 
 	/******************************************************************************************************
@@ -92,7 +92,7 @@ keywords:
 デフォルトで表示される件数は20件までなようです。
 さらに表示したい場合は、
 
-```js
+```JavaScript
 params[ opensocial.DataRequest.PeopleRequestFields.MAX ] = 50;
 ```
 をつかって、件数を取得するようです。
@@ -100,7 +100,7 @@ params[ opensocial.DataRequest.PeopleRequestFields.MAX ] = 50;
 
 さらに、条件から一致した全体の数から、n件目から取得みたいなこともできる。
 
-```js
+```JavaScript
 params[ opensocial.DataRequest.PeopleRequestFields.MAX ] = 50;
 params[ opensocial.DataRequest.PeopleRequestFields.FIRST ] = 30;
 ```

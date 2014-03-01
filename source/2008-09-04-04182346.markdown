@@ -15,7 +15,7 @@ keywords:
 
 
 
-```js
+```JavaScript
 var_dump(document);
 
 //var_dump

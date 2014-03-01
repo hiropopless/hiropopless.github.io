@@ -17,7 +17,7 @@ JavaScriptを拡張するのはあまり気が進まないのですが、ネイ�
 
 まずは配列のシャッフル。
 
-```js
+```JavaScript
 Array.shuffle()
 ```
 
@@ -28,7 +28,7 @@ Array.shuffle()
 
 JavaScriptの実装は下記の通り
 
-```js
+```JavaScript
 Array.prototype.shuffle = function() {
 	var i = this.length;
 	while(i){
@@ -45,7 +45,7 @@ Array.prototype.shuffle = function() {
 
 次に配列のコピー(クローン)をつくるためのメソッド。
 
-```js
+```JavaScript
 Array.clone()
 ```
 
@@ -54,7 +54,7 @@ JavaScriptの配列は別変数に代入した場合、それはコピーにな�
 
 実装はこちら
 
-```js
+```JavaScript
 Array.prototype.clone = function(){
 	return Array.apply(null,this);
 }
@@ -65,7 +65,7 @@ Array.prototype.clone = function(){
 
 Array.shuffle() と Array.clone() を両方の使い方はこちら。
 
-```js
+```JavaScript
 //配列hogeを生成
 var hoge = Array(1,2,3,4,5);
 //hogeのクローンfooを生成

@@ -15,7 +15,7 @@ swfobject.js(ver_1.5)を使った場合のFlashPlayerの有無の判別。
 いつもスクラッチするので、めんどくさいと思いメモ。
 
 
-```js
+```JavaScript
 /*
 *	swfobject.js(ver_1.5)を使った場合
 */

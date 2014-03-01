@@ -19,7 +19,7 @@ JavaScriptはプロトタイプベースのオブジェクト指向言語です�
 とりあえず入門編1ということで、簡易的なソースを書きます。
 
 
-```js
+```JavaScript
 (function(){
     if( !ahya ){
         var ahya = {}
@@ -43,7 +43,7 @@ JavaScriptはプロトタイプベースのオブジェクト指向言語です�
 さて、実際にはどんなことをしているのか、先ほどのソースに注釈を入れてみました。
 
 
-```js
+```JavaScript
 (function(){
     //ahyaオブジェクトがない場合、
     if( !ahya ){

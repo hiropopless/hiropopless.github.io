@@ -19,7 +19,7 @@ keywords:
 <div id="debug"></div>
 ```
 
-```js
+```JavaScript
 (function(){
   var getid = function(id){
     return document.getElementById(id);

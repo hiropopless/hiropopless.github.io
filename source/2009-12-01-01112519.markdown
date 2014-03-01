@@ -50,7 +50,7 @@ CSSは、とりあえず動きがわかりやすいようにやっつけ。
 
 JSもシンプルだね。
 
-```js
+```JavaScript
 (function(){
 	var col = [];
 	for( var i = 0; i < 6; i++ )

@@ -12,7 +12,7 @@ keywords:
 [ロケットスタート](http://rocketstart.jp "ロケットスタート")のページで面白いスクリプトを見つけた。
 
 
-```js
+```JavaScript
 var timer = setInterval(function(){
 	var i = document.getElementById(&quot;count&quot;).childNodes[0].nodeValue  * 1;
 	i-- ;
