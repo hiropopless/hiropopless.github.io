@@ -6,11 +6,11 @@ comments: true
 tags:
 - (X)HTML
 - CSS
-- ｦﾁらせ
+- info
 
 keywords:
 - (X)HTML
 - CSS
-- ｦﾁらせ
+- info
 ---
 ひろぽっぽれすのデザインをちょっちいじりました。ヘッダー部分をもちっといじっていこうと思います。

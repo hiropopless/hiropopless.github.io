@@ -7,13 +7,13 @@ tags:
 - (X)HTML
 - CSS
 - wordpress
-- ｦﾁらせ
+- info
 
 keywords:
 - (X)HTML
 - CSS
 - wordpress
-- ｦﾁらせ
+- info
 ---
 僕が作ってるwordpress用のmixiっぽいテンプレートですが、最後のバグ取り（Safariでカレンダーのボーダーが正しく表示されない）が完了しました。
 

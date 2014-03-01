@@ -4,9 +4,9 @@ published: true
 date: 2007-12-14 01:46
 comments: true
 tags:
-- ｦﾁらせ
+- info
 
 keywords:
-- ｦﾁらせ
+- info
 ---
 こんちゃス。ブログさらにリニューアルちうです。

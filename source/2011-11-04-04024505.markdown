@@ -4,12 +4,13 @@ published: true
 date: 2011-11-04 02:45
 comments: true
 tags:
-- ルンバ
+- roomba
 
 keywords:
-- ルンバ
+- roomba
 ---
-<a href="/imgs/archives/2011/11/IMG_2602.jpg"><img src="/imgs/archives/2011/11/IMG_2602.jpg" alt="" title="IMG_2602" width="600" height="400" class="alignnone size-full wp-image-807" /></a>
+
+![](/imgs/archives/2011/11/IMG_2602.jpg)
 
 ウチです。自宅です。リビングです。
 
@@ -17,27 +18,32 @@ keywords:
 一眼レフでバルブモードにして長い間露光させておけばシャッターを押してから離すまでの部分を撮影できるのです。これを利用してルンバちゃんの軌跡を撮影してみました。
 
 
-<a href="/imgs/archives/2011/11/IMG_2593.jpg"><img src="/imgs/archives/2011/11/IMG_2593.jpg" alt="" title="IMG_2593" width="600" height="400" class="alignnone size-full wp-image-806" /></a>
+![](/imgs/archives/2011/11/IMG_2593.jpg)
+
 まずはバルブモードで7分ほど撮影。ちょっと手ブレしちゃった…。
 
 
 
-<a href="/imgs/archives/2011/11/IMG_2611.jpg"><img src="/imgs/archives/2011/11/IMG_2611.jpg" alt="" title="IMG_2611" width="600" height="400" class="alignnone size-full wp-image-809" /></a>
+![](/imgs/archives/2011/11/IMG_2611.jpg)
+
 まっすぐからのスポット掃除。
 
 
 
-<a href="/imgs/archives/2011/11/IMG_2589.jpg"><img src="/imgs/archives/2011/11/IMG_2589.jpg" alt="" title="IMG_2589" width="600" height="400" class="alignnone size-full wp-image-805" /></a>
+![](/imgs/archives/2011/11/IMG_2589.jpg)
+
 どこ行っちゃうのかなー？
 
 
 
-<a href="/imgs/archives/2011/11/IMG_2608.jpg"><img src="/imgs/archives/2011/11/IMG_2608.jpg" alt="" title="IMG_2608" width="600" height="400" class="alignnone size-full wp-image-808" /></a>
+![](/imgs/archives/2011/11/IMG_2608.jpg)
+
 スポットしすぎ。
 
 
 
-<a href="/imgs/archives/2011/11/IMG_2612.jpg"><img src="/imgs/archives/2011/11/IMG_2612.jpg" alt="" title="IMG_2612" width="600" height="400" class="alignnone size-full wp-image-810" /></a>
+![](/imgs/archives/2011/11/IMG_2612.jpg)
+
 手動操作でいろいろ動かしてみた。
 
 

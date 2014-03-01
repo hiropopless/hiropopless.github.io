@@ -6,11 +6,7 @@ comments: true
 tags:
 - Arduino
 - Processing
-- フィジカルコンピューティング
 keywords:
-- Arduino
-- Processing
-- フィジカルコンピューティング
 - Arduino
 - Processing
 ---
@@ -19,15 +15,18 @@ GainerやらArduinoやらたくさんのマイコンがあるのだけれど、A
 
 まずは何もないと始まらないので、Amazonで下記の二つを買った。
 
-▽Arduinoをはじめようキット
+> Arduinoをはじめようキット
+
 <iframe src="http://rcm-jp.amazon.co.jp/e/cm?lt1=_blank&bc1=FFFFFF&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=hirozxcustomd-22&o=9&p=8&l=as1&m=amazon&f=ifr&md=1X69VDGQCMF7Z30FM082&asins=B0025Y6C5G" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
 
-▽Arduinoをはじめよう
+> Arduinoをはじめよう
+
 <iframe src="http://rcm-jp.amazon.co.jp/e/cm?lt1=_blank&bc1=FFFFFF&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=hirozxcustomd-22&o=9&p=8&l=as1&m=amazon&f=ifr&md=1X69VDGQCMF7Z30FM082&asins=4873113989" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
 
 早速組み立ててみた。
-<div><a href="/imgs/archives/2010/07/hello_world_1.jpg"><img class="alignleft size-medium wp-image-508" title="hello_world_1" src="/imgs/archives/2010/07/hello_world_1-300x208.jpg" alt="" width="300" height="208" /></a></div>
-<br clear="all" />
+
+![](/imgs/archives/2010/07/hello_world_1.jpg
+
 Arduino SDK でC言語でProcessingに似た形式でプログラムを書くことができる。
 
 

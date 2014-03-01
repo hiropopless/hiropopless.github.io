@@ -10,7 +10,7 @@ tags:
 - iPhone
 - JavaScript
 - jQuery
-- マルチデバイス
+- responsive
 
 keywords:
 - Android
@@ -19,7 +19,7 @@ keywords:
 - iPhone
 - JavaScript
 - jQuery
-- マルチデバイス
+- responsive
 ---
 CSS3のメディアクエリを使ったワンソース・マルチデバイステンプレートをリリースしました。
 
@@ -28,35 +28,40 @@ CSS3のメディアクエリを使ったワンソース・マルチデバイス�
 PC, iPhone, iPad, Android, 各種タブレットに最適化された形でコンテンツが提供できるように開発しました。多分まだ検証不十分でバグがあるかもですが、ベータ版をリリースします。
 
 ### ワンソース・マルチデバイスとは？
+
 <blockquote>
 「ワンソース・マルチデバイス」とは、1つのドキュメント(HTML)を、文書構造・内容に手を加えずに、仕様や画面サイズの異なる複数の端末毎に最適化して表示させる技術です。
 CSS3のMediaQueryを使って横幅の変化によってCSSの読み込みを変えることで、さまざまな画面サイズのデバイスに対応することができます。
 </blockquote>
 
 ### 動作検証端末
-<div class="clearfix">
-<dl class="defList">
-<dt>Windows Mac</dt>
-<dd>Internet Explorer 7 以上</dd>
-<dd>Firefox3.6 以上</dd>
-<dd>Safari5 以上</dd>
-<dd>Opera11 以上</dd>
-<dd>Google Chrome</dd>
-</dl>
-<dl class="defList">
-<dt>iOS4.3 以上</dt>
-<dd>iPhone3GS</dd>
-<dd>iPhone4</dd>
-<dd>iPad</dd>
-<dd>iPad2</dd>
-</dl>
-<dl class="defList">
-<dt>Android2.1 以上</dt>
-<dd>Xperia (Android2.1)</dd>
-<dd>GalaxyS (Android2.2)</dd>
-<dd>NexusS (Android2.3)</dd>
-</dl>
-</div>
+
+> Windows, Mac
+
+```
+Internet Explorer 7 以上
+Firefox3.6 以上
+Safari5 以上
+Opera11 以上
+Google Chrome
+```
+
+> iOS4.3以上
+
+```
+iPhone3GS
+iPhone4
+iPad
+iPad2
+```
+
+> Android2.1以上
+
+```
+Xperia (Android2.1)
+GalaxyS (Android2.2)
+NexusS (Android2.3)
+```
 
 とりあえず目標として、スマートフォン、PC、タブレットなど、Web標準ブラウザを搭載するデバイスに最適な形でコンテンツを提供することを目指しました。
 
@@ -65,16 +70,19 @@ CSS3のMediaQueryを使って横幅の変化によってCSSの読み込みを変
 極力、ユーザーエージェント判別による振り分けはしません。全部CSS！
 JSギミックなければ全然いけるよ、うんきっと。
 
-<h4 style="margin: 0;">メリット</h4>
+#### メリット
+
 CSSのみで対応できちゃう。
 JavaScriptができなくても、マークアップのみで対応できちゃう。
 MediaQueryはウィンドウの横幅でCSSを切り替えるため、未知のデバイスも考慮できる（はず。）
 
-<h4 style="margin: 0;">デメリット</h4>
+#### デメリット
+
 複雑なレイアウト、コンテンツの出し分けは難しい。
 MediaQueryでのCSS切り替えによるコーディングの取得が必要。
 
 
 
-<h3 style="margin: 0;">最後に・・・</h3>
+### 最後に・・・
+
 このブログはマルチデバイス対応まだです！これからこのテンプレートを使ってみようと思います。

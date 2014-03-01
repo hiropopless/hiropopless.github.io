@@ -6,12 +6,12 @@ comments: true
 tags:
 - bug
 - untitle
-- ｦﾁらせ
+- info
 
 keywords:
 - bug
 - untitle
-- ｦﾁらせ
+- info
 ---
 チカッパからヘテムルへサーバ移行中テストなうパーティ！
 なんかムームードメインがDBエラーとかで調子悪いしうんこだし！

@@ -4,10 +4,10 @@ published: true
 date: 2010-11-02 12:33
 comments: true
 tags:
-- ｦﾁらせ
+- info
 
 keywords:
-- ｦﾁらせ
+- info
 ---
 wordpress3.0にしてからテーマファイルに不都合があったのですが、ずっと放置していたのでいい加減変えなきゃと思いようやく変えました。
 元々入っていた”twentyten” というテーマをちょこっといじって変更してみました。
