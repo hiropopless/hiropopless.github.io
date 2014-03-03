@@ -72,11 +72,10 @@ end
 
 オマケに若槻千夏の画像でも。
 
-0：00
-<img src="/imgs/archives/2010/01/0000-300x228.jpg" alt="0000" title="0000" width="300" height="228" class="alignnone size-medium wp-image-349" />
 
-18：00
-<img src="/imgs/archives/2010/01/1800-300x228.jpg" alt="1800" title="1800" width="300" height="228" class="alignnone size-medium wp-image-350" />
+![0：00](/imgs/archives/2010/01/0000-300x228.jpg)
+
+![18：00](/imgs/archives/2010/01/1800-300x228.jpg)
 
 この美人時計とかGAL時計、けっこうコラボしてるんだよねー。美人時計に出てる娘とかも、ニコニコ動画で有名な踊ってる娘がいたりとか、けっこう収集してて面白いよね。
 
@@ -85,7 +84,8 @@ end
 <script type="text/javascript" src="http://ext.nicovideo.jp/thumb_watch/sm4146159"></script><noscript>[【ニコニコ動画】キラッ☆星間飛行を踊ってみた＠いとくとら](http://www.nicovideo.jp/watch/sm4146159 "【ニコニコ動画】キラッ☆星間飛行を踊ってみた＠いとくとら")</noscript>
 
 いくらちゃんの美人時計
-<img src="/imgs/archives/2010/01/2004-300x228.jpg" alt="2004" title="2004" width="300" height="228" class="alignnone size-medium wp-image-351" />
-<img src="/imgs/archives/2010/01/2007-300x228.jpg" alt="2007" title="2007" width="300" height="228" class="alignnone size-medium wp-image-352" />
+
+![](/imgs/archives/2010/01/2004-300x228.jpg)
+![](/imgs/archives/2010/01/2007-300x228.jpg)
 
 むっちゃくちゃ可愛いですお（＾ｑ＾）オレの方が可愛いけどなっ！
