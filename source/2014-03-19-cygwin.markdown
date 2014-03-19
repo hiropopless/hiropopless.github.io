@@ -1,0 +1,190 @@
+---
+title: WindowsにCygwin入れてSass/Compass/TypeScript/Gruntな環境を構築してみた
+date: 2014-03-19 20:05 UTC
+tags:
+- cygwin
+---
+
+Windows環境しか使えないという場所でがっつりMac/UnixなユーザーのためにWindowsでコマンドプロンプト使うのつらたんってな環境がありまして、どうにかならないかと思ってググってみたらどうやら最近のCygwin(v1.7)はかなりいい感じらしい。
+ということでCygwinいれてUnixライクな環境をつくってみることにした。
+
+## Cygwin Install
+
+Cygwin公式サイトから`setup-x86.exe`を落としてインストールする。
+http://cygwin.com/install.html
+
+> 導入パッケージ
+- git-svn
+- svn
+- git
+- zsh
+- screen
+- wget
+- tree
+- make
+- openssh
+- openssl
+- vim
+- g++
+- ruby
+
+## apt-cyg Install
+
+Cygwinのパッケージ管理として`apt-cyg`というものがある。
+`brew`や`apt-get`みたいな感じっぽい。
+
+> apt-cyg
+>
+> https://github.com/transcode-open/apt-cyg
+
+> Usage apt-cyg
+> 
+> http://takuya-1st.hatenablog.jp/entry/20110205/1296887435
+
+```sh
+$ git clone https://github.com/kou1okada/apt-cyg.git
+$ cp apt-cyg/apt-cyg /bin/
+$ chmod +x /bin/apt-cyg
+```
+
+## oh-my-zsh Install
+
+Macでは`oh-my-zsh`をいれていてこれがないともう生きていけない体になってるのでCygwinにもいれる。
+その前にzshをインストールする。
+
+```sh
+$ apt-cyg install zsh
+```
+
+zshを使ってみる。
+
+```sh
+$ zsh
+% echo $SHELL
+/bin/zsh
+```
+
+zshがはいったら`oh-my-zsh`をインストールする。
+
+> oh-my-zsh
+> 
+> https://github.com/robbyrussell/oh-my-zsh
+
+```sh
+$ curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | ZSH=~/.dotfiles/zsh sh
+```
+
+## Nodejs Install
+
+gruntやらbowerやらでフロントエンド開発を幸せにするためにNodejsいれる。
+公式からインストーラを落としてインストールする。
+
+> Nodejs
+> 
+> http://nodejs.org/
+
+インストールの確認
+
+```sh
+$ which node
+/cygdrive/c/Program Files/nodejs/node
+```
+
+インストールできるか試してみる
+
+```sh
+$ npm install -g grunt-cli
+```
+
+たぶんエラーが出るので、下記を参考にして対応をする
+http://aki2o.hatenablog.jp/entry/2013/08/16/Node.js%E3%82%92Windows%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%A9%E3%81%A7%E5%85%A5%E3%82%8C%E3%81%9F%E3%82%89%E3%80%81Cygwin%E3%81%AE%E3%82%B7%E3%82%A7%E3%83%AB%E3%81%A7npm%E3%81%8C%E3%82%A8
+
+## sass/compass Install
+
+gemをアップデートする。
+
+```sh
+$ gem update
+```
+
+sass/compassをgemでインストールする。
+
+```sh
+$ gem install sass
+$ gem install compass
+```
+
+インストールされたか確認。
+
+```sh
+$ gem list
+
+*** LOCAL GEMS ***
+compass (0.12.3)
+sass (3.3.3, 3.2.14)
+```
+
+compassの動作確認。
+
+```sh
+$ compass create
+```
+
+プロジェクトが生成されたらscssをコンパイルしてみる。
+
+```sh
+$ compass compile
+unchanged sass/ie.scss
+unchanged sass/print.scss
+unchanged sass/screen.scss
+```
+
+コンパイル通ればおｋ。
+
+
+## TypeScript Install
+
+公式からインストールする。
+http://www.typescriptlang.org/
+
+インストール後、パスを確認。
+
+```sh
+$ which tsc
+```
+
+試しに書いてみる
+
+`hello.ts`
+
+```typescript
+class Hello {
+  say(): string {
+    return "hello";
+  }
+}
+```
+
+コンパイルしてみる。
+
+```sh
+$ tsc hello.ts
+```
+
+`hello.js`が生成されてればおｋ。
+
+## grunt Install
+
+gruntをインストールする
+
+```sh
+$ npm install -g grunt-cli
+```
+
+インストールされたか確認
+
+```sh
+$ which grunt
+```
+
+パスが表示されればおｋ。
