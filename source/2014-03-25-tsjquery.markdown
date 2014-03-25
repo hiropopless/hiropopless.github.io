@@ -1,0 +1,69 @@
+---
+title: よくわかるTypeScriptでjQueryを使う方法
+date: 2014-03-25 21:30 UTC
+tags:
+- typescript
+---
+
+こんにちは！ちょっとちゃんとブログを書いていこうと思った僕です。
+今回はTypeScriptでjQueryを使う方法をわかりやすく紹介します。
+
+## 準備
+
+TypeScriptをインストール！
+
+```sh
+% npm install -g typescript
+```
+
+TypeScriptでjQueryを使うにはdefinition fileというjQueryのInterfaceが記述された`jquery.d.ts`が必要になるので下記からダウンロードしてください。
+
+* [get definition file for jQuery](https://raw.githubusercontent.com/borisyankov/DefinitelyTyped/master/jquery/jquery.d.ts)
+
+もちろんjQueryも必要になるのでダウンロードしましょう。
+
+* [get jQuery](http://code.jquery.com/jquery-2.1.0.min.js)
+
+### ディレクトリ構造
+
+こんな感じのシンプルな構成でいきます。
+
+```sh
+jquery.d.ts
+jquery-2.1.0.min.js
+app.ts
+app.js
+app.html
+```
+
+## Hello world してみよう！
+
+HTMLとTypeScriptをこんな感じで書きます。
+
+`app.html`
+
+```html
+<!Doctype><html><head><meta charset="utf-8">
+<script type="text/javascript" src="jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="app.js"></script>
+</head><body></body></html>
+```
+
+`app.ts`
+
+```typescript
+/// <reference path="jquery.d.ts" />
+
+var $p: JQuery = $('<p class="greeting">');
+$p.html('hello world');
+
+$('body').append($p);
+```
+
+### TypeScriptをコンパイルしよう！
+
+```sh
+% tsc app.ts
+```
+
+こんな感じで`app.html`開いて `hello world` が表示されたらおｋです！
