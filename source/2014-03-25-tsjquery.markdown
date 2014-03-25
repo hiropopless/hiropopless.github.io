@@ -17,11 +17,9 @@ TypeScriptをインストール！
 ```
 
 TypeScriptでjQueryを使うにはdefinition fileというjQueryのInterfaceが記述された`jquery.d.ts`が必要になるので下記からダウンロードしてください。
-
-* [get definition file for jQuery](https://raw.githubusercontent.com/borisyankov/DefinitelyTyped/master/jquery/jquery.d.ts)
-
 もちろんjQueryも必要になるのでダウンロードしましょう。
 
+* [get definition file for jQuery](https://raw.githubusercontent.com/borisyankov/DefinitelyTyped/master/jquery/jquery.d.ts)
 * [get jQuery](http://code.jquery.com/jquery-2.1.0.min.js)
 
 ### ディレクトリ構造
