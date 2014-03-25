@@ -1,6 +1,6 @@
 ---
 title: よくわかるTypeScriptでjQueryを使う方法
-date: 2014-03-25 21:30 UTC
+date: 2014-03-25 12:47 UTC
 tags:
 - typescript
 ---
