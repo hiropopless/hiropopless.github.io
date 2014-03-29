@@ -97,7 +97,8 @@ $ npm install -g grunt-cli
 ```
 
 たぶんエラーが出るので、下記を参考にして対応をする
-http://aki2o.hatenablog.jp/entry/2013/08/16/Node.js%E3%82%92Windows%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%A9%E3%81%A7%E5%85%A5%E3%82%8C%E3%81%9F%E3%82%89%E3%80%81Cygwin%E3%81%AE%E3%82%B7%E3%82%A7%E3%83%AB%E3%81%A7npm%E3%81%8C%E3%82%A8
+
+[Node.jsをWindowsインストーラで入れたら、Cygwinのシェルでnpmがエラーになる](http://aki2o.hatenablog.jp/entry/2013/08/16/Node.js%E3%82%92Windows%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%A9%E3%81%A7%E5%85%A5%E3%82%8C%E3%81%9F%E3%82%89%E3%80%81Cygwin%E3%81%AE%E3%82%B7%E3%82%A7%E3%83%AB%E3%81%A7npm%E3%81%8C%E3%82%A8)
 
 ## sass/compass Install
 
