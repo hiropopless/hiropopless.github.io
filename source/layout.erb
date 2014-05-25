@@ -31,10 +31,11 @@
 
       <section class="entries">
         <% unless current_article.nil? %>
-        <h1 class="entry-title"><%= current_article.title %></h1>
+          <h1 class="entry-title"><%= current_article.title %></h1>
         <% end %>
         <%= yield %>
       </section>
+
     </section>
     
     <aside class="aside">
