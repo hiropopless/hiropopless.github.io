@@ -29,7 +29,7 @@ keywords:
 #  ライブラリのインポート
 #
 require 'digest/md5'
-require './ooiwa_frame_work'
+require './hoge_frame_work'
 
 $scriptPath = './gal_tokei/'
 $targetDir = getTimeNow(0) + '_gal'
@@ -68,7 +68,7 @@ end
 ```
 
 上記のスクリプトはサンプルです。実際には、上記スクリプトのhikakuメソッドを使用して、差分のみを当日フォルダに保存するといった処理をかましています。
-ちなみに "ooiwa_frame_work" という謎の自作ライブラリをかましてるので、コピペだけじゃ動かないかも。（意味なし。）
+ちなみに "hoge_frame_work" という謎の自作ライブラリをかましてるので、コピペだけじゃ動かないかも。（意味なし。）
 
 オマケに若槻千夏の画像でも。
 

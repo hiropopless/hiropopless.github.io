@@ -64,7 +64,7 @@ end
 ▽コマンドから実行
 
 ```sh
-[ooiwa@eva bijin_tokei]$ ruby bijin.ruby
+[hoge@eva bijin_tokei]$ ruby bijin.ruby
 ```
 
 おぉー！画像がどんどん落ちてきたよー！これは感動！とりあえず動作確認はOKと。
@@ -220,10 +220,10 @@ Rubyは変数の定義がグローバルとローカルでスコープがわか�
 
 
 ```sh
-[ooiwa@eva bijin_tokei]$ ruby /home/ooiwa/tmp_ruby/bijin_tokei/bijin.ruby
-[ooiwa@eva bijin_tokei]$ ls
+[hoge@eva bijin_tokei]$ ruby /home/hoge/tmp_ruby/bijin_tokei/bijin.ruby
+[hoge@eva bijin_tokei]$ ls
 20091120  bijin.ruby
-[ooiwa@eva bijin_tokei]$ ls 20091120/
+[hoge@eva bijin_tokei]$ ls 20091120/
 0000.jpg 0001.jpg 0002.jpg
 ```
 
@@ -233,9 +233,9 @@ Rubyは変数の定義がグローバルとローカルでスコープがわか�
 
 
 ```sh
-[ooiwa@eva bijin_tokei]$ crontab -e
+[hoge@eva bijin_tokei]$ crontab -e
 #毎日10:00に bijin.ruby スクリプトを実行
-0 10 * * * ruby /home/ooiwa/tmp_ruby/bijin_tokei/bijin.ruby
+0 10 * * * ruby /home/hoge/tmp_ruby/bijin_tokei/bijin.ruby
 ```
 
 あとは毎日10時になるとCronがRubyスクリプトを実行してくれます。

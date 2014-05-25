@@ -12,11 +12,11 @@ keywords:
 Ajaxも飽きてきたのでそろそろPHPをやろうと思いやっとphpに入門しました。
 とりあえず無駄にディレクトリを作ったり消したりしてみた。
 
-# あらかじめ、/ooiwa/ は、パーミッションを777にしてある。
+# あらかじめ、/hoge/ は、パーミッションを777にしてある。
 
 
 ```php
-$_dir = '/ooiwa/ahya';
+$_dir = '/hoge/ahya';
 $permit = 0777;
 
 if( !file_exists($_dir) ){

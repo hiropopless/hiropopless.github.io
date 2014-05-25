@@ -13,15 +13,15 @@ pearをインストールしてみた。
 
 
 ```sh
-[ooiwa@EVA01_TEST ~]$ pwd
-/home/ooiwa/
-[ooiwa@EVA01_TEST ~]$ mkdir pear
-[ooiwa@EVA01_TEST ~]$ cd pear/
-[ooiwa@EVA01_TEST pear]$ wget http://pear.php.net/go-pear
-[ooiwa@EVA01_TEST pear]$ mv go-pear go-pear.php
-[ooiwa@EVA01_TEST pear]$ php -Cq go-pear.php
+[hoge@EVA01_TEST ~]$ pwd
+/home/hoge/
+[hoge@EVA01_TEST ~]$ mkdir pear
+[hoge@EVA01_TEST ~]$ cd pear/
+[hoge@EVA01_TEST pear]$ wget http://pear.php.net/go-pear
+[hoge@EVA01_TEST pear]$ mv go-pear go-pear.php
+[hoge@EVA01_TEST pear]$ php -Cq go-pear.php
 
-[ooiwa@EVA01_TEST pear]$ /home/ooiwa/pear/bin/pear install PEAR
+[hoge@EVA01_TEST pear]$ /home/hoge/pear/bin/pear install PEAR
 WARNING: channel "pear.php.net" has updated its protocols, use "channel-update pear.php.net" to update
 Did not download optional dependencies: pear/XML_RPC, use --alldeps to download automatically
 pear/PEAR can optionally use package "pear/XML_RPC" (version >= 1.4.0)
@@ -45,7 +45,7 @@ PEAR: Optional feature webinstaller available (PEAR's web-based installer)
 PEAR: Optional feature gtkinstaller available (PEAR's PHP-GTK-based installer)
 PEAR: Optional feature gtk2installer available (PEAR's PHP-GTK2-based installer)
 PEAR: To install optional features use "pear install pear/PEAR#featurename"
-[ooiwa@EVA01_TEST pear]$ bin/pear list
+[hoge@EVA01_TEST pear]$ bin/pear list
 Installed packages, channel pear.php.net:
 =========================================
 Package          Version State
