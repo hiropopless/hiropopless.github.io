@@ -123,3 +123,8 @@ activate :rouge_syntax
 
 # slim
 set :slim, { :pretty => true, :sort_attrs => false, :format => :html5 }
+
+# minify
+configure :build do
+  activate :minify_html, :remove_quotes => false, :remove_intertag_spaces => true
+end
