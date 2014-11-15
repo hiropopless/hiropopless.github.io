@@ -1,4 +1,5 @@
 ---
+id: 331
 title: '美人時計の全画像を取得するスクリプトをバッチ化してみた'
 published: true
 date: 2009-11-20 11:18
@@ -187,7 +188,7 @@ def getBijin()
 	             file.puts response.body
 	         end
 	      end
-	      rescue 
+	      rescue
 	         p "#{now_hour}#{now_minute}.jpg can not get"
 	         error_files += "http://bijint.com/jp/img/clk/#{now_hour}#{now_minute}.jpg\n"
 	      end

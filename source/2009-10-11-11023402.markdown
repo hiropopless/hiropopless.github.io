@@ -1,4 +1,5 @@
 ---
+id: 313
 title: '起動スクリプトの作成 /etc/rc.d/init.d/'
 published: true
 date: 2009-10-11 02:34

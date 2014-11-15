@@ -1,4 +1,5 @@
 ---
+id: 326
 title: 'Facebookユーザーを標的にしたメール詐欺に対抗してみた2'
 published: true
 date: 2009-11-06 00:36

@@ -1,4 +1,5 @@
 ---
+id: 16
 title: 'CSS画像置換について'
 published: true
 date: 2007-12-20 15:58

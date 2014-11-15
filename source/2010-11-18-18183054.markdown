@@ -1,4 +1,5 @@
 ---
+id: 573
 title: 'passenger をインストールする'
 published: true
 date: 2010-11-18 18:30

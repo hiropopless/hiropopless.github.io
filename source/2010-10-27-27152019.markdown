@@ -1,4 +1,5 @@
 ---
+id: 552
 title: 'Wordpressで記事の並び替えを昇順または降順で並び替える'
 published: true
 date: 2010-10-27 15:20
@@ -23,7 +24,7 @@ query_posts("order=ASC");
 
 <blockquote>
     * order=ASC - 昇順。小さい値から大きい値の順。
-    * order=DESC - 降順。大きい値から小さい値の順。 
+    * order=DESC - 降順。大きい値から小さい値の順。
 </blockquote>
 
 ただ、これだと全記事がソートされることになるので、カテゴリだけソートしたい場合は、category.php （テーマファイル）に対して、下記のように記述する。

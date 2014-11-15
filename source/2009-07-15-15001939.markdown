@@ -1,4 +1,5 @@
 ---
+id: 176
 title: 'urlエンコードと文字コード'
 published: true
 date: 2009-07-15 00:19

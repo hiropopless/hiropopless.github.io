@@ -1,4 +1,5 @@
 ---
+id: 49
 title: 'VirtualPC Fedoraの起動　Athlon系は起動オプション clock=pit をつける。'
 published: true
 date: 2008-10-01 22:56

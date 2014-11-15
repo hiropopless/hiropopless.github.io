@@ -1,4 +1,5 @@
 ---
+id: 652
 title: '配列を拡張してみた。Array.shuffle() Array.clone() - JavaScript'
 published: true
 date: 2011-04-26 11:17

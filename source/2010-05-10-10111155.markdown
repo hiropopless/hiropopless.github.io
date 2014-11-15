@@ -1,4 +1,5 @@
 ---
+id: 461
 title: 'fedora13 がもうすぐリリース！'
 published: true
 date: 2010-05-10 11:11

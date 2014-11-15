@@ -1,4 +1,5 @@
 ---
+id: 557
 title: 'wordpressにProcessingを埋め込むプラグインを導入してみた'
 published: true
 date: 2010-11-02 11:36
@@ -82,7 +83,7 @@ void draw(){
   ball2.move();
   ball3.move();
   ball4.move();
-  
+
   ball1.display();
   ball2.display();
   ball3.display();
@@ -95,7 +96,7 @@ class Ball{
   int xpos;
   int ypos;
   int c1, c2, c3;
-  
+
   Ball(){
     xpos = int(random(11,(dim-11)));
     ypos = int(random(11,(dim-11)));
@@ -106,27 +107,27 @@ class Ball{
   void move(){
     xpos = xpos+xvel;
     ypos = ypos+yvel;
-  
+
     if ( xpos < 10 || xpos > (dim-10) ){
       xvel = -1 * xvel;
       c1 = int(random(0,255));
       c2 = int(random(0,255));
       c3 = int(random(0,255));
     }
-  
+
     if ( ypos < 10 || ypos > (dim-10) ){
       yvel = -1 * yvel;
       c1 = int(random(0,255));
       c2 = int(random(0,255));
       c3 = int(random(0,255));
-    }   
+    }
   }
-  
+
   void display(){
     fill(c1,c2,c3);
     ellipse(xpos,ypos,20,20);
   }
-  
+
 }
 ```
 

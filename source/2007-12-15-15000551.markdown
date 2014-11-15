@@ -1,4 +1,5 @@
 ---
+id: 8
 title: '原付投稿 - XOOPSを使った構築'
 published: true
 date: 2007-12-15 00:05

@@ -1,4 +1,5 @@
 ---
+id: 37
 title: 'wordpressMU インストール'
 published: true
 date: 2008-06-06 19:11

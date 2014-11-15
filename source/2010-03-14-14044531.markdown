@@ -1,4 +1,5 @@
 ---
+id: 432
 title: 'Rubyでメールを送る（日本語非対応）'
 published: true
 date: 2010-03-14 04:45
@@ -21,11 +22,11 @@ def mail( subject, message, to_address, from_address )
 	#------------------------------------------------------------
 	# インポート
 	require 'net/smtp'
-	
+
 	#------------------------------------------------------------
 	# セット
 	mail_server = 'mail.localhost'
-	
+
 	#------------------------------------------------------------
 	# 投稿
 	Net::SMTP.start( mail_server, 25 ) {|smtp|
@@ -38,7 +39,7 @@ def mail( subject, message, to_address, from_address )
 		}
 	}
 	p 'mail send!!'
-	
+
 	#------------------------------------------------------------
 end
 ```

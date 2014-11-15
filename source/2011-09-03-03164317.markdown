@@ -1,4 +1,5 @@
 ---
+id: 715
 title: 'iMac SnowLeopard にwgetをインストールする'
 published: true
 date: 2011-09-03 16:43

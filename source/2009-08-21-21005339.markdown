@@ -1,4 +1,5 @@
 ---
+id: 210
 title: '幼少期のゲイツ - Crazy frog bros !Very funny!'
 published: true
 date: 2009-08-21 00:53

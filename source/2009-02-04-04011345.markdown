@@ -1,4 +1,5 @@
 ---
+id: 129
 title: '原付改造ブログ MovableType（MT）で構築'
 published: true
 date: 2009-02-04 01:13

@@ -1,4 +1,5 @@
 ---
+id: 308
 title: 'ActionScript3.0でiPhoneアプリ開発がAdobe CS5で実現！？'
 published: true
 date: 2009-10-09 01:43

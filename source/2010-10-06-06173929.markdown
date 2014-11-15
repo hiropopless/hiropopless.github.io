@@ -1,4 +1,5 @@
 ---
+id: 536
 title: 'codeColorer test'
 published: false
 date: 2010-10-06 17:39
@@ -15,7 +16,7 @@ class Mickey{
   //プロパティを定義
   float x,y;  //X座標とY座標
   float w,h;  //width, height
-  
+
   //コンストラクタ
   Mickey( float spos, float xpos, float ypos )
   {
@@ -24,10 +25,10 @@ class Mickey{
     this.y = ypos;
     this.w = spos;
     this.h = spos * 0.8;
-    
+
     //svgシェイプを読み込む
     PShape ms = loadShape("mickey.svg");
-    
+
     shapeMode(CENTER);
     shape( ms, this.x, this.y, this.w, this.h );
   }

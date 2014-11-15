@@ -1,4 +1,5 @@
 ---
+id: 163
 title: 'pearでHTTP_Requestクラスを使うには (1)'
 published: true
 date: 2009-07-03 01:19

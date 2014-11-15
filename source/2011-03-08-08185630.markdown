@@ -1,4 +1,5 @@
 ---
+id: 589
 title: 'Powershell でのシェルスクリプティング'
 published: true
 date: 2011-03-08 18:56

@@ -1,4 +1,5 @@
 ---
+id: 398
 title: '新「ブラッディ・マンデイ」の藤丸が持ってるUSBメモリの作り方 - BackTrack4 final 編'
 published: true
 date: 2010-02-12 01:44

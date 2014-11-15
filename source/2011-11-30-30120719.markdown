@@ -1,4 +1,5 @@
 ---
+id: 866
 title: '田代砲的なもの（DOSアタックで耐久テスト）'
 published: true
 date: 2011-11-30 12:07
@@ -22,5 +23,3 @@ javascript:(function(){ setInterval(function(){var dd = new Date(); console.log(
 ちなみにChromeなどではある程度実行すると悪意のあるスクリプト（？）とみなされて停止して動かなくなったり・・・。
 
 そんなメモでした。
-
-

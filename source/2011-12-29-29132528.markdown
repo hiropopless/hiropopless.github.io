@@ -1,4 +1,5 @@
 ---
+id: 871
 title: 'JavaScriptで桃鉄っぽいもの作り始めてみた #jsdoit'
 published: true
 date: 2011-12-29 13:25

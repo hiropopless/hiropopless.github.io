@@ -1,4 +1,5 @@
 ---
+id: 504
 title: 'Arduino 入門してみた - フィジカルコンピューティング'
 published: true
 date: 2010-07-18 23:03
@@ -25,12 +26,12 @@ GainerやらArduinoやらたくさんのマイコンがあるのだけれど、A
 
 早速組み立ててみた。
 
-![](/imgs/archives/2010/07/hello_world_1.jpg
+![](/imgs/archives/2010/07/hello_world_1.jpg)
 
-Arduino SDK でC言語でProcessingに似た形式でプログラムを書くことができる。
+Arduino SDK でJavaでProcessingに似た形式でプログラムを書くことができる。
 
 
-```c
+```Java
 #define LED 13
 
 void setup(){

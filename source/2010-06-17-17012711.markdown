@@ -1,4 +1,5 @@
 ---
+id: 477
 title: 'Spamassassin が動いてない'
 published: true
 date: 2010-06-17 01:27
@@ -38,7 +39,7 @@ spamd を起動中: child process [14793] exited or timed out without signaling 
 Hi
 Just found the solution: Run the command 'sa-update'
 Note: Found the hint, after I tried to run spamd without '--daemonize'
-Hope this works also for others! 
+Hope this works also for others!
 </blockquote>
 
 と書いてあるので、下記コマンドを実行後、改めてSpamassassin を起動してみた。

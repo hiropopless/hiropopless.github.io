@@ -1,4 +1,5 @@
 ---
+id: 144
 title: 'ntfsをmountする - CentOS'
 published: true
 date: 2009-05-20 00:27

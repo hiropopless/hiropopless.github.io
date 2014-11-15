@@ -1,4 +1,5 @@
 ---
+id: 693
 title: 'Titanium Studio でデスクトップアプリ開発に入門してみた'
 published: true
 date: 2011-09-02 19:05

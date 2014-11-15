@@ -1,4 +1,5 @@
 ---
+id: 5
 title: 'XMLHttpRequest'
 published: true
 date: 2007-12-14 01:58

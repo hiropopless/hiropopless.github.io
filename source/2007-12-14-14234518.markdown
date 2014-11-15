@@ -1,4 +1,5 @@
 ---
+id: 7
 title: 'Movable Typeがオープンソースに'
 published: true
 date: 2007-12-14 23:45

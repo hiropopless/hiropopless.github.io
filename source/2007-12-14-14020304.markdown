@@ -1,4 +1,5 @@
 ---
+id: 6
 title: 'mixi風wordpressテーマ'
 published: true
 date: 2007-12-14 02:03

@@ -1,4 +1,5 @@
 ---
+id: 473
 title: 'zshでテトリス'
 published: true
 date: 2010-05-21 13:02

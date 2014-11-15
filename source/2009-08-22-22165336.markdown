@@ -1,4 +1,5 @@
 ---
+id: 213
 title: 'yumで、proftpd インストール - CentOS'
 published: true
 date: 2009-08-22 16:53

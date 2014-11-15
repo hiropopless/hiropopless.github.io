@@ -1,4 +1,5 @@
 ---
+id: 868
 title: 'JavaScriptのクロージャーでFizzBuzzやってみた'
 published: true
 date: 2011-12-03 12:28

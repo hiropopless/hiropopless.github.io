@@ -1,4 +1,5 @@
 ---
+id: 581
 title: 'Ruby1.9.2 をインストールする。'
 published: true
 date: 2011-01-19 14:00
@@ -19,7 +20,7 @@ Rails環境を整える準備として、RubyとRubyGemsをインストールす
 
 
 まずはRuby1.9.2 をインストール。
-[Ruby最新版はここで確認する。](http://www.ruby-lang.org/ja/downloads/ "Ruby最新版はここで確認する。")
+[Ruby最新版はここで確認する。](http://www.ruby-lang.org/ja/downloads/)
 
 
 ```sh

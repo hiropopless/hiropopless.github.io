@@ -1,4 +1,5 @@
 ---
+id: 967
 title: 'TypeScriptでqflipper.jsというものを書いた'
 published: true
 date: 2013-10-06 16:16

@@ -1,4 +1,5 @@
 ---
+id: 343
 title: 'mixiのFlash広告、こういうの流行ってるのかねぇ'
 published: true
 date: 2009-12-02 00:41

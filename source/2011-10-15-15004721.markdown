@@ -1,4 +1,5 @@
 ---
+id: 784
 title: '【PaaS】fluxflexにRedmine（ベーシック認証付き）を構築してみた'
 published: true
 date: 2011-10-15 00:47

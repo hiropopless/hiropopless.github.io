@@ -1,4 +1,5 @@
 ---
+id: 550
 title: 'WordPressで今見ているカテゴリーのIDを取得'
 published: true
 date: 2010-10-27 15:07

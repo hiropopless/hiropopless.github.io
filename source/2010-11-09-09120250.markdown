@@ -1,4 +1,5 @@
 ---
+id: 562
 title: 'さくらVPSにRubyとRuby on Railsをインストールする'
 published: true
 date: 2010-11-09 12:02

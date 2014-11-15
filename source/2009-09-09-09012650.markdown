@@ -1,4 +1,5 @@
 ---
+id: 298
 title: 'ケータイ番号で似顔絵'
 published: true
 date: 2009-09-09 01:26

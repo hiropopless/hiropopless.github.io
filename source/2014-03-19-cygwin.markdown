@@ -1,4 +1,5 @@
 ---
+id: 969
 title: WindowsにCygwin入れてSass/Compass/TypeScript/Gruntな環境を構築してみた
 date: 2014-03-19 20:05 UTC
 tags:
@@ -38,7 +39,7 @@ Cygwinのパッケージ管理として`apt-cyg`というものがある。
 > https://github.com/transcode-open/apt-cyg
 
 > Usage apt-cyg
-> 
+>
 > http://takuya-1st.hatenablog.jp/entry/20110205/1296887435
 
 ```sh
@@ -67,7 +68,7 @@ $ zsh
 zshがはいったら`oh-my-zsh`をインストールする。
 
 > oh-my-zsh
-> 
+>
 > https://github.com/robbyrussell/oh-my-zsh
 
 ```sh
@@ -80,7 +81,7 @@ gruntやらbowerやらでフロントエンド開発を幸せにするためにN
 公式からインストーラを落としてインストールする。
 
 > Nodejs
-> 
+>
 > http://nodejs.org/
 
 インストールの確認

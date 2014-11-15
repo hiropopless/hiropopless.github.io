@@ -1,4 +1,5 @@
 ---
+id: 547
 title: 'スマートフォン Xperia ユーザーエージェント'
 published: true
 date: 2010-10-22 17:03

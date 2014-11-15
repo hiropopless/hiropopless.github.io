@@ -1,4 +1,5 @@
 ---
+id: 480
 title: 'Xcodeをアンインストールする'
 published: true
 date: 2010-06-20 04:01

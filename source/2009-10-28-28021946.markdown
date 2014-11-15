@@ -1,4 +1,5 @@
 ---
+id: 319
 title: 'JavaScript OOP入門編2'
 published: true
 date: 2009-10-28 02:19

@@ -1,4 +1,5 @@
 ---
+id: 19
 title: '年末ですね'
 published: true
 date: 2007-12-29 16:40

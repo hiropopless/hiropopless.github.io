@@ -1,4 +1,5 @@
 ---
+id: 429
 title: 'Rubyでtwitterに投稿できるrubygems'
 published: true
 date: 2010-03-14 03:02
@@ -63,12 +64,12 @@ def twit( v )
 	# Rubyから投稿
 	twit_username = 'アカウント名'
 	twit_password = 'ログインパスワード'
-	
+
 	auth = Twitter::HTTPAuth.new( twit_username, twit_password )
 	twit = Twitter::Base.new( auth )
 	twit.update( v )
 	p 'twit!!'
-	
+
 	#------------------------------------------------------------
 end
 

@@ -1,4 +1,5 @@
 ---
+id: 585
 title: 'Androidでベーシック認証をかけるとJSが文字化けする'
 published: true
 date: 2011-03-03 17:24

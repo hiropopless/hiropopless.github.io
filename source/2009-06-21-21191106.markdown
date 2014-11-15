@@ -1,4 +1,5 @@
 ---
+id: 159
 title: 'メールaliases'
 published: true
 date: 2009-06-21 19:11

@@ -1,4 +1,5 @@
 ---
+id: 292
 title: 'めちゃめちゃ若いのに…。 - jQueryちゃん'
 published: true
 date: 2009-09-02 00:39

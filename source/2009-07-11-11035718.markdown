@@ -1,4 +1,5 @@
 ---
+id: 168
 title: '無名関数、無名コンストラクタ - JavaScript'
 published: true
 date: 2009-07-11 03:57

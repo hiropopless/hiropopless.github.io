@@ -1,4 +1,5 @@
 ---
+id: 968
 title: Wordpressからmiddleman/GitHubに移行した
 date: 2014-02-28 05:06 UTC
 tags:

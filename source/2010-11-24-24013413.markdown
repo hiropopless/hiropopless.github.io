@@ -1,4 +1,5 @@
 ---
+id: 576
 title: 'OpenKinect と ofxKinect を導入してopenFrameworks でキネクトハック'
 published: true
 date: 2010-11-24 01:34
@@ -18,7 +19,7 @@ keywords:
 キネクトドライバとopenFrameworksのofxKinect をインストールすればとりあえず楽しめるらしい。
 
 参考にしたページはこちら
-[Compiling OpenKinect on a stubborn OSX 10.6.5 (Updated 21/Nov)](http://www.spoofscript.com/blog/?p=327 "Compiling OpenKinect on a stubborn OSX 10.6.5 (Updated 21/Nov)")
+[Compiling OpenKinect on a stubborn OSX 10.6.5 (Updated 21/Nov)](http://www.spoofscript.com/blog/?p=327)
 
 まずキネクトドライバをインストールする前に、cmakeとgitをインストールする。
 

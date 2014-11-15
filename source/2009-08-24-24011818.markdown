@@ -1,4 +1,5 @@
 ---
+id: 289
 title: '[mixiアプリ] 2ちゃんねるまとめサイトのRSSリーダーをつくってみた'
 published: true
 date: 2009-08-24 01:18

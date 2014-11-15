@@ -1,4 +1,5 @@
 ---
+id: 969
 title: よくわかるTypeScriptでjQueryを使う方法
 date: 2014-03-25 12:47 UTC
 tags:

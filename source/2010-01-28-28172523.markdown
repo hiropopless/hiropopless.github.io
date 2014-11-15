@@ -1,4 +1,5 @@
 ---
+id: 364
 title: 'find でベーシック認証が書いてある.htaccess を検索'
 published: true
 date: 2010-01-28 17:25

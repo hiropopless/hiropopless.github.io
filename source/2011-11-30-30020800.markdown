@@ -1,4 +1,5 @@
 ---
+id: 850
 title: 'ProcessingのVideoライブラリを試してみた'
 published: true
 date: 2011-11-30 02:08
@@ -60,18 +61,18 @@ void draw(){
 
 ```java
 import processing.video.*;
- 
+
 Capture cam;
- 
+
 void setup(){
   size(420, 320);
   cam = new Capture(this, width, height, 15);
 }
- 
+
 void captureEvent(Capture cam){
   cam.read();
 }
- 
+
 void draw(){
   image(cam, 0, 0);
   loadPixels();
@@ -97,18 +98,18 @@ void mosaic(int w, int h){
 
 ```java
 import processing.video.*;
- 
+
 Capture cam;
- 
+
 void setup(){
   size(420, 320);
   cam = new Capture(this, width, height, 15);
 }
- 
+
 void captureEvent(Capture cam){
   cam.read();
 }
- 
+
 void draw(){
   image(cam, 0, 0);
   loadPixels();
@@ -134,18 +135,18 @@ void fillMosaic(PImage img, int w, int h){
 
 ```java
 import processing.video.*;
- 
+
 Capture cam;
- 
+
 void setup(){
   size(420, 320);
   cam = new Capture(this, width, height, 15);
 }
- 
+
 void captureEvent(Capture cam){
   cam.read();
 }
- 
+
 void draw(){
   image(cam, 0, 0);
   loadPixels();

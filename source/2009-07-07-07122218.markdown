@@ -1,4 +1,5 @@
 ---
+id: 166
 title: 'phpでmkdirとrmdirをひたすら繰り返してみた'
 published: true
 date: 2009-07-07 12:22

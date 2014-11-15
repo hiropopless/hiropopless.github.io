@@ -1,4 +1,5 @@
 ---
+id: 537
 title: 'Processing でオブジェクト指向っぽくネズミさんを描いてみた'
 published: true
 date: 2010-10-06 19:17
@@ -43,12 +44,12 @@ void draw(){
 
 ```java
 class Mouse{
-  
+
   //プロパティ
   float x,y;  //positionX, positionY
   float face; //face
   int[] bg;
-  
+
   //コンストラクタ
   Mouse( float xpos, float ypos, int[] cpos )
   {
@@ -56,11 +57,11 @@ class Mouse{
     this.x = xpos;
     this.y = ypos;
     this.bg = cpos;
-    
+
     //conf
     fill( this.bg[0], this.bg[1], this.bg[2] );
     ellipseMode(CORNER);
-    
+
     //耳
     ellipse( 0 + this.x, 0 + this.y, 50, 50 );
     ellipse( 100 + this.x, 0 + this.y, 50, 50 );
@@ -101,12 +102,12 @@ void draw(){
 }
 
 class Mouse{
-  
+
   //プロパティ
   float x,y;  //positionX, positionY
   float face; //face
   int[] bg;
-  
+
   //コンストラクタ
   Mouse( float xpos, float ypos, int[] cpos )
   {
@@ -114,11 +115,11 @@ class Mouse{
     this.x = xpos;
     this.y = ypos;
     this.bg = cpos;
-    
+
     //conf
     fill( this.bg[0], this.bg[1], this.bg[2] );
     ellipseMode(CORNER);
-    
+
     //耳
     ellipse( 0 + this.x, 0 + this.y, 50, 50 );
     ellipse( 100 + this.x, 0 + this.y, 50, 50 );

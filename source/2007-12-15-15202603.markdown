@@ -1,4 +1,5 @@
 ---
+id: 12
 title: 'funnythingz公式サイトについて'
 published: true
 date: 2007-12-15 20:26

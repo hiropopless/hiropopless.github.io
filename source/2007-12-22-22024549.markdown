@@ -1,4 +1,5 @@
 ---
+id: 18
 title: 'mixi wordpress テーマ ver.0.0.4（バグ取り完了っぽい）'
 published: true
 date: 2007-12-22 02:45

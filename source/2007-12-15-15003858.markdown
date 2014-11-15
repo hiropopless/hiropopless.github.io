@@ -1,4 +1,5 @@
 ---
+id: 11
 title: 'スパム集めてました。'
 published: true
 date: 2007-12-15 00:38
