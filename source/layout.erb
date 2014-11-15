@@ -32,6 +32,11 @@
       <section class="entries">
         <% unless current_article.nil? %>
           <h1 class="entry-title"><%= current_article.title %></h1>
+          <ul>
+            <li class="date">
+              <%= current_article.date.strftime('%Y.%m.%d') %>
+            </li>
+          </ul>
           <ul class="external-link">
             <li>
               <a class="twitter-share-button"
@@ -69,7 +74,7 @@
           <h2>Recent Articles</h2>
           <ol class="articles">
             <% blog.articles[0...10].each do |article| %>
-              <li><%= link_to article.title, article %> <span><%= article.date.strftime('%b %e') %></span></li>
+              <li><%= link_to article.title, article %> <span><%= article.date.strftime('%Y.%m.%d') %></span></li>
             <% end %>
           </ol>
         </section>
