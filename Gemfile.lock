@@ -75,6 +75,10 @@ GEM
       middleman-core (>= 3.2)
       net-sftp
       ptools
+    middleman-rouge (0.0.1)
+      middleman-core (>= 3.0.0)
+      redcarpet (>= 2.2.0)
+      rouge (>= 0.3.0)
     middleman-sprockets (3.3.10)
       middleman-core (~> 3.3)
       sprockets (~> 2.12.1)
@@ -99,6 +103,7 @@ GEM
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
     redcarpet (3.2.0)
+    rouge (1.7.2)
     sass (3.4.8)
     slim (2.1.0)
       temple (~> 0.6.9)
@@ -134,5 +139,6 @@ DEPENDENCIES
   middleman (~> 3.3.7)
   middleman-blog (~> 3.5.3)
   middleman-deploy (~> 0.3.0)
+  middleman-rouge
   redcarpet
   slim
