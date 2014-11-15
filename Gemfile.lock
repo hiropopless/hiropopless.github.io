@@ -79,6 +79,9 @@ GEM
       middleman-core (>= 3.0.0)
       redcarpet (>= 2.2.0)
       rouge (>= 0.3.0)
+    middleman-slim (0.1.2)
+      middleman (~> 3.2)
+      slim (~> 2.0)
     middleman-sprockets (3.3.10)
       middleman-core (~> 3.3)
       sprockets (~> 2.12.1)
@@ -140,5 +143,6 @@ DEPENDENCIES
   middleman-blog (~> 3.5.3)
   middleman-deploy (~> 0.3.0)
   middleman-rouge
+  middleman-slim
   redcarpet
   slim
