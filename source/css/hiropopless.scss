@@ -182,3 +182,13 @@ li {
   text-align: right;
   margin: 0 0 10px;
 }
+
+.external-link {
+  text-align: right;
+
+  li {
+    display: inline-block;
+    vertical-align: top;
+
+  }
+}
