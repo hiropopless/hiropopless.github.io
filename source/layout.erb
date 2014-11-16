@@ -22,6 +22,16 @@
     <header class="header">
       <h1 class="hero-site"><a href="http://hiropo.co.uk">ひろぽっぽれす - hiropopless</a></h1>
       <p class="description-site">いくらが大好きです。Webの開発やってます。</p>
+      <ul class="follow-links">
+        <li>
+          <a href="https://twitter.com/funnythingz" class="twitter-follow-button" data-show-count="true">Follow @funnythingz</a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        </li>
+        <li>
+          <iframe src="http://ghbtns.com/github-btn.html?user=funnythingz&type=follow&count=true"
+            allowtransparency="true" frameborder="0" scrolling="0" width="165" height="20"></iframe>
+        </li>
+      </ul>
       <figure class="figure-profile">
         <img src="/imgs/archives/2013/08/6S6A7152_12.jpg">
       </figure>
@@ -41,7 +51,7 @@
             <li>
               <a class="twitter-share-button"
                 href="https://twitter.com/share"
-                data-url="http:/hiropo.co.uk<%= current_article.url %>"
+                data-url="http://hiropo.co.uk<%= current_article.url %>"
                 data-via="funnythingz"
                 data-text="<%= current_article.title %>">
                 Tweet
@@ -51,7 +61,7 @@
               </script>
             </li>
             <li>
-              <div class="fb-like" data-href="http:/hiropo.co.uk<%= current_article.url %>" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+              <div class="fb-like" data-href="http://hiropo.co.uk<%= current_article.url %>" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
               <div id="fb-root"></div>
               <script>(function(d, s, id) {
                 var js, fjs = d.getElementsByTagName(s)[0];
@@ -74,7 +84,7 @@
           <h2>Recent Articles</h2>
           <ol class="articles">
             <% blog.articles[0...10].each do |article| %>
-              <li><%= link_to article.title, article %> <span><%= article.date.strftime('%Y.%m.%d') %></span></li>
+              <li><%= link_to article.title, article %> <small class="meta"><%= article.date.strftime('%Y.%m.%d') %></small></li>
             <% end %>
           </ol>
         </section>

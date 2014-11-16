@@ -131,6 +131,11 @@ li {
   li {
     margin-bottom: .5em;
 
+    a {
+      color: #789;
+      text-decoration: none;
+    }
+
     &:last-child {
       margin-bottom: 0;
       margin-right: 0;
@@ -143,8 +148,12 @@ li {
     display: inline-block;
     margin-right: .5em;
     margin-bottom: .5em;
-    color: #789;
     font-size: 14px;
+
+    a {
+      color: #789;
+      text-decoration: none;
+    }
 
     &:last-child {
       margin-right: 0;
@@ -193,4 +202,22 @@ li {
 .date {
   color: #789;
   font-size: 14px;
+}
+
+.follow-links {
+  text-align: center;
+  margin-bottom: 1em;
+  li {
+    display: inline;
+    margin-right: 10px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.meta {
+  font-size: 12px;
+  color: #789;
 }
