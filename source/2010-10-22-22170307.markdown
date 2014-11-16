@@ -5,10 +5,10 @@ published: true
 date: 2010-10-22 17:03
 comments: true
 tags:
-- スマートフォン
+- smartphone
 
 keywords:
-- スマートフォン
+- smartphone
 ---
 スマフォ対応の案件がちょこちょこあるためクソperiaのUAをメモっとく。
 

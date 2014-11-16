@@ -137,27 +137,25 @@ li {
     }
   }
 }
-.tags {
+
+%_other-list {
   li {
     display: inline-block;
     margin-right: .5em;
     margin-bottom: .5em;
+    color: #789;
+    font-size: 14px;
 
     &:last-child {
       margin-right: 0;
     }
   }
 }
+.tags {
+  @extend %_other-list
+}
 .years {
-  li {
-    display: inline-block;
-    margin-right: .5em;
-    margin-bottom: .5em;
-
-    &:last-child {
-      margin-right: 0;
-    }
-  }
+  @extend %_other-list
 }
 .pagenations {
   @include clearfix;

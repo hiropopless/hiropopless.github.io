@@ -7,12 +7,12 @@ comments: true
 tags:
 - Android
 - JavaScript
-- スマートフォン
+- smartphone
 
 keywords:
 - Android
 - JavaScript
-- スマートフォン
+- smartphone
 ---
 あまりに何も書いていなかったので久しぶりに書こうかと。
 最近はすっかりスマートフォン対応の案件が多くなってきたのでちょろちょろとスマフォ対応についても書いていこうかなと思います。
