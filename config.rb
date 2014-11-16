@@ -112,6 +112,8 @@ end
 activate :deploy do |deploy|
   deploy.method = :git
   deploy.branch = 'master'
+  deploy.commit_message = 'deploy'
+  deploy.build_before = true
 end
 
 # Markdown
