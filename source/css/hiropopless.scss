@@ -193,9 +193,8 @@ li {
   text-align: right;
 
   li {
-    display: inline-block;
+    @include inline-block;
     vertical-align: top;
-
   }
 }
 
