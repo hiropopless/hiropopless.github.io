@@ -74,8 +74,8 @@ func main() {
 
 となってhtml_safeな感じで出力されます。ちなみにbluemondayのポリシーで許可されているタグは下記になります。
 
-詳細は[bluemondayのコード](https://github.com/microcosm-cc/bluemonday/blob/master/policies.go)をみてみてください。
-
 > article, aside, figure, section, summary, h1~h6, hgroup, br, div, hr, p, span, wbr, abbr, acronym, cite, code, dfn, em, figcaption, mark, s, samp, strong, sub, sup, var, b, i, pre, small, strike, tt, u, rp, rt, ruby
+
+詳細は[bluemondayのコード](https://github.com/microcosm-cc/bluemonday/blob/master/policies.go)をみてみてください。
 
 こんな感じでblackfridayとbluemondayを組み合わせて使うといろいろできそうですね！
