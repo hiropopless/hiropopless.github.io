@@ -37,7 +37,7 @@ hogehoge
 
 demo.go
 
-```Go
+```go
 package main
 
 import (
@@ -62,7 +62,7 @@ func main() {
 
 ### 出力結果
 
-```
+```sh
 % go run demo.go
 ```
 
