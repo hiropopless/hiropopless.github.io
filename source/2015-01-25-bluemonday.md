@@ -3,10 +3,10 @@ id: 986
 title: Golangでbluemondayを使ってhtml_safeなsanitizeをする
 date:  2015-01-25
 tags:
-- Golang
+- golang
 - Go
 keywords:
-- Golang
+- golang
 - Go
 ---
 

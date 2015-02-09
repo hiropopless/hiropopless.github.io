@@ -5,7 +5,7 @@ date:  2014-08-06
 tags:
 - martini
 - Go
-- golang
+- Golang
 ---
 
 こんにちは！funnythingzです。夏です暑いです。
