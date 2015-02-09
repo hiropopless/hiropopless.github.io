@@ -1,0 +1,264 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0, maximum-scale=10"><meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1'><title>ひろぽっぽれす - hiropopless - いくらが大好きです。Webの開発やってます。</title><link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/feed.xml"/><link href='//fonts.googleapis.com/css?family=Raleway' rel='stylesheet'><link href="/css/hiropopless.css" rel="stylesheet"><meta property="og:type" content="article"><meta property="og:description" content="いくらが大好きです。Webの開発やってます。"><meta property="og:site_name" content="ひろぽっぽれす"><meta property="og:title" content="ひろぽっぽれす"><meta property="og:url" content="http://hiropo.co.uk"></head><body><header class="header"><h1 class="hero-site"><a href="//hiropo.co.uk">ひろぽっぽれす - hiropopless</a></h1><p class="description-site">いくらが大好きです。Webの開発やってます。</p><ul class="follow-links"><li><a href="https://twitter.com/funnythingz" class="twitter-follow-button" data-show-count="false">Follow @funnythingz</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></li><li><iframe src="//ghbtns.com/github-btn.html?user=funnythingz&type=follow&count=false" allowtransparency="true" frameborder="0" scrolling="0" width="165" height="20"></iframe></li></ul><figure class="figure-profile"><img src="/imgs/archives/2013/08/6S6A7152_12.jpg"></figure></header><section id="main" class="content" role="main"><section class="entries"><p class="page-number">Page 14 of 19</p><ul class="pagenations"><li class="old-page"><a href="/page/15/">Old entry</a></li><li class="new-page"><a href="/page/13/">New entry</a></li></ul><article class="entry"><h2><a href="/archives/147.html">OS判別JS</a></h2><ul><li class="date"> 2009.05.20 </li></ul><ul class="external-link"><li><a href="//b.hatena.ne.jp/entry/http://hiropo.co.uk/archives/147.html" class="hatena-bookmark-button" data-hatena-bookmark-title="OS判別JS" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;"/></a><script src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script></li><li><div class="fb-like" data-href="//hiropo.co.uk/archives/147.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div><div id="fb-root"></div><script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=1386417958332605&version=v2.0";
+          fjs.parentNode.insertBefore(js, fjs);
+          }(document, 'script', 'facebook-jssdk'));</script></li><li><a class="twitter-share-button" href="https://twitter.com/share" data-url="http://hiropo.co.uk/archives/147.html" data-via="funnythingz" data-text="OS判別JS"> Tweet </a><script>
+        window.twttr=(function(d,s,id){var t,js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id)){return}js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);return window.twttr||(t={_e:[],ready:function(f){t._e.push(f)}})}(document,"script","twitter-wjs"));
+        </script></li></ul><p>何か使えるかもしれないので、OS判別スクリプトをメモ</p><pre class="highlight plaintext"><code>var getOS = function() {
+   var agent = navigator.userAgent.toLowerCase() ;
+   var Win_OS = agent.indexOf("win") != -1 ;
+   var Mac_OS = agent.indexOf("mac") != -1 ;
+   var Linux_OS = agent.indexOf("linux") != -1 ;
+   var Other_OS = agent.indexOf("win") == -1 &amp;&amp;
+   agent.indexOf("mac") == -1 &amp;&amp;
+   agent.indexOf("linux") == -1 ;
+
+   if(Win_OS){os = "Windows"}
+   if(Mac_OS){os = "MacOS";}
+   if(Linux_OS){os = "Linux";}
+   if(Other_OS){os = "不明";}
+   return os;
+}
+</code></pre></article><article class="entry"><h2><a href="/archives/144.html">ntfsをmountする - CentOS</a></h2><ul><li class="date"> 2009.05.20 </li></ul><ul class="external-link"><li><a href="//b.hatena.ne.jp/entry/http://hiropo.co.uk/archives/144.html" class="hatena-bookmark-button" data-hatena-bookmark-title="ntfsをmountする - CentOS" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;"/></a><script src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script></li><li><div class="fb-like" data-href="//hiropo.co.uk/archives/144.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div><div id="fb-root"></div><script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=1386417958332605&version=v2.0";
+          fjs.parentNode.insertBefore(js, fjs);
+          }(document, 'script', 'facebook-jssdk'));</script></li><li><a class="twitter-share-button" href="https://twitter.com/share" data-url="http://hiropo.co.uk/archives/144.html" data-via="funnythingz" data-text="ntfsをmountする - CentOS"> Tweet </a><script>
+        window.twttr=(function(d,s,id){var t,js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id)){return}js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);return window.twttr||(t={_e:[],ready:function(f){t._e.push(f)}})}(document,"script","twitter-wjs"));
+        </script></li></ul><p>最近まったくブログを更新していなかったので、まめに更新してメモやライブラリを残していこうと思う今日この頃。 メモるくせをつけないとすぐ忘れちゃうからちゃんとメモらないとまずいよね。</p><p>さて、CentOSでntfsをmountする手順をまとめておく。 ウチにあまっていた2.5インチHDDたちを稼動してる自宅のサーバに接続してファイルサーバにしてしまおうと思ったからだ。 今まではUSB接続でwindowsマシンにつなげていたが、USBポートがいくらあっても足らんし、サーバ機に繋げてしまえば、いつでもどこでも（家の中なら）アクセスできるし便利だろうと。</p><p>まず、下記コマンドを打ってみる。</p><pre class="highlight shell"><code><span class="o">[</span>root@host ~]# mount -t ntfs /dev/sdb1 /mnt/sdb1
+mount: マウントポイント /mnt/sdb1 が存在しません
+</code></pre><p>そこで、マウントポイントを作成して、マウントを再試行する。</p><pre class="highlight shell"><code><span class="o">[</span>root@host ~]# mkdir /mnt/o
+<span class="o">[</span>root@host ~]# mount /dev/sdb1 /mnt/o/
+mount: unknown filesystem <span class="nb">type</span> <span class="s1">'ntfs'</span>
+</code></pre><p>&lsquo;ntfs&#39;なんぞ知らんとのこと。 調べてみたら、&#39;mount -t ntfs-3g&rsquo; というコマンドでマウントするらしい。 そこで、ntfs-3gをインストールする。</p><pre class="highlight shell"><code><span class="o">[</span>root@host ~]# yum install ntfs-3g
+</code></pre><p>インストールが終わったところ、再マウント。</p><pre class="highlight shell"><code><span class="o">[</span>root@host ~]# mount -t ntfs-3g /dev/sdb1 /mnt/o
+FATAL: Module fuse not found.
+ntfs-3g-mount: fuse device is missing, try <span class="s1">'modprobe fuse'</span> as root
+</code></pre><p>&#39;modprobe fuse&#39;を試せとのことで、試してみる。</p><pre class="highlight shell"><code><span class="o">[</span>root@host ~]# modprobe fuse
+FATAL: Module fuse not found.
+</code></pre><p>&#39;not found&rsquo; って・・・。 さらに調べると、&#39;dkms-fuse&#39;ってのをインストールしなくてはならないよう。</p><pre class="highlight shell"><code><span class="o">[</span>root@host ~]# yum --enablerepo<span class="o">=</span>rpmforge install dkms-fuse
+</code></pre><p>そして、&#39;modprobe fuse&rsquo; を実行して、マウントに再挑戦</p><pre class="highlight shell"><code><span class="o">[</span>root@host ~]# modprobe fuse
+<span class="o">[</span>root@host ~]# mount -t ntfs-3g /dev/sdb1 /mnt/o/
+</code></pre><p>エラーが返ってこないので成功か？確認してみる。</p><pre class="highlight shell"><code><span class="o">[</span>root@host ~]# ls /mnt/o/
+System Volume Information  evangelion  music
+</code></pre><p>マウントに成功！&#39;evangelion&rsquo; ってナニ？とか聞かないのっ。</p></article><article class="entry"><h2><a href="/archives/139.html">ActionScript3を入門してみた。</a></h2><ul><li class="date"> 2009.03.19 </li></ul><ul class="external-link"><li><a href="//b.hatena.ne.jp/entry/http://hiropo.co.uk/archives/139.html" class="hatena-bookmark-button" data-hatena-bookmark-title="ActionScript3を入門してみた。" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;"/></a><script src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script></li><li><div class="fb-like" data-href="//hiropo.co.uk/archives/139.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div><div id="fb-root"></div><script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=1386417958332605&version=v2.0";
+          fjs.parentNode.insertBefore(js, fjs);
+          }(document, 'script', 'facebook-jssdk'));</script></li><li><a class="twitter-share-button" href="https://twitter.com/share" data-url="http://hiropo.co.uk/archives/139.html" data-via="funnythingz" data-text="ActionScript3を入門してみた。"> Tweet </a><script>
+        window.twttr=(function(d,s,id){var t,js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id)){return}js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);return window.twttr||(t={_e:[],ready:function(f){t._e.push(f)}})}(document,"script","twitter-wjs"));
+        </script></li></ul><p>ActionScript3を入門してみた。</p><pre class="highlight plaintext"><code>/*******************************
+ *
+ *  Hello world ActionScript
+ *
+ */
+
+/*==============================
+ *  型のないCorpオブジェクトの定義
+ */
+var Corp = {
+  //名前を定義
+  setName: 'no name',
+
+  //setNameプロパティを出力する関数を定義
+  traceName: function(){
+    trace(this.setName);
+  }
+}
+
+/*  CorpオブジェクトのtraceNameメソッドを実行すると、
+ *  デフォルトで定義されている &amp;quot;no name&amp;quot; が出力される。
+ */
+Corp.traceName();
+
+
+/* CorpオブジェクトをfunnyCorpオブジェクトに代入。
+ */
+var funnyCorp = Corp;
+
+/*  setNameプロパティに &amp;quot;funnythingz&amp;quot; を代入。
+ */
+funnyCorp.setName = 'funnythingz';
+
+/*  funnyCorpオブジェクトのtraceNameメソッドを実行すると、
+ *  上記で代入された &amp;quot;funnythingz&amp;quot; が出力される。
+ */
+funnyCorp.traceName();
+
+/*  ただし、ただの代入のため、CorpオブジェクトのtraceName();を
+ *  実行しても同じ結果として、&amp;quot;funnythingz&amp;quot; が出力される。
+ */
+Corp.traceName();
+</code></pre><p>結局、ASっぽいことやってないので、JSと書き方がまったく同じです。 しかも特にクラスベースっぽいことも何もしてない。</p><p>これからがんばることにするお！</p></article><article class="entry"><h2><a href="/archives/137.html">フォントサイズをうにゅうにゅさせてみた。</a></h2><ul><li class="date"> 2009.03.05 </li></ul><ul class="external-link"><li><a href="//b.hatena.ne.jp/entry/http://hiropo.co.uk/archives/137.html" class="hatena-bookmark-button" data-hatena-bookmark-title="フォントサイズをうにゅうにゅさせてみた。" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;"/></a><script src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script></li><li><div class="fb-like" data-href="//hiropo.co.uk/archives/137.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div><div id="fb-root"></div><script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=1386417958332605&version=v2.0";
+          fjs.parentNode.insertBefore(js, fjs);
+          }(document, 'script', 'facebook-jssdk'));</script></li><li><a class="twitter-share-button" href="https://twitter.com/share" data-url="http://hiropo.co.uk/archives/137.html" data-via="funnythingz" data-text="フォントサイズをうにゅうにゅさせてみた。"> Tweet </a><script>
+        window.twttr=(function(d,s,id){var t,js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id)){return}js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);return window.twttr||(t={_e:[],ready:function(f){t._e.push(f)}})}(document,"script","twitter-wjs"));
+        </script></li></ul><p>フォントサイズをうにゅうにゅさせるJSを実装してみた。</p><p><a title="動作デモはこちら" href="//funnythingz.com/dev/onono/">動作デモはこちら</a></p><p>なんてこたぁないJSです。jQuery使ったら30分で実装できた。 jQuery、凄すぎる！</p><p>ついでに、ブラウザ閉じても最後に設定したフォントサイズを維持してくれるように クッキーの制御入れてます。</p><p><a title="ソースコードのダウンロードはこちら" href="//funnythingz.com/dev/onono/onono.lzh">ソースコードのダウンロードはこちら</a></p></article><article class="entry"><h2><a href="/archives/129.html">原付改造ブログ MovableType（MT）で構築</a></h2><ul><li class="date"> 2009.02.04 </li></ul><ul class="external-link"><li><a href="//b.hatena.ne.jp/entry/http://hiropo.co.uk/archives/129.html" class="hatena-bookmark-button" data-hatena-bookmark-title="原付改造ブログ MovableType（MT）で構築" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;"/></a><script src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script></li><li><div class="fb-like" data-href="//hiropo.co.uk/archives/129.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div><div id="fb-root"></div><script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=1386417958332605&version=v2.0";
+          fjs.parentNode.insertBefore(js, fjs);
+          }(document, 'script', 'facebook-jssdk'));</script></li><li><a class="twitter-share-button" href="https://twitter.com/share" data-url="http://hiropo.co.uk/archives/129.html" data-via="funnythingz" data-text="原付改造ブログ MovableType（MT）で構築"> Tweet </a><script>
+        window.twttr=(function(d,s,id){var t,js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id)){return}js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);return window.twttr||(t={_e:[],ready:function(f){t._e.push(f)}})}(document,"script","twitter-wjs"));
+        </script></li></ul><p>こんぬつわ。久しぶりの更新です。</p><p>wordpress大好きな僕としては、個人的にMovableTypeとかアンチだったんですが、MTを組み込む仕事があったことをきっかけにMTにはまっちゃいました！</p><p>そこで、専門学校の時につくったサイトをMTに組み込んで再構築してみました。</p><p style="text-align: center;"><a href="//www.makingmachinez.com/"><img src="/imgs/archives/2009/02/makingmachinez-198x300.jpg" alt="" title="makingmachinez" width="198" height="300" class="alignnone size-medium wp-image-130"/></a></p><p>当時、「原付改造日記」というものをフルスクラッチで作っていました。 （その頃、ブログはまだ一般的でなかったのです。）</p><p>MT組み込んだら更新もめちゃめちゃ簡単だし、もうラクっていうかなんていうか…。 今の世の中って凄いです。</p></article><article class="entry"><h2><a href="/archives/124.html">tomcatのHelloWorld的な。 - JSP編</a></h2><ul><li class="date"> 2009.01.10 </li></ul><ul class="external-link"><li><a href="//b.hatena.ne.jp/entry/http://hiropo.co.uk/archives/124.html" class="hatena-bookmark-button" data-hatena-bookmark-title="tomcatのHelloWorld的な。 - JSP編" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;"/></a><script src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script></li><li><div class="fb-like" data-href="//hiropo.co.uk/archives/124.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div><div id="fb-root"></div><script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=1386417958332605&version=v2.0";
+          fjs.parentNode.insertBefore(js, fjs);
+          }(document, 'script', 'facebook-jssdk'));</script></li><li><a class="twitter-share-button" href="https://twitter.com/share" data-url="http://hiropo.co.uk/archives/124.html" data-via="funnythingz" data-text="tomcatのHelloWorld的な。 - JSP編"> Tweet </a><script>
+        window.twttr=(function(d,s,id){var t,js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id)){return}js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);return window.twttr||(t={_e:[],ready:function(f){t._e.push(f)}})}(document,"script","twitter-wjs"));
+        </script></li></ul><p>tomcat6をインストールした。 超めんどかった。</p><p>サーバーサイドはPHPしかやったことないので、コンパイルとか超めんどくさい。 &ldquo;web.xml&rdquo; とか &ldquo;WEB-INF&rdquo; とか初めて知りました。</p><p>とりあえず、JSPのHelloWorld的な。</p><pre class="highlight java"><code><span class="o">&lt;%</span>
+  <span class="n">String</span> <span class="n">ahya</span><span class="o">=</span> <span class="s">"# JSPのテストやね。"</span><span class="o">;</span>
+  <span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">ahya</span><span class="o">);</span>
+<span class="o">%&gt;</span>
+</code></pre><p>▼テストURL <a title="http://funnythingz.com/tomcat/funnythingz/test.jsp" href="//funnythingz.com/tomcat/funnythingz/test.jsp">http://funnythingz.com/tomcat/funnythingz/test.jsp</a></p><p>JSPはコンパイルとか要らないから良いね。 サーブレットはまた次回。</p></article><article class="entry"><h2><a href="/archives/122.html">CentOS eth0 のネットワーク設定</a></h2><ul><li class="date"> 2008.12.28 </li></ul><ul class="external-link"><li><a href="//b.hatena.ne.jp/entry/http://hiropo.co.uk/archives/122.html" class="hatena-bookmark-button" data-hatena-bookmark-title="CentOS eth0 のネットワーク設定" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;"/></a><script src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script></li><li><div class="fb-like" data-href="//hiropo.co.uk/archives/122.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div><div id="fb-root"></div><script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=1386417958332605&version=v2.0";
+          fjs.parentNode.insertBefore(js, fjs);
+          }(document, 'script', 'facebook-jssdk'));</script></li><li><a class="twitter-share-button" href="https://twitter.com/share" data-url="http://hiropo.co.uk/archives/122.html" data-via="funnythingz" data-text="CentOS eth0 のネットワーク設定"> Tweet </a><script>
+        window.twttr=(function(d,s,id){var t,js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id)){return}js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);return window.twttr||(t={_e:[],ready:function(f){t._e.push(f)}})}(document,"script","twitter-wjs"));
+        </script></li></ul><p>自部用メモ</p><pre class="highlight shell"><code><span class="o">[</span>root@host ~]# <span class="nb">cd</span> /etc/sysconfig/network-scripts/
+<span class="o">[</span>root@host network-scripts]# vi ifcfg-eth0
+<span class="nv">DEVICE</span><span class="o">=</span>eth0
+<span class="nv">BOOTPROTO</span><span class="o">=</span>static
+<span class="nv">BROADCAST</span><span class="o">=</span>192.168.x.255
+<span class="nv">HWADDR</span><span class="o">=</span>xx:xx:xx:xx:xx:xx <span class="c">#MACアドレス</span>
+<span class="nv">IPADDR</span><span class="o">=</span>192.168.x.xxx <span class="c">#現在のホストのIPアドレスを指定</span>
+<span class="nv">NETMASK</span><span class="o">=</span>255.255.255.0 <span class="c">#IPアドレスに対応するサブネットマスク</span>
+<span class="nv">NETWORK</span><span class="o">=</span>192.168.1.0
+<span class="nv">ONBOOT</span><span class="o">=</span>yes
+</code></pre></article><article class="entry"><h2><a href="/archives/111.html">「ブラッディ・マンデイ」の藤丸がもってるUSBメモリの作り方</a></h2><ul><li class="date"> 2008.12.20 </li></ul><ul class="external-link"><li><a href="//b.hatena.ne.jp/entry/http://hiropo.co.uk/archives/111.html" class="hatena-bookmark-button" data-hatena-bookmark-title="「ブラッディ・マンデイ」の藤丸がもってるUSBメモリの作り方" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;"/></a><script src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script></li><li><div class="fb-like" data-href="//hiropo.co.uk/archives/111.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div><div id="fb-root"></div><script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=1386417958332605&version=v2.0";
+          fjs.parentNode.insertBefore(js, fjs);
+          }(document, 'script', 'facebook-jssdk'));</script></li><li><a class="twitter-share-button" href="https://twitter.com/share" data-url="http://hiropo.co.uk/archives/111.html" data-via="funnythingz" data-text="「ブラッディ・マンデイ」の藤丸がもってるUSBメモリの作り方"> Tweet </a><script>
+        window.twttr=(function(d,s,id){var t,js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id)){return}js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);return window.twttr||(t={_e:[],ready:function(f){t._e.push(f)}})}(document,"script","twitter-wjs"));
+        </script></li></ul><p>ブラッディ・マンデイ、ついに最終回が終わりましたね。 今回はブラッディ・マンデイの主人公、高木藤丸がもっているUSBメモリ（的な）の作り方を。 （※自己責任でつくってねん。ちなみに不正侵入は犯罪だよ！ダメ！絶対！）</p><p>このUSBメモリの中身を作るにあたって、参考にしたサイトは下記の通りです。 ■<a title="高校生サーバー管理者の考察日誌" href="//japan.cnet.com/blog/isidai/">高校生サーバー管理者の考察日誌</a> ブラッディ・マンデイが始まってから『「ブラッディ・マンデイ」を考察する』というブログを書き始められたのですが、 このブログを書いてるのはなんと高校生！脱帽です。 ■<a title="【BackTrack 3】：Royal Windows" href="//royalwin.blog.so-net.ne.jp/2008-07-01">【BackTrack 3】：Royal Windows</a> 今回のUSBメモリ作成にあたって選んだOS『backtrack3』について記事を書かれているatc-500 さんのブログ。 今回の作成方法もここを丸パクりと言っていほど参考にしています。</p><p>高木藤丸仕様ですが、USBメモリ内にＵＳＢブート可能なＯＳを入れて、 そいつをもろもろカスタマイズして使ってるんではないかと。 という訳で、ＵＳＢブート可能なＬｉｎｕｘを使います。 ubuntuでも良いし、ＵＳＢブートできるFedoraでも良いし、ＯＳは何でも良いです。 今回僕はペネトレーションテスト用ＯＳ、『backtrack3』を使います。 （backtrackについては自分で調べてくださいね。）</p><p><a title="ちなみに、ざっくりとした作り方はこちら" href="//hiropo.co.uk/archives/95">ちなみに、ざっくりとした作り方はこちら</a><blockquote>▼準備するもの [1] <a title="ubuntu Linux （ＬｉｖｅCD）" href="//www.ubuntulinux.jp/products/JA-Localized/download">ubuntu Linux （ＬｉｖｅCD）</a> or <a title="VMware版 ubuntu Linux" href="//www.ubuntulinux.jp/products/JA-Localized/vmware">VMware版 ubuntu Linux</a> ※ubuntuはUSBメモリのパーティションを分割するために使います。 ※パーティション分割できればOKなので、OSはubuntuじゃなくても可。 [2] USBメモリ（4GB以上がオススメ）</blockquote> とりあえず上記があればつくれます。あとUSBブートできるパソコンも必要ね！ [3]<a title="backtrack3final （ペネトレーション用OS）" href="//www.remote-exploit.org/backtrack_download.html">backtrack3final （ペネトレーション用OS）</a> [4]<a title="ophcrack （windowsパスワードクラッカー）" href="//ophcrack.sourceforge.net/download.php">ophcrack （windowsパスワードクラッカー）</a></p><p>要は、[2]に[3]と[4]をぶっこむというわけです。（完成！？ｗ）</p><p>まずはUSBメモリを分割します。 fdiskを使って分割していきましょう。</p><pre class="highlight shell"><code><span class="gp">root@ubuntu-vm:~# </span>fdisk /dev/sdb
+Command <span class="o">(</span>m <span class="k">for </span><span class="nb">help</span><span class="o">)</span>: p
+
+Disk /dev/sdb: 4009 MB, 4009754624 bytes
+5 heads, 32 sectors/track, 48947 cylinders
+Units <span class="o">=</span> cylinders of 160 <span class="k">*</span> 512 <span class="o">=</span> 81920 bytes
+Disk identifier: 0x9fe248cd
+
+   Device Boot      Start         End      Blocks   Id  System
+</code></pre><p>まず、fdiskのpコマンドで、USBメモリ内にパーティションがないことを確認。 通常は、パーティションが何かしらあると思うので、dコマンドでパーティションを削除しておくこと。</p><p>では、パーティションがないという前提ですすめていく。</p><pre class="highlight shell"><code>Command <span class="o">(</span>m <span class="k">for </span><span class="nb">help</span><span class="o">)</span>: n
+Command action
+   e   extended
+   p   primary partition <span class="o">(</span>1-4<span class="o">)</span>
+p
+Partition number <span class="o">(</span>1-4<span class="o">)</span>: 1
+First cylinder <span class="o">(</span>1-48947, default 1<span class="o">)</span>:
+Using default value 1
+Last cylinder or +size or +sizeM or +sizeK <span class="o">(</span>1-48947, default 48947<span class="o">)</span>: 24473
+</code></pre><p>fdiskのnコマンドでプライマリパーティションを切っていく。 まず一つ目。シリンダーサイズが48947となっているので、半分（24473）のところでパーティションをぶち切る。 そして、ファーストパーティションはwindows形式（FAT32）にする。</p><pre class="highlight shell"><code>Command <span class="o">(</span>m <span class="k">for </span><span class="nb">help</span><span class="o">)</span>: t
+Selected partition 1
+Hex code <span class="o">(</span><span class="nb">type </span>L to list codes<span class="o">)</span>: b
+Changed system <span class="nb">type </span>of partition 1 to b <span class="o">(</span>W95 FAT32<span class="o">)</span>
+
+Command <span class="o">(</span>m <span class="k">for </span><span class="nb">help</span><span class="o">)</span>: p
+
+Disk /dev/sdb: 4009 MB, 4009754624 bytes
+5 heads, 32 sectors/track, 48947 cylinders
+Units <span class="o">=</span> cylinders of 160 <span class="k">*</span> 512 <span class="o">=</span> 81920 bytes
+Disk identifier: 0x9fe248cd
+
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sdb1               1       24473     1957824    b  W95 FAT32
+</code></pre><p>tコマンドで、b を選ぶとファイルシステムがwindows形式（FAT32）になった。</p><p>同じ要領でセカンドパーティションを作っていく。</p><pre class="highlight shell"><code>Command <span class="o">(</span>m <span class="k">for </span><span class="nb">help</span><span class="o">)</span>: n
+Command action
+   e   extended
+   p   primary partition <span class="o">(</span>1-4<span class="o">)</span>
+p
+Partition number <span class="o">(</span>1-4<span class="o">)</span>: 2
+First cylinder <span class="o">(</span>24474-48947, default 24474<span class="o">)</span>:
+Using default value 24474
+Last cylinder or +size or +sizeM or +sizeK <span class="o">(</span>24474-48947, default 48947<span class="o">)</span>:
+Using default value 48947
+
+Command <span class="o">(</span>m <span class="k">for </span><span class="nb">help</span><span class="o">)</span>: t
+Partition number <span class="o">(</span>1-4<span class="o">)</span>: 2
+Hex code <span class="o">(</span><span class="nb">type </span>L to list codes<span class="o">)</span>: 83
+
+Command <span class="o">(</span>m <span class="k">for </span><span class="nb">help</span><span class="o">)</span>: p
+
+Disk /dev/sdb: 4009 MB, 4009754624 bytes
+5 heads, 32 sectors/track, 48947 cylinders
+Units <span class="o">=</span> cylinders of 160 <span class="k">*</span> 512 <span class="o">=</span> 81920 bytes
+Disk identifier: 0x9fe248cd
+
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sdb1               1       24473     1957824    b  W95 FAT32
+/dev/sdb2           24474       48947     1957920   83  Linux
+</code></pre><p>セカンドパーティションはファイルシステムをLinuxにした。 セカンドパーティションは設定データなどを保存するためのディスクになる。</p><p>ここまでできたら、fdisk の w コマンドで設定を保存し終了する。 fdiskを抜けたら、ふたつのパーティションをフォーマットする。</p><p>もしマウントされていたら、umountコマンドでアンマウントしておくこと。</p><pre class="highlight shell"><code><span class="gp">root@ubuntu-vm:~# </span>mkfs.vfat /dev/sdb1
+<span class="gp">root@ubuntu-vm:~# </span>mkfs.ext2 /dev/sdb2
+</code></pre><p>次に、データ保存用の&ldquo;changes&quot;フォルダをつくる。</p><pre class="highlight shell"><code><span class="gp">root@ubuntu-vm:~# </span>mount /dev/sdb2 /media/disk
+<span class="gp">root@ubuntu-vm:~# </span><span class="nb">cd</span> /media/disk/
+<span class="gp">root@ubuntu-vm:/media/disk# </span>ls
+lost+found
+<span class="gp">root@ubuntu-vm:/media/disk# </span>mkdir changes
+<span class="gp">root@ubuntu-vm:/media/disk# </span>ls
+changes  lost+found
+</code></pre><p>上記例では、/media/disk にUSBメモリのセカンドパーティションをマウントして、 mkdir で &quot;changes&quot;フォルダを作っている。</p><p>ここまでで、USBメモリ側の準備はできた。</p><p>さて、これからが本番である。 backtrack本体とophcrackをUSBメモリにつっこんでいく。 MBRはbacktrack3のものを使う。そして、backtrack3とophcrackのカーネルを共存させる。</p><p>ここからはwindowsでもmacでもLinuxでも作業方法は何でも良い。 ここではwindowsをベースに説明していく。（ここからは超簡単。）</p><p>まずはダウンロードしてきたbacktrackを解凍する。 すると中に、 <blockquote>/boot /BT3</blockquote> というフォルダがあるので、こいつらをUSBメモリのファーストパーティションにコピーする。 そしたら次にダウンロードしたophcrackを解凍して中身を確認する。 <blockquote>/boot /ophcrack</blockquote> というフォルダが確認できるだろう。 そしたら、&rdquo;/ophcrack&quot;フォルダだけ、USBメモリにコピーする。 （レインボーテーブルもダウンロードした人はレインボーテーブルも。）</p><p>ここまでできたら、次にUSBメモリ内に移動する。 そして、&quot;/boot&quot; フォルダ内に &ldquo;oph&quot;というフォルダをつくる。 <blockquote>＃ここまでのUSBメモリ内 /boot /boot/oph /ophcrack /BT3</p><p>※他にもフォルダやファイルはあるが、割愛する。</blockquote> ここまでできたら、&rdquo;/boot/oph&quot; フォルダ内に、ophcrackのカーネルイメージを入れる。 <blockquote>＃ophcrackを解凍した際にできた&quot;/boot&quot;フォルダ内から、 &ldquo;vmlinuz&rdquo; と &ldquo;initrd.gz&rdquo; をUSBメモリ内の&ldquo;/boot/oph&rdquo; にコピーする。</blockquote> これでUSBメモリ内に必要なファイルはすべて揃った。</p><p>次にブートメニューをいじっていく。 USBメモリ内にある、&quot;/boot/syslinux&quot; フォルダ内の&ldquo;syslinux.cfg&rdquo; をカスタマイズする。 このファイルがブートメニューの設定ファイルである。</p><p>必要なものは下記の３つあたりだろう。 ちなみに下記は僕がすでにカスタマイズしたあとです。 ポイントは&ldquo;changes=/dev/sdb2&rdquo; ←こいつ。 セカンドパーティションが設定やらのデータ保存領域になります。</p><pre class="highlight shell"><code><span class="c">#backtrack3 グラフィックモード</span>
+LABEL pchanges
+MENU LABEL BackTrack3
+KERNEL /boot/vmlinuz
+APPEND <span class="nv">initrd</span><span class="o">=</span>/boot/initrd.gz <span class="nv">ramdisk_size</span><span class="o">=</span>6666 <span class="nv">root</span><span class="o">=</span>/dev/ram0 rw <span class="nv">changes</span><span class="o">=</span>/dev/sdb2 <span class="nv">autoexec</span><span class="o">=</span>xconf;kdm
+
+<span class="c">#backtrack3 テキストモード</span>
+LABEL BT3
+MENU LABEL BackTrack3 text_mode
+KERNEL /boot/vmlinuz
+APPEND <span class="nv">initrd</span><span class="o">=</span>/boot/initrd.gz <span class="nv">ramdisk_size</span><span class="o">=</span>6666 <span class="nv">root</span><span class="o">=</span>/dev/ram0 rw <span class="nv">changes</span><span class="o">=</span>/dev/sdb2
+
+<span class="c">#ophcrack グラフィックモード</span>
+LABEL oph
+MENU LABEL Ophcrack
+KERNEL /boot/oph/vmlinuz
+APPEND <span class="nv">initrd</span><span class="o">=</span>/boot/oph/initrd.gz <span class="nv">ramdisk_size</span><span class="o">=</span>6666 <span class="nv">root</span><span class="o">=</span>/dev/ram0 rw <span class="nv">autoexec</span><span class="o">=</span>xconf;startx <span class="nv">changes</span><span class="o">=</span>/slax/
+</code></pre><p>これですべての準備は整いましたね。 最後に、下記のファイルを実行して、USBブートを可能にする。</p><pre class="highlight shell"><code>＃USBメモリ内の、下記ファイルを実行。※必ずUSBメモリ内で実行してください！
+＃windowsのローカル上で実行するとwindowsがぶっこわれる可能性が。
+
+/boot/bootinst.bat
+</code></pre><p>これで完成です。長かったですね・・・。 あとは、USBメモリをブートすれば、藤丸仕様っぽいUSBメモリが完成です。 パスワードクラックでも、侵入テストでも何でもテキトーにやってみてください。 （自分のマシンを対象にやってねん。人のマシンはダメよ！）</p><p>ってな感じで以上です。 なんか間違ってる部分とかあったらご指摘くださいませ。（まだまだ勉強中です…。）</p></article><article class="entry"><h2><a href="/archives/105.html">デスソース</a></h2><ul><li class="date"> 2008.12.20 </li></ul><ul class="external-link"><li><a href="//b.hatena.ne.jp/entry/http://hiropo.co.uk/archives/105.html" class="hatena-bookmark-button" data-hatena-bookmark-title="デスソース" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;"/></a><script src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script></li><li><div class="fb-like" data-href="//hiropo.co.uk/archives/105.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div><div id="fb-root"></div><script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=1386417958332605&version=v2.0";
+          fjs.parentNode.insertBefore(js, fjs);
+          }(document, 'script', 'facebook-jssdk'));</script></li><li><a class="twitter-share-button" href="https://twitter.com/share" data-url="http://hiropo.co.uk/archives/105.html" data-via="funnythingz" data-text="デスソース"> Tweet </a><script>
+        window.twttr=(function(d,s,id){var t,js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id)){return}js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);return window.twttr||(t={_e:[],ready:function(f){t._e.push(f)}})}(document,"script","twitter-wjs"));
+        </script></li></ul><p>前の職場の社長、美帆さんとこで面白い記事を見つけた。</p><p><a title="「禁煙セラピー」社長日記 - アフターデスソース！" href="//ameblo.jp/allen-carr/entry-10178549887.html">「禁煙セラピー」社長日記 - アフターデスソース！</a></p><p><a href="//www.extremefood.com/" target="_blank"><img class="aligncenter size-medium wp-image-106" title="death-soruce" src="/imgs/archives/2008/12/death-soruce-300x300.jpg" alt="" width="300" height="300"/></a></p><p>激辛度がハンパないらしい。辛いってか「痛い」が正しいよう。 暴君ハバネロとかもはやそういう可愛い冗談レベルではすまされないようだ。</p><p>この年末にぜひ挑戦してみたらいかがだろうか。</p><p><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://fpdownload.macromedia.com/get/flashplayer/current/swflash.cab" id="Player_2243cb4d-dfad-4cc9-b53d-d179d5b4ec10" WIDTH="600px" HEIGHT="200px"><param NAME="movie" VALUE="http://ws.amazon.co.jp/widgets/q?ServiceVersion=20070822&MarketPlace=JP&ID=V20070822%2FJP%2Fhirozxcustomd-22%2F8010%2F2243cb4d-dfad-4cc9-b53d-d179d5b4ec10&Operation=GetDisplayTemplate"><param NAME="quality" VALUE="high"><param NAME="bgcolor" VALUE="#FFFFFF"><param NAME="allowscriptaccess" VALUE="always"><embed src="//ws.amazon.co.jp/widgets/q?ServiceVersion=20070822&MarketPlace=JP&ID=V20070822%2FJP%2Fhirozxcustomd-22%2F8010%2F2243cb4d-dfad-4cc9-b53d-d179d5b4ec10&Operation=GetDisplayTemplate" id="Player_2243cb4d-dfad-4cc9-b53d-d179d5b4ec10" quality="high" bgcolor="#ffffff" name="Player_2243cb4d-dfad-4cc9-b53d-d179d5b4ec10" allowscriptaccess="always" type="application/x-shockwave-flash" align="middle" height="200px" width="600px"></embed></object><noscript><a HREF="//ws.amazon.co.jp/widgets/q?ServiceVersion=20070822&MarketPlace=JP&ID=V20070822%2FJP%2Fhirozxcustomd-22%2F8010%2F2243cb4d-dfad-4cc9-b53d-d179d5b4ec10&Operation=NoScript">Amazon.co.jp ウィジェット</a></noscript></p></article><article class="entry"><h2><a href="/archives/95.html">「ブラッディ・マンデイ」の藤丸がもってるUSBメモリの中身的なものをつくってみた。[追記あり]</a></h2><ul><li class="date"> 2008.12.16 </li></ul><ul class="external-link"><li><a href="//b.hatena.ne.jp/entry/http://hiropo.co.uk/archives/95.html" class="hatena-bookmark-button" data-hatena-bookmark-title="「ブラッディ・マンデイ」の藤丸がもってるUSBメモリの中身的なものをつくってみた。[追記あり]" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;"/></a><script src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script></li><li><div class="fb-like" data-href="//hiropo.co.uk/archives/95.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div><div id="fb-root"></div><script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=1386417958332605&version=v2.0";
+          fjs.parentNode.insertBefore(js, fjs);
+          }(document, 'script', 'facebook-jssdk'));</script></li><li><a class="twitter-share-button" href="https://twitter.com/share" data-url="http://hiropo.co.uk/archives/95.html" data-via="funnythingz" data-text="「ブラッディ・マンデイ」の藤丸がもってるUSBメモリの中身的なものをつくってみた。[追記あり]"> Tweet </a><script>
+        window.twttr=(function(d,s,id){var t,js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id)){return}js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);return window.twttr||(t={_e:[],ready:function(f){t._e.push(f)}})}(document,"script","twitter-wjs"));
+        </script></li></ul><p>こんぬつわ、TBSで放送中のドラマ「ブラッディ・マンデイ」に出てくる主人公 高木藤丸がもってるUSBメモリの中身的なものをつくってみました。</p><p>あくまで、「的な」ってとこがミソです。 つまりは「っぽい」ってことです。 これを使ってハッキングしたりクラッキングしたりってのはアナタの腕次第！？ （不正アクセスは違法だよ！酔い子は真似しちゃダメお！）</p><p>藤丸の使ってるUSBメモリですが、USBブートのLinuxを使ってると思われです。 USBブートのLinuxっていうと、ubuntu、knoppix、などなど「LiveCD,Linux」で検索すれば たくさん出てきます。（最近はFedoraもUSBブート可能なようです。）</p><p>考察に関しては、下記のブログがすごい！ <a title="高校生サーバー管理者の考察日誌 - CNET Japan" href="//japan.cnet.com/blog/isidai/">高校生サーバー管理者の考察日誌 - CNET Japan</a></p><p>ブログ書いてる人、高校生なんだって。 今の高校生は変態だな・・・。</p><p>さて、本題のUSBメモリの作り方です。 容量は、最低２GB。４GBあれば夢は膨らむでしょう。（＾ｑ＾） 今回は、ハッカーご用達のペネトレーションOS「backtrack」を使ってみます。 ペネトレーションとは、「コンピュータやネットワークのセキュリティ上の弱点を発見するテスト手法の一つで、 システムを実際に攻撃して侵入を試みる手法。」のことです。 要はハッキング（クラッキング？）用のOSってことですね。</p><p>あとは、windowsXPのパスワードをクラックするDevianベースのophcrackを同梱しようかと。 下記にサクッと作り方を書いといた。</p><blockquote> やりたいこと * ペネトレーション用OS＋パスワードクラッカーをひとつのUSBメモリにおさめる。 * そして、USBブートにて使用可能にする。 ただこのままだけだと、backtrack上でデータの保存ができないので、 USBメモリのパーティションを分割して、データを書き込める領域をつくることにする。 > 材料： * backtrack3 final （ペネトレーション用LinuxOS） * ophcrack（レインボーアタック＋ブルートフォースアタック）パスワードクラッカー * USBメモリ（4GB） ※材料のダウンロードは各自で探してねん。（＾ｑ＾） 作り方： [1] USBメモリのパーティションを分割する<s>（1.5GB+2.5GB）</s> このパーティションの割り方だとレインボーアタック用のテーブルが入らないので、2GBずつが良いと思われ。 [2] /dev/sdb1をFAT32、/dev/sdb2をext2でフォーマット。 [3] /dev/sdb2 内に、&quot;changes&quot;フォルダ作成 [4] backtrack3 と ophcrack の各ソースファイル、各カーネルファイルをUSBメモリにぶっこむ。 ブートローダはbacktrack3のものを使用。 [5] syslinux.cfg を編集して、backtrack3とophcrackの起動メニューを作成。 [6] USBメモリ内で、&quot;bootinst.bat&quot;を実行し、USBメモリにブートローダをインストールする。 （※間違ってもPCのローカルドライブ上でやらないこと！） [7] あとは、BIOSメニューからUSBブートを選んで、できたUSBメモリをぶっさして パソコン起動すれば、ブラッディ・マンディ的な極悪USBメモリの完成。 </blockquote><p>ってな感じで、Linuxの知識ある人なら誰でも簡単（？）につくれちゃうんじゃないかと。 カーネルイメージは同名だから同じフォルダに置けないので、 /oph/　とかフォルダつくって別にすることでブート可能。</p><p>反響あったら超細かい詳細を書きます。</p></article><ul class="pagenations"><li class="old-page"><a href="/page/15/">Old entry</a></li><li class="new-page"><a href="/page/13/">New entry</a></li></ul></section></section><aside class="aside"><div class="aside-wrapper"><section class="article-list"><h2>Recent Articles</h2><ol class="articles"><li><a href="/archives/988.html">goqueryでHTMLをパースする</a><small class="meta">2015.02.05</small></li><li><a href="/archives/987.html">インストールしたGoパッケージを最新にする</a><small class="meta">2015.02.04</small></li><li><a href="/archives/986.html">Golangでbluemondayを使ってhtml_safeなsanitizeをする</a><small class="meta">2015.01.25</small></li><li><a href="/archives/985.html">GolangでBlackfridayを使ってMarkdownをHTMLに変換する</a><small class="meta">2015.01.25</small></li><li><a href="/archives/984.html">RapberryPi B+ セットアップメモ</a><small class="meta">2014.12.01</small></li><li><a href="/archives/983.html">MacでGNU版のコマンドをhomebrewでインストールする</a><small class="meta">2014.11.19</small></li><li><a href="/archives/981.html">GitHub Pages Legacy IP Desprecation</a><small class="meta">2014.11.16</small></li><li><a href="/archives/980.html">Intel Edison 秋葉原の秋月電子通商で衝動買いレビュー</a><small class="meta">2014.11.16</small></li><li><a href="/archives/979.html">Meteorで簡単なWebサービスつくってみた</a><small class="meta">2014.09.01</small></li><li><a href="/archives/978.html">gomを使ってGoのパッケージをGemfileライクに管理して使う</a><small class="meta">2014.08.09</small></li></ol></section><section class="article-list"><h2>Tags</h2><ul class="tags"><li><a href="/tags/info.html">info</a> (6)</a></li><li><a href="/tags/x-html.html">(X)HTML</a> (8)</a></li><li><a href="/tags/css.html">CSS</a> (10)</a></li><li><a href="/tags/ajax.html">Ajax</a> (14)</a></li><li><a href="/tags/javascript.html">JavaScript</a> (50)</a></li><li><a href="/tags/untitle.html">untitle</a> (4)</a></li><li><a href="/tags/cms.html">CMS</a> (2)</a></li><li><a href="/tags/xoops.html">XOOPS</a> (1)</a></li><li><a href="/tags/tsurezure.html">TsureZure</a> (8)</a></li><li><a href="/tags/bug.html">bug</a> (3)</a></li><li><a href="/tags/wordpress.html">wordpress</a> (6)</a></li><li><a href="/tags/funny.html">funny</a> (2)</a></li><li><a href="/tags/apache.html">apache</a> (1)</a></li><li><a href="/tags/php.html">PHP</a> (13)</a></li><li><a href="/tags/fedoracore.html">FedoraCore</a> (7)</a></li><li><a href="/tags/mysql.html">MySQL</a> (1)</a></li><li><a href="/tags/proftpd.html">proftpd</a> (2)</a></li><li><a href="/tags/virtualpc.html">VirtualPC</a> (3)</a></li><li><a href="/tags/java.html">Java</a> (4)</a></li><li><a href="/tags/x-html-css.html">(X)HTML+CSS</a> (6)</a></li><li><a href="/tags/linux.html">Linux</a> (26)</a></li><li><a href="/tags/backtrack.html">backtrack</a> (3)</a></li><li><a href="/tags/crack.html">crack</a> (3)</a></li><li><a href="/tags/hack.html">hack</a> (4)</a></li><li><a href="/tags/centos.html">CentOS</a> (5)</a></li><li><a href="/tags/movabletype.html">MovableType</a> (1)</a></li><li><a href="/tags/actionscript3.html">ActionScript3</a> (4)</a></li><li><a href="/tags/flash.html">Flash</a> (9)</a></li><li><a href="/tags/fedora.html">Fedora</a> (2)</a></li><li><a href="/tags/aliases.html">aliases</a> (1)</a></li><li><a href="/tags/sendmail.html">sendmail</a> (3)</a></li><li><a href="/tags/eva.html">eva</a> (2)</a></li><li><a href="/tags/pear.html">pear</a> (2)</a></li><li><a href="/tags/adobe-air.html">Adobe AIR</a> (1)</a></li><li><a href="/tags/aptana.html">Aptana</a> (2)</a></li><li><a href="/tags/android.html">Android</a> (4)</a></li><li><a href="/tags/oop.html">OOP</a> (1)</a></li><li><a href="/tags/api.html">API</a> (2)</a></li><li><a href="/tags/bash.html">bash</a> (2)</a></li><li><a href="/tags/adobe.html">Adobe</a> (1)</a></li><li><a href="/tags/ruby.html">Ruby</a> (12)</a></li><li><a href="/tags/美人時計.html">美人時計</a> (8)</a></li><li><a href="/tags/web-service.html">web service</a> (2)</a></li><li><a href="/tags/twitter.html">twitter</a> (1)</a></li><li><a href="/tags/tripwire.html">Tripwire</a> (1)</a></li><li><a href="/tags/ipad.html">iPad</a> (5)</a></li><li><a href="/tags/iphone.html">iPhone</a> (5)</a></li><li><a href="/tags/macosx.html">MacOSX</a> (4)</a></li><li><a href="/tags/objective-c.html">Objective-C</a> (4)</a></li><li><a href="/tags/zsh.html">zsh</a> (2)</a></li><li><a href="/tags/c.html">C</a> (1)</a></li><li><a href="/tags/spamassassin.html">Spamassassin</a> (1)</a></li><li><a href="/tags/xcode.html">Xcode</a> (1)</a></li><li><a href="/tags/rsync.html">Rsync</a> (1)</a></li><li><a href="/tags/postgresql.html">PostgreSQL</a> (1)</a></li><li><a href="/tags/guruplug.html">GuruPlug</a> (1)</a></li><li><a href="/tags/arduino.html">Arduino</a> (1)</a></li><li><a href="/tags/processing.html">Processing</a> (7)</a></li><li><a href="/tags/smartphone.html">smartphone</a> (2)</a></li><li><a href="/tags/ruby-on-rails.html">Ruby on Rails</a> (5)</a></li><li><a href="/tags/kinect.html">kinect</a> (1)</a></li><li><a href="/tags/openframeworks.html">openFrameworks</a> (1)</a></li><li><a href="/tags/ms-dos.html">MS-DOS</a> (1)</a></li><li><a href="/tags/powershell.html">Powershell</a> (1)</a></li><li><a href="/tags/python.html">Python</a> (2)</a></li><li><a href="/tags/titanium.html">Titanium</a> (1)</a></li><li><a href="/tags/google-app-engine.html">Google App Engine</a> (1)</a></li><li><a href="/tags/html5.html">HTML5</a> (2)</a></li><li><a href="/tags/jquery.html">jQuery</a> (4)</a></li><li><a href="/tags/responsive.html">responsive</a> (1)</a></li><li><a href="/tags/imagemagick.html">ImageMagick</a> (1)</a></li><li><a href="/tags/paas.html">PaaS</a> (1)</a></li><li><a href="/tags/redmine.html">Redmine</a> (1)</a></li><li><a href="/tags/roomba.html">roomba</a> (1)</a></li><li><a href="/tags/canvas.html">canvas</a> (1)</a></li><li><a href="/tags/pavuk.html">pavuk</a> (1)</a></li><li><a href="/tags/wget.html">wget</a> (1)</a></li><li><a href="/tags/find.html">find</a> (1)</a></li><li><a href="/tags/xargs.html">xargs</a> (1)</a></li><li><a href="/tags/css3.html">CSS3</a> (1)</a></li><li><a href="/tags/coffeescript.html">CoffeeScript</a> (1)</a></li><li><a href="/tags/grunt.html">Grunt</a> (1)</a></li><li><a href="/tags/sass-compass.html">Sass/Compass</a> (1)</a></li><li><a href="/tags/typescript.html">TypeScript</a> (2)</a></li><li><a href="/tags/middleman.html">middleman</a> (1)</a></li><li><a href="/tags/cygwin.html">cygwin</a> (1)</a></li><li><a href="/tags/typescript.html">typescript</a> (1)</a></li><li><a href="/tags/リニューアル.html">リニューアル</a> (1)</a></li><li><a href="/tags/js.html">JS</a> (1)</a></li><li><a href="/tags/cabinjs.html">CabinJS</a> (1)</a></li><li><a href="/tags/git.html">Git</a> (1)</a></li><li><a href="/tags/sass.html">sass</a> (1)</a></li><li><a href="/tags/scss.html">scss</a> (1)</a></li><li><a href="/tags/rails.html">Rails</a> (1)</a></li><li><a href="/tags/compass.html">compass</a> (1)</a></li><li><a href="/tags/martini.html">martini</a> (1)</a></li><li><a href="/tags/go.html">Go</a> (5)</a></li><li><a href="/tags/golang.html">golang</a> (2)</a></li><li><a href="/tags/gom.html">gom</a> (1)</a></li><li><a href="/tags/go.html">GO</a> (1)</a></li><li><a href="/tags/meteor.html">meteor</a> (1)</a></li><li><a href="/tags/edison.html">Edison</a> (1)</a></li><li><a href="/tags/iot.html">IOT</a> (1)</a></li><li><a href="/tags/github.html">GitHub</a> (1)</a></li><li><a href="/tags/github-pages.html">GitHub Pages</a> (1)</a></li><li><a href="/tags/gnu.html">GNU</a> (1)</a></li><li><a href="/tags/coreutils.html">coreutils</a> (1)</a></li><li><a href="/tags/raspberrypi.html">RaspberryPi</a> (1)</a></li><li><a href="/tags/raspbian.html">raspbian</a> (1)</a></li><li><a href="/tags/linux.html">linux</a> (1)</a></li><li><a href="/tags/golang.html">Golang</a> (4)</a></li></ul></section><section class="article-list"><h2>By Year</h2><ul class="years"><li><a href="/2015.html">2015</a> (4)</a></li><li><a href="/2014.html">2014</a> (17)</a></li><li><a href="/2013.html">2013</a> (4)</a></li><li><a href="/2012.html">2012</a> (8)</a></li><li><a href="/2011.html">2011</a> (20)</a></li><li><a href="/2010.html">2010</a> (38)</a></li><li><a href="/2009.html">2009</a> (45)</a></li><li><a href="/2008.html">2008</a> (31)</a></li><li><a href="/2007.html">2007</a> (15)</a></li></ul></section></div></aside><footer class="footer"><p class="copyright">&copy; funnythingz</p></footer><script>
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-1882060-2']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+       })();
+     </script></body></html>

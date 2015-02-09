@@ -1,0 +1,29 @@
+秋葉原のマルツ本店でRaspberry Pi B+ を買ってきました。千石通商でも売ってましたがマルツの方が安かったのでマルツで買いました。
+
+Raspberry Pi で使えるOSはRaspbianとPidoraと他にいろいろあるのですが、Fedoraの方が好きなので、Pidoraをセットアップしてみます。
+
+
+TODO: SDカード確認
+
+```
+$ df -h
+Filesystem      Size   Used  Avail Capacity   iused    ifree %iused  Mounted on
+...
+/dev/disk1s1    15Gi  2.3Mi   15Gi     1%         0        0  100%   /Volumes/NO NAME
+```
+
+TODO: ddコマンドでファイルを展開してコピー
+
+```
+$ sudo dd bs=1m if=Pidora-2014-R3.img of=/dev/rdisk1s1
+Password:
+2067+1 records in
+2067+1 records out
+2167788544 bytes transferred in 215.907210 secs (10040371 bytes/sec)
+```
+
+TODO: ディスクの取り出し
+
+```
+$ sudo diskutil umountdisk /dev/disk1s1
+```
