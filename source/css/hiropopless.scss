@@ -110,10 +110,19 @@ li {
 }
 .entry,
 .entries {
+  > h2 {
+    font-size: 140%;
+
+    &:first-child {
+      font-size: 160%;
+    }
+  }
+
   padding-bottom: 1.5em;
   margin-bottom: 1.5em;
   border-bottom: solid 1px #dedede;
 }
+
 .aside {
   .aside-wrapper {
     @extend %wrapper;
@@ -128,10 +137,6 @@ li {
 }
 
 .articles {
-  h2 {
-    font-size: 140%;
-  }
-
   li {
     margin-bottom: .5em;
 
