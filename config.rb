@@ -2,17 +2,16 @@
 # Blog settings
 ###
 
-# Time.zone = "UTC"
+Time.zone = 'Tokyo'
 
 activate :blog do |blog|
-
-  blog.name = "hiropopless"
+  blog.name = 'hiropopless'
 
   # This will add a prefix to all links, template references and source paths
   # blog.prefix = "blog"
 
   # blog.permalink = "{year}/{month}/{day}/{title}.html"
-  blog.permalink = "archives/{id}.html"
+  blog.permalink = 'archives/{id}.html'
 
   # Matcher for blog source files
   # blog.sources = "{year}-{month}-{day}-{title}.html"
@@ -27,25 +26,25 @@ activate :blog do |blog|
 
   # blog.default_extension = ".markdown"
 
-  blog.tag_template = "tag.html"
-  blog.calendar_template = "calendar.html"
+  blog.tag_template = 'tag.html'
+  blog.calendar_template = 'calendar.html'
 
   # Enable pagination
   blog.paginate = true
   blog.per_page = 10
-  blog.page_link = "page/{num}"
+  blog.page_link = 'page/{num}'
 end
 
-page "/feed.xml", layout: false
+page '/feed.xml', layout: false
 
 ###
 # Compass
 ###
 
 # Change Compass configuration
-# compass_config do |config|
-#   config.output_style = :compact
-# end
+compass_config do |config|
+  config.output_style = :compact
+end
 
 ###
 # Page options, layouts, aliases and proxies
@@ -86,9 +85,7 @@ page "/feed.xml", layout: false
 # end
 
 set :css_dir, 'css'
-
 set :js_dir, 'js'
-
 set :images_dir, 'imgs'
 
 # Build-specific configuration
@@ -118,15 +115,15 @@ end
 
 # Markdown
 set :markdown_engine, :redcarpet
-set :markdown, :fenced_code_blocks => true, :smartypants => true
+set :markdown, fenced_code_blocks: true, smartypants: true
 
 # Code highlighting
 activate :rouge_syntax
 
 # slim
-set :slim, { :pretty => true, :sort_attrs => false, :format => :html5 }
+set :slim,  pretty: true, sort_attrs: false, format: :html5
 
 # minify
 configure :build do
-  activate :minify_html, :remove_quotes => false, :remove_intertag_spaces => true
+  activate :minify_html, remove_quotes: false, remove_intertag_spaces: true
 end
