@@ -1,7 +1,7 @@
 ---
 id: 969
 title: WindowsにCygwin入れてSass/Compass/TypeScript/Gruntな環境を構築してみた
-date: 2014-03-19 20:05 UTC
+date: 2014-03-19 20:05
 tags:
 - cygwin
 ---
