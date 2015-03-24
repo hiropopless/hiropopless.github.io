@@ -1,0 +1,59 @@
+---
+title: 美人時計のgemつくった
+date: 2015-03-25 00:30 JST
+tags:
+  - 美人時計
+---
+
+Hello, world. funnythingzです。めんどくさすぎてブログを放置していました。明日から本気出す。
+
+プルリクにLGTMするときに美人時計を表示したいなと思ったのでなんとなく[bijint](https://github.com/funnythingz/bijint)というgemをつくってみました。けっこう適当です。
+
+Chromeエクステンションとかまではつくるのがめんどくさかったのでとりあえずコマンドベースで美人時計の画像パスのマークダウンとか生成してくれます。あまり難しいことはしていません。
+
+## bijintをインストールする
+
+```
+$ gem install bijint
+```
+
+とっても簡単インストールです。
+
+## 使い方
+
+一番シンプルなコマンドです。今の時間の画像パスを生成します。
+
+```
+$ bijint
+http://www.bijint.com/assets/pict/tokyo/pc/0039.jpg
+```
+
+ランダムな時間の画像パスを生成します。
+
+```
+$ bijint random
+http://www.bijint.com/assets/pict/tokyo/pc/1530.jpg
+```
+
+今の時間の画像パスをマークダウン形式で生成してくれます。
+LGTMでよく使うのでコマンド名もlgtmにしてしまいました。
+
+```
+$ bijint lgtm
+[![bijint](http://www.bijint.com/assets/pict/tokyo/pc/0043.jpg)](http://www.bijint.com/assets/pict/tokyo/pc/0043.jpg)
+```
+
+ランダムな時間のマークダウン形式の画像パスを生成してくれます。
+
+```
+$ bijint lgtm_random
+[![bijint](http://www.bijint.com/assets/pict/tokyo/pc/1407.jpg)](http://www.bijint.com/assets/pict/tokyo/pc/1407.jpg)
+```
+
+`pbcopy` と組み合わせて使うとクリップボードにコピーしてくれるので貼り付けも簡単です。
+
+```
+$ bijint | pbcopy
+```
+
+それでは良き美人時計ライフを！
