@@ -95,7 +95,9 @@ html
                 |  (#{articles.size})
     footer.footer
       p.copyright
-        | &copy; funnythingz
+        | &copy;&nbsp;
+        = link_to 'http://www.funnythingz.com', target: '_blank'
+          | funnythingz
     javascript:
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-1882060-2']);
