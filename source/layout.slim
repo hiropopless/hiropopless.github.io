@@ -22,8 +22,8 @@ html
   body
     header.header
       h1.hero-site
-        a[href="http://hiropo.co.uk"]
-          | ひろぽっぽれす - hiropopless
+        = link_to '"http://hiropo.co.uk"'
+          | ひろぽっぽれす
       p.description-site
         | いくらが大好きです。Webの開発やってます。
       ul.follow-links
@@ -34,7 +34,7 @@ html
             !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
         li
           iframe[src="http://ghbtns.com/github-btn.html?user=funnythingz&type=follow&count=false" allowtransparency="true" frameborder="0" scrolling="0" width="165" height="20"]
-      figure.figure-profile
+      /figure.figure-profile
         img[src="/imgs/archives/2013/08/6S6A7152_12.jpg"]
     section#main.content[role="main"]
       section.entries
