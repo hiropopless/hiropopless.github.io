@@ -1,29 +1,164 @@
-<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0, maximum-scale=10"><meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1'><title>ひろぽっぽれす - hiropopless - いくらが大好きです。Webの開発やってます。</title><link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/feed.xml"/><link href='//fonts.googleapis.com/css?family=Raleway' rel='stylesheet'><link href="/css/hiropopless.css" rel="stylesheet"><meta property="og:type" content="article"><meta property="og:description" content="いくらが大好きです。Webの開発やってます。"><meta property="og:site_name" content="ひろぽっぽれす"><meta property="og:title" content="ひろぽっぽれす"><meta property="og:url" content="http://hiropo.co.uk"></head><body><header class="header"><h1 class="hero-site"><a href="//hiropo.co.uk">ひろぽっぽれす - hiropopless</a></h1><p class="description-site">いくらが大好きです。Webの開発やってます。</p><ul class="follow-links"><li><a href="https://twitter.com/funnythingz" class="twitter-follow-button" data-show-count="false">Follow @funnythingz</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></li><li><iframe src="//ghbtns.com/github-btn.html?user=funnythingz&type=follow&count=false" allowtransparency="true" frameborder="0" scrolling="0" width="165" height="20"></iframe></li></ul><figure class="figure-profile"><img src="/imgs/archives/2013/08/6S6A7152_12.jpg"></figure></header><section id="main" class="content" role="main"><section class="entries"><p class="page-number">Page 6 of 19</p><ul class="pagenations"><li class="old-page"><a href="/page/7/">Old entry</a></li><li class="new-page"><a href="/page/5/">New entry</a></li></ul><article class="entry"><h2><a href="/archives/587.html">コマンドプロンプトで.svnディレクトリを再帰的に削除</a></h2><ul><li class="date"> 2011.03.08 </li></ul><ul class="external-link"><li><a href="//b.hatena.ne.jp/entry/http://hiropo.co.uk/archives/587.html" class="hatena-bookmark-button" data-hatena-bookmark-title="コマンドプロンプトで.svnディレクトリを再帰的に削除" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;"/></a><script src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script></li><li><div class="fb-like" data-href="//hiropo.co.uk/archives/587.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div><div id="fb-root"></div><script>(function(d, s, id) {
-          var js, fjs = d.getElementsByTagName(s)[0];
-          if (d.getElementById(id)) return;
-          js = d.createElement(s); js.id = id;
-          js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=1386417958332605&version=v2.0";
-          fjs.parentNode.insertBefore(js, fjs);
-          }(document, 'script', 'facebook-jssdk'));</script></li><li><a class="twitter-share-button" href="https://twitter.com/share" data-url="http://hiropo.co.uk/archives/587.html" data-via="funnythingz" data-text="コマンドプロンプトで.svnディレクトリを再帰的に削除"> Tweet </a><script>
+<!DOCTYPE html><html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0, maximum-scale=10"/><meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1"/><title>ひろぽっぽれす - いくらが大好きです。Webの開発やってます</title><link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/feed.xml"/><link href="http://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"/><link href="/css/hiropopless.css" rel="stylesheet"/><meta property="og:type" content="article"/><meta property="og:description" content="いくらが大好きです。Webの開発やってます。"/><meta property="og:site_name" content="ひろぽっぽれす"/><meta property="og:title" content="ひろぽっぽれす"/><meta property="og:url" content="http://hiropo.co.uk"/></head><body><header class="header"><h1 class="hero-site"><a href="http://hiropo.co.uk"> ひろぽっぽれす</a></h1><p class="description-site"> いくらが大好きです。Webの開発やってます。 </p><ul class="follow-links"><li><a class="twitter-follow-button" href="https://twitter.com/funnythingz" data-show-count="false">Follow @funnythingz</a><script>
+            !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+          </script></li><li><iframe src="http://ghbtns.com/github-btn.html?user=funnythingz&type=follow&count=false" allowtransparency="true" frameborder="0" scrolling="0" width="165" height="20"></iframe></li></ul><figure class="figure-profile"><img src="/imgs/archives/2013/08/6S6A7152_12.jpg"/></figure></header><section id="main" class="content" role="main"><section class="entries"><ul class="pagenations"><li class="old-page"><a href="/page/7/">Old entry</a></li><li class="new-page"><a href="/page/5/">New entry</a></li></ul><article class="entry"><h2><a href="/archives/718.html">MacPortsをアンインストールし、Homebrewをインストールする</a></h2><ul><li class="date"> 2011.09.03 </li></ul><ul class="external-link"><li><a href="http://b.hatena.ne.jp/entry/http://hiropo.co.uk/archives/718.html" class="hatena-bookmark-button" data-hatena-bookmark-title="MacPortsをアンインストールし、Homebrewをインストールする" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;"/><script src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script></a></li><li><div class="fb-like" data-href="http://hiropo.co.uk/archives/718.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div><div id="fb-root"></div><script>
+        (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=1386417958332605&version=v2.0";
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+      </script></li><li><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://hiropo.co.uk/archives/718.html" data-via="funnythingz" data-text="MacPortsをアンインストールし、Homebrewをインストールする"></a><script>
         window.twttr=(function(d,s,id){var t,js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id)){return}js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);return window.twttr||(t={_e:[],ready:function(f){t._e.push(f)}})}(document,"script","twitter-wjs"));
-        </script></li></ul><p>Subversionを使ってる方々、.svnディレクトリを全部削除したいって思ったことはないでしょうか。 僕はしょっちゅうあります。最近はgitを使っているので.svnの呪縛から逃れましたが、まだまだsvnを使うことも多いです。</p><p>そこで、再帰的に一気に.svnディレクトリを削除するコマンドを書いておきます。</p><pre class="highlight shell"><code><span class="k">for</span> /f <span class="s2">"tokens=*"</span> %d <span class="k">in</span> <span class="o">(</span><span class="s1">'"dir /b/s/a | findstr /r \.svn$"'</span><span class="o">)</span> <span class="k">do </span>rmdir /q/s <span class="s2">"%d"</span>
-</code></pre><p>これだけです。 削除したいルートディレクトリに移動してからこのコマンドを使うとキレイに.svnディレクトリを削除してくれます。 失敗しないようにバックアップをとってから削除することをおすすめします。</p><p>ではではー。</p></article><article class="entry"><h2><a href="/archives/585.html">Androidでベーシック認証をかけるとJSが文字化けする</a></h2><ul><li class="date"> 2011.03.03 </li></ul><ul class="external-link"><li><a href="//b.hatena.ne.jp/entry/http://hiropo.co.uk/archives/585.html" class="hatena-bookmark-button" data-hatena-bookmark-title="Androidでベーシック認証をかけるとJSが文字化けする" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;"/></a><script src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script></li><li><div class="fb-like" data-href="//hiropo.co.uk/archives/585.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div><div id="fb-root"></div><script>(function(d, s, id) {
-          var js, fjs = d.getElementsByTagName(s)[0];
-          if (d.getElementById(id)) return;
-          js = d.createElement(s); js.id = id;
-          js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=1386417958332605&version=v2.0";
-          fjs.parentNode.insertBefore(js, fjs);
-          }(document, 'script', 'facebook-jssdk'));</script></li><li><a class="twitter-share-button" href="https://twitter.com/share" data-url="http://hiropo.co.uk/archives/585.html" data-via="funnythingz" data-text="Androidでベーシック認証をかけるとJSが文字化けする"> Tweet </a><script>
+      </script></li></ul><p>MacPortsよりHomebrewの方がおすすめということで、MacPortsをアンインストールし、Homebrewをインストールする。</p><p>下記サイトを参考にします。 <a title="http://tukaikta.blog135.fc2.com/blog-entry-183.html" href="http://tukaikta.blog135.fc2.com/blog-entry-183.html">http://tukaikta.blog135.fc2.com/blog-entry-183.html</a></p><h3>MacPortsのアンインストール</h3><p>MacPortsと不要なアカウントを削除する。</p><pre class="highlight shell"><code><span class="gp">% </span>sudo port -f uninstall installed
+<span class="gp">% </span>sudo dscl . -delete /Users/macports
+<span class="gp">% </span>sudo dscl . -delete /Groups/macports
+</code></pre><h3>Homebrewをインストールする</h3><pre class="highlight shell"><code><span class="gp">% </span>ruby -e <span class="s2">"</span><span class="k">$(</span>curl -fsSL https://gist.github.com/raw/323731/install_homebrew.rb<span class="k">)</span><span class="s2">"</span>
+</code></pre><h3>Homebrewをアンインストールする順序も書いておく</h3><pre class="highlight shell"><code><span class="gp">$ </span><span class="nb">cd</span> <span class="sb">`</span>brew --prefix<span class="sb">`</span>
+<span class="gp">$ </span>rm -rf Cellar
+<span class="gp">$ </span>brew prune
+<span class="gp">$ </span>rm <span class="sb">`</span>git ls-files<span class="sb">`</span>
+<span class="gp">$ </span>rmdir Library/Homebrew Library/Aliases Library/Formula Library/Contributions
+<span class="gp">$ </span>rm -rf .git
+<span class="gp">$ </span>rm -rf ~/Library/Caches/Homebrew
+</code></pre></article><article class="entry"><h2><a href="/archives/715.html">iMac SnowLeopard にwgetをインストールする</a></h2><ul><li class="date"> 2011.09.03 </li></ul><ul class="external-link"><li><a href="http://b.hatena.ne.jp/entry/http://hiropo.co.uk/archives/715.html" class="hatena-bookmark-button" data-hatena-bookmark-title="iMac SnowLeopard にwgetをインストールする" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;"/><script src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script></a></li><li><div class="fb-like" data-href="http://hiropo.co.uk/archives/715.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div><div id="fb-root"></div><script>
+        (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=1386417958332605&version=v2.0";
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+      </script></li><li><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://hiropo.co.uk/archives/715.html" data-via="funnythingz" data-text="iMac SnowLeopard にwgetをインストールする"></a><script>
         window.twttr=(function(d,s,id){var t,js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id)){return}js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);return window.twttr||(t={_e:[],ready:function(f){t._e.push(f)}})}(document,"script","twitter-wjs"));
-        </script></li></ul><p>あまりに何も書いていなかったので久しぶりに書こうかと。 最近はすっかりスマートフォン対応の案件が多くなってきたのでちょろちょろとスマフォ対応についても書いていこうかなと思います。</p><p>今回は結構気づきにくいバグがあったのでそれを書きます。</p><p>Android2.2 で外部から読み込んでいるJSがきちんと動作しないことがありました。どうも文字コードがおかしくなってるのかなんなのかわかりませんがJSが壊れます。</p><p>原因はなんとベーシック認証！ベーシック認証を外せば特に問題ないのですが、ベーシック認証をかけた瞬間からJSを正常によまなくなります。まったくもって意味不明です。NexusS(Android2.3)ではよめたのですが、文字化けは起こさないものの、何らかの動作がおかしくなります。結局Android全般ダメっぽいです。</p><p>apacheのバグなのか、Androidのバグかは定かではありませんが、開発段階ではベーシック認証をかかった環境での開発が多々あると思いますので、スマフォ対応の案件をやる方は注意してください。</p></article><article class="entry"><h2><a href="/archives/581.html">Ruby1.9.2 をインストールする。</a></h2><ul><li class="date"> 2011.01.19 </li></ul><ul class="external-link"><li><a href="//b.hatena.ne.jp/entry/http://hiropo.co.uk/archives/581.html" class="hatena-bookmark-button" data-hatena-bookmark-title="Ruby1.9.2 をインストールする。" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;"/></a><script src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script></li><li><div class="fb-like" data-href="//hiropo.co.uk/archives/581.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div><div id="fb-root"></div><script>(function(d, s, id) {
-          var js, fjs = d.getElementsByTagName(s)[0];
-          if (d.getElementById(id)) return;
-          js = d.createElement(s); js.id = id;
-          js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=1386417958332605&version=v2.0";
-          fjs.parentNode.insertBefore(js, fjs);
-          }(document, 'script', 'facebook-jssdk'));</script></li><li><a class="twitter-share-button" href="https://twitter.com/share" data-url="http://hiropo.co.uk/archives/581.html" data-via="funnythingz" data-text="Ruby1.9.2 をインストールする。"> Tweet </a><script>
+      </script></li></ul><p>MacOSX SnowLeopardちゃん、Curlちゃんは入ってるんだけど、wgetちゃんが入ってない事実…。</p><p>ということでwgetをインストールします。</p><p>GNUからwgetの最新版をダウンロードします。 <a title="wget最新版はこちらからチェック" href="ftp://ftp.gnu.org/pub/gnu/wget/">wget最新版はこちらからチェック</a></p><pre class="highlight shell"><code><span class="gp">$ </span>sudo su -
+<span class="c"># curl -O ftp://ftp.gnu.org/pub/gnu/wget/wget-1.9.1.tar.gz</span>
+<span class="c"># tar xvfz wget-1.9.1.tar.gz</span>
+<span class="c"># cd wget-1.9.1</span>
+<span class="c"># ./configure</span>
+<span class="c"># make</span>
+<span class="c"># make install</span>
+</code></pre><p>これでwgetちゃんが使えるようになりました！</p></article><article class="entry"><h2><a href="/archives/693.html">Titanium Studio でデスクトップアプリ開発に入門してみた</a></h2><ul><li class="date"> 2011.09.02 </li></ul><ul class="external-link"><li><a href="http://b.hatena.ne.jp/entry/http://hiropo.co.uk/archives/693.html" class="hatena-bookmark-button" data-hatena-bookmark-title="Titanium Studio でデスクトップアプリ開発に入門してみた" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;"/><script src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script></a></li><li><div class="fb-like" data-href="http://hiropo.co.uk/archives/693.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div><div id="fb-root"></div><script>
+        (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=1386417958332605&version=v2.0";
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+      </script></li><li><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://hiropo.co.uk/archives/693.html" data-via="funnythingz" data-text="Titanium Studio でデスクトップアプリ開発に入門してみた"></a><script>
         window.twttr=(function(d,s,id){var t,js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id)){return}js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);return window.twttr||(t={_e:[],ready:function(f){t._e.push(f)}})}(document,"script","twitter-wjs"));
-        </script></li></ul><p>いつもyumでさらっとアプリケーションをインストールしているのでたまにはちょっと手間かけて最新版をソースからコンパイルしてインストールすることにする。あと最新版のRails3.x系を使いたいということで。</p><p>Rails環境を整える準備として、RubyとRubyGemsをインストールする。</p><p>まずはRuby1.9.2 をインストール。 <a href="//www.ruby-lang.org/ja/downloads/">Ruby最新版はここで確認する。</a></p><pre class="highlight shell"><code><span class="c"># wget ftp://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.2-p136.tar.gz</span>
+      </script></li></ul><p>こんぬつわ。ブログを放置してから早半年弱…。完全に放置してしまいました。 技術的にはいろんなことできるようになったのですが全然メモってませんでした…。 反省してます…。</p><p>ということできちんとブログを買いていこうかなと思い、最近ちょっとやってみようと思ったのが、Titanium Studio によるデスクトップアプリケーション開発！ なんと、みんなが大好きなHTML5+CSS3+JavaScript+Ruby+Python+PHP と、最近流行のweb系言語がだいたい使えちゃいます。Adobe AIRよりもこっちの方が良いんじゃないかって思ってみたり。</p><p>Titanium Studio は、Aptanaを買収し、AptanaとTitaniumががっちゃんこしたもの（？）みたいです。 Titanium はiPhone, Android でクロスデバイス開発をするための開発ツールで、iPhoneアプリやAndroidアプリを開発したことある人は知っているであろうと思うのでここでは割愛します。</p><p>それでは早速Titanium Studio でHello Worldしてみます。</p><p>まずはTitanium Studioをユーザー登録してダウンロードします。 <a title="http://www.appcelerator.com/" href="http://www.appcelerator.com/">http://www.appcelerator.com/</a></p><h3>Titanium Studio を起動し、プロジェクトを新規でつくる</h3><p><a href="/imgs/archives/2011/09/754de3cf2d164ca350e6ca3eea66196c1.png"><img src="/imgs/archives/2011/09/754de3cf2d164ca350e6ca3eea66196c1.png" alt="" title="CreateProject" width="228" height="125" class="alignnone size-full wp-image-696"/></a></p><h3>Titanium Desctop Project をつくる</h3><p><a href="/imgs/archives/2011/09/65da3bfd87ed0a14e1c66afa31b6fa45.png"><img src="/imgs/archives/2011/09/65da3bfd87ed0a14e1c66afa31b6fa45.png" alt="" title="Titanium Desctop Project" width="527" height="504" class="alignnone size-full wp-image-698"/></a></p><h3>Project Name を設定し、使用言語にRuby, Python, PHP をチェック</h3><p><a href="/imgs/archives/2011/09/583944337d08aed0c389ad1165e279fb.png"><img src="/imgs/archives/2011/09/583944337d08aed0c389ad1165e279fb.png" alt="" title="Use Language" width="532" height="501" class="alignnone size-full wp-image-699"/></a></p><h3>アプリケーション情報を設定する</h3><p><a href="/imgs/archives/2011/09/b36f7164a016a593dde3baed5a14b240.png"><img src="/imgs/archives/2011/09/b36f7164a016a593dde3baed5a14b240.png" alt="" title="Config" width="408" height="475" class="alignnone size-full wp-image-703"/></a></p><h3>ソースコードを書くために /Resources/index.html を開く</h3><p><a href="/imgs/archives/2011/09/3ca357de7e930f7da506a4b426695a86.png"><img src="/imgs/archives/2011/09/3ca357de7e930f7da506a4b426695a86.png" alt="" title="source" width="240" height="213" class="alignnone size-full wp-image-701"/></a></p><h3>ソースコードを書く</h3><pre class="highlight html"><code><span class="cp">&lt;!Doctype html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"ja"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;title&gt;</span>test<span class="nt">&lt;/title&gt;</span>
+        <span class="nt">&lt;style </span><span class="na">type=</span><span class="s">"text/css"</span><span class="nt">&gt;</span>
+        <span class="nt">body</span> <span class="p">{</span>
+            <span class="nl">background</span><span class="p">:</span> <span class="m">#fff</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="nt">&lt;/style&gt;</span>
+    <span class="nt">&lt;/head&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+        <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/python"</span><span class="nt">&gt;</span>
+            <span class="nx">def</span> <span class="nx">pyFunc</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span><span class="err">:</span>
+                <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span>
+            <span class="nx">pyFunc</span><span class="p">(</span><span class="s2">"python"</span><span class="p">)</span>
+        <span class="nt">&lt;/script&gt;</span>
+        <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/ruby"</span><span class="nt">&gt;</span>
+            <span class="nx">def</span> <span class="nx">rbFunc</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span>
+                <span class="nx">pyFunc</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span>
+            <span class="nx">end</span>
+            <span class="nx">rbFunc</span><span class="p">(</span><span class="s2">"ruby"</span><span class="p">)</span>
+        <span class="nt">&lt;/script&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre><h3>アプリを実行してみる</h3><p><a href="/imgs/archives/2011/09/23951a9f864ad6d1ade13d6f72a46dea.png"><img src="/imgs/archives/2011/09/23951a9f864ad6d1ade13d6f72a46dea.png" alt="" title="実行" width="331" height="173" class="alignnone size-full wp-image-706"/></a></p><p><a href="/imgs/archives/2011/09/9fa470a3d698a9d2c2414894676ee9af.png"><img src="/imgs/archives/2011/09/9fa470a3d698a9d2c2414894676ee9af.png" alt="" title="アプリ起動" width="717" height="507" class="alignnone size-full wp-image-707"/></a></p><p>デスクトップアプリができちゃった！</p><p>Pythonの中にRubyを書いたりJS書いたり何だか何でもアリのカオス状態ですが、面白いことできそうな予感がぷんぷんします。こういうの嫌いじゃない。</p></article><article class="entry"><h2><a href="/archives/652.html">配列を拡張してみた。Array.shuffle() Array.clone() - JavaScript</a></h2><ul><li class="date"> 2011.04.26 </li></ul><ul class="external-link"><li><a href="http://b.hatena.ne.jp/entry/http://hiropo.co.uk/archives/652.html" class="hatena-bookmark-button" data-hatena-bookmark-title="配列を拡張してみた。Array.shuffle() Array.clone() - JavaScript" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;"/><script src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script></a></li><li><div class="fb-like" data-href="http://hiropo.co.uk/archives/652.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div><div id="fb-root"></div><script>
+        (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=1386417958332605&version=v2.0";
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+      </script></li><li><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://hiropo.co.uk/archives/652.html" data-via="funnythingz" data-text="配列を拡張してみた。Array.shuffle() Array.clone() - JavaScript"></a><script>
+        window.twttr=(function(d,s,id){var t,js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id)){return}js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);return window.twttr||(t={_e:[],ready:function(f){t._e.push(f)}})}(document,"script","twitter-wjs"));
+      </script></li></ul><p>こんにちは。最近あまり投稿していませんでした。</p><p>JavaScriptを拡張するのはあまり気が進まないのですが、ネイティブ実装がイケてない部分が多いので、もうがっつり拡張しまくったライブラリつくっても良いんじゃないかくらいに思っている今日この頃でございます。</p><p>今回は超絶によく使うArrayオブジェクト(配列)の拡張を書いておきます。</p><p>まずは配列のシャッフル。</p><pre class="highlight plaintext"><code>Array.shuffle()
+</code></pre><p>見たまんまです。このまま使います。ネイティブ実装にはないのでprototypeを使って拡張します。 アルゴリズムはシャッフル最速(？)と言われているFisher–Yatesアルゴリズムを使います。</p><p><a title="Fisher–Yatesアルゴリズムについて" href="http://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle">Fisher–Yatesアルゴリズムについて</a></p><p>JavaScriptの実装は下記の通り</p><pre class="highlight plaintext"><code>Array.prototype.shuffle = function() {
+    var i = this.length;
+    while(i){
+        var j = Math.floor(Math.random()*i);
+        var t = this[--i];
+        this[i] = this[j];
+        this[j] = t;
+    }
+    return this;
+}
+</code></pre><p>これで簡単に配列の中身をシャッフルできます。</p><p>次に配列のコピー(クローン)をつくるためのメソッド。</p><pre class="highlight plaintext"><code>Array.clone()
+</code></pre><p>JavaScriptの配列は別変数に代入した場合、それはコピーになるのではなく単純に元の配列オブジェクトを参照するだけになるので、コピーをつくりたい場合はいちいちループ文の中でpushしたりしなきゃならんのでめんどくさいのです。 それを一発で解決する方法が、Array.clone() をつくっちゃえば簡単だよねってことなのです。</p><p>実装はこちら</p><pre class="highlight plaintext"><code>Array.prototype.clone = function(){
+    return Array.apply(null,this);
+}
+</code></pre><p>これだけです。とてもシンプル。</p><p>Array.shuffle() と Array.clone() を両方の使い方はこちら。</p><pre class="highlight plaintext"><code>//配列hogeを生成
+var hoge = Array(1,2,3,4,5);
+//hogeのクローンfooを生成
+var foo = hoge.clone();
+//fooをシャッフルする
+foo.shuffle();
+
+console.log( hoge )     // [1,2,3,4,5]
+console.log( foo )       // [2,4,1,3,5]
+</code></pre><p>この2つとても便利ちゃんなのです。 JavaScriptはどんどん拡張しちゃえば良いと思います。</p></article><article class="entry"><h2><a href="/archives/589.html">Powershell でのシェルスクリプティング</a></h2><ul><li class="date"> 2011.03.08 </li></ul><ul class="external-link"><li><a href="http://b.hatena.ne.jp/entry/http://hiropo.co.uk/archives/589.html" class="hatena-bookmark-button" data-hatena-bookmark-title="Powershell でのシェルスクリプティング" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;"/><script src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script></a></li><li><div class="fb-like" data-href="http://hiropo.co.uk/archives/589.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div><div id="fb-root"></div><script>
+        (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=1386417958332605&version=v2.0";
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+      </script></li><li><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://hiropo.co.uk/archives/589.html" data-via="funnythingz" data-text="Powershell でのシェルスクリプティング"></a><script>
+        window.twttr=(function(d,s,id){var t,js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id)){return}js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);return window.twttr||(t={_e:[],ready:function(f){t._e.push(f)}})}(document,"script","twitter-wjs"));
+      </script></li></ul><p>連投です。 普段はLinux上でシェルスクリプティングをすることはありますが、あまりWindows上でやることがないのでちょっとやってみました。</p><p>MS-DOS使ってバッチファイル書いたりすることはありますが、コマンドも少なくいまいち使いにくい感が否めません。Linuxに慣れてる身としては、Powershellを使ってパワフルなシェルスクリプティングをやっちゃおうかと思います。</p><p>まずはPowershellがインストールされているかどうか確認しなくてはいけませんが、ここは割愛します。</p><p>1）MS-DOSプロンプトを開いて、Powershell を起動します。</p><pre class="highlight shell"><code>C:<span class="se">\D</span>ocuments and Settings<span class="se">\h</span>oge&gt; powershell
+Windows Powershell
+</code></pre><p><img src="/imgs/archives/2011/03/1.gif" alt="" title="1" class="alignnone size-full wp-image-590"/></p><p>2) Set-ExecutionPolicyコマンドを実行してps1ファイルをまま実行できるようにします。</p><pre class="highlight shell"><code>PS C:<span class="se">\D</span>ocuments and Settings<span class="se">\h</span>oge&gt; Set-ExecutionPolicy RemoteSigned
+PS C:<span class="se">\D</span>ocuments and Settings<span class="se">\h</span>oge&gt; Get-ExecutionPolicy
+RemoteSigned
+PS C:<span class="se">\D</span>ocuments and Settings<span class="se">\h</span>oge&gt;
+</code></pre><p><img src="/imgs/archives/2011/03/2.gif" alt="" title="2" class="alignnone size-full wp-image-591"/></p><p>3)テキストエディタでシェルスクリプトを書く。例としてtest.ps1 として保存して、シェルスクリプトを実行</p><pre class="highlight shell"><code>PS C:<span class="se">\D</span>ocuments and Settings<span class="se">\h</span>oge&gt; notepad
+PS C:<span class="se">\D</span>ocuments and Settings<span class="se">\h</span>oge&gt; .<span class="se">\t</span>est.ps1
+<span class="nb">test
+</span>PS C:<span class="se">\D</span>ocuments and Settings<span class="se">\h</span>oge&gt;
+</code></pre><p><img src="/imgs/archives/2011/03/3.gif" alt="" title="3" class="alignnone size-full wp-image-592"/></p><p>割と簡単にPowershellスクリプトが書けるので、GUIでのめんどくさい作業はどんどんシェルスクリプト書いて実行してしまえば良いと思う。</p></article><article class="entry"><h2><a href="/archives/587.html">コマンドプロンプトで.svnディレクトリを再帰的に削除</a></h2><ul><li class="date"> 2011.03.08 </li></ul><ul class="external-link"><li><a href="http://b.hatena.ne.jp/entry/http://hiropo.co.uk/archives/587.html" class="hatena-bookmark-button" data-hatena-bookmark-title="コマンドプロンプトで.svnディレクトリを再帰的に削除" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;"/><script src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script></a></li><li><div class="fb-like" data-href="http://hiropo.co.uk/archives/587.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div><div id="fb-root"></div><script>
+        (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=1386417958332605&version=v2.0";
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+      </script></li><li><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://hiropo.co.uk/archives/587.html" data-via="funnythingz" data-text="コマンドプロンプトで.svnディレクトリを再帰的に削除"></a><script>
+        window.twttr=(function(d,s,id){var t,js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id)){return}js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);return window.twttr||(t={_e:[],ready:function(f){t._e.push(f)}})}(document,"script","twitter-wjs"));
+      </script></li></ul><p>Subversionを使ってる方々、.svnディレクトリを全部削除したいって思ったことはないでしょうか。 僕はしょっちゅうあります。最近はgitを使っているので.svnの呪縛から逃れましたが、まだまだsvnを使うことも多いです。</p><p>そこで、再帰的に一気に.svnディレクトリを削除するコマンドを書いておきます。</p><pre class="highlight shell"><code><span class="k">for</span> /f <span class="s2">"tokens=*"</span> %d <span class="k">in</span> <span class="o">(</span><span class="s1">'"dir /b/s/a | findstr /r \.svn$"'</span><span class="o">)</span> <span class="k">do </span>rmdir /q/s <span class="s2">"%d"</span>
+</code></pre><p>これだけです。 削除したいルートディレクトリに移動してからこのコマンドを使うとキレイに.svnディレクトリを削除してくれます。 失敗しないようにバックアップをとってから削除することをおすすめします。</p><p>ではではー。</p></article><article class="entry"><h2><a href="/archives/585.html">Androidでベーシック認証をかけるとJSが文字化けする</a></h2><ul><li class="date"> 2011.03.03 </li></ul><ul class="external-link"><li><a href="http://b.hatena.ne.jp/entry/http://hiropo.co.uk/archives/585.html" class="hatena-bookmark-button" data-hatena-bookmark-title="Androidでベーシック認証をかけるとJSが文字化けする" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;"/><script src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script></a></li><li><div class="fb-like" data-href="http://hiropo.co.uk/archives/585.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div><div id="fb-root"></div><script>
+        (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=1386417958332605&version=v2.0";
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+      </script></li><li><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://hiropo.co.uk/archives/585.html" data-via="funnythingz" data-text="Androidでベーシック認証をかけるとJSが文字化けする"></a><script>
+        window.twttr=(function(d,s,id){var t,js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id)){return}js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);return window.twttr||(t={_e:[],ready:function(f){t._e.push(f)}})}(document,"script","twitter-wjs"));
+      </script></li></ul><p>あまりに何も書いていなかったので久しぶりに書こうかと。 最近はすっかりスマートフォン対応の案件が多くなってきたのでちょろちょろとスマフォ対応についても書いていこうかなと思います。</p><p>今回は結構気づきにくいバグがあったのでそれを書きます。</p><p>Android2.2 で外部から読み込んでいるJSがきちんと動作しないことがありました。どうも文字コードがおかしくなってるのかなんなのかわかりませんがJSが壊れます。</p><p>原因はなんとベーシック認証！ベーシック認証を外せば特に問題ないのですが、ベーシック認証をかけた瞬間からJSを正常によまなくなります。まったくもって意味不明です。NexusS(Android2.3)ではよめたのですが、文字化けは起こさないものの、何らかの動作がおかしくなります。結局Android全般ダメっぽいです。</p><p>apacheのバグなのか、Androidのバグかは定かではありませんが、開発段階ではベーシック認証をかかった環境での開発が多々あると思いますので、スマフォ対応の案件をやる方は注意してください。</p></article><article class="entry"><h2><a href="/archives/581.html">Ruby1.9.2 をインストールする。</a></h2><ul><li class="date"> 2011.01.19 </li></ul><ul class="external-link"><li><a href="http://b.hatena.ne.jp/entry/http://hiropo.co.uk/archives/581.html" class="hatena-bookmark-button" data-hatena-bookmark-title="Ruby1.9.2 をインストールする。" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;"/><script src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script></a></li><li><div class="fb-like" data-href="http://hiropo.co.uk/archives/581.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div><div id="fb-root"></div><script>
+        (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=1386417958332605&version=v2.0";
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+      </script></li><li><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://hiropo.co.uk/archives/581.html" data-via="funnythingz" data-text="Ruby1.9.2 をインストールする。"></a><script>
+        window.twttr=(function(d,s,id){var t,js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id)){return}js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);return window.twttr||(t={_e:[],ready:function(f){t._e.push(f)}})}(document,"script","twitter-wjs"));
+      </script></li></ul><p>いつもyumでさらっとアプリケーションをインストールしているのでたまにはちょっと手間かけて最新版をソースからコンパイルしてインストールすることにする。あと最新版のRails3.x系を使いたいということで。</p><p>Rails環境を整える準備として、RubyとRubyGemsをインストールする。</p><p>まずはRuby1.9.2 をインストール。 <a href="http://www.ruby-lang.org/ja/downloads/">Ruby最新版はここで確認する。</a></p><pre class="highlight shell"><code><span class="c"># wget ftp://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.2-p136.tar.gz</span>
 <span class="c"># tar xvzf ruby-1.9.2-p136.tar.gz</span>
 <span class="c"># cd ruby-1.9.2-p136</span>
 <span class="c"># ./configure</span>
@@ -48,15 +183,17 @@ ahya
 minitest <span class="o">(</span>1.6.0<span class="o">)</span>
 rake <span class="o">(</span>0.8.7<span class="o">)</span>
 rdoc <span class="o">(</span>2.5.8<span class="o">)</span>
-</code></pre><p>これでおｋ。</p></article><article class="entry"><h2><a href="/archives/576.html">OpenKinect と ofxKinect を導入してopenFrameworks でキネクトハック</a></h2><ul><li class="date"> 2010.11.24 </li></ul><ul class="external-link"><li><a href="//b.hatena.ne.jp/entry/http://hiropo.co.uk/archives/576.html" class="hatena-bookmark-button" data-hatena-bookmark-title="OpenKinect と ofxKinect を導入してopenFrameworks でキネクトハック" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;"/></a><script src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script></li><li><div class="fb-like" data-href="//hiropo.co.uk/archives/576.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div><div id="fb-root"></div><script>(function(d, s, id) {
-          var js, fjs = d.getElementsByTagName(s)[0];
-          if (d.getElementById(id)) return;
-          js = d.createElement(s); js.id = id;
-          js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=1386417958332605&version=v2.0";
-          fjs.parentNode.insertBefore(js, fjs);
-          }(document, 'script', 'facebook-jssdk'));</script></li><li><a class="twitter-share-button" href="https://twitter.com/share" data-url="http://hiropo.co.uk/archives/576.html" data-via="funnythingz" data-text="OpenKinect と ofxKinect を導入してopenFrameworks でキネクトハック"> Tweet </a><script>
+</code></pre><p>これでおｋ。</p></article><article class="entry"><h2><a href="/archives/576.html">OpenKinect と ofxKinect を導入してopenFrameworks でキネクトハック</a></h2><ul><li class="date"> 2010.11.24 </li></ul><ul class="external-link"><li><a href="http://b.hatena.ne.jp/entry/http://hiropo.co.uk/archives/576.html" class="hatena-bookmark-button" data-hatena-bookmark-title="OpenKinect と ofxKinect を導入してopenFrameworks でキネクトハック" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;"/><script src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script></a></li><li><div class="fb-like" data-href="http://hiropo.co.uk/archives/576.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div><div id="fb-root"></div><script>
+        (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=1386417958332605&version=v2.0";
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+      </script></li><li><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://hiropo.co.uk/archives/576.html" data-via="funnythingz" data-text="OpenKinect と ofxKinect を導入してopenFrameworks でキネクトハック"></a><script>
         window.twttr=(function(d,s,id){var t,js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id)){return}js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);return window.twttr||(t={_e:[],ready:function(f){t._e.push(f)}})}(document,"script","twitter-wjs"));
-        </script></li></ul><p>あるスーパーハッカー様により、キネクトのドライバがオープンソースとして公開された（非公式）ので自分も便乗してキネクトハックに挑戦してみる。</p><p>キネクトドライバとopenFrameworksのofxKinect をインストールすればとりあえず楽しめるらしい。</p><p>参考にしたページはこちら <a href="//www.spoofscript.com/blog/?p=327">Compiling OpenKinect on a stubborn OSX 10.6.5 (Updated 21/Nov)</a></p><p>まずキネクトドライバをインストールする前に、cmakeとgitをインストールする。</p><pre class="highlight shell"><code><span class="gp">$ </span>wget http://www.cmake.org/files/v2.8/cmake-2.8.3-Darwin-universal.dmg
+      </script></li></ul><p>あるスーパーハッカー様により、キネクトのドライバがオープンソースとして公開された（非公式）ので自分も便乗してキネクトハックに挑戦してみる。</p><p>キネクトドライバとopenFrameworksのofxKinect をインストールすればとりあえず楽しめるらしい。</p><p>参考にしたページはこちら <a href="http://www.spoofscript.com/blog/?p=327">Compiling OpenKinect on a stubborn OSX 10.6.5 (Updated 21/Nov)</a></p><p>まずキネクトドライバをインストールする前に、cmakeとgitをインストールする。</p><pre class="highlight shell"><code><span class="gp">$ </span>wget http://www.cmake.org/files/v2.8/cmake-2.8.3-Darwin-universal.dmg
 <span class="gp">$ </span>wget http://git-osx-installer.googlecode.com/files/git-1.7.3.2-intel-leopard.dmg
 </code></pre><p>この２つを解凍してインストールする。 終わったら次にコマンドラインでキネクトドライバをインストールする。</p><p>OpenKinect と LibUSB をダウンロード。</p><pre class="highlight shell"><code><span class="gp">$ </span>git clone https://github.com/OpenKinect/libfreenect.git
 Cloning into libfreenect...
@@ -144,15 +281,17 @@ Install the project...
 -- Installing: /usr/local/include/libfreenect/libfreenect.h
 -- Installing: /usr/local/include/libfreenect/libfreenect.hpp
 -- Installing: /usr/local/bin/glview
-</code></pre><p>次に、openFrameworks用の ofxKinect をダウンロードし、適当な箇所で解凍する。 <a title="https://github.com/ofTheo/ofxKinect" href="https://github.com/ofTheo/ofxKinect">https://github.com/ofTheo/ofxKinect</a></p><p>解凍できたら下記ディレクトリ配下に移動。 OpenFrameworks/apps/examples/ofxKinect</p><p>中にあるXcodeのプロジェクトファイル ofxKinect.xcodeproj を開いて buildしてみる。</p><p><a href="/imgs/archives/2010/11/02c2a9a6a154bae8a909aed7a19dc2af.png"><img src="/imgs/archives/2010/11/02c2a9a6a154bae8a909aed7a19dc2af-1024x742.png" alt="" title="スクリーンショット（2010-11-24 1.18.58）" width="640" height="463" class="alignnone size-large wp-image-577"/></a></p><p>これでとりあえず動いたお！ なんかつくるお！</p><p>P.S. できちゃえば何ともないんだけど、ここまでが割と難しくいくらかつまずいたよ…。</p></article><article class="entry"><h2><a href="/archives/573.html">passenger をインストールする</a></h2><ul><li class="date"> 2010.11.18 </li></ul><ul class="external-link"><li><a href="//b.hatena.ne.jp/entry/http://hiropo.co.uk/archives/573.html" class="hatena-bookmark-button" data-hatena-bookmark-title="passenger をインストールする" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;"/></a><script src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script></li><li><div class="fb-like" data-href="//hiropo.co.uk/archives/573.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div><div id="fb-root"></div><script>(function(d, s, id) {
-          var js, fjs = d.getElementsByTagName(s)[0];
-          if (d.getElementById(id)) return;
-          js = d.createElement(s); js.id = id;
-          js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=1386417958332605&version=v2.0";
-          fjs.parentNode.insertBefore(js, fjs);
-          }(document, 'script', 'facebook-jssdk'));</script></li><li><a class="twitter-share-button" href="https://twitter.com/share" data-url="http://hiropo.co.uk/archives/573.html" data-via="funnythingz" data-text="passenger をインストールする"> Tweet </a><script>
+</code></pre><p>次に、openFrameworks用の ofxKinect をダウンロードし、適当な箇所で解凍する。 <a title="https://github.com/ofTheo/ofxKinect" href="https://github.com/ofTheo/ofxKinect">https://github.com/ofTheo/ofxKinect</a></p><p>解凍できたら下記ディレクトリ配下に移動。 OpenFrameworks/apps/examples/ofxKinect</p><p>中にあるXcodeのプロジェクトファイル ofxKinect.xcodeproj を開いて buildしてみる。</p><p><a href="/imgs/archives/2010/11/02c2a9a6a154bae8a909aed7a19dc2af.png"><img src="/imgs/archives/2010/11/02c2a9a6a154bae8a909aed7a19dc2af-1024x742.png" alt="" title="スクリーンショット（2010-11-24 1.18.58）" width="640" height="463" class="alignnone size-large wp-image-577"/></a></p><p>これでとりあえず動いたお！ なんかつくるお！</p><p>P.S. できちゃえば何ともないんだけど、ここまでが割と難しくいくらかつまずいたよ…。</p></article><article class="entry"><h2><a href="/archives/573.html">passenger をインストールする</a></h2><ul><li class="date"> 2010.11.18 </li></ul><ul class="external-link"><li><a href="http://b.hatena.ne.jp/entry/http://hiropo.co.uk/archives/573.html" class="hatena-bookmark-button" data-hatena-bookmark-title="passenger をインストールする" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;"/><script src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script></a></li><li><div class="fb-like" data-href="http://hiropo.co.uk/archives/573.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div><div id="fb-root"></div><script>
+        (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=1386417958332605&version=v2.0";
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+      </script></li><li><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://hiropo.co.uk/archives/573.html" data-via="funnythingz" data-text="passenger をインストールする"></a><script>
         window.twttr=(function(d,s,id){var t,js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id)){return}js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);return window.twttr||(t={_e:[],ready:function(f){t._e.push(f)}})}(document,"script","twitter-wjs"));
-        </script></li></ul><p>そういえばpassenger をインストールしてなかったので、インストールする。</p><pre class="highlight shell"><code><span class="c"># gem install passenger</span>
+      </script></li></ul><p>そういえばpassenger をインストールしてなかったので、インストールする。</p><pre class="highlight shell"><code><span class="c"># gem install passenger</span>
 <span class="c"># passenger-install-apache2-module</span>
 
 Checking <span class="k">for </span>required software...
@@ -255,461 +394,7 @@ PassengerRuby /usr/local/bin/ruby
 </code></pre><p>apacheの再起動を行う。</p><pre class="highlight shell"><code><span class="c"># /etc/rc.d/init.d/httpd restart</span>
 Stopping httpd:                                            <span class="o">[</span>  OK  <span class="o">]</span>
 Starting httpd:                                            <span class="o">[</span>  OK  <span class="o">]</span>
-</code></pre><p>これで無事完了なりー。</p></article><article class="entry"><h2><a href="/archives/562.html">さくらVPSにRubyとRuby on Railsをインストールする</a></h2><ul><li class="date"> 2010.11.09 </li></ul><ul class="external-link"><li><a href="//b.hatena.ne.jp/entry/http://hiropo.co.uk/archives/562.html" class="hatena-bookmark-button" data-hatena-bookmark-title="さくらVPSにRubyとRuby on Railsをインストールする" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;"/></a><script src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script></li><li><div class="fb-like" data-href="//hiropo.co.uk/archives/562.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div><div id="fb-root"></div><script>(function(d, s, id) {
-          var js, fjs = d.getElementsByTagName(s)[0];
-          if (d.getElementById(id)) return;
-          js = d.createElement(s); js.id = id;
-          js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=1386417958332605&version=v2.0";
-          fjs.parentNode.insertBefore(js, fjs);
-          }(document, 'script', 'facebook-jssdk'));</script></li><li><a class="twitter-share-button" href="https://twitter.com/share" data-url="http://hiropo.co.uk/archives/562.html" data-via="funnythingz" data-text="さくらVPSにRubyとRuby on Railsをインストールする"> Tweet </a><script>
-        window.twttr=(function(d,s,id){var t,js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id)){return}js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);return window.twttr||(t={_e:[],ready:function(f){t._e.push(f)}})}(document,"script","twitter-wjs"));
-        </script></li></ul><p>さくらVPSにRubyとRuby on Railsをインストールする</p><p>先日借りたさくらVPSでRubyを使おうと思ったらデフォルトでインストールされていないようなのでRuby環境を構築することにする。ついでにRuby on Railsもインストールすることにする。</p><p>まずRubyをインストール</p><pre class="highlight shell"><code><span class="gp">$ </span>sudo su -
-<span class="c"># yum install ruby</span>
-Installed:
-  ruby.x86_64 0:1.8.5-5.el5_4.8
-
-Dependency Installed:
-  ruby-libs.x86_64 0:1.8.5-5.el5_4.8
-
-Complete!
-</code></pre><p>次にRubyGemsをインストールする。 ただし、Ruby1.8.5だと、Gemsは1.3.5でないとインストールできない。1.3.6以降を使いたい場合は、Ruby1.8.6以上をインストールする。</p><pre class="highlight shell"><code><span class="c"># wget http://rubyforge.org/frs/download.php/60718/rubygems-1.3.5.tgz</span>
-<span class="c"># tar xvfz rubygems-1.3.5.tgz</span>
-<span class="c"># cd rubygems-1.3.5</span>
-<span class="c"># ruby setup.rb</span>
-RubyGems 1.3.5 installed
-./lib/rubygems/custom_require.rb:31:in <span class="sb">`</span>gem_original_require<span class="s1">': no such file to load -- rdoc/rdoc (LoadError)
-        from ./lib/rubygems/custom_require.rb:31:in `require'</span>
-        from ./lib/rubygems/commands/setup_command.rb:352:in <span class="sb">`</span>run_rdoc<span class="s1">'
-        from ./lib/rubygems/commands/setup_command.rb:247:in `install_rdoc'</span>
-        from ./lib/rubygems/commands/setup_command.rb:120:in <span class="sb">`</span>execute<span class="s1">'
-        from ./lib/rubygems/command.rb:257:in `invoke'</span>
-        from ./lib/rubygems/command_manager.rb:132:in <span class="sb">`</span>process_args<span class="s1">'
-        from ./lib/rubygems/command_manager.rb:102:in `run'</span>
-        from ./lib/rubygems/gem_runner.rb:58:in <span class="sb">`</span>run<span class="s1">'
-        from setup.rb:35
-</span></code></pre><p>rdocがないって言われたので、rdocをインストールして、再びGemsインストールを実行</p><pre class="highlight shell"><code><span class="c"># yum install rdoc</span>
-Installed:
-  ruby-rdoc.x86_64 0:1.8.5-5.el5_4.8
-
-Dependency Installed:
-  ruby-irb.x86_64 0:1.8.5-5.el5_4.8
-
-Complete!
-
-<span class="c"># ruby setup.rb</span>
-RubyGems 1.3.5 installed
-
-<span class="o">===</span> 1.3.5 / 2009-07-21
-
-Bug fixes:
-
-<span class="k">*</span> Fix use of prerelease gems.
-<span class="k">*</span> Gem.bin_path no longer escapes path with spaces. Bug <span class="c">#25935 and #26458.</span>
-
-Deprecation Notices:
-
-<span class="k">*</span> Bulk index update is no longer supported <span class="o">(</span>the code currently remains, but not
-  the tests<span class="o">)</span>
-<span class="k">*</span> Gem::manage_gems was removed <span class="k">in </span>1.3.3.
-<span class="k">*</span> Time::today was removed <span class="k">in </span>1.3.3.
-
-------------------------------------------------------------------------------
-
-RubyGems installed the following executables:
-        /usr/bin/gem
-</code></pre><p>これでRubyとRubyGemsのインストールができた。</p><p>次にRuby on Rails をインストールする。</p><pre class="highlight shell"><code><span class="c"># gem install rails</span>
-ERROR:  Error installing rails:
-        activesupport requires Ruby version &gt;<span class="o">=</span> 1.8.7
-</code></pre><p>Ruby1.8.7 以上いれろって怒られた。 さすがにめんどくさくなってきたけどもうちょっと頑張ることにする。</p><p>仕方がないので、Ruby1.8.7をインストールする。 最新版のソースを落としてビルドする。</p><pre class="highlight shell"><code><span class="c"># wget ftp://ftp.ruby-lang.org/pub/ruby/1.8/ruby-1.8.7-p249.tar.bz2</span>
-<span class="c"># tar jvxf ruby-1.8.7-p249.tar.bz2</span>
-<span class="c"># cd ruby-1.8.7-p249</span>
-<span class="c"># ./configure</span>
-<span class="c"># make &amp;&amp; make install</span>
-<span class="c"># make clean</span>
-</code></pre><p>Ruby1.8.7がインストールできたので、Ruby1.8.5を削除する。</p><pre class="highlight shell"><code><span class="c"># yum remove ruby</span>
-Removed:
-  ruby.x86_64 0:1.8.5-5.el5_4.8
-
-Dependency Removed:
-  ruby-irb.x86_64 0:1.8.5-5.el5_4.8            ruby-rdoc.x86_64 0:1.8.5-5.el5_4.8
-
-Complete!
-</code></pre><p>Rubyのバージョンを確認する。</p><pre class="highlight shell"><code><span class="c"># ruby -v</span>
-ruby 1.8.7 <span class="o">(</span>2010-01-10 patchlevel 249<span class="o">)</span> <span class="o">[</span>x86_64-linux]
-</code></pre><p>gemsも最新版をインストールする。 <a title="最新版URLはこちらで確認" href="//rubyforge.org/frs/?group_id=126">最新版URLはこちらで確認</a></p><pre class="highlight shell"><code><span class="c"># wget http://rubyforge.org/frs/download.php/70696/rubygems-1.3.7.tgz</span>
-<span class="c"># tar xvfz rubygems-1.3.7.tgz</span>
-<span class="c"># cd rubygems-1.3.7</span>
-<span class="c"># ruby setup.rb</span>
-<span class="c"># gem -v</span>
-1.3.7
-</code></pre><p>これで、Ruby1.8.7、RubyGems1.3.7がインストールできた。 と思いきや、リストを参照したらエラーがでた。</p><pre class="highlight shell"><code><span class="c"># gem list</span>
-ERROR:  Loading <span class="nb">command</span>: list <span class="o">(</span>LoadError<span class="o">)</span>
-    no such file to load -- zlib
-ERROR:  While executing gem ... <span class="o">(</span>NameError<span class="o">)</span>
-    uninitialized constant Gem::Commands::ListCommand
-</code></pre><p>zlibないって言われた。でもzlib入ってるし。 ググったら同じ問題にぶつかった人がいたので<a title="こちらを参考" href="//fujiiyuuki.blogspot.com/2010/03/centosrails.html">こちらを参考</a>にzlib-devel入れて再コンパイルしてみた。そしたらすんなり通りやがりましたよ。</p><pre class="highlight shell"><code><span class="c"># cd</span>
-<span class="c"># yum install zlib-devel</span>
-Installed:
-  zlib-devel.i386 0:1.2.3-3                    zlib-devel.x86_64 0:1.2.3-3
-
-Complete!
-
-<span class="c"># cd ruby-1.8.7-p249</span>
-<span class="c"># cd ext/</span>
-<span class="c"># ruby extconf.rb --with-zlib-include=/usr/include -with-zlib-lib=/usr/lib</span>
-checking <span class="k">for </span>deflateReset<span class="o">()</span> <span class="k">in</span> -lz... yes
-checking <span class="k">for </span>zlib.h... yes
-checking <span class="k">for </span>kind of operating system... Unix
-creating Makefile
-
-<span class="c"># make &amp;&amp; make install</span>
-<span class="c"># gem list</span>
-
-<span class="k">***</span> LOCAL GEMS <span class="k">***</span>
-</code></pre><p>でーけたー！これでやっとRailsをインストールできるはず。</p><pre class="highlight shell"><code><span class="c"># gem install rails</span>
-Successfully installed activesupport-3.0.1
-Successfully installed builder-2.1.2
-Successfully installed i18n-0.4.2
-Successfully installed activemodel-3.0.1
-Successfully installed rack-1.2.1
-Successfully installed rack-test-0.5.6
-Successfully installed rack-mount-0.6.13
-Successfully installed tzinfo-0.3.23
-Successfully installed abstract-1.0.0
-Successfully installed erubis-2.6.6
-Successfully installed actionpack-3.0.1
-Successfully installed arel-1.0.1
-Successfully installed activerecord-3.0.1
-Successfully installed activeresource-3.0.1
-Successfully installed mime-types-1.16
-Successfully installed polyglot-0.3.1
-Successfully installed treetop-1.4.8
-Successfully installed mail-2.2.9
-Successfully installed actionmailer-3.0.1
-Successfully installed rake-0.8.7
-Successfully installed thor-0.14.4
-Successfully installed railties-3.0.1
-Successfully installed bundler-1.0.3
-Successfully installed rails-3.0.1
-24 gems installed
-Installing ri documentation <span class="k">for </span>activesupport-3.0.1...
-Installing ri documentation <span class="k">for </span>builder-2.1.2...
-ERROR:  While generating documentation <span class="k">for </span>builder-2.1.2
-... MESSAGE:   Unhandled special: Special: <span class="nb">type</span><span class="o">=</span>17, <span class="nv">text</span><span class="o">=</span><span class="s2">"&lt;!-- HI --&gt;"</span>
-... RDOC args: --ri --op /usr/local/lib/ruby/gems/1.8/doc/builder-2.1.2/ri --title Builder -- Easy XML Building --main README --line-numbers --quiet lib CHANGES Rakefile README doc/releases/builder-1.2.4.rdoc doc/releases/builder-2.0.0.rdoc doc/releases/builder-2.1.1.rdoc --title builder-2.1.2 Documentation
-<span class="o">(</span>continuing with the rest of the installation<span class="o">)</span>
-Installing ri documentation <span class="k">for </span>i18n-0.4.2...
-Installing ri documentation <span class="k">for </span>activemodel-3.0.1...
-Installing ri documentation <span class="k">for </span>rack-1.2.1...
-Installing ri documentation <span class="k">for </span>rack-test-0.5.6...
-Installing ri documentation <span class="k">for </span>rack-mount-0.6.13...
-Installing ri documentation <span class="k">for </span>tzinfo-0.3.23...
-Installing ri documentation <span class="k">for </span>abstract-1.0.0...
-Installing ri documentation <span class="k">for </span>erubis-2.6.6...
-Installing ri documentation <span class="k">for </span>actionpack-3.0.1...
-Installing ri documentation <span class="k">for </span>arel-1.0.1...
-Installing ri documentation <span class="k">for </span>activerecord-3.0.1...
-Installing ri documentation <span class="k">for </span>activeresource-3.0.1...
-Installing ri documentation <span class="k">for </span>mime-types-1.16...
-Installing ri documentation <span class="k">for </span>polyglot-0.3.1...
-Installing ri documentation <span class="k">for </span>treetop-1.4.8...
-Installing ri documentation <span class="k">for </span>mail-2.2.9...
-Installing ri documentation <span class="k">for </span>actionmailer-3.0.1...
-Installing ri documentation <span class="k">for </span>rake-0.8.7...
-Installing ri documentation <span class="k">for </span>thor-0.14.4...
-Installing ri documentation <span class="k">for </span>railties-3.0.1...
-Installing ri documentation <span class="k">for </span>bundler-1.0.3...
-Installing ri documentation <span class="k">for </span>rails-3.0.1...
-File not found: lib
-</code></pre><p>なんか途中エラーでた。なんじゃこりゃ。 とりあえず確認してみる。</p><pre class="highlight shell"><code><span class="c"># rails -v</span>
-Rails 3.0.1
-</code></pre><p>Rails3.x系になってから、createコマンドがRails2系と違うみたいで、下記ではcreateできなかった。</p><pre class="highlight shell"><code><span class="gp">$ </span>rails testapp
-Usage:
-  rails new APP_PATH <span class="o">[</span>options]
-</code></pre><p>ので、Rails3.0にのっとってcreateしてみる。</p><pre class="highlight shell"><code><span class="gp">$ </span>rails new testapp
-      create
-      create  README
-      create  Rakefile
-      create  config.ru
-      create  .gitignore
-      create  Gemfile
-      create  app
-      create  app/controllers/application_controller.rb
-      create  app/helpers/application_helper.rb
-      create  app/mailers
-      create  app/models
-      create  app/views/layouts/application.html.erb
-      create  config
-      create  config/routes.rb
-      create  config/application.rb
-      create  config/environment.rb
-      create  config/environments
-      create  config/environments/development.rb
-      create  config/environments/production.rb
-      create  config/environments/test.rb
-      create  config/initializers
-      create  config/initializers/backtrace_silencers.rb
-      create  config/initializers/inflections.rb
-      create  config/initializers/mime_types.rb
-      create  config/initializers/secret_token.rb
-      create  config/initializers/session_store.rb
-      create  config/locales
-      create  config/locales/en.yml
-      create  config/boot.rb
-      create  config/database.yml
-      create  db
-      create  db/seeds.rb
-      create  doc
-      create  doc/README_FOR_APP
-      create  lib
-      create  lib/tasks
-      create  lib/tasks/.gitkeep
-      create  log
-      create  log/server.log
-      create  log/production.log
-      create  log/development.log
-      create  log/test.log
-      create  public
-      create  public/404.html
-      create  public/422.html
-      create  public/500.html
-      create  public/favicon.ico
-      create  public/index.html
-      create  public/robots.txt
-      create  public/images
-      create  public/images/rails.png
-      create  public/stylesheets
-      create  public/stylesheets/.gitkeep
-      create  public/javascripts
-      create  public/javascripts/application.js
-      create  public/javascripts/controls.js
-      create  public/javascripts/dragdrop.js
-      create  public/javascripts/effects.js
-      create  public/javascripts/prototype.js
-      create  public/javascripts/rails.js
-      create  script
-      create  script/rails
-      create  test
-      create  test/fixtures
-      create  test/functional
-      create  test/integration
-      create  test/performance/browsing_test.rb
-      create  test/test_helper.rb
-      create  test/unit
-      create  tmp
-      create  tmp/sessions
-      create  tmp/sockets
-      create  tmp/cache
-      create  tmp/pids
-      create  vendor/plugins
-      create  vendor/plugins/.gitkeep
-</code></pre><p>testappを動かしてみる</p><pre class="highlight shell"><code><span class="gp">$ </span><span class="nb">cd </span>testapp/
-<span class="gp">$ </span>rails server
-Could not find gem <span class="s1">'sqlite3-ruby (&gt;= 0, runtime)'</span> <span class="k">in </span>any of the gem sources.
-Try running <span class="sb">`</span>bundle install<span class="sb">`</span>.
-</code></pre><p>&ldquo;sqlite3-ruby&rdquo; が入ってないとのこと。 &ldquo;sqlite3-ruby&rdquo; を入れる。</p><pre class="highlight shell"><code><span class="gp">$ </span><span class="nb">cd </span>testapp/
-<span class="gp">$ </span>vi Gemfile
-gem <span class="s1">'sqlite3-ruby'</span>, :require <span class="o">=</span>&gt; <span class="s1">'sqlite3'</span>
-
-<span class="gp">$ </span>sudo gem install sqlite3-ruby
-Building native extensions.  This could take a <span class="k">while</span>...
-ERROR:  Error installing sqlite3-ruby:
-        ERROR: Failed to build gem native extension.
-
-/usr/local/bin/ruby extconf.rb
-checking <span class="k">for </span>sqlite3.h... yes
-checking <span class="k">for </span>sqlite3_libversion_number<span class="o">()</span> <span class="k">in</span> -lsqlite3... yes
-checking <span class="k">for </span>rb_proc_arity<span class="o">()</span>... no
-checking <span class="k">for </span>sqlite3_initialize<span class="o">()</span>... no
-sqlite3-ruby only supports sqlite3 versions 3.6.16+, please upgrade!
-<span class="k">***</span> extconf.rb failed <span class="k">***</span>
-Could not create Makefile due to some reason, probably lack of
-necessary libraries and/or headers.  Check the mkmf.log file <span class="k">for </span>more
-details.  You may need configuration options.
-
-Gem files will remain installed <span class="k">in</span> /usr/local/lib/ruby/gems/1.8/gems/sqlite3-ruby-1.3.2 <span class="k">for </span>inspection.
-Results logged to /usr/local/lib/ruby/gems/1.8/gems/sqlite3-ruby-1.3.2/ext/sqlite3/gem_make.out
-</code></pre><p>&ldquo;sqlite3-ruby only supports sqlite3 versions 3.6.16+, please upgrade!&rdquo; って新しいのいれろってことかしら。</p><p>sqlite3のバージョン確認</p><pre class="highlight shell"><code><span class="gp">$ </span>rpm -q sqlite
-sqlite-3.3.6-5
-</code></pre><p>古い。そういえばsqlite-develも入っていなかったので、インストールする。</p><pre class="highlight shell"><code><span class="c"># yum install sqlite-devel</span>
-Installed:
-  sqlite-devel.i386 0:3.3.6-5                sqlite-devel.x86_64 0:3.3.6-5
-
-Complete!
-</code></pre><p>sqlite3をソースからインストールする。</p><pre class="highlight shell"><code><span class="gp">$ </span><span class="nb">cd</span> /usr/local/src
-<span class="gp">$ </span>sudo wget http://www.sqlite.org/sqlite-amalgamation-3.7.3.tar.gz
-<span class="gp">$ </span>sudo tar xvzf sqlite-3.7.3.tar.gz 
-<span class="gp">$ </span><span class="nb">cd </span>sqlite-3.7.3
-<span class="gp">$ </span>sudo ./configure
-<span class="gp">$ </span>sudo make
-<span class="gp">$ </span>sudo make install
-</code></pre><p>再びsqlite3-ruby をインストール</p><pre class="highlight shell"><code><span class="gp">$ </span>sudo gem install sqlite3-ruby
-Building native extensions.  This could take a <span class="k">while</span>...
-Successfully installed sqlite3-ruby-1.3.2
-1 gem installed
-Installing ri documentation <span class="k">for </span>sqlite3-ruby-1.3.2...
-
-No definition <span class="k">for </span>libversion
-
-Enclosing class/module <span class="s1">'mSqlite3'</span> <span class="k">for </span>class Statement not known
-Installing RDoc documentation <span class="k">for </span>sqlite3-ruby-1.3.2...
-
-No definition <span class="k">for </span>libversion
-
-Enclosing class/module <span class="s1">'mSqlite3'</span> <span class="k">for </span>class Statement not known
-</code></pre><p>sqlite3-ruby を確認</p><pre class="highlight shell"><code><span class="gp">$ </span>gem list
-
-
-<span class="k">***</span> LOCAL GEMS <span class="k">***</span>
-
-
-abstract <span class="o">(</span>1.0.0<span class="o">)</span>
-actionmailer <span class="o">(</span>3.0.1<span class="o">)</span>
-actionpack <span class="o">(</span>3.0.1<span class="o">)</span>
-activemodel <span class="o">(</span>3.0.1<span class="o">)</span>
-activerecord <span class="o">(</span>3.0.1<span class="o">)</span>
-activeresource <span class="o">(</span>3.0.1<span class="o">)</span>
-activesupport <span class="o">(</span>3.0.1<span class="o">)</span>
-arel <span class="o">(</span>1.0.1<span class="o">)</span>
-bcrypt-ruby <span class="o">(</span>2.1.2<span class="o">)</span>
-builder <span class="o">(</span>2.1.2<span class="o">)</span>
-bundler <span class="o">(</span>1.0.3<span class="o">)</span>
-erubis <span class="o">(</span>2.6.6<span class="o">)</span>
-i18n <span class="o">(</span>0.4.2<span class="o">)</span>
-mail <span class="o">(</span>2.2.9<span class="o">)</span>
-mime-types <span class="o">(</span>1.16<span class="o">)</span>
-polyglot <span class="o">(</span>0.3.1<span class="o">)</span>
-rack <span class="o">(</span>1.2.1<span class="o">)</span>
-rack-mount <span class="o">(</span>0.6.13<span class="o">)</span>
-rack-test <span class="o">(</span>0.5.6<span class="o">)</span>
-rails <span class="o">(</span>3.0.1<span class="o">)</span>
-railties <span class="o">(</span>3.0.1<span class="o">)</span>
-rake <span class="o">(</span>0.8.7<span class="o">)</span>
-sqlite3-ruby <span class="o">(</span>1.3.2<span class="o">)</span>
-thor <span class="o">(</span>0.14.4<span class="o">)</span>
-treetop <span class="o">(</span>1.4.8<span class="o">)</span>
-tzinfo <span class="o">(</span>0.3.23<span class="o">)</span>
-</code></pre><p>はいったー！ railsサーバーを立ち上げてみる。</p><pre class="highlight shell"><code><span class="gp">$ </span><span class="nb">cd</span>
-<span class="gp">$ </span><span class="nb">cd </span>dev/rails/testapp/
-<span class="gp">$ </span>rails server
-<span class="gp">=&gt; </span>Booting WEBrick
-<span class="gp">=&gt; </span>Rails 3.0.1 application starting <span class="k">in </span>development on http://0.0.0.0:3000
-</code></pre><p>http://localhost:3000/ にアクセス。 <a href="/imgs/archives/2010/11/rails.gif"><img src="/imgs/archives/2010/11/rails-300x230.gif" alt="" title="rails" width="300" height="230" class="alignnone size-medium wp-image-563"/></a></p><p>やったー！うごいたー！</p></article><article class="entry"><h2><a href="/archives/560.html">ブログデザインをかえますた。</a></h2><ul><li class="date"> 2010.11.02 </li></ul><ul class="external-link"><li><a href="//b.hatena.ne.jp/entry/http://hiropo.co.uk/archives/560.html" class="hatena-bookmark-button" data-hatena-bookmark-title="ブログデザインをかえますた。" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;"/></a><script src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script></li><li><div class="fb-like" data-href="//hiropo.co.uk/archives/560.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div><div id="fb-root"></div><script>(function(d, s, id) {
-          var js, fjs = d.getElementsByTagName(s)[0];
-          if (d.getElementById(id)) return;
-          js = d.createElement(s); js.id = id;
-          js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=1386417958332605&version=v2.0";
-          fjs.parentNode.insertBefore(js, fjs);
-          }(document, 'script', 'facebook-jssdk'));</script></li><li><a class="twitter-share-button" href="https://twitter.com/share" data-url="http://hiropo.co.uk/archives/560.html" data-via="funnythingz" data-text="ブログデザインをかえますた。"> Tweet </a><script>
-        window.twttr=(function(d,s,id){var t,js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id)){return}js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);return window.twttr||(t={_e:[],ready:function(f){t._e.push(f)}})}(document,"script","twitter-wjs"));
-        </script></li></ul><p>wordpress3.0にしてからテーマファイルに不都合があったのですが、ずっと放置していたのでいい加減変えなきゃと思いようやく変えました。 元々入っていた”twentyten” というテーマをちょこっといじって変更してみました。</p><p><a title="mixiテーマ" href="//ikepo.com/">mixiテーマ</a>の方も近々更新する予定です。</p><p>ではではー。</p></article><article class="entry"><h2><a href="/archives/557.html">wordpressにProcessingを埋め込むプラグインを導入してみた</a></h2><ul><li class="date"> 2010.11.02 </li></ul><ul class="external-link"><li><a href="//b.hatena.ne.jp/entry/http://hiropo.co.uk/archives/557.html" class="hatena-bookmark-button" data-hatena-bookmark-title="wordpressにProcessingを埋め込むプラグインを導入してみた" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;"/></a><script src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script></li><li><div class="fb-like" data-href="//hiropo.co.uk/archives/557.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div><div id="fb-root"></div><script>(function(d, s, id) {
-          var js, fjs = d.getElementsByTagName(s)[0];
-          if (d.getElementById(id)) return;
-          js = d.createElement(s); js.id = id;
-          js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=1386417958332605&version=v2.0";
-          fjs.parentNode.insertBefore(js, fjs);
-          }(document, 'script', 'facebook-jssdk'));</script></li><li><a class="twitter-share-button" href="https://twitter.com/share" data-url="http://hiropo.co.uk/archives/557.html" data-via="funnythingz" data-text="wordpressにProcessingを埋め込むプラグインを導入してみた"> Tweet </a><script>
-        window.twttr=(function(d,s,id){var t,js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id)){return}js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);return window.twttr||(t={_e:[],ready:function(f){t._e.push(f)}})}(document,"script","twitter-wjs"));
-        </script></li></ul><p>最近インタラクティブ・メディアアートという言葉が流行ってますね。流行り物大好きです！ その流行り物のベースとなっている言語であるProcessingを埋め込むためのプラグインをつっこんでみました。</p><p>Processingとは、Javaを単純化し、グラフィック機能に特化した言語です。(Wikipedia 談) Javaというとオブジェクト指向でとても難しい言語だというイメージがあるかもですが、Processingはかなり単純化されているので、 オブジェクト指向を気にしなくても気軽にJavaでメディアアートができます。</p><blockquote> - Processing本家（英語）<br/> [http://processing.org/](http://processing.org/ &ldquo;http://processing.org/&rdquo;) - Processing.js JavaScript Framework<br/> [http://processingjs.org/](http://processingjs.org/ &ldquo;http://processingjs.org/&rdquo;) </blockquote><p>もちろん、インタラクティブにゴリッゴリの凄いやつをつくろう！ってなるとクラスを定義したりなどオブジェクト指向が必要になりますが、それでもネイティブなJavaよりProcessingは簡単にそれを実現できます。</p><p>最近はHTML5でゴリッゴリに動くメディアアートなどもありますが、jQueryの開発者でもある、ジョンがProcessing.js というJavaScriptでProcessingを描けるステキライブラリを開発してくれたので、Processingを覚えちゃえば誰でも割と簡単にインタラクティブ・メディアアートができます。まさに夢の言語です！</p><p>Processingの実際の書き方などはここでは割愛しちゃいますが、 とりあえず、このブログにてProcessingでつくられた作品を公開できるようにしてみました。</p><p>ProcessingはJavaベースなので、書き出す際には、Javaアプレットとして書き出します。 そして、書き出したjarファイルを下記の場所におきます。</p><blockquote> 例：threeballsclass.jar の場合 /wp-content/plugins/wp-proc-embed/threeballsclass/applet/threeballsclass.jar </blockquote><p>次に記事投稿画面で、HTMLモードで下記のように記述します。 <blockquote> processing=threeballsclass 200 200 ※実際は &ldquo;[]&rdquo; で囲ってください。 </blockquote> これで埋め込みができるはずです。</p><p>下記が実際にProcessingで組まれた作品です。 [processing=threeballsclass 200 200]</p><p>実際のProcessing内でのソースはこちら</p><pre class="highlight java"><code><span class="kt">int</span> <span class="n">dim</span> <span class="o">=</span> <span class="mi">200</span><span class="o">;</span>
-<span class="n">Ball</span> <span class="n">ball1</span><span class="o">,</span> <span class="n">ball2</span><span class="o">,</span> <span class="n">ball3</span><span class="o">,</span> <span class="n">ball4</span><span class="o">;</span>
-
-<span class="kt">void</span> <span class="nf">setup</span><span class="p">(</span><span class="o">){</span>
-  <span class="n">size</span><span class="o">(</span><span class="n">dim</span><span class="o">,</span><span class="n">dim</span><span class="o">);</span>
-  <span class="n">noStroke</span><span class="o">();</span>
-  <span class="n">frameRate</span><span class="o">(</span><span class="mi">30</span><span class="o">);</span>
-  <span class="n">smooth</span><span class="o">();</span>
-  <span class="n">ellipseMode</span><span class="o">(</span><span class="n">CENTER</span><span class="o">);</span>
-  <span class="n">ball1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Ball</span><span class="o">();</span>
-  <span class="n">ball2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Ball</span><span class="o">();</span>
-  <span class="n">ball3</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Ball</span><span class="o">();</span>
-  <span class="n">ball4</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Ball</span><span class="o">();</span>
-<span class="o">}</span>
-
-<span class="kt">void</span> <span class="nf">draw</span><span class="p">(</span><span class="o">){</span>
-  <span class="n">background</span><span class="o">(</span><span class="mi">255</span><span class="o">,</span><span class="mi">255</span><span class="o">,</span><span class="mi">255</span><span class="o">);</span>
-  <span class="n">ball1</span><span class="o">.</span><span class="na">move</span><span class="o">();</span>
-  <span class="n">ball2</span><span class="o">.</span><span class="na">move</span><span class="o">();</span>
-  <span class="n">ball3</span><span class="o">.</span><span class="na">move</span><span class="o">();</span>
-  <span class="n">ball4</span><span class="o">.</span><span class="na">move</span><span class="o">();</span>
-
-  <span class="n">ball1</span><span class="o">.</span><span class="na">display</span><span class="o">();</span>
-  <span class="n">ball2</span><span class="o">.</span><span class="na">display</span><span class="o">();</span>
-  <span class="n">ball3</span><span class="o">.</span><span class="na">display</span><span class="o">();</span>
-  <span class="n">ball4</span><span class="o">.</span><span class="na">display</span><span class="o">();</span>
-<span class="o">}</span>
-
-<span class="kd">class</span> <span class="nc">Ball</span><span class="o">{</span>
-  <span class="kt">int</span> <span class="n">xvel</span><span class="o">;</span>
-  <span class="kt">int</span> <span class="n">yvel</span><span class="o">;</span>
-  <span class="kt">int</span> <span class="n">xpos</span><span class="o">;</span>
-  <span class="kt">int</span> <span class="n">ypos</span><span class="o">;</span>
-  <span class="kt">int</span> <span class="n">c1</span><span class="o">,</span> <span class="n">c2</span><span class="o">,</span> <span class="n">c3</span><span class="o">;</span>
-
-  <span class="n">Ball</span><span class="o">(){</span>
-    <span class="n">xpos</span> <span class="o">=</span> <span class="kt">int</span><span class="o">(</span><span class="n">random</span><span class="o">(</span><span class="mi">11</span><span class="o">,(</span><span class="n">dim</span><span class="o">-</span><span class="mi">11</span><span class="o">)));</span>
-    <span class="n">ypos</span> <span class="o">=</span> <span class="kt">int</span><span class="o">(</span><span class="n">random</span><span class="o">(</span><span class="mi">11</span><span class="o">,(</span><span class="n">dim</span><span class="o">-</span><span class="mi">11</span><span class="o">)));</span>
-    <span class="n">xvel</span> <span class="o">=</span> <span class="mi">3</span><span class="o">;</span>
-    <span class="n">yvel</span> <span class="o">=</span> <span class="mi">3</span><span class="o">;</span>
-  <span class="o">}</span>
-
-  <span class="kt">void</span> <span class="n">move</span><span class="o">(){</span>
-    <span class="n">xpos</span> <span class="o">=</span> <span class="n">xpos</span><span class="o">+</span><span class="n">xvel</span><span class="o">;</span>
-    <span class="n">ypos</span> <span class="o">=</span> <span class="n">ypos</span><span class="o">+</span><span class="n">yvel</span><span class="o">;</span>
-
-    <span class="k">if</span> <span class="o">(</span> <span class="n">xpos</span> <span class="o">&lt;</span> <span class="mi">10</span> <span class="o">||</span> <span class="n">xpos</span> <span class="o">&gt;</span> <span class="o">(</span><span class="n">dim</span><span class="o">-</span><span class="mi">10</span><span class="o">)</span> <span class="o">){</span>
-      <span class="n">xvel</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="o">*</span> <span class="n">xvel</span><span class="o">;</span>
-      <span class="n">c1</span> <span class="o">=</span> <span class="kt">int</span><span class="o">(</span><span class="n">random</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span><span class="mi">255</span><span class="o">));</span>
-      <span class="n">c2</span> <span class="o">=</span> <span class="kt">int</span><span class="o">(</span><span class="n">random</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span><span class="mi">255</span><span class="o">));</span>
-      <span class="n">c3</span> <span class="o">=</span> <span class="kt">int</span><span class="o">(</span><span class="n">random</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span><span class="mi">255</span><span class="o">));</span>
-    <span class="o">}</span>
-
-    <span class="k">if</span> <span class="o">(</span> <span class="n">ypos</span> <span class="o">&lt;</span> <span class="mi">10</span> <span class="o">||</span> <span class="n">ypos</span> <span class="o">&gt;</span> <span class="o">(</span><span class="n">dim</span><span class="o">-</span><span class="mi">10</span><span class="o">)</span> <span class="o">){</span>
-      <span class="n">yvel</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="o">*</span> <span class="n">yvel</span><span class="o">;</span>
-      <span class="n">c1</span> <span class="o">=</span> <span class="kt">int</span><span class="o">(</span><span class="n">random</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span><span class="mi">255</span><span class="o">));</span>
-      <span class="n">c2</span> <span class="o">=</span> <span class="kt">int</span><span class="o">(</span><span class="n">random</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span><span class="mi">255</span><span class="o">));</span>
-      <span class="n">c3</span> <span class="o">=</span> <span class="kt">int</span><span class="o">(</span><span class="n">random</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span><span class="mi">255</span><span class="o">));</span>
-    <span class="o">}</span>
-  <span class="o">}</span>
-
-  <span class="kt">void</span> <span class="n">display</span><span class="o">(){</span>
-    <span class="n">fill</span><span class="o">(</span><span class="n">c1</span><span class="o">,</span><span class="n">c2</span><span class="o">,</span><span class="n">c3</span><span class="o">);</span>
-    <span class="n">ellipse</span><span class="o">(</span><span class="n">xpos</span><span class="o">,</span><span class="n">ypos</span><span class="o">,</span><span class="mi">20</span><span class="o">,</span><span class="mi">20</span><span class="o">);</span>
-  <span class="o">}</span>
-
-<span class="o">}</span>
-</code></pre><p>こんな感じで興味があればぜひぜひどうぞー！</p><p>アプレット、たのしいよ、アプレット。</p></article><article class="entry"><h2><a href="/archives/552.html">Wordpressで記事の並び替えを昇順または降順で並び替える</a></h2><ul><li class="date"> 2010.10.27 </li></ul><ul class="external-link"><li><a href="//b.hatena.ne.jp/entry/http://hiropo.co.uk/archives/552.html" class="hatena-bookmark-button" data-hatena-bookmark-title="Wordpressで記事の並び替えを昇順または降順で並び替える" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;"/></a><script src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script></li><li><div class="fb-like" data-href="//hiropo.co.uk/archives/552.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div><div id="fb-root"></div><script>(function(d, s, id) {
-          var js, fjs = d.getElementsByTagName(s)[0];
-          if (d.getElementById(id)) return;
-          js = d.createElement(s); js.id = id;
-          js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=1386417958332605&version=v2.0";
-          fjs.parentNode.insertBefore(js, fjs);
-          }(document, 'script', 'facebook-jssdk'));</script></li><li><a class="twitter-share-button" href="https://twitter.com/share" data-url="http://hiropo.co.uk/archives/552.html" data-via="funnythingz" data-text="Wordpressで記事の並び替えを昇順または降順で並び替える"> Tweet </a><script>
-        window.twttr=(function(d,s,id){var t,js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id)){return}js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);return window.twttr||(t={_e:[],ready:function(f){t._e.push(f)}})}(document,"script","twitter-wjs"));
-        </script></li></ul><p>blog記事ってふつー最新から順に並べられているけど、あえて逆に並べたいときもある。 そんなときの書き方</p><p>▽古い順（デフォルトは、order=DESC）</p><pre class="highlight php"><code>query_posts("order=ASC");
-</code></pre><blockquote> * order=ASC - 昇順。小さい値から大きい値の順。 * order=DESC - 降順。大きい値から小さい値の順。 </blockquote><p>ただ、これだと全記事がソートされることになるので、カテゴリだけソートしたい場合は、category.php （テーマファイル）に対して、下記のように記述する。</p><pre class="highlight php"><code>$cat = get_query_var('cat');
-$paged = get_query_var('paged');
-query_posts("cat=".$cat."<span class="ni">&amp;order=ASC&amp;orderby=date&amp;posts_per_page=10&amp;paged=".$paged);</span>
-</code></pre><p>query_posts() 覚えちゃえばたいていのことはソートできちゃうね！</p></article><article class="entry"><h2><a href="/archives/550.html">WordPressで今見ているカテゴリーのIDを取得</a></h2><ul><li class="date"> 2010.10.27 </li></ul><ul class="external-link"><li><a href="//b.hatena.ne.jp/entry/http://hiropo.co.uk/archives/550.html" class="hatena-bookmark-button" data-hatena-bookmark-title="WordPressで今見ているカテゴリーのIDを取得" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;"/></a><script src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script></li><li><div class="fb-like" data-href="//hiropo.co.uk/archives/550.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div><div id="fb-root"></div><script>(function(d, s, id) {
-          var js, fjs = d.getElementsByTagName(s)[0];
-          if (d.getElementById(id)) return;
-          js = d.createElement(s); js.id = id;
-          js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=1386417958332605&version=v2.0";
-          fjs.parentNode.insertBefore(js, fjs);
-          }(document, 'script', 'facebook-jssdk'));</script></li><li><a class="twitter-share-button" href="https://twitter.com/share" data-url="http://hiropo.co.uk/archives/550.html" data-via="funnythingz" data-text="WordPressで今見ているカテゴリーのIDを取得"> Tweet </a><script>
-        window.twttr=(function(d,s,id){var t,js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id)){return}js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);return window.twttr||(t={_e:[],ready:function(f){t._e.push(f)}})}(document,"script","twitter-wjs"));
-        </script></li></ul><p>今見ているカテゴリーの記事をごにょごにょとソートしたいってことがよくあるのでメモっておく。 関数にまとめてしまっても良いんだけどねー。</p><pre class="highlight php"><code>$cat = get_query_var('cat');
-</code></pre><p>$cat にカテゴリIDが入るので、あとはquery_posts() などでソートしてやればおｋ。</p><p>カテゴリページでソートしたい場合は下記のように。 例： 古い順でカテゴリごとに並び替え</p><pre class="highlight php"><code><span class="cp">&lt;?php</span>
-    <span class="nv">$cat</span> <span class="o">=</span> <span class="nx">get_query_var</span><span class="p">(</span><span class="s1">'cat'</span><span class="p">);</span>
-    <span class="nv">$paged</span> <span class="o">=</span> <span class="nx">get_query_var</span><span class="p">(</span><span class="s1">'paged'</span><span class="p">);</span>
-    <span class="nx">query_posts</span><span class="p">(</span><span class="s2">"cat="</span><span class="o">.</span><span class="nv">$cat</span><span class="o">.</span><span class="s2">"&amp;order=ASC&amp;orderby=date&amp;posts_per_page=10&amp;paged="</span><span class="o">.</span><span class="nv">$paged</span><span class="p">);</span>
-<span class="cp">?&gt;</span>
-<span class="cp">&lt;?php</span> <span class="k">if</span> <span class="p">(</span> <span class="nx">have_posts</span><span class="p">()</span> <span class="p">)</span> <span class="o">:</span> <span class="k">while</span> <span class="p">(</span> <span class="nx">have_posts</span><span class="p">()</span> <span class="p">)</span> <span class="o">:</span> <span class="nx">the_post</span><span class="p">();</span> <span class="cp">?&gt;</span>
-
-//吐き出しテンプレート
-
-<span class="cp">&lt;?php</span> <span class="k">endwhile</span><span class="p">;</span> <span class="k">else</span><span class="o">:</span> <span class="cp">?&gt;</span>
-<span class="cp">&lt;?php</span> <span class="k">endif</span><span class="p">;</span> <span class="cp">?&gt;</span>
-</code></pre></article><ul class="pagenations"><li class="old-page"><a href="/page/7/">Old entry</a></li><li class="new-page"><a href="/page/5/">New entry</a></li></ul></section></section><aside class="aside"><div class="aside-wrapper"><section class="article-list"><h2>Recent Articles</h2><ol class="articles"><li><a href="/archives/988.html">goqueryでHTMLをパースする</a><small class="meta">2015.02.05</small></li><li><a href="/archives/987.html">インストールしたGoパッケージを最新にする</a><small class="meta">2015.02.04</small></li><li><a href="/archives/986.html">Golangでbluemondayを使ってhtml_safeなsanitizeをする</a><small class="meta">2015.01.25</small></li><li><a href="/archives/985.html">GolangでBlackfridayを使ってMarkdownをHTMLに変換する</a><small class="meta">2015.01.25</small></li><li><a href="/archives/984.html">RapberryPi B+ セットアップメモ</a><small class="meta">2014.12.01</small></li><li><a href="/archives/983.html">MacでGNU版のコマンドをhomebrewでインストールする</a><small class="meta">2014.11.19</small></li><li><a href="/archives/981.html">GitHub Pages Legacy IP Desprecation</a><small class="meta">2014.11.16</small></li><li><a href="/archives/980.html">Intel Edison 秋葉原の秋月電子通商で衝動買いレビュー</a><small class="meta">2014.11.16</small></li><li><a href="/archives/979.html">Meteorで簡単なWebサービスつくってみた</a><small class="meta">2014.09.01</small></li><li><a href="/archives/978.html">gomを使ってGoのパッケージをGemfileライクに管理して使う</a><small class="meta">2014.08.09</small></li></ol></section><section class="article-list"><h2>Tags</h2><ul class="tags"><li><a href="/tags/info.html">info</a> (6)</a></li><li><a href="/tags/x-html.html">(X)HTML</a> (8)</a></li><li><a href="/tags/css.html">CSS</a> (10)</a></li><li><a href="/tags/ajax.html">Ajax</a> (14)</a></li><li><a href="/tags/javascript.html">JavaScript</a> (50)</a></li><li><a href="/tags/untitle.html">untitle</a> (4)</a></li><li><a href="/tags/cms.html">CMS</a> (2)</a></li><li><a href="/tags/xoops.html">XOOPS</a> (1)</a></li><li><a href="/tags/tsurezure.html">TsureZure</a> (8)</a></li><li><a href="/tags/bug.html">bug</a> (3)</a></li><li><a href="/tags/wordpress.html">wordpress</a> (6)</a></li><li><a href="/tags/funny.html">funny</a> (2)</a></li><li><a href="/tags/apache.html">apache</a> (1)</a></li><li><a href="/tags/php.html">PHP</a> (13)</a></li><li><a href="/tags/fedoracore.html">FedoraCore</a> (7)</a></li><li><a href="/tags/mysql.html">MySQL</a> (1)</a></li><li><a href="/tags/proftpd.html">proftpd</a> (2)</a></li><li><a href="/tags/virtualpc.html">VirtualPC</a> (3)</a></li><li><a href="/tags/java.html">Java</a> (4)</a></li><li><a href="/tags/x-html-css.html">(X)HTML+CSS</a> (6)</a></li><li><a href="/tags/linux.html">Linux</a> (26)</a></li><li><a href="/tags/backtrack.html">backtrack</a> (3)</a></li><li><a href="/tags/crack.html">crack</a> (3)</a></li><li><a href="/tags/hack.html">hack</a> (4)</a></li><li><a href="/tags/centos.html">CentOS</a> (5)</a></li><li><a href="/tags/movabletype.html">MovableType</a> (1)</a></li><li><a href="/tags/actionscript3.html">ActionScript3</a> (4)</a></li><li><a href="/tags/flash.html">Flash</a> (9)</a></li><li><a href="/tags/fedora.html">Fedora</a> (2)</a></li><li><a href="/tags/aliases.html">aliases</a> (1)</a></li><li><a href="/tags/sendmail.html">sendmail</a> (3)</a></li><li><a href="/tags/eva.html">eva</a> (2)</a></li><li><a href="/tags/pear.html">pear</a> (2)</a></li><li><a href="/tags/adobe-air.html">Adobe AIR</a> (1)</a></li><li><a href="/tags/aptana.html">Aptana</a> (2)</a></li><li><a href="/tags/android.html">Android</a> (4)</a></li><li><a href="/tags/oop.html">OOP</a> (1)</a></li><li><a href="/tags/api.html">API</a> (2)</a></li><li><a href="/tags/bash.html">bash</a> (2)</a></li><li><a href="/tags/adobe.html">Adobe</a> (1)</a></li><li><a href="/tags/ruby.html">Ruby</a> (12)</a></li><li><a href="/tags/美人時計.html">美人時計</a> (8)</a></li><li><a href="/tags/web-service.html">web service</a> (2)</a></li><li><a href="/tags/twitter.html">twitter</a> (1)</a></li><li><a href="/tags/tripwire.html">Tripwire</a> (1)</a></li><li><a href="/tags/ipad.html">iPad</a> (5)</a></li><li><a href="/tags/iphone.html">iPhone</a> (5)</a></li><li><a href="/tags/macosx.html">MacOSX</a> (4)</a></li><li><a href="/tags/objective-c.html">Objective-C</a> (4)</a></li><li><a href="/tags/zsh.html">zsh</a> (2)</a></li><li><a href="/tags/c.html">C</a> (1)</a></li><li><a href="/tags/spamassassin.html">Spamassassin</a> (1)</a></li><li><a href="/tags/xcode.html">Xcode</a> (1)</a></li><li><a href="/tags/rsync.html">Rsync</a> (1)</a></li><li><a href="/tags/postgresql.html">PostgreSQL</a> (1)</a></li><li><a href="/tags/guruplug.html">GuruPlug</a> (1)</a></li><li><a href="/tags/arduino.html">Arduino</a> (1)</a></li><li><a href="/tags/processing.html">Processing</a> (7)</a></li><li><a href="/tags/smartphone.html">smartphone</a> (2)</a></li><li><a href="/tags/ruby-on-rails.html">Ruby on Rails</a> (5)</a></li><li><a href="/tags/kinect.html">kinect</a> (1)</a></li><li><a href="/tags/openframeworks.html">openFrameworks</a> (1)</a></li><li><a href="/tags/ms-dos.html">MS-DOS</a> (1)</a></li><li><a href="/tags/powershell.html">Powershell</a> (1)</a></li><li><a href="/tags/python.html">Python</a> (2)</a></li><li><a href="/tags/titanium.html">Titanium</a> (1)</a></li><li><a href="/tags/google-app-engine.html">Google App Engine</a> (1)</a></li><li><a href="/tags/html5.html">HTML5</a> (2)</a></li><li><a href="/tags/jquery.html">jQuery</a> (4)</a></li><li><a href="/tags/responsive.html">responsive</a> (1)</a></li><li><a href="/tags/imagemagick.html">ImageMagick</a> (1)</a></li><li><a href="/tags/paas.html">PaaS</a> (1)</a></li><li><a href="/tags/redmine.html">Redmine</a> (1)</a></li><li><a href="/tags/roomba.html">roomba</a> (1)</a></li><li><a href="/tags/canvas.html">canvas</a> (1)</a></li><li><a href="/tags/pavuk.html">pavuk</a> (1)</a></li><li><a href="/tags/wget.html">wget</a> (1)</a></li><li><a href="/tags/find.html">find</a> (1)</a></li><li><a href="/tags/xargs.html">xargs</a> (1)</a></li><li><a href="/tags/css3.html">CSS3</a> (1)</a></li><li><a href="/tags/coffeescript.html">CoffeeScript</a> (1)</a></li><li><a href="/tags/grunt.html">Grunt</a> (1)</a></li><li><a href="/tags/sass-compass.html">Sass/Compass</a> (1)</a></li><li><a href="/tags/typescript.html">TypeScript</a> (2)</a></li><li><a href="/tags/middleman.html">middleman</a> (1)</a></li><li><a href="/tags/cygwin.html">cygwin</a> (1)</a></li><li><a href="/tags/typescript.html">typescript</a> (1)</a></li><li><a href="/tags/リニューアル.html">リニューアル</a> (1)</a></li><li><a href="/tags/js.html">JS</a> (1)</a></li><li><a href="/tags/cabinjs.html">CabinJS</a> (1)</a></li><li><a href="/tags/git.html">Git</a> (1)</a></li><li><a href="/tags/sass.html">sass</a> (1)</a></li><li><a href="/tags/scss.html">scss</a> (1)</a></li><li><a href="/tags/rails.html">Rails</a> (1)</a></li><li><a href="/tags/compass.html">compass</a> (1)</a></li><li><a href="/tags/martini.html">martini</a> (1)</a></li><li><a href="/tags/go.html">Go</a> (5)</a></li><li><a href="/tags/golang.html">golang</a> (2)</a></li><li><a href="/tags/gom.html">gom</a> (1)</a></li><li><a href="/tags/go.html">GO</a> (1)</a></li><li><a href="/tags/meteor.html">meteor</a> (1)</a></li><li><a href="/tags/edison.html">Edison</a> (1)</a></li><li><a href="/tags/iot.html">IOT</a> (1)</a></li><li><a href="/tags/github.html">GitHub</a> (1)</a></li><li><a href="/tags/github-pages.html">GitHub Pages</a> (1)</a></li><li><a href="/tags/gnu.html">GNU</a> (1)</a></li><li><a href="/tags/coreutils.html">coreutils</a> (1)</a></li><li><a href="/tags/raspberrypi.html">RaspberryPi</a> (1)</a></li><li><a href="/tags/raspbian.html">raspbian</a> (1)</a></li><li><a href="/tags/linux.html">linux</a> (1)</a></li><li><a href="/tags/golang.html">Golang</a> (4)</a></li></ul></section><section class="article-list"><h2>By Year</h2><ul class="years"><li><a href="/2015.html">2015</a> (4)</a></li><li><a href="/2014.html">2014</a> (17)</a></li><li><a href="/2013.html">2013</a> (4)</a></li><li><a href="/2012.html">2012</a> (8)</a></li><li><a href="/2011.html">2011</a> (20)</a></li><li><a href="/2010.html">2010</a> (38)</a></li><li><a href="/2009.html">2009</a> (45)</a></li><li><a href="/2008.html">2008</a> (31)</a></li><li><a href="/2007.html">2007</a> (15)</a></li></ul></section></div></aside><footer class="footer"><p class="copyright">&copy; funnythingz</p></footer><script>
+</code></pre><p>これで無事完了なりー。</p></article><ul class="pagenations"><li class="old-page"><a href="/page/7/">Old entry</a></li><li class="new-page"><a href="/page/5/">New entry</a></li></ul></section></section><aside class="aside"><div class="aside-wrapper"><section class="article-list"><h2> Recent Articles </h2><ol class="articles"><li><a href="/archives/.html">Android2系でインストール時にINSTALL_FAILED_DEXOPTエラー</a><small class="meta">2015.11.27</small></li><li><a href="/archives/.html">GoでJSONを返す</a><small class="meta">2015.07.28</small></li><li><a href="/archives/.html">ようやくモバイルフレンドリー化した</a><small class="meta">2015.07.26</small></li><li><a href="/archives/990.html">美人時計のgemつくった</a><small class="meta">2015.03.25</small></li><li><a href="/archives/989.html">GolangでTruncateできるsunnydayというパッケージをつくった</a><small class="meta">2015.02.14</small></li><li><a href="/archives/988.html">goqueryでHTMLをパースする</a><small class="meta">2015.02.05</small></li><li><a href="/archives/987.html">インストールしたGoパッケージを最新にする</a><small class="meta">2015.02.04</small></li><li><a href="/archives/986.html">Golangでbluemondayを使ってhtml_safeなsanitizeをする</a><small class="meta">2015.01.25</small></li><li><a href="/archives/985.html">GolangでBlackfridayを使ってMarkdownをHTMLに変換する</a><small class="meta">2015.01.25</small></li><li><a href="/archives/984.html">RapberryPi B+ セットアップメモ</a><small class="meta">2014.12.01</small></li></ol></section><section class="article-list"><h2> Tags </h2><ul class="tags"><li><a href="/tags/info.html">info</a> (6) </li><li><a href="/tags/x-html.html">(X)HTML</a> (8) </li><li><a href="/tags/css.html">CSS</a> (10) </li><li><a href="/tags/ajax.html">Ajax</a> (14) </li><li><a href="/tags/javascript.html">JavaScript</a> (50) </li><li><a href="/tags/untitle.html">untitle</a> (4) </li><li><a href="/tags/cms.html">CMS</a> (2) </li><li><a href="/tags/xoops.html">XOOPS</a> (1) </li><li><a href="/tags/tsurezure.html">TsureZure</a> (8) </li><li><a href="/tags/bug.html">bug</a> (3) </li><li><a href="/tags/wordpress.html">wordpress</a> (6) </li><li><a href="/tags/funny.html">funny</a> (2) </li><li><a href="/tags/apache.html">apache</a> (1) </li><li><a href="/tags/php.html">PHP</a> (13) </li><li><a href="/tags/fedoracore.html">FedoraCore</a> (7) </li><li><a href="/tags/mysql.html">MySQL</a> (1) </li><li><a href="/tags/proftpd.html">proftpd</a> (2) </li><li><a href="/tags/virtualpc.html">VirtualPC</a> (3) </li><li><a href="/tags/java.html">Java</a> (4) </li><li><a href="/tags/x-html-css.html">(X)HTML+CSS</a> (6) </li><li><a href="/tags/linux.html">Linux</a> (26) </li><li><a href="/tags/backtrack.html">backtrack</a> (3) </li><li><a href="/tags/crack.html">crack</a> (3) </li><li><a href="/tags/hack.html">hack</a> (4) </li><li><a href="/tags/centos.html">CentOS</a> (5) </li><li><a href="/tags/movabletype.html">MovableType</a> (1) </li><li><a href="/tags/actionscript3.html">ActionScript3</a> (4) </li><li><a href="/tags/flash.html">Flash</a> (9) </li><li><a href="/tags/fedora.html">Fedora</a> (2) </li><li><a href="/tags/aliases.html">aliases</a> (1) </li><li><a href="/tags/sendmail.html">sendmail</a> (3) </li><li><a href="/tags/eva.html">eva</a> (2) </li><li><a href="/tags/pear.html">pear</a> (2) </li><li><a href="/tags/adobe-air.html">Adobe AIR</a> (1) </li><li><a href="/tags/aptana.html">Aptana</a> (2) </li><li><a href="/tags/android.html">Android</a> (5) </li><li><a href="/tags/oop.html">OOP</a> (1) </li><li><a href="/tags/api.html">API</a> (2) </li><li><a href="/tags/bash.html">bash</a> (2) </li><li><a href="/tags/adobe.html">Adobe</a> (1) </li><li><a href="/tags/ruby.html">Ruby</a> (12) </li><li><a href="/tags/美人時計.html">美人時計</a> (9) </li><li><a href="/tags/web-service.html">web service</a> (2) </li><li><a href="/tags/twitter.html">twitter</a> (1) </li><li><a href="/tags/tripwire.html">Tripwire</a> (1) </li><li><a href="/tags/ipad.html">iPad</a> (5) </li><li><a href="/tags/iphone.html">iPhone</a> (5) </li><li><a href="/tags/macosx.html">MacOSX</a> (4) </li><li><a href="/tags/objective-c.html">Objective-C</a> (4) </li><li><a href="/tags/zsh.html">zsh</a> (2) </li><li><a href="/tags/c.html">C</a> (1) </li><li><a href="/tags/spamassassin.html">Spamassassin</a> (1) </li><li><a href="/tags/xcode.html">Xcode</a> (1) </li><li><a href="/tags/rsync.html">Rsync</a> (1) </li><li><a href="/tags/postgresql.html">PostgreSQL</a> (1) </li><li><a href="/tags/guruplug.html">GuruPlug</a> (1) </li><li><a href="/tags/arduino.html">Arduino</a> (1) </li><li><a href="/tags/processing.html">Processing</a> (7) </li><li><a href="/tags/smartphone.html">smartphone</a> (2) </li><li><a href="/tags/ruby-on-rails.html">Ruby on Rails</a> (5) </li><li><a href="/tags/kinect.html">kinect</a> (1) </li><li><a href="/tags/openframeworks.html">openFrameworks</a> (1) </li><li><a href="/tags/ms-dos.html">MS-DOS</a> (1) </li><li><a href="/tags/powershell.html">Powershell</a> (1) </li><li><a href="/tags/python.html">Python</a> (2) </li><li><a href="/tags/titanium.html">Titanium</a> (1) </li><li><a href="/tags/google-app-engine.html">Google App Engine</a> (1) </li><li><a href="/tags/html5.html">HTML5</a> (2) </li><li><a href="/tags/jquery.html">jQuery</a> (4) </li><li><a href="/tags/responsive.html">responsive</a> (1) </li><li><a href="/tags/imagemagick.html">ImageMagick</a> (1) </li><li><a href="/tags/paas.html">PaaS</a> (1) </li><li><a href="/tags/redmine.html">Redmine</a> (1) </li><li><a href="/tags/roomba.html">roomba</a> (1) </li><li><a href="/tags/canvas.html">canvas</a> (1) </li><li><a href="/tags/pavuk.html">pavuk</a> (1) </li><li><a href="/tags/wget.html">wget</a> (1) </li><li><a href="/tags/find.html">find</a> (1) </li><li><a href="/tags/xargs.html">xargs</a> (1) </li><li><a href="/tags/css3.html">CSS3</a> (1) </li><li><a href="/tags/coffeescript.html">CoffeeScript</a> (1) </li><li><a href="/tags/grunt.html">Grunt</a> (1) </li><li><a href="/tags/sass-compass.html">Sass/Compass</a> (1) </li><li><a href="/tags/typescript.html">TypeScript</a> (2) </li><li><a href="/tags/middleman.html">middleman</a> (1) </li><li><a href="/tags/cygwin.html">cygwin</a> (1) </li><li><a href="/tags/typescript.html">typescript</a> (1) </li><li><a href="/tags/リニューアル.html">リニューアル</a> (1) </li><li><a href="/tags/js.html">JS</a> (1) </li><li><a href="/tags/cabinjs.html">CabinJS</a> (1) </li><li><a href="/tags/git.html">Git</a> (1) </li><li><a href="/tags/sass.html">sass</a> (1) </li><li><a href="/tags/scss.html">scss</a> (1) </li><li><a href="/tags/rails.html">Rails</a> (1) </li><li><a href="/tags/compass.html">compass</a> (1) </li><li><a href="/tags/martini.html">martini</a> (1) </li><li><a href="/tags/go.html">Go</a> (7) </li><li><a href="/tags/golang.html">Golang</a> (6) </li><li><a href="/tags/gom.html">gom</a> (1) </li><li><a href="/tags/meteor.html">meteor</a> (1) </li><li><a href="/tags/edison.html">Edison</a> (1) </li><li><a href="/tags/iot.html">IOT</a> (1) </li><li><a href="/tags/github.html">GitHub</a> (1) </li><li><a href="/tags/github-pages.html">GitHub Pages</a> (1) </li><li><a href="/tags/gnu.html">GNU</a> (1) </li><li><a href="/tags/coreutils.html">coreutils</a> (1) </li><li><a href="/tags/raspberrypi.html">RaspberryPi</a> (1) </li><li><a href="/tags/raspbian.html">raspbian</a> (1) </li><li><a href="/tags/linux.html">linux</a> (1) </li><li><a href="/tags/golang.html">golang</a> (1) </li><li><a href="/tags/diary.html">diary</a> (1) </li><li><a href="/tags/go.html">go</a> (1) </li></ul></section><section class="article-list"><h2> By Year </h2><ul class="years"><li><a href="/2015.html">2015</a> (9) </li><li><a href="/2014.html">2014</a> (17) </li><li><a href="/2013.html">2013</a> (4) </li><li><a href="/2012.html">2012</a> (8) </li><li><a href="/2011.html">2011</a> (20) </li><li><a href="/2010.html">2010</a> (38) </li><li><a href="/2009.html">2009</a> (45) </li><li><a href="/2008.html">2008</a> (31) </li><li><a href="/2007.html">2007</a> (15) </li></ul></section></div></aside><footer class="footer"><p class="copyright"> &copy;&nbsp;<a target="_blank" href="http://www.funnythingz.com">funnythingz</a></p></footer><script>
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-1882060-2']);
       _gaq.push(['_trackPageview']);
@@ -718,4 +403,4 @@ query_posts("cat=".$cat."<span class="ni">&amp;order=ASC&amp;orderby=date&amp;po
        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
        })();
-     </script></body></html>
+    </script></body></html>

@@ -1,22 +1,260 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Blog Name</title>
-  <subtitle>Blog subtitle</subtitle>
-  <id>http://blog.url.com/</id>
-  <link href="http://blog.url.com/"/>
-  <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2015-02-05T09:00:00+09:00</updated>
+  <title>ひろぽっぽれす - hiropopless</title>
+  <subtitle>いくらが大好きです。Webの開発やってます。</subtitle>
+  <id>http://hiropo.co.uk/</id>
+  <link href="http://hiropo.co.uk/"/>
+  <link href="http://hiropo.co.uk/feed.xml" rel="self"/>
+  <updated>2015-11-27T23:55:00+09:00</updated>
   <author>
-    <name>Blog Author</name>
+    <name>funnythingz</name>
   </author>
   <entry>
+    <title>Android2系でインストール時にINSTALL_FAILED_DEXOPTエラー</title>
+    <link rel="alternate" href="http://hiropo.co.uk/archives/.html"/>
+    <id>http://hiropo.co.uk/archives/.html</id>
+    <published>2015-11-27T23:55:00+09:00</published>
+    <updated>2015-11-28T00:09:00+09:00</updated>
+    <author>
+      <name>funnythingz</name>
+    </author>
+    <content type="html">&lt;p&gt;お久しぶりです。Goエンジニアやってたと思ったら今ではAndroidエンジニアやってる今日このごろです。&lt;/p&gt;
+
+&lt;p&gt;Android2系で&lt;a href="https://www.facebook.com/notes/facebook-engineering/under-the-hood-dalvik-patch-for-facebook-for-android/10151345597798920"&gt;こんな感じのエラー&lt;/a&gt;に遭遇してしまい、メソッド数を減らさなくてはいけないため対処した内容をメモっておきます。&lt;/p&gt;
+
+&lt;p&gt;どうもgradleで &lt;code&gt;com.google.android.gms:play-services&lt;/code&gt; を読み込んでいると、ほとんど使ってない余計なものがたくさんあるようで、なんと &lt;code&gt;18513&lt;/code&gt; もメソッドがあるようです。&lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;dependencies {
+  compile 'com.google.android.gms:play-services:6.5.+'
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;なので、これを&lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;dependencies {
+  compile 'com.google.android.gms:play-services-base:6.5.87'
+  compile 'com.google.android.gms:play-services-identity:6.5.87'
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;こんな感じに必要なものだけをcompileするようにします。これでメソッド数がかなり減らせるのと、ビルド時間もかなり短縮できます。&lt;/p&gt;
+
+&lt;p&gt;さらに&lt;a href="http://android-developers.blogspot.de/2014/12/google-play-services-and-dex-method.html"&gt;詳しくはこちら&lt;/a&gt;をみてみてください。&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>GoでJSONを返す</title>
+    <link rel="alternate" href="http://hiropo.co.uk/archives/.html"/>
+    <id>http://hiropo.co.uk/archives/.html</id>
+    <published>2015-07-28T23:16:00+09:00</published>
+    <updated>2015-11-27T23:45:17+09:00</updated>
+    <author>
+      <name>funnythingz</name>
+    </author>
+    <content type="html">&lt;p&gt;仕事でGoでAPI開発やってるのですが、JSON書き出しのところメモっておきます。&lt;/p&gt;
+
+&lt;h2&gt;基本的なJSONの書き出し方&lt;/h2&gt;
+
+&lt;p&gt;structでオブジェクトを定義してjson化します。&lt;/p&gt;
+&lt;pre class="highlight go"&gt;&lt;code&gt;&lt;span class="k"&gt;package&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="n"&gt;main&lt;/span&gt;&lt;span class="x"&gt;
+
+&lt;/span&gt;&lt;span class="k"&gt;import&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="x"&gt;
+    &lt;/span&gt;&lt;span class="s"&gt;"encoding/json"&lt;/span&gt;&lt;span class="x"&gt;
+    &lt;/span&gt;&lt;span class="s"&gt;"fmt"&lt;/span&gt;&lt;span class="x"&gt;
+&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="x"&gt;
+
+&lt;/span&gt;&lt;span class="k"&gt;type&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="n"&gt;Object&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="k"&gt;struct&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="x"&gt;
+    &lt;/span&gt;&lt;span class="n"&gt;Name&lt;/span&gt;&lt;span class="x"&gt;  &lt;/span&gt;&lt;span class="kt"&gt;string&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="s"&gt;`json:"name"`&lt;/span&gt;&lt;span class="x"&gt;
+    &lt;/span&gt;&lt;span class="n"&gt;Value&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="kt"&gt;string&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="s"&gt;`json:"value"`&lt;/span&gt;&lt;span class="x"&gt;
+    &lt;/span&gt;&lt;span class="n"&gt;Memo&lt;/span&gt;&lt;span class="x"&gt;  &lt;/span&gt;&lt;span class="kt"&gt;string&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="s"&gt;`json:"memo"`&lt;/span&gt;&lt;span class="x"&gt;
+&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="x"&gt;
+
+&lt;/span&gt;&lt;span class="k"&gt;func&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="n"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="x"&gt;
+
+    &lt;/span&gt;&lt;span class="n"&gt;o&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="o"&gt;:=&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="n"&gt;Object&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="n"&gt;Name&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="s"&gt;"unko"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="n"&gt;Value&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="s"&gt;"ばりゅー"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="n"&gt;Memo&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="s"&gt;"めもめもー"&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="x"&gt;
+
+    &lt;/span&gt;&lt;span class="n"&gt;response&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="n"&gt;_&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="o"&gt;:=&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="n"&gt;json&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Marshal&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;o&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="x"&gt;
+    &lt;/span&gt;&lt;span class="n"&gt;fmt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Println&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;string&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;response&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;&lt;span class="x"&gt;
+&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="x"&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;こんな感じのコードだと&lt;/p&gt;
+&lt;pre class="highlight json"&gt;&lt;code&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;
+  &lt;/span&gt;&lt;span class="nt"&gt;"name"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="s2"&gt;"unko"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt;
+  &lt;/span&gt;&lt;span class="nt"&gt;"value"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="s2"&gt;"ばりゅー"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt;
+  &lt;/span&gt;&lt;span class="nt"&gt;"memo"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="s2"&gt;"めもめもー"&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;こんな感じのJSONとして書き出されます。とてもシンプルです。&lt;/p&gt;
+
+&lt;h2&gt;書き出したくないプロパティがある場合&lt;/h2&gt;
+
+&lt;p&gt;structの中で書き出したくないパラメータがあります。
+この場合はアノテーションを使って &lt;code&gt;-&lt;/code&gt; を与えます。&lt;/p&gt;
+&lt;pre class="highlight go"&gt;&lt;code&gt;&lt;span class="k"&gt;package&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="n"&gt;main&lt;/span&gt;&lt;span class="x"&gt;
+
+&lt;/span&gt;&lt;span class="k"&gt;import&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="x"&gt;
+    &lt;/span&gt;&lt;span class="s"&gt;"encoding/json"&lt;/span&gt;&lt;span class="x"&gt;
+    &lt;/span&gt;&lt;span class="s"&gt;"fmt"&lt;/span&gt;&lt;span class="x"&gt;
+&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="x"&gt;
+
+&lt;/span&gt;&lt;span class="k"&gt;type&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="n"&gt;Object&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="k"&gt;struct&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="x"&gt;
+    &lt;/span&gt;&lt;span class="n"&gt;Name&lt;/span&gt;&lt;span class="x"&gt;  &lt;/span&gt;&lt;span class="kt"&gt;string&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="s"&gt;`json:"name"`&lt;/span&gt;&lt;span class="x"&gt;
+    &lt;/span&gt;&lt;span class="n"&gt;Value&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="kt"&gt;string&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="s"&gt;`json:"value"`&lt;/span&gt;&lt;span class="x"&gt;
+    &lt;/span&gt;&lt;span class="n"&gt;Memo&lt;/span&gt;&lt;span class="x"&gt;  &lt;/span&gt;&lt;span class="kt"&gt;string&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="s"&gt;`json:"-"`&lt;/span&gt;&lt;span class="x"&gt;
+&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="x"&gt;
+
+&lt;/span&gt;&lt;span class="k"&gt;func&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="n"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="x"&gt;
+
+    &lt;/span&gt;&lt;span class="n"&gt;o&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="o"&gt;:=&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="n"&gt;Object&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="n"&gt;Name&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="s"&gt;"unko"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="n"&gt;Value&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="s"&gt;"ばりゅー"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="n"&gt;Memo&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="s"&gt;"ここは表示されないよー"&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="x"&gt;
+
+    &lt;/span&gt;&lt;span class="n"&gt;response&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="n"&gt;_&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="o"&gt;:=&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="n"&gt;json&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Marshal&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;o&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="x"&gt;
+    &lt;/span&gt;&lt;span class="n"&gt;fmt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Println&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;string&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;response&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;&lt;span class="x"&gt;
+&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="x"&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;で、こんな感じにo.Memoは表示されなくなります。&lt;/p&gt;
+&lt;pre class="highlight json"&gt;&lt;code&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;
+  &lt;/span&gt;&lt;span class="nt"&gt;"name"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="s2"&gt;"unko"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt;
+  &lt;/span&gt;&lt;span class="nt"&gt;"value"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="s2"&gt;"ばりゅー"&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;GoはJSONの扱いがとても簡単なのでした。&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>ようやくモバイルフレンドリー化した</title>
+    <link rel="alternate" href="http://hiropo.co.uk/archives/.html"/>
+    <id>http://hiropo.co.uk/archives/.html</id>
+    <published>2015-07-26T14:28:00+09:00</published>
+    <updated>2015-11-27T23:45:17+09:00</updated>
+    <author>
+      <name>funnythingz</name>
+    </author>
+    <content type="html">&lt;p&gt;ひろぽっぽれすがやっとモバイルフレンドリーになりました。&lt;/p&gt;
+
+&lt;p&gt;何が悪かったかっていうと、画像がスマフォで見た時にどうやらはみ出しまくるサイズになっていたようで。&lt;/p&gt;
+
+&lt;p&gt;サクッと&lt;/p&gt;
+&lt;pre class="highlight scss"&gt;&lt;code&gt;&lt;span class="nc"&gt;.article&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="nt"&gt;img&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nl"&gt;max-width&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;100%&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;にしてやりましたよ。&lt;/p&gt;
+
+&lt;p&gt;ﾄﾞﾔｧ&lt;/p&gt;
+
+&lt;p&gt;夏暑いです。&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>美人時計のgemつくった</title>
+    <link rel="alternate" href="http://hiropo.co.uk/archives/990.html"/>
+    <id>http://hiropo.co.uk/archives/990.html</id>
+    <published>2015-03-25T00:30:00+09:00</published>
+    <updated>2015-11-27T23:45:17+09:00</updated>
+    <author>
+      <name>funnythingz</name>
+    </author>
+    <content type="html">&lt;p&gt;Hello, world. funnythingzです。めんどくさすぎてブログを放置していました。明日から本気出す。&lt;/p&gt;
+
+&lt;p&gt;プルリクにLGTMするときに美人時計を表示したいなと思ったのでなんとなく&lt;a href="https://github.com/funnythingz/bijint"&gt;bijint&lt;/a&gt;というgemをつくってみました。けっこう適当です。&lt;/p&gt;
+
+&lt;p&gt;Chromeエクステンションとかまではつくるのがめんどくさかったのでとりあえずコマンドベースで美人時計の画像パスのマークダウンとか生成してくれます。あまり難しいことはしていません。&lt;/p&gt;
+
+&lt;h2&gt;bijintをインストールする&lt;/h2&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;$ gem install bijint
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;とっても簡単インストールです。&lt;/p&gt;
+
+&lt;h2&gt;使い方&lt;/h2&gt;
+
+&lt;p&gt;一番シンプルなコマンドです。今の時間の画像パスを生成します。&lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;$ bijint
+http://www.bijint.com/assets/pict/tokyo/pc/0039.jpg
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ランダムな時間の画像パスを生成します。&lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;$ bijint random
+http://www.bijint.com/assets/pict/tokyo/pc/1530.jpg
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;今の時間の画像パスをマークダウン形式で生成してくれます。&lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;$ bijint md
+[![bijint](http://www.bijint.com/assets/pict/tokyo/pc/0043.jpg)](http://www.bijint.com/assets/pict/tokyo/pc/0043.jpg)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ランダムな時間のマークダウン形式の画像パスを生成してくれます。&lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;$ bijint md_random
+[![bijint](http://www.bijint.com/assets/pict/tokyo/pc/1407.jpg)](http://www.bijint.com/assets/pict/tokyo/pc/1407.jpg)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;pbcopy&lt;/code&gt; と組み合わせて使うとクリップボードにコピーしてくれるので貼り付けも簡単です。&lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;$ bijint | pbcopy
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;それでは良き美人時計ライフを！&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>GolangでTruncateできるsunnydayというパッケージをつくった</title>
+    <link rel="alternate" href="http://hiropo.co.uk/archives/989.html"/>
+    <id>http://hiropo.co.uk/archives/989.html</id>
+    <published>2015-02-14T00:00:00+09:00</published>
+    <updated>2015-11-27T23:45:17+09:00</updated>
+    <author>
+      <name>funnythingz</name>
+    </author>
+    <content type="html">&lt;p&gt;こんにちは、funnythingzです。GoでTruncateがありそうでなかったのでつくってみました。超シンプルです。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://github.com/funnythingz/sunnyday"&gt;github.com/funnythingz/sunnyday&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;使い方は超簡単です。&lt;/p&gt;
+
+&lt;p&gt;まず &lt;code&gt;go get&lt;/code&gt; します。&lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;% go get github.com/funnythingz/sunnyday
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;importして &lt;code&gt;sunnyday.Truncate&lt;/code&gt; をこんな感じで呼び出します。&lt;/p&gt;
+&lt;pre class="highlight go"&gt;&lt;code&gt;&lt;span class="k"&gt;package&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="n"&gt;main&lt;/span&gt;&lt;span class="x"&gt;
+
+&lt;/span&gt;&lt;span class="k"&gt;import&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="x"&gt;
+    &lt;/span&gt;&lt;span class="s"&gt;"fmt"&lt;/span&gt;&lt;span class="x"&gt;
+    &lt;/span&gt;&lt;span class="s"&gt;"github.com/funnythingz/sunnyday"&lt;/span&gt;&lt;span class="x"&gt;
+&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="x"&gt;
+
+&lt;/span&gt;&lt;span class="k"&gt;func&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="n"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="x"&gt;
+    &lt;/span&gt;&lt;span class="n"&gt;fmt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Println&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sunnyday&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Truncate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"うんこっこたのしいお！"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="m"&gt;5&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;&lt;span class="x"&gt;
+&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="x"&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;うんこっこ…
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;超シンプルです。簡単です。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;...&lt;/code&gt; をカスタムするには第3引数にカスタム用のstringを渡すだけです。&lt;/p&gt;
+&lt;pre class="highlight go"&gt;&lt;code&gt;&lt;span class="n"&gt;fmt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Println&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sunnyday&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Truncate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"うんこっこたのしいお！"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="m"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="s"&gt;"...more"&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;&lt;span class="x"&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;うんこっこ...more
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;超カンタンです。難しいことはなにひとつありません。&lt;/p&gt;
+
+&lt;p&gt;こんな感じであると地味に便利なTruncateです。ぜひ使ってみてください。&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
     <title>goqueryでHTMLをパースする</title>
-    <link rel="alternate" href="http://blog.url.com/archives/988.html"/>
-    <id>http://blog.url.com/archives/988.html</id>
-    <published>2015-02-05T09:00:00+09:00</published>
+    <link rel="alternate" href="http://hiropo.co.uk/archives/988.html"/>
+    <id>http://hiropo.co.uk/archives/988.html</id>
+    <published>2015-02-05T00:00:00+09:00</published>
     <updated>2015-02-09T19:02:53+09:00</updated>
     <author>
-      <name>Article Author</name>
+      <name>funnythingz</name>
     </author>
     <content type="html">&lt;p&gt;HTMLのパースをするならgoquery！goquery便利すぎて泣いた。
 jQueryっぽく使えて良いです。&lt;/p&gt;
@@ -97,355 +335,6 @@ ok
 今回のテストコードは&lt;a href="https://github.com/funnythingz/go-test/blob/master/goquery_test.go"&gt;GitHub&lt;/a&gt;にもあげました。&lt;/p&gt;
 
 &lt;p&gt;テスト、だいじだよ、テスト。&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>インストールしたGoパッケージを最新にする</title>
-    <link rel="alternate" href="http://blog.url.com/archives/987.html"/>
-    <id>http://blog.url.com/archives/987.html</id>
-    <published>2015-02-04T09:00:00+09:00</published>
-    <updated>2015-02-09T19:02:53+09:00</updated>
-    <author>
-      <name>Article Author</name>
-    </author>
-    <content type="html">&lt;p&gt;go get でインストールしたパッケージたちを一気にアップグレードする。&lt;/p&gt;
-&lt;pre class="highlight shell"&gt;&lt;code&gt;&lt;span class="gp"&gt;% &lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; &lt;span class="nv"&gt;$GOPATH&lt;/span&gt;
-&lt;span class="gp"&gt;% &lt;/span&gt;go clean -i ./...
-&lt;span class="gp"&gt;% &lt;/span&gt;go install ...
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;これでいけた！&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Golangでbluemondayを使ってhtml_safeなsanitizeをする</title>
-    <link rel="alternate" href="http://blog.url.com/archives/986.html"/>
-    <id>http://blog.url.com/archives/986.html</id>
-    <published>2015-01-25T09:00:00+09:00</published>
-    <updated>2015-02-09T19:02:53+09:00</updated>
-    <author>
-      <name>Article Author</name>
-    </author>
-    <content type="html">&lt;p&gt;ここ数年ブログを書くのが億劫すぎていたのでまさかの1日2連続エントリーです。2015年はブログもちゃんと書くぞ！&lt;/p&gt;
-
-&lt;p&gt;&lt;a href="http://hiropo.co.uk/archives/985.html"&gt;GolangでBlackfridayを使ってMarkdownをHTMLに変換する&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;上記記事でも軽くふれたのですが、sanitizerの&lt;a href="https://github.com/microcosm-cc/bluemonday"&gt;microcosm-cc/bluemonday&lt;/a&gt;も便利なので(名前が鬱になるけど)使ってみました。&lt;/p&gt;
-
-&lt;h3&gt;html&lt;/h3&gt;
-
-&lt;p&gt;hoge.html&lt;/p&gt;
-&lt;pre class="highlight html"&gt;&lt;code&gt;&lt;span class="nt"&gt;&amp;lt;h1&amp;gt;&lt;/span&gt;hoge&lt;span class="nt"&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
-&lt;span class="nt"&gt;&amp;lt;p&amp;gt;&lt;/span&gt;hogehoge&lt;span class="nt"&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
-&lt;span class="nt"&gt;&amp;lt;script&amp;gt;&lt;/span&gt;&lt;span class="nx"&gt;alert&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="nt"&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
-&lt;span class="nt"&gt;&amp;lt;style&amp;gt;body&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="nl"&gt;font-size&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;100px&lt;/span&gt;&lt;span class="p"&gt;;}&lt;/span&gt;&lt;span class="nt"&gt;&amp;lt;/style&amp;gt;&lt;/span&gt;
-&lt;span class="nt"&gt;&amp;lt;footer&amp;gt;&lt;/span&gt;&lt;span class="ni"&gt;&amp;amp;copy;&lt;/span&gt; funnythingz&lt;span class="nt"&gt;&amp;lt;/footer&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3&gt;Go&lt;/h3&gt;
-
-&lt;p&gt;demo.go&lt;/p&gt;
-&lt;pre class="highlight go"&gt;&lt;code&gt;&lt;span class="k"&gt;package&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="n"&gt;main&lt;/span&gt;&lt;span class="x"&gt;
-
-&lt;/span&gt;&lt;span class="k"&gt;import&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="x"&gt;
-    &lt;/span&gt;&lt;span class="s"&gt;"fmt"&lt;/span&gt;&lt;span class="x"&gt;
-    &lt;/span&gt;&lt;span class="s"&gt;"github.com/microcosm-cc/bluemonday"&lt;/span&gt;&lt;span class="x"&gt;
-    &lt;/span&gt;&lt;span class="s"&gt;"io/ioutil"&lt;/span&gt;&lt;span class="x"&gt;
-&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="x"&gt;
-
-&lt;/span&gt;&lt;span class="k"&gt;func&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="n"&gt;check&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="kt"&gt;error&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="x"&gt;
-    &lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="o"&gt;!=&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="no"&gt;nil&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="x"&gt;
-        &lt;/span&gt;&lt;span class="nb"&gt;panic&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="x"&gt;
-    &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="x"&gt;
-&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="x"&gt;
-
-&lt;/span&gt;&lt;span class="k"&gt;func&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="n"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="x"&gt;
-    &lt;/span&gt;&lt;span class="n"&gt;html&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="n"&gt;err&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="o"&gt;:=&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="n"&gt;ioutil&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ReadFile&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"hoge.html"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="x"&gt;
-    &lt;/span&gt;&lt;span class="n"&gt;check&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;err&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="x"&gt;
-
-    &lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="o"&gt;:=&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="n"&gt;bluemonday&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;UGCPolicy&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="x"&gt;
-    &lt;/span&gt;&lt;span class="n"&gt;fmt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Println&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Sanitize&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;string&lt;/span&gt;&lt;span class="p"&gt;([]&lt;/span&gt;&lt;span class="kt"&gt;byte&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;html&lt;/span&gt;&lt;span class="p"&gt;))))&lt;/span&gt;&lt;span class="x"&gt;
-&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="x"&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3&gt;出力結果&lt;/h3&gt;
-&lt;pre class="highlight shell"&gt;&lt;code&gt;&lt;span class="gp"&gt;% &lt;/span&gt;go run demo.go
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;で実行すると&lt;/p&gt;
-&lt;pre class="highlight html"&gt;&lt;code&gt;&lt;span class="nt"&gt;&amp;lt;h1&amp;gt;&lt;/span&gt;hoge&lt;span class="nt"&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
-&lt;span class="nt"&gt;&amp;lt;p&amp;gt;&lt;/span&gt;hogehoge&lt;span class="nt"&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
-
-
-© funnythingz
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;となってhtml_safeな感じで出力されます。ちなみにbluemondayのポリシーで許可されているタグは下記になります。&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;article, aside, figure, section, summary, h1~h6, hgroup, br, div, hr, p, span, wbr, abbr, acronym, cite, code, dfn, em, figcaption, mark, s, samp, strong, sub, sup, var, b, i, pre, small, strike, tt, u, rp, rt, ruby&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;詳細は&lt;a href="https://github.com/microcosm-cc/bluemonday/blob/master/policies.go"&gt;bluemondayのコード&lt;/a&gt;をみてみてください。&lt;/p&gt;
-
-&lt;p&gt;こんな感じでblackfridayとbluemondayを組み合わせて使うといろいろできそうですね！&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>GolangでBlackfridayを使ってMarkdownをHTMLに変換する</title>
-    <link rel="alternate" href="http://blog.url.com/archives/985.html"/>
-    <id>http://blog.url.com/archives/985.html</id>
-    <published>2015-01-25T09:00:00+09:00</published>
-    <updated>2015-02-09T19:02:53+09:00</updated>
-    <author>
-      <name>Article Author</name>
-    </author>
-    <content type="html">&lt;p&gt;Rails大好きfunnythingzです。TypeScriptよりもRails書いてます。&lt;/p&gt;
-
-&lt;p&gt;Railsに慣れすぎてしまうと他のことができなくなってやばいと思い2015年はGolangに力を入れていこうと思っています。Go界隈の流れの早さについていけていません。&lt;/p&gt;
-
-&lt;p&gt;それはさておきGoでMarkdownをHTMLにしたいなと思いGitHubをいろいろ探していたら&lt;a href="https://github.com/russross/blackfriday"&gt;russross/blackfriday&lt;/a&gt;というものを見つけました。名前が中二感ハンパなくてカッコイイです。sanitizerの&lt;a href="https://github.com/microcosm-cc/bluemonday"&gt;microcosm-cc/bluemonday&lt;/a&gt;というものもあります。名前カッコイイわー。&lt;/p&gt;
-
-&lt;p&gt;とりあえず使い方は簡単なのでコード書いておきます。&lt;/p&gt;
-
-&lt;h3&gt;markdown&lt;/h3&gt;
-
-&lt;p&gt;hoge.md&lt;/p&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;# hoge
-
-hogehoge
-
-- hoge
-- hoge
-
-## hoge
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3&gt;Go&lt;/h3&gt;
-
-&lt;p&gt;demo.go&lt;/p&gt;
-&lt;pre class="highlight go"&gt;&lt;code&gt;&lt;span class="k"&gt;package&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="n"&gt;main&lt;/span&gt;&lt;span class="x"&gt;
-
-&lt;/span&gt;&lt;span class="k"&gt;import&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="x"&gt;
-    &lt;/span&gt;&lt;span class="s"&gt;"fmt"&lt;/span&gt;&lt;span class="x"&gt;
-    &lt;/span&gt;&lt;span class="s"&gt;"github.com/russross/blackfriday"&lt;/span&gt;&lt;span class="x"&gt;
-    &lt;/span&gt;&lt;span class="s"&gt;"io/ioutil"&lt;/span&gt;&lt;span class="x"&gt;
-&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="x"&gt;
-
-&lt;/span&gt;&lt;span class="k"&gt;func&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="n"&gt;check&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="kt"&gt;error&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="x"&gt;
-    &lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="o"&gt;!=&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="no"&gt;nil&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="x"&gt;
-        &lt;/span&gt;&lt;span class="nb"&gt;panic&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="x"&gt;
-    &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="x"&gt;
-&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="x"&gt;
-
-&lt;/span&gt;&lt;span class="k"&gt;func&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="n"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="x"&gt;
-    &lt;/span&gt;&lt;span class="n"&gt;md&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="n"&gt;err&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="o"&gt;:=&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="n"&gt;ioutil&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ReadFile&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"hoge.md"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="x"&gt;
-    &lt;/span&gt;&lt;span class="n"&gt;check&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;err&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="x"&gt;
-    &lt;/span&gt;&lt;span class="n"&gt;output&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="o"&gt;:=&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="n"&gt;blackfriday&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;MarkdownCommon&lt;/span&gt;&lt;span class="p"&gt;([]&lt;/span&gt;&lt;span class="kt"&gt;byte&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;md&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;&lt;span class="x"&gt;
-    &lt;/span&gt;&lt;span class="n"&gt;fmt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Println&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;string&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;output&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;&lt;span class="x"&gt;
-&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="x"&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3&gt;出力結果&lt;/h3&gt;
-&lt;pre class="highlight shell"&gt;&lt;code&gt;&lt;span class="gp"&gt;% &lt;/span&gt;go run demo.go
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;で実行すると&lt;/p&gt;
-&lt;pre class="highlight html"&gt;&lt;code&gt;&lt;span class="nt"&gt;&amp;lt;h1&amp;gt;&lt;/span&gt;hoge&lt;span class="nt"&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
-
-&lt;span class="nt"&gt;&amp;lt;p&amp;gt;&lt;/span&gt;hogehoge&lt;span class="nt"&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
-
-&lt;span class="nt"&gt;&amp;lt;ul&amp;gt;&lt;/span&gt;
-&lt;span class="nt"&gt;&amp;lt;li&amp;gt;&lt;/span&gt;hoge&lt;span class="nt"&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
-&lt;span class="nt"&gt;&amp;lt;li&amp;gt;&lt;/span&gt;hoge&lt;span class="nt"&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
-&lt;span class="nt"&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
-
-&lt;span class="nt"&gt;&amp;lt;h2&amp;gt;&lt;/span&gt;hoge&lt;span class="nt"&gt;&amp;lt;/h2&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;となります。簡単！&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>RapberryPi B+ セットアップメモ</title>
-    <link rel="alternate" href="http://blog.url.com/archives/984.html"/>
-    <id>http://blog.url.com/archives/984.html</id>
-    <published>2014-12-01T09:00:00+09:00</published>
-    <updated>2015-01-30T12:54:24+09:00</updated>
-    <author>
-      <name>Article Author</name>
-    </author>
-    <content type="html">&lt;p&gt;先日秋葉原で&lt;a href="http://hiropo.co.uk/archives/980.html"&gt;Intel Edison&lt;/a&gt;の他にRaspberryPi B+ も買ったのでbotサーバーでもつくろうと思っている。&lt;/p&gt;
-
-&lt;p&gt;とりあえずセットアップしたことをメモっていく。&lt;/p&gt;
-
-&lt;h2&gt;環境&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Raspberry Pi B+&lt;/li&gt;
-&lt;li&gt;Raspbian&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2&gt;初期設定&lt;/h2&gt;
-
-&lt;p&gt;起動したらいきなり初期設定が立ち上がっている場合もある。&lt;/p&gt;
-
-&lt;p&gt;初期設定画面が出なかったらログインして初期設定を行う&lt;/p&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;user: pi
-pass: raspberry
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;初期設定を行うには&amp;lsquo;raspi-config&amp;#39;を実行する&lt;/p&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;% raspi-config
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3&gt;SSHの設定でつまずいた件&lt;/h3&gt;
-
-&lt;p&gt;&amp;#39;raspi-config&amp;rsquo; でSSHを設定する際に、&amp;#39;Initial ssh key generation still running. Please wait and try again.&amp;rsquo; というエラーメッセージに遭遇。
-下記の対応をすることで解決されるんだけど、非常にめんどくさすぎる。&lt;/p&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;% sudo rm /var/log/regen_ssh_keys.log
-% sudo rm /etc/ssh/ssh_host*
-% sudo ssh-keygen -A
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2&gt;不要なファイルを削除する&lt;/h2&gt;
-
-&lt;p&gt;bot用途で使おうと思っているのでGUI系のソースとかは要らないので片っ端から削除していく。
-削除したファイルは下記の通り。シェルスクリプトにして実行するとラクになる。&lt;/p&gt;
-&lt;pre class="highlight shell"&gt;&lt;code&gt;&lt;span class="c"&gt;#!/bin/sh&lt;/span&gt;
-
-sudo apt-get autoremove -y scratch
-sudo apt-get autoremove -y midori
-sudo apt-get autoremove -y omxplayer
-sudo apt-get autoremove -y galculator
-sudo apt-get autoremove -y xpdf
-sudo apt-get autoremove -y dillo
-sudo apt-get autoremove -y debian-reference-common
-sudo apt-get autoremove -y netsurf-common
-sudo apt-get autoremove -y netsurf-gtk
-sudo apt-get autoremove -y x11-common
-sudo apt-get autoremove -y python&lt;span class="k"&gt;*&lt;/span&gt;
-sudo apt-get autoremove -y lxde-icon-theme
-sudo apt-get autoremove -y psmisc
-sudo apt-get autoremove -y idle-python3.2
-sudo apt-get autoremove -y python
-sudo apt-get autoremove -y python3
-sudo apt-get autoremove -y python2.7
-sudo apt-get autoremove -y python2.7-minimal
-sudo apt-get autoremove -y lxde-common
-sudo apt-get autoremove -y lxdeterminal
-sudo apt-get autoremove -y hicolor-icon-theme 
-sudo apt-get autoremove -y xarchiver
-sudo apt-get autoremove -y libpoppler19
-sudo apt-get autoremove -y ed
-sudo apt-get autoremove -y lxsession
-sudo apt-get autoremove -y lxappearance
-sudo apt-get autoremove -y lxpolkit
-sudo apt-get autoremove -y lxrandr
-sudo apt-get autoremove -y lxsession-edit
-sudo apt-get autoremove -y lxshortcut
-sudo apt-get autoremove -y lxtask
-sudo apt-get autoremove -y lxterminal
-sudo apt-get autoremove -y xauth
-sudo apt-get autoremove -y samba-common
-sudo apt-get autoremove -y fontconfig
-sudo apt-get autoremove -y fontconfig-config
-sudo apt-get autoremove -y fonts-freefont-ttf
-sudo apt-get autoremove -y dbus-x11
-sudo apt-get autoremove -y desktop-base
-sudo apt-get autoremove -y desktop-file-utils
-sudo apt-get autoremove -y libxmuu1
-sudo apt-get autoremove -y
-sudo apt-get -y clean
-
-sudo rm -rf /home/pi/python_games
-sudo rm -rf /home/pi/Desktop
-sudo rm -rv /usr/share/wallpapers/
-sudo rm -rf /usr/share/sounds/
-sudo rm -rv /usr/share/icons/&lt;span class="k"&gt;*&lt;/span&gt;
-sudo rm -rv /opt/vc/src/&lt;span class="k"&gt;*&lt;/span&gt;
-sudo rm -rv /opt/&lt;span class="k"&gt;*&lt;/span&gt;
-sudo rm -rv /usr/share/icons/&lt;span class="k"&gt;*&lt;/span&gt;
-sudo rm -rv /usr/games/
-sudo rm -rv /usr/share/squeak/
-sudo rm -rv /usr/share/themes
-sudo rm -rv /usr/share/kde4
-sudo rm -rv /usr/share/images/&lt;span class="k"&gt;*&lt;/span&gt;
-sudo rm -rf /opt/vc/src/&lt;span class="k"&gt;*&lt;/span&gt;
-sudo rm -rf /usr/share/icons/&lt;span class="k"&gt;*&lt;/span&gt;
-sudo rm -rf /usr/share/squeak/
-sudo rm -rf /usr/share/themes
-sudo rm -rf /usr/share/kde4
-sudo rm -rf /usr/share/images/&lt;span class="k"&gt;*&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2&gt;パッケージを更新する&lt;/h2&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;% sudo apt-get autoremove
-% sudo apt-get update
-% sudo apt-get dist-upgrade
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2&gt;必要に応じてパッケージをインストールする&lt;/h2&gt;
-
-&lt;h3&gt;vim&lt;/h3&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;% sudo apt-get install vim
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3&gt;zsh&lt;/h3&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;% sudo apt-get install zsh
-% chsh -s `which zsh`
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3&gt;oh-my-zsh&lt;/h3&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;% curl -L http://install.ohmyz.sh | sh
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3&gt;ruby with rbenv&lt;/h3&gt;
-
-&lt;p&gt;rbenv&lt;/p&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;% git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
-% echo 'export PATH="$HOME/.rbenv/bin:$PATH"' &amp;gt;&amp;gt; ~/.zshrc
-% echo 'eval "$(rbenv init -)"' &amp;gt;&amp;gt; ~/.zshrc
-% source .zshrc
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;ruby-build&lt;/p&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;% git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;rubyはインストールするバージョンを確認してからインストールする&lt;/p&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;% rbenv install --list
-% rbenv install 2.1.5
-% rbenv global 2.1.5
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Rubyのbuildは2時間半かかった…。&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>MacでGNU版のコマンドをhomebrewでインストールする</title>
-    <link rel="alternate" href="http://blog.url.com/archives/983.html"/>
-    <id>http://blog.url.com/archives/983.html</id>
-    <published>2014-11-19T09:00:00+09:00</published>
-    <updated>2015-01-30T12:54:24+09:00</updated>
-    <author>
-      <name>Article Author</name>
-    </author>
-    <content type="html">&lt;p&gt;LinuxだとGNU系なので特に意識せず使えるっぽいのですが、MacはUnixなのでインストールする必要があります。&lt;/p&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;$ brew install coreutils
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;これで使えるようになります。&lt;/p&gt;
-
-&lt;p&gt;ただし、コマンドの前に &lt;code&gt;g&lt;/code&gt; をつけなくてはいけないのでaliasとかで置き換えると良いかもしれません。&lt;/p&gt;
-
-&lt;p&gt;dateの場合はこんな風に使えます。&lt;/p&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;$ gdate -d '-1 days' +%Y/%m/%d
-
-2014/11/18
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;g&lt;/code&gt; つけるのやっぱり不便だなー。&lt;/p&gt;
 </content>
   </entry>
 </feed>
