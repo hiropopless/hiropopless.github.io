@@ -5,10 +5,52 @@
   <id>http://hiropo.co.uk/</id>
   <link href="http://hiropo.co.uk/"/>
   <link href="http://hiropo.co.uk/feed.xml" rel="self"/>
-  <updated>2015-11-27T23:55:00+09:00</updated>
+  <updated>2015-12-25T11:34:00+09:00</updated>
   <author>
     <name>funnythingz</name>
   </author>
+  <entry>
+    <title>Rails5 インストール時にeventmachineでハマる</title>
+    <link rel="alternate" href="http://hiropo.co.uk/archives/994.html"/>
+    <id>http://hiropo.co.uk/archives/994.html</id>
+    <published>2015-12-25T11:34:00+09:00</published>
+    <updated>2015-12-25T11:43:53+09:00</updated>
+    <author>
+      <name>funnythingz</name>
+    </author>
+    <content type="html">&lt;p&gt;&lt;a href="https://rubygems.org/gems/rails/versions/5.0.0.beta1"&gt;Rails5 beta1&lt;/a&gt;が出たので試してみようと思い、インストール時に一箇所ハマりかけたので記録として残しておきます。&lt;/p&gt;
+
+&lt;h2&gt;環境&lt;/h2&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;ruby 2.2.4
+bundler 1.11.2
+Rails 5.0.0.beta1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;あとは&lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;% gem install rails --pre
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;でインストールを実行。この際にgemのエラーでインストールエラーになる。&lt;/p&gt;
+
+&lt;h2&gt;ハマり方&lt;/h2&gt;
+
+&lt;p&gt;ログ見れなくなっちゃったので忘れましたが &lt;code&gt;eventmachine&lt;/code&gt; が &lt;code&gt;openssl.h&lt;/code&gt; を読めませんよ的なエラー。&lt;/p&gt;
+
+&lt;h2&gt;解決方法&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;eventmachine&lt;/code&gt; インストール時にコケるのでオプションつけてインストール&lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;% gem install eventmachine -- --with-cppflags=-I/usr/local/opt/openssl/include
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;a href="https://github.com/eventmachine/eventmachine/issues/602"&gt;eventmachineのissueにもあがってました&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;これで再度Railsのインストールを実行&lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;% gem install rails --pre
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これで無事にインストールできました。&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Android2系でインストール時にINSTALL_FAILED_DEXOPTエラー</title>
     <link rel="alternate" href="http://hiropo.co.uk/archives/993.html"/>
@@ -245,96 +287,6 @@ http://www.bijint.com/assets/pict/tokyo/pc/1530.jpg
 &lt;p&gt;超カンタンです。難しいことはなにひとつありません。&lt;/p&gt;
 
 &lt;p&gt;こんな感じであると地味に便利なTruncateです。ぜひ使ってみてください。&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>goqueryでHTMLをパースする</title>
-    <link rel="alternate" href="http://hiropo.co.uk/archives/988.html"/>
-    <id>http://hiropo.co.uk/archives/988.html</id>
-    <published>2015-02-05T00:00:00+09:00</published>
-    <updated>2015-02-09T19:02:53+09:00</updated>
-    <author>
-      <name>funnythingz</name>
-    </author>
-    <content type="html">&lt;p&gt;HTMLのパースをするならgoquery！goquery便利すぎて泣いた。
-jQueryっぽく使えて良いです。&lt;/p&gt;
-
-&lt;p&gt;まずは&lt;a href="https://github.com/PuerkitoBio/goquery"&gt;goquery&lt;/a&gt;を入れましょう。&lt;/p&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;% go get github.com/PuerkitoBio/goquery
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2&gt;HTMLをパースする&lt;/h2&gt;
-
-&lt;p&gt;それではパースしてみましょう。
-HTMLのパースのやり方はいくつかあります。&lt;/p&gt;
-
-&lt;h3&gt;URLから直接パースする&lt;/h3&gt;
-&lt;pre class="highlight go"&gt;&lt;code&gt;&lt;span class="n"&gt;doc&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="n"&gt;_&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="o"&gt;:=&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="n"&gt;goquery&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;NewDocument&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"http://yahoo.co.jp"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="x"&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3&gt;文字列をパースする&lt;/h3&gt;
-&lt;pre class="highlight go"&gt;&lt;code&gt;&lt;span class="n"&gt;html&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="o"&gt;:=&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="s"&gt;`&amp;lt;h1 class="heading"&amp;gt;見出し&amp;lt;/h1&amp;gt;`&lt;/span&gt;&lt;span class="x"&gt;
-&lt;/span&gt;&lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="o"&gt;:=&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="n"&gt;strings&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;NewReader&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;html&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="x"&gt;
-&lt;/span&gt;&lt;span class="n"&gt;doc&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="n"&gt;_&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="o"&gt;:=&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="n"&gt;goquery&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;NewDocumentFromReader&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="x"&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2&gt;パースしたHTMLから要素を取り出す&lt;/h2&gt;
-
-&lt;p&gt;goqueryでパースしたHTMLから要素を取り出してみましょう&lt;/p&gt;
-&lt;pre class="highlight go"&gt;&lt;code&gt;&lt;span class="n"&gt;doc&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Find&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;".heading"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Text&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="x"&gt;  &lt;/span&gt;&lt;span class="c"&gt;//=&amp;gt; 見出し&lt;/span&gt;&lt;span class="x"&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;こんな感じでとっても簡単です。&lt;/p&gt;
-
-&lt;h2&gt;goqueryのひと通りの操作のテストを書く&lt;/h2&gt;
-
-&lt;p&gt;goqueryのテストをざっくり書いてみるとこうなります。&lt;/p&gt;
-&lt;pre class="highlight go"&gt;&lt;code&gt;&lt;span class="k"&gt;package&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="n"&gt;main&lt;/span&gt;&lt;span class="x"&gt;
-
-&lt;/span&gt;&lt;span class="k"&gt;import&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="x"&gt;
-    &lt;/span&gt;&lt;span class="s"&gt;"github.com/PuerkitoBio/goquery"&lt;/span&gt;&lt;span class="x"&gt;
-    &lt;/span&gt;&lt;span class="s"&gt;"strings"&lt;/span&gt;&lt;span class="x"&gt;
-    &lt;/span&gt;&lt;span class="s"&gt;"testing"&lt;/span&gt;&lt;span class="x"&gt;
-&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="x"&gt;
-
-&lt;/span&gt;&lt;span class="k"&gt;func&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="n"&gt;TestParseHtml&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;testing&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;T&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="x"&gt;
-    &lt;/span&gt;&lt;span class="n"&gt;html&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="o"&gt;:=&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="s"&gt;`
-&amp;lt;section&amp;gt;
-&amp;lt;h1 class="heading"&amp;gt;うんこっこ&amp;lt;/h1&amp;gt;
-&amp;lt;p class="lead"&amp;gt;なんかにおうってばよ&amp;lt;/p&amp;gt;
-&amp;lt;/section&amp;gt;
-`&lt;/span&gt;&lt;span class="x"&gt;
-    &lt;/span&gt;&lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="o"&gt;:=&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="n"&gt;strings&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;NewReader&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;html&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="x"&gt;
-    &lt;/span&gt;&lt;span class="n"&gt;doc&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="n"&gt;_&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="o"&gt;:=&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="n"&gt;goquery&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;NewDocumentFromReader&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="x"&gt;
-
-    &lt;/span&gt;&lt;span class="n"&gt;docHeading&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="o"&gt;:=&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="n"&gt;doc&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Find&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;".heading"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Text&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="x"&gt;
-    &lt;/span&gt;&lt;span class="n"&gt;heading&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="o"&gt;:=&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="s"&gt;"うんこっこ"&lt;/span&gt;&lt;span class="x"&gt;
-
-    &lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="n"&gt;docHeading&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="o"&gt;!=&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="n"&gt;heading&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="x"&gt;
-        &lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Errorf&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"got %v want %v"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="n"&gt;docHeading&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="n"&gt;heading&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="x"&gt;
-    &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="x"&gt;
-
-    &lt;/span&gt;&lt;span class="n"&gt;docLead&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="o"&gt;:=&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="n"&gt;doc&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Find&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;".lead"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Text&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="x"&gt;
-    &lt;/span&gt;&lt;span class="n"&gt;lead&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="o"&gt;:=&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="s"&gt;"なんかにおうってばよ"&lt;/span&gt;&lt;span class="x"&gt;
-
-    &lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="n"&gt;docLead&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="o"&gt;!=&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="n"&gt;lead&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="x"&gt;
-        &lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Errorf&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"got %v want %v"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="n"&gt;docLead&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="n"&gt;lead&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="x"&gt;
-    &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="x"&gt;
-&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="x"&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;goのテスト実行コマンドで実行してみましょう。&lt;/p&gt;
-&lt;pre class="highlight shell"&gt;&lt;code&gt;&lt;span class="gp"&gt;% &lt;/span&gt;go &lt;span class="nb"&gt;test&lt;/span&gt; -v
-&lt;span class="o"&gt;===&lt;/span&gt; RUN TestParseHtml
---- PASS: TestParseHtml &lt;span class="o"&gt;(&lt;/span&gt;0.00s&lt;span class="o"&gt;)&lt;/span&gt;
-PASS
-ok
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;こんな感じで動けばテスト完了です。
-今回のテストコードは&lt;a href="https://github.com/funnythingz/go-test/blob/master/goquery_test.go"&gt;GitHub&lt;/a&gt;にもあげました。&lt;/p&gt;
-
-&lt;p&gt;テスト、だいじだよ、テスト。&lt;/p&gt;
 </content>
   </entry>
 </feed>
